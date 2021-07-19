@@ -6,7 +6,7 @@
 
 </a>
 
-<h2  align="center"> DevJams 21 </h2>
+<h2  align="center"> DevJams 21 💻</h2>
 
 <h4  align="center"> Frontend portal for DevJams 21 🎉. The event everyone loves. DevJams is one of a kind hackathon conducted by Developer Student Clubs VIT 🎓 every year to encourage tech enthusiasts 💻 from across the country to develop their ideas for the future 💡. <h4>
 
@@ -40,7 +40,7 @@ Clone the repository and run
 
 ```bash
 
-	npm install
+npm install
 
 ```
 
@@ -48,7 +48,7 @@ After installing the node modules
 
 ```bash
 
-	npm start
+npm start
 
 ```
 
@@ -73,7 +73,9 @@ Sai Teja T
 </td>
 
 <td>
+
 Sricharan Ramesh
+
 <p align="center">
 <img src = "https://avatars.githubusercontent.com/u/60818157?v=4" width="150" height="150" alt="Sricharan Ramesh">
 </p>
