@@ -1,14 +1,17 @@
 import React from 'react'
+import { ReactComponent as TimelineBackground } from '../assets/Moon Timeline.svg'
+import { ReactComponent as TimelineMap } from '../assets/Timeline Map.svg'
 
 export default function Timeline () {
   return (
-    <div className='grid place-content-center h-screen bg-green-200 text-xl'>
-      <div className='font-sora text-green-700'>This is the timeline page</div>
-      <div className='font-sora font-semibold text-green-700'>
-        This is the timeline page
-      </div>
-      <div className='font-sora font-bold text-green-700'>
-        This is the timeline page
+    <div>
+      <TimelineBackground className='w-full h-auto' />
+
+      <div class='-my-3 bg-jams_black p-10'>
+        <div class='font-sora font-bold text-2xl md:text-3xl md:my-6 xl:text-5xl text-center text-white'>
+          TimeLine
+        </div>
+        <TimelineMap className='w-full h-auto my-10 lg:w-2/3 mx-auto' />
       </div>
     </div>
   )
