@@ -22,3 +22,8 @@
   display: flex;
   justify-content: space-around;
 }
+
+.about-content {
+  background: #262525;
+  color: white;
+}
