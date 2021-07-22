@@ -6,6 +6,9 @@ module.exports = {
     extend: {
       fontFamily: {
         sora: ['Sora', 'sans-serif']
+      },
+      colors: {
+        jams_black: '#1B1B1B'
       }
     }
   },
