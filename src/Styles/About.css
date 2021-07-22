@@ -7,7 +7,6 @@
 }
 
 .about-train {
-  width: 50%;
   position: absolute;
   bottom: 27%;
   left: 25%;
@@ -16,11 +15,8 @@
 .about-nav-link {
   width: 100%;
   position: absolute;
-  font-size: 1em;
   bottom: calc(23% + 2px);
   color: white;
-  display: flex;
-  justify-content: space-around;
 }
 
 .about-content {

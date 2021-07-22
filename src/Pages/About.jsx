@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom' 
-import HomeNight from '../Assets/HomeNight.svg'
+import { Link } from 'react-router-dom'
+import { ReactComponent as HomeNight } from '../Assets/HomeNight.svg'
 import Train from '../Assets/Train.svg'
 import '../Styles/About.css'
 
@@ -8,9 +8,9 @@ export default function About () {
   return (
     <div className=''>
       <div className='about-nav'>
-        <img  className='about-background' src={HomeNight} alt='background' />
-        <img className='about-train'  src={Train} alt='train' />
-        <div className='about-nav-link'>
+        <HomeNight className='w-full h-auto' />
+        <img className='about-train w-1/2' src={Train} alt='train' />
+        <div className='about-nav-link invisible font-sora md:visible flex justify-around text-sm lg:text-md 2xl:text-xl'>
           <Link to='/timeline'>Timeline</Link>
           <Link to='/speakers'>Speakers</Link>
           <Link to='/timeline'>Sponsors</Link>
@@ -26,8 +26,8 @@ export default function About () {
           </div>
         </div>
         <div className='my-36 mx-8 grid grid-cols-5'>
-          <div className='col-span-5 md:col-start-2 col-span-4 lg:col-start-3 col-span-3'>
-            <h2 className='text-2xl text-start font-semibold mb-8 2xl:text-3xl'>About DSC</h2>
+          <div className='col-span-5 md:col-start-3'>
+            <h2 className='text-2xl text-start font-semibold mb-8 xl:text-2xl 2xl:text-3xl'>About DSC</h2>
             <p className='text-md leading-relaxed xl:text-lg 2xl:text-xl'>DSC VIT powered by Google Developers is a student community at VIT Vellore. We strive to bring about technological innovations among students and we do so by providing a platform for them to exhibit their talents. We are a group of passionate designers, developers and managers who work together to bring about collaborative results that better the lives of everyone around us.</p>
           </div>
         </div>
