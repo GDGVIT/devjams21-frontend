@@ -1,6 +1,6 @@
 import React from 'react'
-import { ReactComponent as SpeakersBackground } from '../Assets/Speaker Moon.svg'
-import { ReactComponent as SpeakersMap } from '../Assets/Speakers Map.svg'
+import { ReactComponent as SpeakersBackground } from '../Assets/SpeakerNight.svg'
+import { ReactComponent as SpeakersMap } from '../Assets/SpeakersMap.svg'
 
 export default function Speakers () {
   return (

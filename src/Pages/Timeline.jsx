@@ -1,6 +1,6 @@
 import React from 'react'
-import { ReactComponent as TimelineBackground } from '../Assets/Moon Timeline.svg'
-import { ReactComponent as TimelineMap } from '../Assets/Timeline Map.svg'
+import { ReactComponent as TimelineBackground } from '../Assets/TimelineNight.svg'
+import { ReactComponent as TimelineMap } from '../Assets/TimelineMap.svg'
 
 export default function Timeline () {
   return (
