@@ -9,6 +9,10 @@ module.exports = {
       },
       colors: {
         jams_black: '#1B1B1B'
+      },
+      gridAutoRows: {
+        10: '10px',
+        1: '1px'
       }
     }
   },
