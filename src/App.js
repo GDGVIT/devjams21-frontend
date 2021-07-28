@@ -1,5 +1,6 @@
 import './App.css'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import Navbar from './Components/Navbar'
 import About from './Pages/About.jsx'
 import Timeline from './Pages/Timeline'
 import Sponsors from './Pages/Sponsors'
@@ -9,6 +10,7 @@ import Faq from './Pages/Faq'
 function App () {
   return (
     <div className='App'>
+      <Navbar />
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={About} />
