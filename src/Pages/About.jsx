@@ -1,22 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { ReactComponent as HomeNight } from '../Assets/HomeNight.svg'
-import Train from '../Assets/Train.svg'
 import '../Styles/About.css'
 
 export default function About () {
   return (
     <div className=''>
-      <div className='about-nav'>
-        <HomeNight className='w-full h-auto' />
-        <img className='about-train w-1/2' src={Train} alt='train' />
-        <div className='about-nav-link invisible font-sora md:visible flex justify-around text-sm lg:text-md 2xl:text-xl'>
-          <Link to='/timeline'>Timeline</Link>
-          <Link to='/speakers'>Speakers</Link>
-          <Link to='/timeline'>Sponsors</Link>
-          <Link to='/faq'>FAQ</Link>
-        </div>
-      </div>
       <div className='about-content p-10 font-sora subpixel-antialiased 2xl:p-24'>
         <h1 className='text-center text-4xl font-semibold mt-8 mb-12  2xl:text-5xl'>About</h1>
         <div className='my-24 mx-8 grid grid-cols-5'>
