@@ -4,6 +4,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      inset: {
+        '28/100': '28%',
+        '3/10': '30%'
+      },
       fontFamily: {
         sora: ['Sora', 'sans-serif']
       },
