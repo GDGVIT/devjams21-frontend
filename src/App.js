@@ -16,17 +16,16 @@ function App () {
     <div className='App'>
       <BrowserRouter>
         <Navbar setBodyRender={setBodyRender} />
-        {  bodyRender &&
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/timeline' component={Timeline} />
-              <Route exact path='/sponsors' component={Sponsors} />
-              <Route exact path='/speakers' component={Speakers} />
-              <Route exact path='/faq' component={Faq} />
-              <Route exact path='/about' component={About} />
-              <Redirect to='/' />
-            </Switch>
-        }
+        {bodyRender &&
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/timeline' component={Timeline} />
+            <Route exact path='/sponsors' component={Sponsors} />
+            <Route exact path='/speakers' component={Speakers} />
+            <Route exact path='/faq' component={Faq} />
+            <Route exact path='/about' component={About} />
+            <Redirect to='/' />
+          </Switch>}
       </BrowserRouter>
     </div>
   )
