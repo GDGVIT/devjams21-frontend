@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import '../Styles/Navbar.css'
 import { ReactComponent as Logo } from '../Assets/dscLogo.svg'
 import { ReactComponent as Discord } from '../Assets/Discord.svg'
@@ -8,21 +8,12 @@ import { ReactComponent as Backdrop } from '../Assets/Foreground__Backdrop.svg'
 import { ReactComponent as Foreground } from '../Assets/Foreground_3.svg'
 import { useHistory } from 'react-router-dom'
 import { moveIntoView } from '../Utils/Scroll'
-import { animations } from '../Utils/Animations'
 
 const Navbar = (props) => {
   const history = useHistory()
   const handleClick = () => {
     moveIntoView(props.setBodyRender, history)
   }
-
-  useEffect(() => {
-    const { trainAnimation } = animations()
-    console.log('Animation started')
-    trainAnimation().then(() => {
-      console.log('Animation ended')
-    })
-  }, [])
 
   return (
     <div>

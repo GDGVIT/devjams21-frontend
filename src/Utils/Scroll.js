@@ -1,13 +1,33 @@
+import { animations } from '../Utils/Animations'
+
 export function moveIntoView (setBodyRender, history) {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  })
-  setTimeout(() => {
+  const { trainAnimation } = animations()
+
+  // scroll to top
+  scrollTo(0, () => {
     setBodyRender(false)
-  }, 1000)
-  setTimeout(() => {
+  })
+
+  // start and end animation
+  trainAnimation().then(() => {
     history.push('/about')
     setBodyRender(true)
-  }, 3000)
+  })
+}
+
+const scrollTo = (offset, callback) => {
+  const fixedOffset = offset.toFixed()
+  const onScroll = () => {
+    if (window.pageYOffset.toFixed() === fixedOffset) {
+      window.removeEventListener('scroll', onScroll)
+      callback()
+    }
+  }
+
+  window.addEventListener('scroll', onScroll)
+  onScroll()
+  window.scrollTo({
+    top: offset,
+    behavior: 'smooth'
+  })
 }
