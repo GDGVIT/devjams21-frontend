@@ -5,3 +5,35 @@
 .background {
   width: 350%;
 }
+
+.discord-link {
+  width: 350%;
+  height: 100%;
+}
+
+.discord-bg {
+  line-height: 56px;
+}
+
+.discord-bg::before {
+  content: '';
+  background-color: #16387F;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.discord-bg::after {
+  content: '';
+  background-color: #16387F;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}

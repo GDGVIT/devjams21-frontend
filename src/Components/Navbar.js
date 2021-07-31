@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router'
 import { ReactComponent as Logo } from '../Assets/dscLogo.svg'
-import { ReactComponent as Discord } from '../Assets/Discord.svg'
+import discord from '../Assets/Discord.svg'
 import { ReactComponent as Train } from '../Assets/Train.svg'
 import { ReactComponent as Background } from '../Assets/Background_3_1.svg'
 import { ReactComponent as Backdrop } from '../Assets/Foreground__Backdrop.svg'
@@ -51,11 +51,15 @@ const Navbar = (props) => {
             >
               Login
             </div>
-            <div
-              className='discord absolute bottom-8 right-8 z-30'
-            >
-              <Discord />
-            </div>
+            <a href='https://discord.com'>
+              <div
+                className='fixed items-center overflow-hidden flex bottom-5 right-5 w-14 h-14 z-40 hover:w-56 rounded transition-all duration-300 ease-in-out'
+              >
+                <img src={discord} alt='Discord' className='h-full' />
+                <span className='h-1/2 border-l-2 border-white' />
+                <h1 className='discord-bg font-sora whitespace-nowrap font-semibold ml-3 text-white w-52 h-full'>Join our Discord</h1>
+              </div>
+            </a>
           </div>
       }
     </div>
