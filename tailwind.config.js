@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     extend: {
       inset: {
+        '27/100': '27%',
         '28/100': '28%',
         '3/10': '30%'
       },
