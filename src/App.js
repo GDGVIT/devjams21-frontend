@@ -19,7 +19,7 @@ function App () {
         {bodyRender &&
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/timeline' component={Timeline} />
+            <Route exact path='/events' component={Timeline} />
             <Route exact path='/sponsors' component={Sponsors} />
             <Route exact path='/speakers' component={Speakers} />
             <Route exact path='/faq' component={Faq} />

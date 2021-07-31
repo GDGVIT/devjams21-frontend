@@ -7,10 +7,8 @@ const animations = () => {
         targets: '.animation-bg',
         translateX: -3848,
         duration: 10000,
-        loop: true,
         easing: 'easeInOutCubic',
         changeComplete: (anim) => {
-          console.log('Animation background done')
           resolve()
         }
       })
@@ -18,21 +16,13 @@ const animations = () => {
         targets: '.animation-city',
         translateX: -6414,
         duration: 10000,
-        loop: true,
-        easing: 'easeInOutCubic',
-        changeComplete: (anim) => {
-          console.log('Animation City done')
-        }
+        easing: 'easeInOutCubic'
       })
       anime({
         targets: '.animation-grass',
         translateX: -12828,
         duration: 10000,
-        loop: true,
-        easing: 'easeInOutCubic',
-        changeComplete: (anim) => {
-          console.log('Animation Grass done')
-        }
+        easing: 'easeInOutCubic'
       })
     })
   }
