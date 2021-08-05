@@ -7,8 +7,8 @@ export default function Timeline () {
     <div>
       <TimelineBackground className='w-full h-auto' />
 
-      <div class='-my-6 bg-jams_black p-10'>
-        <div class='font-sora font-bold text-2xl md:text-3xl md:my-6 xl:text-5xl text-center text-white'>
+      <div className='-my-6 bg-jams_black p-10'>
+        <div className='font-sora font-bold text-2xl md:text-3xl md:my-6 xl:text-5xl text-center text-white'>
           TimeLine
         </div>
         <TimelineMap className='w-full h-auto my-10 lg:w-2/3 mx-auto' />

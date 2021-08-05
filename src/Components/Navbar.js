@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 import { ReactComponent as Logo } from '../Assets/dscLogo.svg'
 import discord from '../Assets/Discord.svg'
@@ -15,6 +15,15 @@ const Navbar = (props) => {
   const location = useLocation()
   const history = useHistory()
   const pathname = location.pathname
+  const [date, setDate] = useState(new Date());
+  const hour = 1000*60*60
+
+  useEffect(() => {
+    const timer = setInterval(() => setDate(new Date()), hour )
+    return function cleanup() {
+      clearInterval(timer)
+    }
+  })
 
   const handleClick = (event) => {
     let route = event.target.id
@@ -31,9 +40,19 @@ const Navbar = (props) => {
     <div>
       <div className='h-screen w-full relative overflow-hidden'>
         <Logo className='z-20 absolute left-8 top-8' />
-        <Background className='animation-bg h-full absolute' />
-        <Backdrop className='animation-city absolute z-10 h-full' />
-        <Foreground className='animation-grass h-full z-20 absolute' />
+        { date.getHours() > 18 ?
+          <div>
+            <Background className='animation-bg h-full absolute' />
+            <Backdrop className='animation-city absolute z-10 h-full' />
+            <Foreground className='animation-grass h-full z-20 absolute' />
+          </div>
+          :
+          <div>
+            <Background className='animation-bg h-full absolute' />
+            <Backdrop className='animation-city absolute z-10 h-full' />
+            <Foreground className='animation-grass h-full z-20 absolute' />
+          </div>
+        }
         <Train className='w-1/2 left-1/4 z-20 absolute bottom-1/4 md:bottom-28/100 lg:bottom-28/100' />
       </div>
       {
