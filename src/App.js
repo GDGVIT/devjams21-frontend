@@ -5,7 +5,6 @@ import Navbar from './Components/Navbar'
 import About from './Pages/About.jsx'
 import Timeline from './Pages/Timeline'
 import Sponsors from './Pages/Sponsors'
-import Speakers from './Pages/Speakers'
 import Faq from './Pages/Faq'
 import Home from './Pages/Home'
 
@@ -21,7 +20,6 @@ function App () {
             <Route exact path='/' component={Home} />
             <Route exact path='/events' component={Timeline} />
             <Route exact path='/sponsors' component={Sponsors} />
-            <Route exact path='/speakers' component={Speakers} />
             <Route exact path='/faq' component={Faq} />
             <Route exact path='/about' component={About} />
             <Redirect to='/' />
