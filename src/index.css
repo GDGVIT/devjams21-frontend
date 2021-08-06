@@ -5,11 +5,15 @@
 @tailwind utilities;
 
 .events-container {
-  @apply sm:w-11/12 mx-auto mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-10 auto-rows-10;
+  @apply sm:w-11/12 mx-auto mt-10 grid gap-6 md:grid-cols-2 mb-10 auto-rows-10;
 }
 
-.event {
-  @apply grid place-content-center bg-red-50 text-red-500 font-bold rounded-md;
+.content-container {
+  @apply grid gap-4 py-5 px-10 text-xs sm:text-sm lg:text-base;
+}
+
+.grid-btn {
+  @apply font-bold my-4 w-full py-3 rounded-md md:text-lg lg:text-xl;
 }
 
 body {
