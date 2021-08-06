@@ -22,23 +22,23 @@
 /* register */
 .register-grid--dark {
   border: 2px solid #6163d7;
-  box-shadow: 0px 0px 15px 10px rgba(177, 79, 238, 0.12);
+  box-shadow: 0 0 15px 10px rgba(177, 79, 238, 0.12);
 }
 
 .register-grid--light {
   border: 2px solid #6163d7;
-  box-shadow: 0px 0px 15px 10px rgba(177, 79, 238, 0.12);
+  box-shadow: 0 0 15px 10px rgba(177, 79, 238, 0.12);
 }
 
 /* coming soon */
 .coming-soon-grid--dark {
   border: 1px solid #d1d1d1;
-  box-shadow: 0px 5px 30px rgba(23, 23, 23, 0.14);
+  box-shadow: 0 5px 30px rgba(23, 23, 23, 0.14);
 }
 
 .coming-soon-grid--light {
   border: 1px solid #d1d1d1;
-  box-shadow: 0px 5px 30px rgba(23, 23, 23, 0.14);
+  box-shadow: 0 5px 30px rgba(23, 23, 23, 0.14);
 }
 
 /* Knockathon */
