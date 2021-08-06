@@ -31,13 +31,13 @@ const Navbar = (props) => {
     <div>
       <div className='h-screen w-full relative overflow-hidden'>
         <Logo className='z-20 absolute left-8 top-8' />
-        {props.theme && // dark
+        {props.darkTheme && // dark
           <div>
             <Background className='animation-bg h-full absolute' />
             <Backdrop className='animation-city absolute z-10 h-full' />
             <Foreground className='animation-grass h-full z-20 absolute' />
           </div>}
-        {!props.theme && // light
+        {!props.darkTheme && // light
           <div>
             <Background className='animation-bg h-full absolute' />
             <Backdrop className='animation-city absolute z-10 h-full' />

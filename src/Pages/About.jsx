@@ -4,7 +4,7 @@ import '../Styles/About.css'
 export default function About (props) {
   return (
     <div>
-      <div className={`p-10 font-sora subpixel-antialiased 2xl:p-24 ${props.theme && 'about-content'}`}>
+      <div className={`p-10 font-sora subpixel-antialiased 2xl:p-24 ${props.darkTheme && 'about-content'}`}>
         <h1 className='text-center text-4xl font-semibold mt-8 mb-12  2xl:text-5xl'>About</h1>
         <div className='my-24 mx-8 grid grid-cols-5'>
           <div className='col-span-5 md:col-span-4 lg:col-span-3'>
