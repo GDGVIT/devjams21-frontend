@@ -113,16 +113,20 @@ const ComingSoonGrid = (props) => {
       className={`grid--${theme} coming-soon-grid--${theme} event relative shadow-md sm:rounded-3xl overflow-hidden`}
     >
       <div className='content-container'>
-        <div>
+        <div className='flex items-center gap-x-4'>
           {props.children}
-          <div className='text-lg sm:text-xl lg:text-2xl font-bold'>{name}</div>
-          <div className='text-jams_pink'>{date}</div>
+          <div>
+            <div className='text-lg sm:text-xl lg:text-2xl font-bold'>
+              {name}
+            </div>
+            <div className='text-jams_pink'>{date}</div>
+          </div>
         </div>
         <div className={`content--${theme}`}>{content}</div>
         <div className='text-center'>
-          <button className={`btn__coming-soon--${theme} grid-btn`}>
+          <div className={`btn__coming-soon--${theme} grid-btn`}>
             Coming Soon
-          </button>
+          </div>
         </div>
       </div>
       <Circles info={props.event} />
