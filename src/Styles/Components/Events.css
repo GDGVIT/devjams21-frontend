@@ -1,0 +1,104 @@
+.devjams-ground {
+  height: auto;
+  position: absolute;
+  bottom: 0;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* grid */
+.grid--dark {
+  background: #1f1f1f;
+  color: white;
+}
+
+.grid--light {
+  background: #fcfcfc;
+}
+
+/* register */
+.register-grid--dark {
+  border: 2px solid #6163d7;
+  box-shadow: 0px 0px 15px 10px rgba(177, 79, 238, 0.12);
+}
+
+.register-grid--light {
+  border: 2px solid #6163d7;
+  box-shadow: 0px 0px 15px 10px rgba(177, 79, 238, 0.12);
+}
+
+/* coming soon */
+.coming-soon-grid--dark {
+  border: 1px solid #d1d1d1;
+  box-shadow: 0px 5px 30px rgba(23, 23, 23, 0.14);
+}
+
+.coming-soon-grid--light {
+  border: 1px solid #d1d1d1;
+  box-shadow: 0px 5px 30px rgba(23, 23, 23, 0.14);
+}
+
+/* Knockathon */
+.knockathon-grid__circle--dark {
+  background: rgba(24, 26, 175, 0.17);
+}
+
+.knockathon-grid__circle--light {
+  background: rgba(227, 227, 255, 0.58);
+}
+
+/* DevTalks */
+.devtalks-grid__circle--dark {
+  background: rgba(216, 61, 52, 0.06);
+}
+
+.devtalks-grid__circle--light {
+  background: rgba(255, 94, 85, 0.08);
+}
+
+/* Designzzz */
+.designzzz-grid__circle--dark {
+  background: rgba(0, 91, 56, 0.1);
+}
+
+.designzzz-grid__circle--light {
+  background: rgba(53, 178, 105, 0.08);
+}
+
+/* CTF */
+.ctf-grid__circle--dark {
+  background: rgba(76, 137, 255, 0.08);
+}
+
+.ctf-grid__circle--light {
+  background: rgba(76, 137, 255, 0.08);
+}
+
+/* buttons */
+.btn__register--dark,
+.btn__coming-soon--dark {
+  background: #272841;
+  color: #5d60ff;
+}
+
+.btn__register--light {
+  background: #4244b4;
+  color: white;
+}
+
+.btn__coming-soon--light {
+  background: #edeeff;
+  color: #4244b4;
+}
+
+/* content text  */
+.content--light {
+  color: #474747;
+}
+
+.content--dark {
+  color: white;
+}
