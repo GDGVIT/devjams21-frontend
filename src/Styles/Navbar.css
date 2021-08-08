@@ -12,7 +12,8 @@
   opacity: 1;
 }
 
-.close:before, .close:after {
+.close::before,
+.close::after {
   position: absolute;
   left: 15px;
   content: ' ';
@@ -21,11 +22,11 @@
   background-color: #333;
 }
 
-.close:before {
+.close::before {
   transform: rotate(45deg);
 }
 
-.close:after {
+.close::after {
   transform: rotate(-45deg);
 }
 
@@ -67,64 +68,4 @@
   right: 0;
   position: absolute;
   z-index: -1;
-}
-
-.navlinkDown {
-  right: 20px;
-}
-
-.animateUp {
-  animation: moveUp 1s forwards;
-}
-
-.animateDown {
-  animation: moveDown 1s forwards;
-}
-
-.animateDiscordUp {
-  animation: moveDiscordUp 1s forwards;
-}
-
-.animateDiscordDown {
-  animation: moveDiscordDown 1s forwards;
-}
-
-@keyframes moveUp {
-  from {
-    top: 32px;
-  }
-
-  to {
-    top: -96px;
-  }
-}
-
-@keyframes moveDown {
-  from {
-    top: -96px;
-  }
-
-  to {
-    top: 32px;
-  }
-}
-
-@keyframes moveDiscordUp {
-  from {
-    bottom: -96px;
-  }
-
-  to {
-    bottom: 20px;
-  }
-}
-
-@keyframes moveDiscordDown {
-  from {
-    bottom: 20px;
-  }
-
-  to {
-    bottom: -96px;
-  }
 }
