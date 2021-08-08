@@ -43,25 +43,26 @@
 }
 
 .animateUp {
-  animation: moveUp 1.0s forwards;
+  animation: moveUp 1s forwards;
 }
 
 .animateDown {
-  animation: moveDown 1.0s forwards;
+  animation: moveDown 1s forwards;
 }
 
 .animateDiscordUp {
-  animation: moveDiscordUp 1.0s forwards;
+  animation: moveDiscordUp 1s forwards;
 }
 
 .animateDiscordDown {
-  animation: moveDiscordDown 1.0s forwards;
+  animation: moveDiscordDown 1s forwards;
 }
 
 @keyframes moveUp {
   from {
     top: 32px;
   }
+
   to {
     top: -96px;
   }
@@ -71,6 +72,7 @@
   from {
     top: -96px;
   }
+
   to {
     top: 32px;
   }
@@ -80,6 +82,7 @@
   from {
     bottom: -96px;
   }
+
   to {
     bottom: 20px;
   }
@@ -89,6 +92,7 @@
   from {
     bottom: 20px;
   }
+
   to {
     bottom: -96px;
   }
