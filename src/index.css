@@ -5,11 +5,15 @@
 @tailwind utilities;
 
 .nav-link {
-  @apply cursor-pointer md:text-xl text-white mr-8 z-30 font-semibold opacity-50 hover:opacity-100;
+  @apply cursor-pointer text-2xl lg:text-xl z-30 font-bold opacity-50 hover:opacity-100;
 }
 
 .nav-link-active {
   @apply border-b-4 border-blue-400 opacity-100 cursor-default;
+}
+
+.nav-link-small {
+  @apply text-black font-sora cursor-pointer font-semibold;
 }
 
 .events-container {
