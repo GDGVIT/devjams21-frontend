@@ -37,3 +37,59 @@
   position: absolute;
   z-index: -1;
 }
+
+.navlinkDown {
+  right: 20px;
+}
+
+.animateUp {
+  animation: moveUp 1.0s forwards;
+}
+
+.animateDown {
+  animation: moveDown 1.0s forwards;
+}
+
+.animateDiscordUp {
+  animation: moveDiscordUp 1.0s forwards;
+}
+
+.animateDiscordDown {
+  animation: moveDiscordDown 1.0s forwards;
+}
+
+@keyframes moveUp {
+  from {
+    top: 32px;
+  }
+  to {
+    top: -96px;
+  }
+}
+
+@keyframes moveDown {
+  from {
+    top: -96px;
+  }
+  to {
+    top: 32px;
+  }
+}
+
+@keyframes moveDiscordUp {
+  from {
+    bottom: -96px;
+  }
+  to {
+    bottom: 20px;
+  }
+}
+
+@keyframes moveDiscordDown {
+  from {
+    bottom: 20px;
+  }
+  to {
+    bottom: -96px;
+  }
+}
