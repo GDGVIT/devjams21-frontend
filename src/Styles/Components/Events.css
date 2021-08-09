@@ -16,11 +16,12 @@
 
 /* grid */
 .grid--dark {
-  background: #1f1f1f;
   color: white;
+  background: #1e1e38;
 }
 
 .grid--light {
+  color: #474747;
   background: #fcfcfc;
 }
 
