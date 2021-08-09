@@ -1,32 +1,31 @@
 // tailwind.config.js
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       inset: {
-        '27/100': '27%',
-        '28/100': '28%',
-        '3/10': '30%'
+        "27/100": "27%",
+        "28/100": "28%",
+        "3/10": "30%",
       },
       fontFamily: {
-        sora: ['Sora', 'sans-serif']
+        sora: ["Sora", "sans-serif"],
       },
       colors: {
-        jams_black: '#1B1B1B',
-        jams_pink: '#FF8ED4',
-        jams_dark_blue: '#272841',
-        jams_purple: '#5D60FF'
+        jams_purple_faded: "#EDEEFF",
+        jams_purple: "#4244B4",
+        jams_red: "#FF5E55",
       },
       gridAutoRows: {
-        10: '10px',
-        1: '1px'
-      }
-    }
+        10: "10px",
+        1: "1px",
+      },
+    },
   },
   variants: {
-    width: ['responsive', 'hover', 'focus'],
-    extend: {}
+    width: ["responsive", "hover", "focus"],
+    extend: {},
   },
-  plugins: []
-}
+  plugins: [],
+};
