@@ -14,10 +14,9 @@ import { ReactComponent as CTFLogo } from "../Assets/Logos/CTF Logo.svg";
 import { ReactComponent as RightArrow } from "../Assets/Home/Right Arrow.svg";
 import DevJamsGridGround from "../Assets/Home/DevJamsGridGround";
 
-const theme = "dark";
-
-export default function Events() {
+export default function Events(props) {
   const homeContainerRef = useRef(null);
+  const theme = props.darkTheme ? "dark" : "light";
 
   useEffect(() => {
     const { resizeGridItem } = resizing();
@@ -36,17 +35,17 @@ export default function Events() {
       ref={homeContainerRef}
       className="events-container mx-auto lg:w-3/4 xl:w-2/3"
     >
-      <DevJamsGrid />
-      <CurrentEventGrid event={events.knockathon}>
+      <DevJamsGrid theme={theme} />
+      <CurrentEventGrid event={events.knockathon} theme={theme}>
         <KnockathonLogo className="w-20" />
       </CurrentEventGrid>
-      <ComingSoonGrid event={events.devtalks}>
+      <ComingSoonGrid event={events.devtalks} theme={theme}>
         <DevTalksLogo className="w-20" />
       </ComingSoonGrid>
-      <ComingSoonGrid event={events.designzzz}>
+      <ComingSoonGrid event={events.designzzz} theme={theme}>
         <DesignzzzLogo className="w-20" />
       </ComingSoonGrid>
-      <ComingSoonGrid event={events.ctf}>
+      <ComingSoonGrid event={events.ctf} theme={theme}>
         <CTFLogo className="w-20" />
       </ComingSoonGrid>
     </div>
@@ -55,7 +54,8 @@ export default function Events() {
 
 // Don't remove event class its not for CSS
 
-const DevJamsGrid = () => {
+const DevJamsGrid = (props) => {
+  const { theme } = props;
   return (
     <div
       className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} event col-span-full relative shadow-md sm:rounded-3xl overflow-hidden`}
@@ -79,13 +79,14 @@ const DevJamsGrid = () => {
 };
 
 const CurrentEventGrid = (props) => {
-  const { name, date, content } = props.event;
+  const { event, theme } = props;
+  const { name, date, content } = event;
 
   return (
     <div
       className={`grid--${theme} register-grid--${theme} event relative shadow-md sm:rounded-3xl overflow-hidden`}
     >
-      <div className="content-container">
+      <div className="content-container z-30 relative">
         <div>
           {props.children}
           <div className="text-lg sm:text-xl lg:text-2xl font-bold">{name}</div>
@@ -100,19 +101,22 @@ const CurrentEventGrid = (props) => {
       </div>
 
       {/* circles */}
-      <Circles info={props.event} />
+      <div className="absolute z-0 top-0 left-0 right-0 bottom-0">
+        <Circles info={props.event} theme={theme} />
+      </div>
     </div>
   );
 };
 
 const ComingSoonGrid = (props) => {
-  const { name, date, content } = props.event;
+  const { theme, event } = props;
+  const { name, date, content } = event;
 
   return (
     <div
       className={`grid--${theme} coming-soon-grid--${theme} event relative shadow-md sm:rounded-3xl overflow-hidden`}
     >
-      <div className="content-container">
+      <div className="content-container z-30 relative">
         <div className="flex items-center gap-x-4">
           {props.children}
           <div>
@@ -129,13 +133,16 @@ const ComingSoonGrid = (props) => {
           </div>
         </div>
       </div>
-      <Circles info={props.event} />
+      <div className="absolute z-0 top-0 bottom-0 right-0 left-0">
+        <Circles info={props.event} theme={theme} />
+      </div>
     </div>
   );
 };
 
 const Circles = (props) => {
-  const { coords, classname } = props.info;
+  const { theme, info } = props;
+  const { coords, classname } = info;
 
   return (
     <>

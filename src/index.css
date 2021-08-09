@@ -4,6 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.nav-link {
+  @apply cursor-pointer text-2xl lg:text-xl z-30 font-bold opacity-50 hover:opacity-100;
+}
+
+.nav-link-active {
+  @apply border-b-4 border-blue-400 opacity-100 cursor-default;
+}
+
+.nav-link-small {
+  @apply text-black font-sora cursor-pointer font-semibold;
+}
+
 .events-container {
   @apply sm:w-11/12 mx-auto mt-10 grid gap-6 md:grid-cols-2 mb-10 auto-rows-10;
 }
