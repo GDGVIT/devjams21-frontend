@@ -18,7 +18,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "stylelint --fix \"**/*.css\""
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +42,8 @@
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "postcss": "^7.0.36",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.5"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.5",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
   }
 }
