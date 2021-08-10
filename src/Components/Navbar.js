@@ -211,7 +211,7 @@ const Navbar = (props) => {
         {/* Discord button */}
         <a href='https://discord.com' target='_blank' rel='noopener noreferrer'>
           <div
-            className={`fixed items-center overflow-hidden flex w-14 h-14 z-40 hover:w-56 right-8 rounded transition-all duration-300 ease-in-out ${
+            className={`fixed items-center overflow-hidden flex w-14 h-14 z-30 hover:w-56 right-8 rounded transition-all duration-300 ease-in-out ${
               startAnimation ? '-bottom-48' : 'bottom-5'
             }`}
           >
