@@ -1,61 +1,72 @@
 import React from 'react'
+import { ReactComponent as Mouse } from '../Assets/Mouse.svg'
+import { ReactComponent as Vit } from '../Assets/About/vit.svg'
+import { ReactComponent as Gdsc } from '../Assets/About/gdsc.svg'
+import { ReactComponent as Devjams } from '../Assets/About/devjams.svg'
 import '../Styles/About.css'
+
+const AboutBaner = () => {
+  return (
+    <div className='w-screen h-screen grid place-items-center z-50 relative bottom-20'>
+      <div
+        style={{ background: '#FC5251' }}
+        className='card-shadow grid place-items-center pt-12 px-14 pb-5 rounded-lg text-white font-circularStd text-8xl font-bold'
+      >
+        About Us
+        <Mouse className='w-5 text-white mt-3' />
+      </div>
+    </div>
+  )
+}
 
 export default function About (props) {
   return (
-    <div className='z-50'>
-      {/* <div className="w-screen h-screen"></div> */}
-      <div className={'p-10 font-sora props.darkTheme && "about-content'}>
-        <h1 className='text-center text-4xl font-semibold mt-8 mb-12  2xl:text-5xl'>
-          About
-        </h1>
-        <div className='my-24 mx-8 grid grid-cols-5'>
-          <div className='col-span-5 md:col-span-4 lg:col-span-3'>
-            <h2 className='text-2xl font-semibold mb-8 2xl:text-3xl'>
-              DevJams'21
+    <div className='z-50 absolute'>
+      <AboutBaner />
+      <div className='p-10 font-sora z-50 mx-4 lg:mx-28'>
+        <div className={`my-24 lg:mx-8 rounded-2xl z-50 shadow-lg pt-14 px-14 pb-10 lg:pb-14 grid grid-cols-6 ${props.darkTheme ? 'about-content' : 'bg-white'}`}>
+          <div className='col-span-6 lg:col-span-3 '>
+            <h2 className='text-3xl font-semibold mb-8'>
+              DevJams
             </h2>
             <p className='text-md leading-relaxed xl:text-lg 2xl:text-xl'>
-              DevJams is one of a kind hackathon conducted by Developer Student
-              Clubs VIT every year to encourage tech enthusiasts from across the
-              country to develop their ideas for the future. The hackathon
-              focuses on providing students and upcoming entrepreneurs with a
-              platform to develop, compete, network and present their ideas to
-              solve real-world problems. We have been successfully conducting
-              DevJams (previously known as Devfest) for 5 years now. DevJams’20
-              will be the sixth edition through which we hope to bring
-              innovative minds from all around the country under one banner.
+              DevJams is one of a kind hackathon conducted by Developer Student Clubs VIT every year to encourage tech enthusiasts from across the country to develop their ideas for the future.
+              The hackathon focuses on providing students and upcoming entrepreneurs with a platform to develop, compete, network and present their ideas to solve real-world problems.
+              We have been successfully conducting DevJams (previously known as Devfest) for 5 years now.
+              DevJams’20 will be the sixth edition through which we hope to bring innovative minds from all around the country under one banner.
             </p>
           </div>
+          <Devjams className='col-span-6 md:mt-3 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9' />
         </div>
-        <div className='my-36 mx-8 grid grid-cols-5'>
-          <div className='col-span-5 md:col-start-3'>
-            <h2 className='text-2xl text-start font-semibold mb-8 xl:text-2xl 2xl:text-3xl'>
-              About DSC
+
+        <div className={`my-36 lg:mx-8 rounded-2xl shadow-lg pt-14 px-14 pb-10 lg:pb-14 grid grid-cols-6 ${props.darkTheme ? 'about-content' : 'bg-white'}`}>
+          <div className='col-span-6 lg:col-span-3'>
+            <h2 className='text-3xl font-semibold mb-8'>
+              GDSC Vit, Vellore
             </h2>
             <p className='text-md leading-relaxed xl:text-lg 2xl:text-xl'>
-              DSC VIT powered by Google Developers is a student community at VIT
-              Vellore. We strive to bring about technological innovations among
-              students and we do so by providing a platform for them to exhibit
-              their talents. We are a group of passionate designers, developers
-              and managers who work together to bring about collaborative
-              results that better the lives of everyone around us.
+              DevJams is one of a kind hackathon conducted by Developer Student Clubs VIT every year to encourage tech enthusiasts from across the country to develop their ideas for the future.
+              The hackathon focuses on providing students and upcoming entrepreneurs with a platform to develop, compete, network and present their ideas to solve real-world problems.
+              We have been successfully conducting DevJams (previously known as Devfest) for 5 years now.
+              DevJams’20 will be the sixth edition through which we hope to bring innovative minds from all around the country under one banner.
             </p>
           </div>
+          <Gdsc className='col-span-6 md:mt-5 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9' />
         </div>
-        <div className='my-24 mx-8 grid grid-cols-5'>
-          <div className='col-span-5 md:col-span-4 lg:col-span-3'>
-            <h2 className='text-2xl font-semibold mb-8 2xl:text-3xl'>
-              About VIT
+
+        <div className={`my-24 lg:mx-8 rounded-2xl shadow-lg pt-14 px-14 pb-10 lg:pb-14 grid grid-cols-6 ${props.darkTheme ? 'about-content' : 'bg-white'}`}>
+          <div className='col-span-6 lg:col-span-3 '>
+            <h2 className='text-3xl font-semibold mb-8'>
+              Vellore Institute of Technology , Vellore
             </h2>
             <p className='text-md leading-relaxed xl:text-lg 2xl:text-xl'>
-              Vellore Institute of Technology, Vellore VIT, Vellore is one of
-              the top-rated engineering colleges in India. Diversity is the
-              strongest aspect of the institute and the students from various
-              states and nations, the key to its reputation. The university
-              works on ideas and executes tasks of different domains under Clubs
-              and Chapters.
+              DevJams is one of a kind hackathon conducted by Developer Student Clubs VIT every year to encourage tech enthusiasts from across the country to develop their ideas for the future.
+              The hackathon focuses on providing students and upcoming entrepreneurs with a platform to develop, compete, network and present their ideas to solve real-world problems.
+              We have been successfully conducting DevJams (previously known as Devfest) for 5 years now.
+              DevJams’20 will be the sixth edition through which we hope to bring innovative minds from all around the country under one banner.
             </p>
           </div>
+          <Vit className='col-span-6 w-full md:mt-8 mx-auto lg:col-span-3 lg:w-11/12 lg:my-auto lg:ml-9' />
         </div>
       </div>
     </div>

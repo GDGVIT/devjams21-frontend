@@ -10,7 +10,8 @@ module.exports = {
         '3/10': '30%'
       },
       fontFamily: {
-        sora: ['Sora', 'sans-serif']
+        sora: ['Sora', 'sans-serif'],
+        circularStd: ['Circular Std Black', 'sans-serif']
       },
       colors: {
         jams_purple_faded: '#EDEEFF',
