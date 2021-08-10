@@ -4,6 +4,11 @@
   bottom: 0;
 }
 
+.card-shadow {
+  background: #c4c4c4;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.14);
+}
+
 .circle {
   position: absolute;
   border-radius: 50%;
@@ -11,11 +16,12 @@
 
 /* grid */
 .grid--dark {
-  background: #1f1f1f;
   color: white;
+  background: #1e1e38;
 }
 
 .grid--light {
+  color: #474747;
   background: #fcfcfc;
 }
 

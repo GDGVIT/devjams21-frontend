@@ -2,12 +2,13 @@ import React, { useEffect, useRef } from 'react'
 import { resizing } from '../Utils/MasonryLayout'
 import events from '../Data/EventsData'
 import '../Styles/Components/Events.css'
+import Img from '../Assets/Train Animations/Night/CityLighthouse.svg'
 
 // Logos
 import { ReactComponent as DevJamsLogo } from '../Assets/Logos/DevJams Logo.svg'
-import { ReactComponent as KnockathonLogo } from '../Assets/Logos/Knockathon Logo.svg'
+import { ReactComponent as KnockathonsLogo } from '../Assets/Logos/Knockathons Logo.svg'
 import { ReactComponent as DevTalksLogo } from '../Assets/Logos/DevTalks Logo.svg'
-import { ReactComponent as DesignzzzLogo } from '../Assets/Logos/Designzz Logo.svg'
+import { ReactComponent as HexathonLogo } from '../Assets/Logos/Hexathon Logo.svg'
 import { ReactComponent as CTFLogo } from '../Assets/Logos/CTF Logo.svg'
 
 // Devjams Grid SVGs
@@ -37,16 +38,16 @@ export default function Events (props) {
     >
       <DevJamsGrid theme={theme} />
       <CurrentEventGrid event={events.knockathon} theme={theme}>
-        <KnockathonLogo className='w-20' />
+        <KnockathonsLogo className='w-56' />
       </CurrentEventGrid>
       <ComingSoonGrid event={events.devtalks} theme={theme}>
-        <DevTalksLogo className='w-20' />
+        <DevTalksLogo className='w-48' />
       </ComingSoonGrid>
       <ComingSoonGrid event={events.designzzz} theme={theme}>
-        <DesignzzzLogo className='w-20' />
+        <HexathonLogo className='w-40' />
       </ComingSoonGrid>
       <ComingSoonGrid event={events.ctf} theme={theme}>
-        <CTFLogo className='w-20' />
+        <CTFLogo className='w-40' />
       </ComingSoonGrid>
     </div>
   )
@@ -60,7 +61,8 @@ const DevJamsGrid = (props) => {
     <div
       className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} event col-span-full relative shadow-md sm:rounded-3xl overflow-hidden`}
     >
-      <div className='flex items-center py-5 px-10'>
+      <img src={Img} alt='this is bullshit' />
+      <div className='flex items-center py-5 px-10 mb-20'>
         <div>
           <DevJamsLogo className='w-32 sm:w-40 h-auto my-5' />
           <div
@@ -73,7 +75,7 @@ const DevJamsGrid = (props) => {
           <RightArrow className='w-6 sm:w-8' />
         </div>
       </div>
-      <DevJamsGridGround theme={theme} />
+      <DevJamsGridGround />
     </div>
   )
 }
@@ -114,7 +116,7 @@ const ComingSoonGrid = (props) => {
 
   return (
     <div
-      className={`grid--${theme} coming-soon-grid--${theme} event relative shadow-md sm:rounded-3xl overflow-hidden`}
+      className={`grid--${theme} coming-soon-grid--${theme} pt-8 event relative shadow-md sm:rounded-3xl overflow-hidden`}
     >
       <div className='content-container z-30 relative'>
         <div className='flex items-center gap-x-4'>

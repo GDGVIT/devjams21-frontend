@@ -13,10 +13,9 @@ module.exports = {
         sora: ['Sora', 'sans-serif']
       },
       colors: {
-        jams_black: '#1B1B1B',
-        jams_pink: '#FF8ED4',
-        jams_dark_blue: '#272841',
-        jams_purple: '#5D60FF'
+        jams_purple_faded: '#EDEEFF',
+        jams_purple: '#4244B4',
+        jams_red: '#FF5E55'
       },
       gridAutoRows: {
         10: '10px',
