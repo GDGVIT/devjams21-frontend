@@ -1,9 +1,25 @@
 import React from 'react'
+import { ReactComponent as Mouse } from '../Assets/Mouse.svg'
 import '../Styles/About.css'
+
+const AboutBaner = () => {
+  return (
+    <div className='w-screen h-screen grid place-items-center relative bottom-20'>
+      <div
+        style={{ background: '#FC5251' }}
+        className='card-shadow grid place-items-center pt-12 px-14 pb-5 z-50 rounded-lg text-white font-circularStd text-8xl font-bold'
+      >
+        About Us
+        <Mouse className='w-5 text-white mt-3' />
+      </div>
+    </div>
+  )
+}
 
 export default function About (props) {
   return (
     <div className='z-50'>
+      <AboutBaner />
       {/* <div className="w-screen h-screen"></div> */}
       <div className={'p-10 font-sora props.darkTheme && "about-content'}>
         <h1 className='text-center text-4xl font-semibold mt-8 mb-12  2xl:text-5xl'>
