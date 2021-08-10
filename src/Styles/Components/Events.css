@@ -6,7 +6,7 @@
 
 .card-shadow {
   background: #c4c4c4;
-  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.14);
 }
 
 .circle {
