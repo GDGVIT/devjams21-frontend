@@ -4,6 +4,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      zIndex: {
+        60: '60'
+      },
       inset: {
         '27/100': '27%',
         '28/100': '28%',

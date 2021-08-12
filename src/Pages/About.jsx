@@ -7,7 +7,7 @@ import '../Styles/About.css'
 
 export default function About (props) {
   return (
-    <div className='z-40 absolute'>
+    <div className='z-30 absolute'>
       <Baner color='#FC5251' title='About Us' />
       <div className='p-10 font-sora z-50 mx-4 lg:mx-28'>
         <div className={`my-24 lg:mx-8 rounded-2xl z-50 shadow-lg pt-14 px-14 pb-10 lg:pb-14 grid grid-cols-6 ${props.darkTheme ? 'about-content' : 'bg-white'}`}>
