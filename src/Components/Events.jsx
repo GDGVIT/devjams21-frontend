@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react'
 import { resizing } from '../Utils/MasonryLayout'
 import events from '../Data/EventsData'
 import '../Styles/Components/Events.css'
-import Img from '../Assets/Train Animations/Night/CityLighthouse.svg'
 
 // Logos
 import { ReactComponent as DevJamsLogo } from '../Assets/Logos/DevJams Logo.svg'
@@ -61,7 +60,6 @@ const DevJamsGrid = (props) => {
     <div
       className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} event col-span-full relative shadow-md sm:rounded-3xl overflow-hidden`}
     >
-      <img src={Img} alt='this is bullshit' />
       <div className='flex items-center py-5 px-10 mb-20'>
         <div>
           <DevJamsLogo className='w-32 sm:w-40 h-auto my-5' />

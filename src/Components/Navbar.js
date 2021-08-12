@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router'
 import { ReactComponent as GDSCLogoNight } from '../Assets/Logos/GDSC Logo Night.svg'
+import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg'
+import { ReactComponent as GDSCLogoMobile } from '../Assets/Logos/GDSC Logo Mobile.svg'
 import discord from '../Assets/Discord.svg'
 
 import { ReactComponent as Train } from '../Assets/Train Animations/Train.svg'
@@ -23,8 +25,8 @@ import '../Styles/Navbar.css'
 const Navbar = (props) => {
   const location = useLocation()
   const history = useHistory()
+  const { darkTheme, setBodyRender, navlinksOpen, setNavlinksOpen } = props
   const [startAnimation, setStartAnimation] = useState(false)
-  const [navlinksOpen, setNavlinksOpen] = useState(false)
   const pathname = location.pathname
 
   const handleClick = (event) => {
@@ -36,56 +38,63 @@ const Navbar = (props) => {
       setStartAnimation(true)
       setNavlinksOpen(false)
       setTimeout(() => {
-        moveIntoView(props.setBodyRender, history, route, setStartAnimation)
+        moveIntoView(setBodyRender, history, route, setStartAnimation)
       }, 700)
     }
   }
 
   const handleNavbarOpen = () => {
     setNavlinksOpen(!navlinksOpen)
-    console.log(navlinksOpen)
   }
 
   return (
     <div>
       <div className='h-screen w-screen fixed overflow-hidden'>
-        {props.darkTheme && ( // dark
+        {darkTheme && ( // dark
           <div>
             <MoonBg className='animation-bg h-full absolute' />
             <NightCityAndLightHouse className='animation-city absolute z-10 h-full' />
-            <GrassAndTrees className='animation-grass h-full z-20 absolute' />
+            <GrassAndTrees className='animation-grass h-full z-30 absolute' />
           </div>
         )}
-        {!props.darkTheme && ( // TODO: change to light
+        {!darkTheme && ( // TODO: change to light
           <div>
             <MoonBg className='animation-bg h-full absolute' />
             <NightCityAndLightHouse className='animation-city absolute z-10 h-full' />
-            <GrassAndTrees className='animation-grass h-full z-20 absolute' />
+            <GrassAndTrees className='animation-grass h-full z-30 absolute' />
           </div>
+        )}
+
+        {/* GDSC Logo */}
+        <GDSCLogoMobile className={`absolute lg:hidden w-1/4 h-auto z-30 left-1/3 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out  ${
+            startAnimation ? '-bottom-48' : '-bottom-2'
+          }`}
+        />
+        {darkTheme && (
+          <GDSCLogoNight
+            className={`hidden lg:block lg:fixed z-50 left-8 transition-all ease-in-out duration-500 ${
+              startAnimation ? '-top-48' : 'top-8'
+            }`}
+          />
+        )}
+        {!darkTheme && (
+          <GDSCLogoDay
+            className={`hidden lg:block lg:fixed z-50 left-8 transition-all ease-in-out duration-500 ${
+              startAnimation ? '-top-48' : 'top-8'
+            }`}
+          />
         )}
         <Train className='w-1/2 left-1/4 z-20 absolute top-2/3 transform -translate-y-8' />
       </div>
+
+      {/* Navbar */}
       <div>
-        {props.darkTheme && (
-          <GDSCLogoNight
-            className={`invisible lg:visible z-20 absolute left-8 transition-all ease-in-out duration-500 ${
-              startAnimation ? '-top-48' : 'top-8'
-            }`}
-          />
-        )}
-        {!props.darkTheme && ( // TODO: Need to change to light themed logo
-          <GDSCLogoNight
-            className={`invisible lg:visible z-20 absolute left-8 transition-all ease-in-out duration-500 ${
-              startAnimation ? '-top-48' : 'top-8'
-            }`}
-          />
-        )}
         {/* Navlinks mobile */}
-        <div className='z-30 bg-white w-36 h-full lg:invisible'>
+        <div className='z-40 w-36 h-full lg:hidden'>
           {/* Hamburger icon */}
           <div
             onClick={handleNavbarOpen}
-            className={`absolute left-8 z-30 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-500 cursor-pointer lg:invisible ${
+            className={`fixed left-8 z-40 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-500 cursor-pointer lg:invisible ${
               startAnimation ? '-top-48' : 'top-8'
             }`}
           >
@@ -95,8 +104,8 @@ const Navbar = (props) => {
           </div>
           {/* Navlinks */}
           <div
-            className={`bg-white w-72 h-full flex flex-col items-center text-left text-black z-30 absolute top-0 transition-all ease-in-out duration-500 ${
-              navlinksOpen ? 'left-0' : '-left-72'
+            className={`bg-white w-72 h-full flex flex-col items-center text-left text-black top-0 z-60 transition-all ease-in-out duration-500 ${
+              navlinksOpen ? 'left-0 fixed' : '-left-96 absolute'
             }`}
           >
             <div className='close' onClick={handleNavbarOpen} />
@@ -150,11 +159,11 @@ const Navbar = (props) => {
 
         {/* Navlinks desktop */}
         <div
-          className={`flex absolute items-center right-8 font-sora transition-all ease-in-out duration-500 ${
+          className={`flex fixed items-center right-8 font-sora z-50 transition-all ease-in-out duration-500 ${
             startAnimation ? '-top-48' : 'top-8'
           }`}
         >
-          <div className='flex invisible text-white lg:visible'>
+          <div className='hidden text-white lg:flex'>
             <h4
               className={`nav-link ${
                 pathname === '/' && 'nav-link-active'
@@ -203,7 +212,7 @@ const Navbar = (props) => {
           </div>
 
           {/* Login button */}
-          <div className='cursor-pointer z-30 px-10 py-2 rounded-md text-white border-solid text-lg font-bold font-sora border-2 bg-red-500 border-red-500 2xl:text-xl hover:bg-white hover:text-red-500 hover:border-white transition-all duration-300 ease-in-out'>
+          <div className='cursor-pointer z-50 px-10 py-2 rounded-md text-white border-solid text-lg font-bold font-sora border-2 bg-red-500 border-red-500 2xl:text-xl hover:bg-white hover:text-red-500 hover:border-white transition-all duration-300 ease-in-out'>
             Login
           </div>
         </div>

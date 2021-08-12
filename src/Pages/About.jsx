@@ -1,28 +1,14 @@
 import React from 'react'
-import { ReactComponent as Mouse } from '../Assets/Mouse.svg'
+import Baner from '../Components/Baner'
 import { ReactComponent as Vit } from '../Assets/About/vit.svg'
 import { ReactComponent as Gdsc } from '../Assets/About/gdsc.svg'
 import { ReactComponent as Devjams } from '../Assets/About/devjams.svg'
 import '../Styles/About.css'
 
-const AboutBaner = () => {
-  return (
-    <div className='w-screen h-screen grid place-items-center z-50 relative bottom-20'>
-      <div
-        style={{ background: '#FC5251' }}
-        className='card-shadow grid place-items-center pt-12 px-14 pb-5 rounded-lg text-white font-circularStd text-8xl font-bold'
-      >
-        About Us
-        <Mouse className='w-5 text-white mt-3' />
-      </div>
-    </div>
-  )
-}
-
 export default function About (props) {
   return (
-    <div className='z-50 absolute'>
-      <AboutBaner />
+    <div className='z-30 absolute'>
+      <Baner color='#FC5251' title='About Us' />
       <div className='p-10 font-sora z-50 mx-4 lg:mx-28'>
         <div className={`my-24 lg:mx-8 rounded-2xl z-50 shadow-lg pt-14 px-14 pb-10 lg:pb-14 grid grid-cols-6 ${props.darkTheme ? 'about-content' : 'bg-white'}`}>
           <div className='col-span-6 lg:col-span-3 '>
