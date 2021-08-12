@@ -9,10 +9,10 @@ const SponsorCard = (props) => {
 
 export default function Sponsors () {
   return (
-    <div className='z-40'>
+    <div className='z-30'>
       <Baner color='#3B7DED' title='Sponsors' />
       <div className='flex w-screen h-screen'>
-        <div className='m-auto z-50'>
+        <div className='m-auto z-40'>
           <div className='grid gap-8 sm:gap-16 grid-cols-2 lg:grid-cols-4 sm:pb-16 lg:pb-0 lg:pt-10'>
             <SponsorCard /> 
             <SponsorCard />
