@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router'
 import { ReactComponent as GDSCLogoNight } from '../Assets/Logos/GDSC Logo Night.svg'
+import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg'
+import { ReactComponent as GDSCLogoMobile } from '../Assets/Logos/GDSC Logo Mobile.svg'
 import discord from '../Assets/Discord.svg'
 
 import { ReactComponent as Train } from '../Assets/Train Animations/Train.svg'
@@ -43,7 +45,6 @@ const Navbar = (props) => {
 
   const handleNavbarOpen = () => {
     setNavlinksOpen(!navlinksOpen)
-    console.log(navlinksOpen)
   }
 
   return (
@@ -53,34 +54,41 @@ const Navbar = (props) => {
           <div>
             <MoonBg className='animation-bg h-full absolute' />
             <NightCityAndLightHouse className='animation-city absolute z-10 h-full' />
-            <GrassAndTrees className='animation-grass h-full z-20 absolute' />
+            <GrassAndTrees className='animation-grass h-full z-30 absolute' />
           </div>
         )}
         {!darkTheme && ( // TODO: change to light
           <div>
             <MoonBg className='animation-bg h-full absolute' />
             <NightCityAndLightHouse className='animation-city absolute z-10 h-full' />
-            <GrassAndTrees className='animation-grass h-full z-20 absolute' />
+            <GrassAndTrees className='animation-grass h-full z-30 absolute' />
           </div>
+        )}
+
+        {/* GDSC Logo */}
+        <GDSCLogoMobile className={`absolute lg:hidden w-1/4 h-auto z-30 left-1/3 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out  ${
+            startAnimation ? '-bottom-48' : '-bottom-2'
+          }`}
+        />
+        {darkTheme && (
+          <GDSCLogoNight
+            className={`hidden lg:block lg:fixed z-50 left-8 transition-all ease-in-out duration-500 ${
+              startAnimation ? '-top-48' : 'top-8'
+            }`}
+          />
+        )}
+        {!darkTheme && (
+          <GDSCLogoDay
+            className={`hidden lg:block lg:fixed z-50 left-8 transition-all ease-in-out duration-500 ${
+              startAnimation ? '-top-48' : 'top-8'
+            }`}
+          />
         )}
         <Train className='w-1/2 left-1/4 z-20 absolute top-2/3 transform -translate-y-8' />
       </div>
-      <div>
-        {darkTheme && (
-          <GDSCLogoNight
-            className={`invisible lg:visible z-20 fixed left-8 transition-all ease-in-out duration-500 ${
-              startAnimation ? '-top-48' : 'top-8'
-            }`}
-          />
-        )}
-        {!darkTheme && ( // TODO: Need to change to light themed logo
-          <GDSCLogoNight
-            className={`invisible fixed lg:visible z-20 left-8 transition-all ease-in-out duration-500 ${
-              startAnimation ? '-top-48' : 'top-8'
-            }`}
-          />
-        )}
 
+      {/* Navbar */}
+      <div>
         {/* Navlinks mobile */}
         <div className='z-40 w-36 h-full lg:hidden'>
           {/* Hamburger icon */}
