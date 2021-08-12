@@ -81,11 +81,11 @@ const Navbar = (props) => {
           />
         )}
         {/* Navlinks mobile */}
-        <div className='z-30 bg-white w-36 h-full lg:invisible'>
+        <div className='z-50 bg-white w-36 h-full lg:hidden'>
           {/* Hamburger icon */}
           <div
             onClick={handleNavbarOpen}
-            className={`absolute left-8 z-30 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-500 cursor-pointer lg:invisible ${
+            className={`absolute left-8 z-50 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-500 cursor-pointer lg:invisible ${
               startAnimation ? '-top-48' : 'top-8'
             }`}
           >
@@ -95,7 +95,7 @@ const Navbar = (props) => {
           </div>
           {/* Navlinks */}
           <div
-            className={`bg-white w-72 h-full flex flex-col items-center text-left text-black z-30 absolute top-0 transition-all ease-in-out duration-500 ${
+            className={`bg-white w-72 h-full flex flex-col items-center text-left text-black z-50 absolute top-0 transition-all ease-in-out duration-500 ${
               navlinksOpen ? 'left-0' : '-left-72'
             }`}
           >
@@ -150,11 +150,11 @@ const Navbar = (props) => {
 
         {/* Navlinks desktop */}
         <div
-          className={`flex absolute items-center right-8 font-sora transition-all ease-in-out duration-500 ${
+          className={`flex absolute items-center right-8 font-sora z-50 transition-all ease-in-out duration-500 ${
             startAnimation ? '-top-48' : 'top-8'
           }`}
         >
-          <div className='flex invisible text-white lg:visible'>
+          <div className='hidden text-white lg:flex'>
             <h4
               className={`nav-link ${
                 pathname === '/' && 'nav-link-active'
@@ -203,7 +203,7 @@ const Navbar = (props) => {
           </div>
 
           {/* Login button */}
-          <div className='cursor-pointer z-30 px-10 py-2 rounded-md text-white border-solid text-lg font-bold font-sora border-2 bg-red-500 border-red-500 2xl:text-xl hover:bg-white hover:text-red-500 hover:border-white transition-all duration-300 ease-in-out'>
+          <div className='cursor-pointer z-50 px-10 py-2 rounded-md text-white border-solid text-lg font-bold font-sora border-2 bg-red-500 border-red-500 2xl:text-xl hover:bg-white hover:text-red-500 hover:border-white transition-all duration-300 ease-in-out'>
             Login
           </div>
         </div>
