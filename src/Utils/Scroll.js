@@ -1,19 +1,7 @@
-import { animations } from '../Utils/Animations'
-
-export function moveIntoView (setBodyRender, history, route, setStartAnimation) {
-  const { trainAnimation } = animations()
-
+export function moveIntoView (setBodyRender) {
   // scroll to top
   scrollTo(0, () => {
     setBodyRender(false)
-  })
-
-  // start and end animation
-  trainAnimation().then(() => {
-    const nextRoute = `/${route}`
-    history.push(nextRoute)
-    setStartAnimation(false)
-    setBodyRender(true)
   })
 }
 
