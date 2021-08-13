@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { resizing } from "../Utils/MasonryLayout";
 import events from "../Data/EventsData";
 import "../Styles/Components/Events.css";
-// import Img from "../Assets/Train Animations/Night/CityLighthouse.svg";
 
 // Logos
 import { ReactComponent as DevJamsLogo } from "../Assets/Logos/DevJams Logo.svg";

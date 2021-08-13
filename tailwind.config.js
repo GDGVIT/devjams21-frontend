@@ -4,13 +4,17 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      zIndex: {
+        60: '60'
+      },
       inset: {
         '27/100': '27%',
         '28/100': '28%',
         '3/10': '30%'
       },
       fontFamily: {
-        sora: ['Sora', 'sans-serif']
+        sora: ['Sora', 'sans-serif'],
+        circularStd: ['Circular Std Black', 'sans-serif']
       },
       colors: {
         jams_purple_faded: '#EDEEFF',
