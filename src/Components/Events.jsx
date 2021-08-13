@@ -65,9 +65,7 @@ const DevJamsGrid = (props) => {
       <div className='grid md:grid-cols-2 place-items-center pt-5 sm:py-5 px-10 relative z-10'>
         <div className=''>
           <DevJamsLogo className='w-48 md:w-60 h-auto my-5' />
-          <div
-            className='pb-6 flex justify-center sm:justify-start gap-x-2 font-semibold items-center text-jams_logo_blue'
-          >
+          <div className='pb-6 flex justify-center md:justify-start gap-x-2 font-semibold items-center text-jams_logo_blue'>
             <span>Know More</span>
             <ChervonRight />
           </div>
@@ -169,15 +167,15 @@ const ChervonRight = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      class='h-4 w-4'
+      className='h-4 w-4'
       fill='none'
       viewBox='0 0 24 24'
       stroke='currentColor'
     >
       <path
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='2'
         d='M9 5l7 7-7 7'
       />
     </svg>
