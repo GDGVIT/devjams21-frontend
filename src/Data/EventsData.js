@@ -3,7 +3,8 @@
 const events = {
   devjams: {
     name: "DevJams'21",
-    date: '27th - 28th Aug 2021',
+    dateRange: '27th - 28th',
+    month: 'September 2021',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero odit praesentium facilis non placeat nisi inventore sapiente nulla alias dolores',
     classname: 'devjams-grid'

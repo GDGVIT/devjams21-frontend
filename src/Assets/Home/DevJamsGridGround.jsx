@@ -1,11 +1,9 @@
 import React from 'react'
 
-const DevJamsGridGround = () => {
-  // const { theme } = props
-
+const DevJamsGridGround = (props) => {
   return (
     <svg
-      className='devjams-ground w-full'
+      className={props.className}
       viewBox='0 0 1736 252'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'

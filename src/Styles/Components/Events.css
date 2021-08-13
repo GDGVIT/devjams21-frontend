@@ -98,6 +98,7 @@
 .btn__coming-soon--light {
   background: #edeeff;
   color: #4244b4;
+  border: 2px solid #4244b4;
 }
 
 /* content text  */

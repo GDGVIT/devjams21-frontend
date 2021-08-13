@@ -1,33 +1,33 @@
-import anime from "animejs/lib/anime.es";
+import anime from 'animejs/lib/anime.es'
 
 const animations = () => {
   const trainAnimation = () => {
     return new Promise((resolve, reject) => {
       anime({
-        targets: ".animation-bg",
+        targets: '.animation-bg',
         translateX: -3848,
         duration: 10000,
-        easing: "easeInOutCubic",
+        easing: 'easeInOutCubic',
         changeComplete: (anim) => {
-          resolve();
-        },
-      });
+          resolve()
+        }
+      })
       anime({
-        targets: ".animation-city",
+        targets: '.animation-city',
         translateX: -10000,
         duration: 10000,
-        easing: "easeInOutCubic",
-      });
+        easing: 'easeInOutCubic'
+      })
       anime({
-        targets: ".animation-grass",
+        targets: '.animation-grass',
         translateX: -12828,
         duration: 10000,
-        easing: "easeInOutCubic",
-      });
-    });
-  };
+        easing: 'easeInOutCubic'
+      })
+    })
+  }
 
-  return { trainAnimation };
-};
+  return { trainAnimation }
+}
 
-export { animations };
+export { animations }
