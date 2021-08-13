@@ -21,11 +21,11 @@
 }
 
 .content-container {
-  @apply grid gap-4 py-5 px-10 text-xs sm:text-sm lg:text-base;
+  @apply grid gap-4 py-5 px-10 text-xs text-center sm:text-sm sm:text-left relative z-10;
 }
 
 .grid-btn {
-  @apply font-bold my-4 w-full py-3 rounded-md md:text-lg lg:text-xl;
+  @apply font-bold my-4 w-full py-3 rounded-md text-sm;
 }
 
 body {

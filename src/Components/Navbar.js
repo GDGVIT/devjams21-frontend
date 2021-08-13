@@ -5,6 +5,8 @@ import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg
 import { ReactComponent as GDSCLogoMobile } from '../Assets/Logos/GDSC Logo Mobile.svg'
 import discord from '../Assets/Discord.svg'
 
+// import { ReactComponent as Rect } from "../Assets/Train Animations/Night/rect.svg";
+
 import { ReactComponent as Train } from '../Assets/Train Animations/Train.svg'
 
 // TODO: Need to replace this later
@@ -52,9 +54,9 @@ const Navbar = (props) => {
       <div className='h-screen w-screen fixed overflow-hidden'>
         {darkTheme && ( // dark
           <div>
-            <MoonBg className='animation-bg h-full absolute' />
-            <NightCityAndLightHouse className='animation-city absolute z-10 h-full' />
-            <GrassAndTrees className='animation-grass h-full z-30 absolute' />
+            <MoonBg className='animation-bg -z-50 h-full absolute' />
+            <NightCityAndLightHouse className='animation-city absolute -z-40 h-full' />
+            <GrassAndTrees className='animation-grass h-full -z-30 absolute' />
           </div>
         )}
         {!darkTheme && ( // TODO: change to light
@@ -66,7 +68,8 @@ const Navbar = (props) => {
         )}
 
         {/* GDSC Logo */}
-        <GDSCLogoMobile className={`absolute lg:hidden w-1/4 h-auto z-30 left-1/3 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out  ${
+        <GDSCLogoMobile
+          className={`absolute lg:hidden w-1/4 h-auto z-30 left-1/3 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out  ${
             startAnimation ? '-bottom-48' : '-bottom-2'
           }`}
         />
@@ -84,14 +87,11 @@ const Navbar = (props) => {
             }`}
           />
         )}
-        <Train className='w-1/2 left-1/4 z-20 absolute top-2/3 transform -translate-y-8' />
+        <Train className='w-120 z-10 absolute top-2/3 transform -translate-y-6 right-1/2' />
       </div>
 
-      {/* Navbar */}
       <div>
-        {/* Navlinks mobile */}
         <div className='z-40 w-36 h-full lg:hidden'>
-          {/* Hamburger icon */}
           <div
             onClick={handleNavbarOpen}
             className={`fixed left-8 z-40 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-500 cursor-pointer lg:invisible ${
@@ -102,7 +102,6 @@ const Navbar = (props) => {
             <span className='h-1 w-full bg-white rounded-lg' />
             <span className='h-1 w-full bg-white rounded-lg' />
           </div>
-          {/* Navlinks */}
           <div
             className={`bg-white w-72 h-full flex flex-col items-center text-left text-black top-0 z-60 transition-all ease-in-out duration-500 ${
               navlinksOpen ? 'left-0 fixed' : '-left-96 absolute'
@@ -156,8 +155,6 @@ const Navbar = (props) => {
             </h4>
           </div>
         </div>
-
-        {/* Navlinks desktop */}
         <div
           className={`flex fixed items-center right-8 font-sora z-50 transition-all ease-in-out duration-500 ${
             startAnimation ? '-top-48' : 'top-8'
@@ -211,7 +208,6 @@ const Navbar = (props) => {
             </h4>
           </div>
 
-          {/* Login button */}
           <div className='cursor-pointer z-50 px-10 py-2 rounded-md text-white border-solid text-lg font-bold font-sora border-2 bg-red-500 border-red-500 2xl:text-xl hover:bg-white hover:text-red-500 hover:border-white transition-all duration-300 ease-in-out'>
             Login
           </div>

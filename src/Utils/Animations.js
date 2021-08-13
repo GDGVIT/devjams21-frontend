@@ -14,7 +14,7 @@ const animations = () => {
       })
       anime({
         targets: '.animation-city',
-        translateX: -6414,
+        translateX: -10000,
         duration: 10000,
         easing: 'easeInOutCubic'
       })
