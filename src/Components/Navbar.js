@@ -2,10 +2,8 @@ import React, { useState, useRef, useEffect } from 'react'
 import { useLocation } from 'react-router'
 import { ReactComponent as GDSCLogoNight } from '../Assets/Logos/GDSC Logo Night.svg'
 import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg'
-import { ReactComponent as GDSCLogoMobile } from '../Assets/Logos/GDSC Logo Mobile.svg'
+import GDSCLogoMobile from '../Assets/Logos/GDSC Logo Mobile.svg'
 import discord from '../Assets/Discord.svg'
-
-// import { ReactComponent as Rect } from "../Assets/Train Animations/Night/rect.svg";
 
 import { ReactComponent as Train } from '../Assets/Train Animations/Train.svg'
 
@@ -83,27 +81,30 @@ const Navbar = (props) => {
         )}
 
         {/* GDSC Logo */}
-        <GDSCLogoMobile
-          className={`absolute lg:hidden w-1/4 h-auto z-30 left-1/3 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out  ${
-            startAnimation ? '-bottom-48' : '-bottom-2'
-          }`}
-        />
-        {darkTheme && (
-          <GDSCLogoNight
-            className={`hidden lg:block lg:fixed z-50 left-8 transition-all ease-in-out duration-500 ${
-              startAnimation ? '-top-48' : 'top-8'
+        <div>
+          <Train className='w-120 z-10 absolute top-2/3 transform -translate-y-6 right-1/2' />
+        </div>
+          {darkTheme && (
+            <GDSCLogoNight
+              className={`w-96 invisible lg:visible lg:fixed z-50 left-8 transition-all ease-in-out duration-500 ${
+                startAnimation ? '-top-48' : 'top-8'
+              }`}
+            />
+          )}
+          {!darkTheme && (
+            <GDSCLogoDay
+              className={`w-72 invisible lg:visible lg:fixed z-50 left-8 transition-all ease-in-out duration-500 ${
+                startAnimation ? '-top-48' : 'top-1'
+              }`}
+            />
+          )}
+          <div className={`absolute visible lg:invisible w-1/2 md:w-1/4 h-24 md:h-24 z-30 left-28 md:left-1/3 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out  ${
+              startAnimation ? '-bottom-48' : '-bottom-2'
             }`}
-          />
-        )}
-        {!darkTheme && (
-          <GDSCLogoDay
-            className={`hidden lg:block lg:fixed z-50 left-8 transition-all ease-in-out duration-500 ${
-              startAnimation ? '-top-48' : 'top-8'
-            }`}
-          />
-        )}
-        <Train className='w-120 z-10 absolute top-2/3 transform -translate-y-6 right-1/2' />
-      </div>
+          >
+            <img src={GDSCLogoMobile} alt='logo mobile' />
+          </div>
+        </div>
 
       {/* Navbar */}
       <div className={`${window.scrollY > 0 ? 'bg-white' : ''}`}>
