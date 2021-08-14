@@ -20,7 +20,7 @@ function App () {
     <div className='App'>
       <BrowserRouter>
         <Navbar setBodyRender={setBodyRender} darkTheme={darkTheme} navlinksOpen={navlinksOpen} setNavlinksOpen={setNavlinksOpen} />
-        {navlinksOpen && <div className='bg-white fixed top-0 left-0 opacity-50 z-40 w-screen h-full transition-all ease-in-out duration-500' />}
+        {navlinksOpen && <div className='bg-white fixed top-0 left-0 opacity-50 z-40 w-screen h-full transition-all ease-in-out duration-300' />}
         {bodyRender &&
           <Switch>
             <Route exact path='/' component={() => <Home darkTheme={darkTheme} />} />

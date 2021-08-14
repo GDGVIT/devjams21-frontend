@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { useLocation } from 'react-router'
 import { ReactComponent as GDSCLogoNight } from '../Assets/Logos/GDSC Logo Night.svg'
 import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg'
@@ -25,11 +25,26 @@ import { moveIntoView } from '../Utils/Scroll'
 import '../Styles/Navbar.css'
 
 const Navbar = (props) => {
+  console.log(window.scrollY)
   const location = useLocation()
   const history = useHistory()
   const { darkTheme, setBodyRender, navlinksOpen, setNavlinksOpen } = props
   const [startAnimation, setStartAnimation] = useState(false)
+  const navbarMobileRef = useRef(null)
   const pathname = location.pathname
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarMobileRef.current && !navbarMobileRef.current.contains(event.target)) {
+        setNavlinksOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [navbarMobileRef, setNavlinksOpen])
 
   const handleClick = (event) => {
     let route = event.target.id
@@ -90,8 +105,10 @@ const Navbar = (props) => {
         <Train className='w-120 z-10 absolute top-2/3 transform -translate-y-6 right-1/2' />
       </div>
 
-      <div>
+      {/* Navbar */}
+      <div className={`${window.scrollY > 0 ? 'bg-white' : ''}`}>
         <div className='z-40 w-36 h-full lg:hidden'>
+          {/* Hamburger */}
           <div
             onClick={handleNavbarOpen}
             className={`fixed left-8 z-40 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-500 cursor-pointer lg:invisible ${
@@ -102,8 +119,10 @@ const Navbar = (props) => {
             <span className='h-1 w-full bg-white rounded-lg' />
             <span className='h-1 w-full bg-white rounded-lg' />
           </div>
+          {/* Links mobile */}
           <div
-            className={`bg-white w-72 h-full flex flex-col items-center text-left text-black top-0 z-60 transition-all ease-in-out duration-500 ${
+            ref={navbarMobileRef}
+            className={`bg-white w-72 h-full flex flex-col items-center text-left text-black top-0 z-60 transition-all ease-in-out duration-300 ${
               navlinksOpen ? 'left-0 fixed' : '-left-96 absolute'
             }`}
           >
@@ -155,6 +174,8 @@ const Navbar = (props) => {
             </h4>
           </div>
         </div>
+
+        {/* Navbar desktop */}
         <div
           className={`flex fixed items-center right-8 font-sora z-50 transition-all ease-in-out duration-500 ${
             startAnimation ? '-top-48' : 'top-8'
