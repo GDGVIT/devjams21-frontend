@@ -1,11 +1,17 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { useLocation } from 'react-router'
+import React, { useEffect, useState, useRef } from 'react'
+import { useLocation, useHistory } from 'react-router-dom'
 import { ReactComponent as GDSCLogoNight } from '../Assets/Logos/GDSC Logo Night.svg'
 import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg'
-// import GDSCLogoMobile from '../Assets/Logos/GDSC Logo Mobile.svg'
-import discord from '../Assets/Discord.svg'
+// import { ReactComponent as GDSCLogoMobile } from '../Assets/Logos/GDSC Logo Mobile.svg'
+import { animations } from '../Utils/Animations'
+import { moveIntoView } from '../Utils/Scroll'
+
+// import { ReactComponent as Rect } from "../Assets/Train Animations/Night/rect.svg";
 
 import { ReactComponent as Train } from '../Assets/Train Animations/Train.svg'
+import discord from '../Assets/Discord.svg'
+
+// import { ReactComponent as Discord } from "../Assets/Discord.svg";
 
 // TODO: Need to replace this later
 // Light
@@ -15,11 +21,10 @@ import { ReactComponent as Train } from '../Assets/Train Animations/Train.svg'
 
 // Dark
 import { ReactComponent as MoonBg } from '../Assets/Train Animations/Night/MoonBg.svg'
-import NightCityAndLightHouse from '../Assets/Train Animations/Night/CityLighthouse'
+// import NightCityAndLightHouse from "../Assets/Train Animations/Night/CityLighthouse";
+import { ReactComponent as NightCityAndLightHouse } from '../Assets/Train Animations/Night/CityLighthouse.svg'
 import { ReactComponent as GrassAndTrees } from '../Assets/Train Animations/Night/GrassAndTrees.svg'
 
-import { useHistory } from 'react-router-dom'
-import { moveIntoView } from '../Utils/Scroll'
 import '../Styles/Navbar.css'
 
 const Navbar = (props) => {
@@ -31,13 +36,10 @@ const Navbar = (props) => {
   const navbarMobileRef = useRef(null)
   const pathname = location.pathname
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
-      setNavbarBg(true)
-    } else {
-      setNavbarBg(false)
-    }
-  })
+  // route we should go to
+  const [destination, setDestination] = useState('/')
+
+  // const pathname = location.pathname
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -52,16 +54,41 @@ const Navbar = (props) => {
     }
   }, [navbarMobileRef, setNavlinksOpen])
 
-  const handleClick = (event) => {
-    let route = event.target.id
-    if (route === 'home') {
-      route = ''
-    }
-    if (pathname !== `/${route}`) {
-      setNavlinksOpen(false)
-      moveIntoView(setBodyRender, history, route, setStartAnimation, setNavlinksOpen)
+  const handleClick = (e) => {
+    const dest = e.target?.id
+    const currentStation = pathname
+    setNavlinksOpen(false)
+
+    if (dest && currentStation !== dest) {
+      setStartAnimation(true)
+      setDestination(`/${dest}`)
     }
   }
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+      setNavbarBg(true)
+    } else {
+      setNavbarBg(false)
+    }
+  })
+
+  useEffect(() => {
+    if (startAnimation) {
+      const { trainAnimation } = animations()
+
+      moveIntoView(setBodyRender)
+
+      const currentStation = pathname
+      const destinationStation = destination
+
+      trainAnimation(currentStation, destinationStation).then(() => {
+        history.push(destination)
+        setStartAnimation(false)
+        setBodyRender(true)
+      })
+    }
+  }, [startAnimation, destination, history, setBodyRender, pathname])
 
   const handleNavbarOpen = () => {
     setNavlinksOpen(!navlinksOpen)
@@ -89,7 +116,7 @@ const Navbar = (props) => {
 
       {/* Navbar */}
       <div
-        className={`fixed z-40 h-24 w-full ${navbarBg ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow` : ''} transition-all duration-300 ease-in-out`}
+        className={`fixed z-40 h-24 w-full ${navbarBg && !startAnimation ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow` : ''} transition-all duration-300 ease-in-out`}
       >
         {/* GDSC Logo */}
         <div>
@@ -260,7 +287,6 @@ const Navbar = (props) => {
           </div>
         </a>
       </div>
-
     </>
   )
 }
