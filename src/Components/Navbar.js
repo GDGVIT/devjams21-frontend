@@ -27,8 +27,17 @@ const Navbar = (props) => {
   const history = useHistory()
   const { darkTheme, setBodyRender, navlinksOpen, setNavlinksOpen } = props
   const [startAnimation, setStartAnimation] = useState(false)
+  const [navbarBg, setNavbarBg] = useState(false)
   const navbarMobileRef = useRef(null)
   const pathname = location.pathname
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+      setNavbarBg(true)
+    } else {
+      setNavbarBg(false)
+    }
+  })
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -49,11 +58,8 @@ const Navbar = (props) => {
       route = ''
     }
     if (pathname !== `/${route}`) {
-      setStartAnimation(true)
       setNavlinksOpen(false)
-      setTimeout(() => {
-        moveIntoView(setBodyRender, history, route, setStartAnimation)
-      }, 700)
+      moveIntoView(setBodyRender, history, route, setStartAnimation, setNavlinksOpen)
     }
   }
 
@@ -82,21 +88,23 @@ const Navbar = (props) => {
       </div>
 
       {/* Navbar */}
-      <div className={`fixed z-40 h-24 w-full ${darkTheme ? 'bg-indigo-900' : 'bg-white'}`}>
+      <div
+        className={`fixed z-40 h-24 w-full ${navbarBg ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow` : ''} transition-all duration-300 ease-in-out`}
+      >
         {/* GDSC Logo */}
         <div>
-        {darkTheme && (
-          <GDSCLogoNight
-            className={`w-96 invisible lg:visible lg:absolute z-50`}
-          />
-        )}
-        {!darkTheme && (
-          <GDSCLogoDay
-            className={`w-72 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-500 ${
+          {darkTheme && (
+            <GDSCLogoNight
+              className='w-96 invisible lg:visible lg:absolute z-50'
+            />
+          )}
+          {!darkTheme && (
+            <GDSCLogoDay
+              className={`w-72 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 ${
               startAnimation ? '-top-48' : '-top-3'
             }`}
-          />
-        )}
+            />
+          )}
         </div>
 
         {/* Navbar */}
@@ -105,7 +113,7 @@ const Navbar = (props) => {
             {/* Hamburger */}
             <div
               onClick={handleNavbarOpen}
-              className={`fixed left-8 z-40 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-500 cursor-pointer lg:invisible ${
+              className={`fixed left-8 z-40 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-300 cursor-pointer lg:invisible ${
                 startAnimation ? '-top-48' : 'top-9'
               }`}
             >
@@ -169,9 +177,9 @@ const Navbar = (props) => {
             </div>
           </div>
 
-        {/* Navbar desktop */}
+          {/* Navbar desktop */}
           <div
-            className={`flex fixed items-center right-8 font-sora z-50 transition-all ease-in-out duration-500 ${
+            className={`flex fixed items-center right-8 font-sora z-50 transition-all ease-in-out duration-300 ${
               startAnimation ? '-top-48' : 'top-6'
             }`}
           >

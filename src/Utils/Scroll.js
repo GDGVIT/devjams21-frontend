@@ -6,15 +6,18 @@ export function moveIntoView (setBodyRender, history, route, setStartAnimation) 
   // scroll to top
   scrollTo(0, () => {
     setBodyRender(false)
+    setStartAnimation(true)
   })
 
-  // start and end animation
-  trainAnimation().then(() => {
-    const nextRoute = `/${route}`
-    history.push(nextRoute)
-    setStartAnimation(false)
-    setBodyRender(true)
-  })
+  setTimeout(() => {
+    // start and end animation
+    trainAnimation().then(() => {
+      const nextRoute = `/${route}`
+      history.push(nextRoute)
+      setStartAnimation(false)
+      setBodyRender(true)
+    })
+  }, 1000)
 }
 
 const scrollTo = (offset, callback) => {
