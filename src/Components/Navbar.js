@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { useLocation } from 'react-router'
 import { ReactComponent as GDSCLogoNight } from '../Assets/Logos/GDSC Logo Night.svg'
 import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg'
-import GDSCLogoMobile from '../Assets/Logos/GDSC Logo Mobile.svg'
+// import GDSCLogoMobile from '../Assets/Logos/GDSC Logo Mobile.svg'
 import discord from '../Assets/Discord.svg'
 
 import { ReactComponent as Train } from '../Assets/Train Animations/Train.svg'
@@ -23,7 +23,6 @@ import { moveIntoView } from '../Utils/Scroll'
 import '../Styles/Navbar.css'
 
 const Navbar = (props) => {
-  console.log(window.scrollY)
   const location = useLocation()
   const history = useHistory()
   const { darkTheme, setBodyRender, navlinksOpen, setNavlinksOpen } = props
@@ -63,7 +62,7 @@ const Navbar = (props) => {
   }
 
   return (
-    <div>
+    <>
       <div className='h-screen w-screen fixed overflow-hidden'>
         {darkTheme && ( // dark
           <div>
@@ -74,166 +73,169 @@ const Navbar = (props) => {
         )}
         {!darkTheme && ( // TODO: change to light
           <div>
-            <MoonBg className='animation-bg h-full absolute' />
-            <NightCityAndLightHouse className='animation-city absolute z-10 h-full' />
-            <GrassAndTrees className='animation-grass h-full z-30 absolute' />
+            <MoonBg className='animation-bg -z-50 h-full absolute' />
+            <NightCityAndLightHouse className='animation-city absolute -z-40 h-full' />
+            <GrassAndTrees className='animation-grass h-full -z-30 absolute' />
           </div>
         )}
-
-        {/* GDSC Logo */}
-        <div>
-          <Train className='w-120 z-10 absolute top-2/3 transform -translate-y-6 right-1/2' />
-        </div>
-          {darkTheme && (
-            <GDSCLogoNight
-              className={`w-96 invisible lg:visible lg:fixed z-50 left-8 transition-all ease-in-out duration-500 ${
-                startAnimation ? '-top-48' : 'top-8'
-              }`}
-            />
-          )}
-          {!darkTheme && (
-            <GDSCLogoDay
-              className={`w-72 invisible lg:visible lg:fixed z-50 left-8 transition-all ease-in-out duration-500 ${
-                startAnimation ? '-top-48' : 'top-1'
-              }`}
-            />
-          )}
-          <div className={`absolute visible lg:invisible w-1/2 md:w-1/4 h-24 md:h-24 z-30 left-28 md:left-1/3 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out  ${
-              startAnimation ? '-bottom-48' : '-bottom-2'
-            }`}
-          >
-            <img src={GDSCLogoMobile} alt='logo mobile' />
-          </div>
-        </div>
+        <Train className='w-120 z-10 absolute top-2/3 transform -translate-y-6 right-1/2' />
+      </div>
 
       {/* Navbar */}
-      <div className={`${window.scrollY > 0 ? 'bg-white' : ''}`}>
-        <div className='z-40 w-36 h-full lg:hidden'>
-          {/* Hamburger */}
-          <div
-            onClick={handleNavbarOpen}
-            className={`fixed left-8 z-40 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-500 cursor-pointer lg:invisible ${
-              startAnimation ? '-top-48' : 'top-8'
+      <div className={`fixed z-40 h-24 w-full ${darkTheme ? 'bg-indigo-900' : 'bg-white'}`}>
+        {/* GDSC Logo */}
+        <div>
+        {darkTheme && (
+          <GDSCLogoNight
+            className={`w-96 invisible lg:visible lg:absolute z-50`}
+          />
+        )}
+        {!darkTheme && (
+          <GDSCLogoDay
+            className={`w-72 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-500 ${
+              startAnimation ? '-top-48' : '-top-3'
             }`}
-          >
-            <span className='h-1 w-full bg-white rounded-lg' />
-            <span className='h-1 w-full bg-white rounded-lg' />
-            <span className='h-1 w-full bg-white rounded-lg' />
-          </div>
-          {/* Links mobile */}
-          <div
-            ref={navbarMobileRef}
-            className={`bg-white w-72 h-full flex flex-col items-center text-left text-black top-0 z-60 transition-all ease-in-out duration-300 ${
-              navlinksOpen ? 'left-0 fixed' : '-left-96 absolute'
-            }`}
-          >
-            <div className='close' onClick={handleNavbarOpen} />
-            <h4
-              className={`nav-link ${
-                pathname === '/' && 'nav-link-active'
-              } mt-32 mb-10`}
-              onClick={handleClick}
-              id='home'
-            >
-              Home
-            </h4>
-            <h4
-              className={`nav-link ${
-                pathname === '/about' && 'nav-link-active'
-              } mb-10`}
-              onClick={handleClick}
-              id='about'
-            >
-              About Us
-            </h4>
-            <h4
-              className={`nav-link ${
-                pathname === '/events' && 'nav-link-active'
-              } mb-10`}
-              onClick={handleClick}
-              id='events'
-            >
-              Events
-            </h4>
-            <h4
-              className={`nav-link ${
-                pathname === '/faq' && 'nav-link-active'
-              } mb-10`}
-              onClick={handleClick}
-              id='faq'
-            >
-              FAQ
-            </h4>
-            <h4
-              className={`nav-link ${
-                pathname === '/sponsors' && 'nav-link-active'
-              } mb-10`}
-              onClick={handleClick}
-              id='sponsors'
-            >
-              Sponsors
-            </h4>
-          </div>
+          />
+        )}
         </div>
+
+        {/* Navbar */}
+        <div>
+          <div className='z-40 w-36 h-full lg:hidden'>
+            {/* Hamburger */}
+            <div
+              onClick={handleNavbarOpen}
+              className={`fixed left-8 z-40 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-500 cursor-pointer lg:invisible ${
+                startAnimation ? '-top-48' : 'top-9'
+              }`}
+            >
+              <span className={`h-1 w-full  rounded-lg ${darkTheme ? 'bg-white' : 'bg-black'}`} />
+              <span className={`h-1 w-full  rounded-lg ${darkTheme ? 'bg-white' : 'bg-black'}`} />
+              <span className={`h-1 w-full  rounded-lg ${darkTheme ? 'bg-white' : 'bg-black'}`} />
+            </div>
+            {/* Links mobile */}
+            <div
+              ref={navbarMobileRef}
+              className={`bg-white w-72 h-full flex flex-col items-center text-left text-black top-0 z-60 transition-all ease-in-out duration-300 ${
+                navlinksOpen ? 'left-0 fixed' : '-left-96 absolute'
+              }`}
+            >
+              <div className='close' onClick={handleNavbarOpen} />
+              <h4
+                className={`nav-link ${
+                  pathname === '/' && 'nav-link-active'
+                } mt-32 mb-10`}
+                onClick={handleClick}
+                id='home'
+              >
+                Home
+              </h4>
+              <h4
+                className={`nav-link ${
+                  pathname === '/about' && 'nav-link-active'
+                } mb-10`}
+                onClick={handleClick}
+                id='about'
+              >
+                About Us
+              </h4>
+              <h4
+                className={`nav-link ${
+                  pathname === '/events' && 'nav-link-active'
+                } mb-10`}
+                onClick={handleClick}
+                id='events'
+              >
+                Events
+              </h4>
+              <h4
+                className={`nav-link ${
+                  pathname === '/faq' && 'nav-link-active'
+                } mb-10`}
+                onClick={handleClick}
+                id='faq'
+              >
+                FAQ
+              </h4>
+              <h4
+                className={`nav-link ${
+                  pathname === '/sponsors' && 'nav-link-active'
+                } mb-10`}
+                onClick={handleClick}
+                id='sponsors'
+              >
+                Sponsors
+              </h4>
+            </div>
+          </div>
 
         {/* Navbar desktop */}
-        <div
-          className={`flex fixed items-center right-8 font-sora z-50 transition-all ease-in-out duration-500 ${
-            startAnimation ? '-top-48' : 'top-8'
-          }`}
-        >
-          <div className='hidden text-white lg:flex'>
-            <h4
-              className={`nav-link ${
-                pathname === '/' && 'nav-link-active'
-              } mr-8`}
-              onClick={handleClick}
-              id='home'
-            >
-              Home
-            </h4>
-            <h4
-              className={`nav-link ${
-                pathname === '/about' && 'nav-link-active'
-              } mr-8`}
-              onClick={handleClick}
-              id='about'
-            >
-              About Us
-            </h4>
-            <h4
-              className={`nav-link ${
-                pathname === '/events' && 'nav-link-active'
-              } mr-8`}
-              onClick={handleClick}
-              id='events'
-            >
-              Events
-            </h4>
-            <h4
-              className={`nav-link ${
-                pathname === '/faq' && 'nav-link-active'
-              } mr-8`}
-              onClick={handleClick}
-              id='faq'
-            >
-              FAQ
-            </h4>
-            <h4
-              className={`nav-link ${
-                pathname === '/sponsors' && 'nav-link-active'
-              } mr-8`}
-              onClick={handleClick}
-              id='sponsors'
-            >
-              Sponsors
-            </h4>
-          </div>
+          <div
+            className={`flex fixed items-center right-8 font-sora z-50 transition-all ease-in-out duration-500 ${
+              startAnimation ? '-top-48' : 'top-6'
+            }`}
+          >
+            <div className={`hidden lg:flex ${darkTheme ? 'text-white' : 'text-black'}`}>
+              <h4
+                className={`nav-link ${
+                  pathname === '/' && 'nav-link-active'
+                } mr-8`}
+                onClick={handleClick}
+                id='home'
+              >
+                Home
+              </h4>
+              <h4
+                className={`nav-link ${
+                  pathname === '/about' && 'nav-link-active'
+                } mr-8`}
+                onClick={handleClick}
+                id='about'
+              >
+                About Us
+              </h4>
+              <h4
+                className={`nav-link ${
+                  pathname === '/events' && 'nav-link-active'
+                } mr-8`}
+                onClick={handleClick}
+                id='events'
+              >
+                Events
+              </h4>
+              <h4
+                className={`nav-link ${
+                  pathname === '/faq' && 'nav-link-active'
+                } mr-8`}
+                onClick={handleClick}
+                id='faq'
+              >
+                FAQ
+              </h4>
+              <h4
+                className={`nav-link ${
+                  pathname === '/sponsors' && 'nav-link-active'
+                } mr-8`}
+                onClick={handleClick}
+                id='sponsors'
+              >
+                Sponsors
+              </h4>
+            </div>
 
-          <div className='cursor-pointer z-50 px-10 py-2 rounded-md text-white border-solid text-lg font-bold font-sora border-2 bg-red-500 border-red-500 2xl:text-xl hover:bg-white hover:text-red-500 hover:border-white transition-all duration-300 ease-in-out'>
-            Login
+            {/* Login button */}
+            <div className='cursor-pointer z-50 px-10 py-2 rounded-md text-white border-solid text-lg font-bold font-sora border-2 bg-red-500 border-red-500 2xl:text-xl hover:bg-white hover:text-red-500 hover:border-white transition-all duration-300 ease-in-out'>
+              Login
+            </div>
           </div>
         </div>
+
+        {/* <div className={`sticky visible lg:invisible w-1/2 md:w-1/4 h-24 md:h-24 z-30 left-28 md:left-1/3 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out  ${
+            startAnimation ? '-bottom-48' : '-bottom-2'
+          }`}
+        >
+          <img src={GDSCLogoMobile} alt='logo mobile' />
+        </div> */}
 
         {/* Discord button */}
         <a href='https://discord.com' target='_blank' rel='noopener noreferrer'>
@@ -250,7 +252,8 @@ const Navbar = (props) => {
           </div>
         </a>
       </div>
-    </div>
+
+    </>
   )
 }
 
