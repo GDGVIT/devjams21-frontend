@@ -176,12 +176,12 @@ const Navbar = (props) => {
               </h4>
               <h4
                 className={`nav-link ${
-                  pathname === '/events' && 'nav-link-active'
+                  pathname === '/timeline' && 'nav-link-active'
                 } mb-10`}
                 onClick={handleClick}
-                id='events'
+                id='timeline'
               >
-                Events
+                Timeline
               </h4>
               <h4
                 className={`nav-link ${
@@ -231,12 +231,12 @@ const Navbar = (props) => {
               </h4>
               <h4
                 className={`nav-link ${
-                  pathname === '/events' && 'nav-link-active'
+                  pathname === '/timeline' && 'nav-link-active'
                 } mr-8`}
                 onClick={handleClick}
-                id='events'
+                id='timeline'
               >
-                Events
+                Timeline
               </h4>
               <h4
                 className={`nav-link ${
