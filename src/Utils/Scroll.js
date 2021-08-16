@@ -1,8 +1,4 @@
-import { animations } from '../Utils/Animations'
-
-export function moveIntoView (setBodyRender, history, route, setStartAnimation) {
-  const { trainAnimation } = animations()
-
+export function moveIntoView (setBodyRender) {
   // scroll to top
   scrollTo(0, () => {
     setBodyRender(false)
@@ -18,6 +14,7 @@ export function moveIntoView (setBodyRender, history, route, setStartAnimation) 
       setBodyRender(true)
     })
   }, 1000)
+
 }
 
 const scrollTo = (offset, callback) => {
