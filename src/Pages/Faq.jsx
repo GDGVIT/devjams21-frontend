@@ -26,7 +26,7 @@ export default function Faq () {
   }, [])
 
   return (
-    <div className='z-40 absolute'>
+    <div className='z-30 absolute'>
       <Baner title='FAQ' color='#2BA24C' />
       <div className='faq z-40 font-sora'>
         <div className='accordion-container' ref={accordionRef}>
