@@ -6,44 +6,49 @@ import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg
 import { animations } from '../Utils/Animations'
 import { moveIntoView } from '../Utils/Scroll'
 
-// import { ReactComponent as Rect } from "../Assets/Train Animations/Night/rect.svg";
-
-import { ReactComponent as Train } from '../Assets/Train Animations/Train.svg'
+import { ReactComponent as Train } from '../Assets/TrainAnimations/Train.svg'
 import discord from '../Assets/Discord.svg'
 
-// import { ReactComponent as Discord } from "../Assets/Discord.svg";
-
-// TODO: Need to replace this later
 // Light
-// import { ReactComponent as MoonBg } from '../Assets/Train Animations/Night/MoonBg.svg'
-// import { ReactComponent as NightCityAndLightHouse } from '../Assets/Train Animations/Night/CityLighthouse.svg'
-// import { ReactComponent as GrassAndTrees } from '../Assets/Train Animations/Night/GrassAndTrees.svg'
+import { ReactComponent as DayBg } from '../Assets/TrainAnimations/Day/DayBg.svg'
+import { ReactComponent as DayCityAndLightHouse } from '../Assets/TrainAnimations/Day/CityLightHouse.svg'
+import { ReactComponent as DayGrassAndTrees, ReactComponent as NightGrassAndTrees } from '../Assets/TrainAnimations/Night/GrassAndTrees.svg'
 
 // Dark
-import { ReactComponent as MoonBg } from '../Assets/Train Animations/Night/MoonBg.svg'
-// import NightCityAndLightHouse from "../Assets/Train Animations/Night/CityLighthouse";
-import { ReactComponent as NightCityAndLightHouse } from '../Assets/Train Animations/Night/CityLighthouse.svg'
-import { ReactComponent as GrassAndTrees } from '../Assets/Train Animations/Night/GrassAndTrees.svg'
+import { ReactComponent as MoonBg } from '../Assets/TrainAnimations/Night/MoonBg.svg'
+import { ReactComponent as NightCityAndLightHouse } from '../Assets/TrainAnimations/Night/CityLighthouse.svg'
 
 import '../Styles/Navbar.css'
 
-const Navbar = (props) => {
+const Navbar = ({
+  darkTheme,
+  setBodyRender,
+  navlinksOpen,
+  setNavlinksOpen
+}) => {
   const location = useLocation()
   const history = useHistory()
-  const { darkTheme, setBodyRender, navlinksOpen, setNavlinksOpen } = props
+
   const [startAnimation, setStartAnimation] = useState(false)
   const [navbarBg, setNavbarBg] = useState(false)
+
+  const bgRef = useRef(null)
+  const cityRef = useRef(null)
+  const grassRef = useRef(null)
+
   const navbarMobileRef = useRef(null)
+
   const pathname = location.pathname
 
   // route we should go to
   const [destination, setDestination] = useState('/')
 
-  // const pathname = location.pathname
-
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (navbarMobileRef.current && !navbarMobileRef.current.contains(event.target)) {
+      if (
+        navbarMobileRef.current &&
+        !navbarMobileRef.current.contains(event.target)
+      ) {
         setNavlinksOpen(false)
       }
     }
@@ -54,14 +59,14 @@ const Navbar = (props) => {
     }
   }, [navbarMobileRef, setNavlinksOpen])
 
-  const handleClick = (e) => {
-    const dest = e.target?.id
+  const handleClick = (route) => {
+    const dest = route
     const currentStation = pathname
     setNavlinksOpen(false)
 
     if (dest && currentStation !== dest) {
       setStartAnimation(true)
-      setDestination(`/${dest}`)
+      setDestination(dest)
     }
   }
 
@@ -74,6 +79,18 @@ const Navbar = (props) => {
   })
 
   useEffect(() => {
+    const { findMetrics } = animations()
+
+    const lengths = {
+      bg: bgRef.current.getBoundingClientRect().width,
+      city: cityRef.current.getBoundingClientRect().width,
+      grass: grassRef.current.getBoundingClientRect().width
+    }
+
+    findMetrics(lengths)
+  }, [])
+
+  useEffect(() => {
     if (startAnimation) {
       const { trainAnimation } = animations()
 
@@ -83,12 +100,12 @@ const Navbar = (props) => {
       const destinationStation = destination
 
       trainAnimation(currentStation, destinationStation).then(() => {
-        history.push(destination)
         setStartAnimation(false)
+        history.push(destination)
         setBodyRender(true)
       })
     }
-  }, [startAnimation, destination, history, setBodyRender, pathname])
+  }, [startAnimation, destination, setBodyRender, pathname, history])
 
   const handleNavbarOpen = () => {
     setNavlinksOpen(!navlinksOpen)
@@ -99,37 +116,54 @@ const Navbar = (props) => {
       <div className='h-screen w-screen fixed overflow-hidden'>
         {darkTheme && ( // dark
           <div>
-            <MoonBg className='animation-bg -z-50 h-full absolute' />
-            <NightCityAndLightHouse className='animation-city absolute -z-40 h-full' />
-            <GrassAndTrees className='animation-grass h-full -z-30 absolute' />
+            <MoonBg
+              ref={bgRef}
+              className='animation-bg -z-50 h-full absolute'
+            />
+            <NightCityAndLightHouse
+              ref={cityRef}
+              className='animation-city absolute -z-40 h-full'
+            />
+            <NightGrassAndTrees
+              ref={grassRef}
+              className='animation-grass h-full -z-30 absolute'
+            />
           </div>
         )}
-        {!darkTheme && ( // TODO: change to light
+        {!darkTheme && (
           <div>
-            <MoonBg className='animation-bg -z-50 h-full absolute' />
-            <NightCityAndLightHouse className='animation-city absolute -z-40 h-full' />
-            <GrassAndTrees className='animation-grass h-full -z-30 absolute' />
+            <DayBg ref={bgRef} className='animation-bg -z-50 h-full absolute' />
+            <DayCityAndLightHouse
+              ref={cityRef}
+              className='animation-city absolute -z-40 h-full'
+            />
+            <DayGrassAndTrees
+              ref={grassRef}
+              className='animation-grass h-full -z-30 absolute'
+            />
           </div>
         )}
-        <Train className='w-120 z-10 absolute top-2/3 transform -translate-y-6 right-1/2' />
+        <Train className='w-120 -z-40 absolute top-2/3 transform -translate-y-6 right-1/2' />
       </div>
 
       {/* Navbar */}
       <div
-        className={`fixed z-40 h-24 w-full ${navbarBg && !startAnimation ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow` : ''} transition-all duration-300 ease-in-out`}
+        className={`fixed z-40 h-24 w-full ${
+          navbarBg && !startAnimation
+            ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow`
+            : ''
+        } transition-all duration-300 ease-in-out`}
       >
         {/* GDSC Logo */}
         <div>
           {darkTheme && (
-            <GDSCLogoNight
-              className='w-96 invisible lg:visible lg:absolute z-50'
-            />
+            <GDSCLogoNight className='w-96 invisible lg:visible lg:absolute z-50' />
           )}
           {!darkTheme && (
             <GDSCLogoDay
               className={`w-72 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 ${
-              startAnimation ? '-top-48' : '-top-3'
-            }`}
+                startAnimation ? '-top-48' : '-top-3'
+              }`}
             />
           )}
         </div>
@@ -144,9 +178,21 @@ const Navbar = (props) => {
                 startAnimation ? '-top-48' : 'top-9'
               }`}
             >
-              <span className={`h-1 w-full  rounded-lg ${darkTheme ? 'bg-white' : 'bg-black'}`} />
-              <span className={`h-1 w-full  rounded-lg ${darkTheme ? 'bg-white' : 'bg-black'}`} />
-              <span className={`h-1 w-full  rounded-lg ${darkTheme ? 'bg-white' : 'bg-black'}`} />
+              <span
+                className={`h-1 w-full  rounded-lg ${
+                  darkTheme ? 'bg-white' : 'bg-black'
+                }`}
+              />
+              <span
+                className={`h-1 w-full  rounded-lg ${
+                  darkTheme ? 'bg-white' : 'bg-black'
+                }`}
+              />
+              <span
+                className={`h-1 w-full  rounded-lg ${
+                  darkTheme ? 'bg-white' : 'bg-black'
+                }`}
+              />
             </div>
             {/* Links mobile */}
             <div
@@ -160,7 +206,7 @@ const Navbar = (props) => {
                 className={`nav-link ${
                   pathname === '/' && 'nav-link-active'
                 } mt-32 mb-10`}
-                onClick={handleClick}
+                onClick={() => handleClick('/')}
                 id='home'
               >
                 Home
@@ -169,7 +215,7 @@ const Navbar = (props) => {
                 className={`nav-link ${
                   pathname === '/about' && 'nav-link-active'
                 } mb-10`}
-                onClick={handleClick}
+                onClick={() => handleClick('/about')}
                 id='about'
               >
                 About Us
@@ -178,7 +224,7 @@ const Navbar = (props) => {
                 className={`nav-link ${
                   pathname === '/events' && 'nav-link-active'
                 } mb-10`}
-                onClick={handleClick}
+                onClick={() => handleClick('/events')}
                 id='events'
               >
                 Events
@@ -187,7 +233,7 @@ const Navbar = (props) => {
                 className={`nav-link ${
                   pathname === '/faq' && 'nav-link-active'
                 } mb-10`}
-                onClick={handleClick}
+                onClick={() => handleClick('/faq')}
                 id='faq'
               >
                 FAQ
@@ -196,7 +242,7 @@ const Navbar = (props) => {
                 className={`nav-link ${
                   pathname === '/sponsors' && 'nav-link-active'
                 } mb-10`}
-                onClick={handleClick}
+                onClick={() => handleClick('/sponsors')}
                 id='sponsors'
               >
                 Sponsors
@@ -210,12 +256,16 @@ const Navbar = (props) => {
               startAnimation ? '-top-48' : 'top-6'
             }`}
           >
-            <div className={`hidden lg:flex ${darkTheme ? 'text-white' : 'text-black'}`}>
+            <div
+              className={`hidden lg:flex ${
+                darkTheme ? 'text-white' : 'text-black'
+              }`}
+            >
               <h4
                 className={`nav-link ${
                   pathname === '/' && 'nav-link-active'
                 } mr-8`}
-                onClick={handleClick}
+                onClick={() => handleClick('/')}
                 id='home'
               >
                 Home
@@ -224,7 +274,7 @@ const Navbar = (props) => {
                 className={`nav-link ${
                   pathname === '/about' && 'nav-link-active'
                 } mr-8`}
-                onClick={handleClick}
+                onClick={() => handleClick('/about')}
                 id='about'
               >
                 About Us
@@ -233,7 +283,7 @@ const Navbar = (props) => {
                 className={`nav-link ${
                   pathname === '/events' && 'nav-link-active'
                 } mr-8`}
-                onClick={handleClick}
+                onClick={() => handleClick('/events')}
                 id='events'
               >
                 Events
@@ -242,7 +292,7 @@ const Navbar = (props) => {
                 className={`nav-link ${
                   pathname === '/faq' && 'nav-link-active'
                 } mr-8`}
-                onClick={handleClick}
+                onClick={() => handleClick('/faq')}
                 id='faq'
               >
                 FAQ
@@ -251,7 +301,7 @@ const Navbar = (props) => {
                 className={`nav-link ${
                   pathname === '/sponsors' && 'nav-link-active'
                 } mr-8`}
-                onClick={handleClick}
+                onClick={() => handleClick('/sponsors')}
                 id='sponsors'
               >
                 Sponsors
