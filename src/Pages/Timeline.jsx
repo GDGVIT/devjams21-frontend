@@ -1,13 +1,17 @@
 import React from 'react'
+import Baner from '../Components/Baner'
 
 export default function Timeline () {
+  // const contentRef = useRef(null)
+  // const handleScroll = () => {
+  //   if (contentRef) {
+  //     contentRef.current.scrollIntoView({ behavior: 'smooth' })
+  //   }
+  // }
+
   return (
-    <div>
-      <div className='-my-6 bg-jams_black p-10'>
-        <div className='font-sora font-bold text-2xl md:text-3xl md:my-6 xl:text-5xl text-center text-white'>
-          TimeLine
-        </div>
-      </div>
+    <div className='z-30 absolute'>
+      <Baner color='#F9C531' title='Timeline' />
     </div>
   )
 }

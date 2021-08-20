@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Baner from '../Components/Baner'
 
 const SponsorCard = (props) => {
@@ -8,10 +8,17 @@ const SponsorCard = (props) => {
 }
 
 export default function Sponsors () {
+  const contentRef = useRef(null)
+  const handleScroll = () => {
+    if (contentRef) {
+      contentRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <div className='z-30'>
-      <Baner color='#3B7DED' title='Sponsors' />
-      <div className='flex w-screen h-screen'>
+      <Baner color='#3B7DED' title='Sponsors' handleScroll={handleScroll} />
+      <div className='flex w-screen h-screen' ref={contentRef}>
         <div className='m-auto z-40'>
           <div className='grid gap-8 sm:gap-16 grid-cols-2 lg:grid-cols-4 sm:pb-16 lg:pb-0 lg:pt-10'>
             <SponsorCard />

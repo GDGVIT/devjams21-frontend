@@ -157,7 +157,11 @@ const Navbar = ({
         {/* GDSC Logo */}
         <div>
           {darkTheme && (
-            <GDSCLogoNight className='w-96 invisible lg:visible lg:absolute z-50' />
+            <GDSCLogoNight
+              className={`w-96 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 ${
+                startAnimation ? '-top-48' : 'top-4'
+              }`}
+            />
           )}
           {!darkTheme && (
             <GDSCLogoDay
@@ -222,12 +226,12 @@ const Navbar = ({
               </h4>
               <h4
                 className={`nav-link ${
-                  pathname === '/events' && 'nav-link-active'
+                  pathname === '/timeline' && 'nav-link-active'
                 } mb-10`}
-                onClick={() => handleClick('/events')}
-                id='events'
+                onClick={() => handleClick('/timeline')}
+                id='timeline'
               >
-                Events
+                Timeline
               </h4>
               <h4
                 className={`nav-link ${
@@ -281,12 +285,12 @@ const Navbar = ({
               </h4>
               <h4
                 className={`nav-link ${
-                  pathname === '/events' && 'nav-link-active'
+                  pathname === '/timeline' && 'nav-link-active'
                 } mr-8`}
-                onClick={() => handleClick('/events')}
-                id='events'
+                onClick={() => handleClick('/timeline')}
+                id='timeline'
               >
-                Events
+                Timeline
               </h4>
               <h4
                 className={`nav-link ${

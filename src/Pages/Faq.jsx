@@ -18,6 +18,8 @@ const Accordian = ({ color, question, answer }) => {
 
 export default function Faq () {
   const accordionRef = useRef(null)
+  const contentRef = useRef(null)
+
   useEffect(() => {
     /* eslint-disable no-unused-vars */
     const Acc = new Accordion(accordionRef.current, {
@@ -25,10 +27,16 @@ export default function Faq () {
     })
   }, [])
 
+  const handleScroll = () => {
+    if (contentRef) {
+      contentRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <div className='z-30 absolute'>
-      <Baner title='FAQ' color='#2BA24C' />
-      <div className='faq z-40 font-sora'>
+      <Baner title='FAQ' color='#2BA24C' handleScroll={handleScroll} />
+      <div className='faq z-40 font-sora pt-28' ref={contentRef}>
         <div className='accordion-container' ref={accordionRef}>
           <Accordian
             color='yellow'
