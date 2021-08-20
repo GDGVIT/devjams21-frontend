@@ -1,5 +1,5 @@
 <svg viewBox="0 0 5760 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0)">
+<g>
 <rect width="5760" height="1080" fill="white"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M1920 0H0V1080H1920H3840H5760V0H3840H1920Z" fill="url(#paint0_linear)"/>
 <path d="M4230 696.001C4188.4 705.201 4045.67 717.168 3979.5 722.001V740.5H4776.5V696.001H4685C4647 694.001 4562.8 689.5 4530 687.5C4489 685 4425.5 674.001 4400.5 666.501C4375.5 659.001 4365.5 652.001 4355 653.501C4344.5 655.001 4282 684.501 4230 696.001Z" fill="#3C3CB5"/>

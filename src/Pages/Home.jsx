@@ -34,7 +34,7 @@ const DevJamsCard = (props) => {
       <div
         className={`devjams-card--${props.theme} card-shadow grid place-items-center p-5 z-10 rounded-lg mx-5`}
       >
-        <DevJamsLogo className='w-full' />
+        <DevJamsLogo className='w-full md:w-96' />
         <Mouse className={`w-5 mouse--${props.theme}`} />
       </div>
     </div>

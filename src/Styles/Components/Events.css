@@ -5,7 +5,6 @@
 }
 
 .card-shadow {
-  background: #c4c4c4;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.14);
 }
 
@@ -38,12 +37,10 @@
 
 /* coming soon */
 .coming-soon-grid--dark {
-  border: 1px solid #d1d1d1;
   box-shadow: 0 5px 30px rgba(23, 23, 23, 0.14);
 }
 
 .coming-soon-grid--light {
-  border: 1px solid #d1d1d1;
   box-shadow: 0 5px 30px rgba(23, 23, 23, 0.14);
 }
 
