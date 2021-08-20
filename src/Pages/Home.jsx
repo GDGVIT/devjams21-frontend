@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Events from '../Components/Events'
 import { ReactComponent as DevJamsLogo } from '../Assets/Logos/DevJams Logo.svg'
 import { ReactComponent as Mouse } from '../Assets/Mouse.svg'
@@ -6,14 +6,21 @@ import '../Styles/Home.css'
 
 export default function Home (props) {
   const theme = props.darkTheme ? 'dark' : 'light'
+  const contentRef = useRef(null)
+  const handleScroll = () => {
+    if (contentRef) {
+      contentRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <>
-      <DevJamsCard theme={theme} />
+      <DevJamsCard theme={theme} handleScroll={handleScroll} />
       <div
         className={`${
           props.darkTheme ? 'bg-jams_black' : 'bg-white'
         } font-sora py-10`}
+        ref={contentRef}
       >
         <div
           className={`${
@@ -35,7 +42,7 @@ const DevJamsCard = (props) => {
         className={`devjams-card--${props.theme} card-shadow grid place-items-center p-5 z-10 rounded-lg mx-5`}
       >
         <DevJamsLogo className='w-full' />
-        <Mouse className={`w-5 mouse--${props.theme}`} />
+        <Mouse className={`w-5 mouse--${props.theme} cursor-pointer`} onClick={props.handleScroll} />
       </div>
     </div>
   )
