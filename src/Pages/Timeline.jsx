@@ -10,7 +10,7 @@ export default function Timeline () {
   // }
 
   return (
-    <div className='z-30 absolute'>
+    <div className='z-20 absolute'>
       <Baner color='#F9C531' title='Timeline' />
     </div>
   )

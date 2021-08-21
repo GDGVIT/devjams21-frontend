@@ -34,9 +34,9 @@ export default function Faq () {
   }
 
   return (
-    <div className='z-30 absolute'>
+    <div className=' absolute'>
       <Baner title='FAQ' color='#2BA24C' handleScroll={handleScroll} />
-      <div className='faq z-40 font-sora pt-28' ref={contentRef}>
+      <div className='faq font-sora pt-28' ref={contentRef}>
         <div className='accordion-container' ref={accordionRef}>
           <Accordian
             color='yellow'

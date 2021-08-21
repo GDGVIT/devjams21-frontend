@@ -172,7 +172,7 @@ const Navbar = ({
           )}
         </div>
 
-        {/* Navbar */}
+        {/* Navbar Mobile */}
         <div>
           <div className='z-40 w-36 h-full lg:hidden'>
             {/* Hamburger */}
@@ -201,7 +201,9 @@ const Navbar = ({
             {/* Links mobile */}
             <div
               ref={navbarMobileRef}
-              className={`bg-white w-72 h-full flex flex-col items-center text-left text-black top-0 z-60 transition-all ease-in-out duration-300 ${
+              className={`${
+                darkTheme ? 'bg-indigo-900 text-white' : 'bg-white text-black'
+              } w-72 h-full flex flex-col items-center text-left top-0 z-60 transition-all ease-in-out duration-300 ${
                 navlinksOpen ? 'left-0 fixed' : '-left-96 absolute'
               }`}
             >

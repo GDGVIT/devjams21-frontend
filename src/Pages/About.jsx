@@ -14,10 +14,10 @@ export default function About (props) {
   }
 
   return (
-    <div className='z-30 absolute'>
+    <div className='absolute'>
       <Baner color='#FC5251' title='About Us' handleScroll={handleScroll} />
-      <div className='p-4 md:p-10 font-sora z-50 lg:mx-28' ref={contentRef}>
-        <div className={`my-24 lg:mx-8 rounded-2xl z-50 shadow-lg pt-14  px-8 md:px-14 pb-10 lg:pb-14 md:grid md:grid-cols-6 ${props.darkTheme ? 'about-content' : 'bg-white'}`}>
+      <div className='p-4 md:p-10 font-sora z-30 lg:mx-28' ref={contentRef}>
+        <div className={`my-24 lg:mx-8 rounded-2xl z-30 shadow-lg pt-14  px-8 md:px-14 pb-10 lg:pb-14 md:grid md:grid-cols-6 ${props.darkTheme ? 'about-content' : 'bg-white'}`}>
           <div className='md:col-span-6 lg:col-span-3 '>
             <h2 className='text-3xl font-semibold mb-8'>
               DevJams
