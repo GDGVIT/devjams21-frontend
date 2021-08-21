@@ -8,7 +8,7 @@ const TOTAL_STATIONS = 5
 const mapStationToIndex = {
   '/': 0,
   '/about': 1,
-  '/events': 2,
+  '/timeline': 2,
   '/faq': 3,
   '/sponsors': 4
 }
