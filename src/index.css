@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link {
+  @apply cursor-pointer text-2xl lg:text-xl z-30 font-bold opacity-50 hover:opacity-100;
+}
+
+.nav-link-active {
+  @apply border-b-4 border-blue-400 opacity-100 cursor-default;
+}
+
+.nav-link-small {
+  @apply text-black font-sora cursor-pointer font-semibold;
+}
+
+.events-container {
+  @apply sm:w-11/12 mx-auto mt-10 grid gap-6 md:grid-cols-2 mb-10 auto-rows-10;
+}
+
+.content-container {
+  @apply grid gap-4 py-5 px-10 text-xs text-center sm:text-sm sm:text-left relative z-10;
+}
+
+.grid-btn {
+  @apply font-bold my-4 w-full py-3 rounded-md text-sm;
+}
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Courier New",
+    monospace;
+}

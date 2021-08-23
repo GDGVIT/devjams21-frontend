@@ -1,0 +1,75 @@
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close::before,
+.close::after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 25px;
+  width: 2px;
+  background-color: #ddd;
+}
+
+.close::before {
+  transform: rotate(45deg);
+}
+
+.close::after {
+  transform: rotate(-45deg);
+}
+
+.backdrop {
+  width: 500%;
+}
+
+.background {
+  width: 350%;
+}
+
+.discord-link {
+  width: 350%;
+  height: 100%;
+}
+
+.discord-bg {
+  line-height: 56px;
+}
+
+.discord-bg::before {
+  content: '';
+  background-color: #16387f;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.discord-bg::after {
+  content: '';
+  background-color: #16387f;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.bottom-shadow {
+  box-shadow: 0 5px 5px -5px #333;
+}

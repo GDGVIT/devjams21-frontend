@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+}
+
+.about-nav {
+  position: relative;
+}
+
+.about-train {
+  position: absolute;
+  bottom: 27%;
+  left: 25%;
+}
+
+.about-nav-link {
+  width: 100%;
+  position: absolute;
+  bottom: calc(23% + 2px);
+  color: white;
+}
+
+.about-content {
+  background: #1e1e38;
+  color: white;
+}

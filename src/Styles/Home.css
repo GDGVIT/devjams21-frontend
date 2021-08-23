@@ -1,0 +1,15 @@
+.devjams-card--dark {
+  background-color: #181a6d;
+}
+
+.devjams-card--light {
+  background-color: white;
+}
+
+.mouse--light {
+  stroke: #474747;
+}
+
+.mouse--dark {
+  stroke: white;
+}
