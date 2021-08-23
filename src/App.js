@@ -24,7 +24,7 @@ function App () {
         {bodyRender &&
           <Switch>
             <Route exact path='/' component={() => <Home darkTheme={darkTheme} />} />
-            <Route exact path='/events' component={() => <Timeline darkTheme={darkTheme} />} />
+            <Route exact path='/timeline' component={() => <Timeline darkTheme={darkTheme} />} />
             <Route exact path='/sponsors' component={() => <Sponsors darkTheme={darkTheme} />} />
             <Route exact path='/faq' component={() => <Faq darkTheme={darkTheme} />} />
             <Route exact path='/about' component={() => <About darkTheme={darkTheme} />} />

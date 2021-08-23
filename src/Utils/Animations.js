@@ -13,6 +13,7 @@ const mapStationToIndex = {
   "/faq": 3,
   "/sponsors": 4,
 };
+
 const TOTAL_DURATION = 10000;
 const END_TO_END_DURATION = 1000;
 

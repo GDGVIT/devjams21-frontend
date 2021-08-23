@@ -19,7 +19,7 @@
   content: " ";
   height: 25px;
   width: 2px;
-  background-color: #333;
+  background-color: #ddd;
 }
 
 .close::before {
