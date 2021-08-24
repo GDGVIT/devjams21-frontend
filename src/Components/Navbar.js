@@ -43,7 +43,7 @@ const Navbar = ({
   const pathname = location.pathname;
 
   // route we should go to
-  const [destination, setDestination] = useState("/");
+  const [destination, setDestination] = useState(pathname);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -89,8 +89,16 @@ const Navbar = ({
       grass: grassRef.current.getBoundingClientRect().width,
     };
 
+    console.log("background position", bgRef.current.getBoundingClientRect());
+
     findMetrics(lengths, trainRef.current);
   }, []);
+
+  useEffect(() => {
+    const { identifyCurrentLocation } = animations();
+
+    identifyCurrentLocation(destination);
+  }, [destination]);
 
   useEffect(() => {
     if (startAnimation) {
@@ -120,15 +128,15 @@ const Navbar = ({
           <div>
             <MoonBg
               ref={bgRef}
-              className="animation-bg -z-50 h-full absolute"
+              className="animation-bg -z-50 h-full absolute left-0"
             />
             <NightCityAndLightHouse
               ref={cityRef}
-              className="animation-city absolute -z-40 h-full"
+              className="animation-city absolute -z-40 h-full left-0"
             />
             <NightGrassAndTrees
               ref={grassRef}
-              className="animation-grass h-full -z-30 absolute"
+              className="animation-grass h-full -z-30 absolute left-0"
             />
           </div>
         )}
@@ -136,21 +144,21 @@ const Navbar = ({
           <div>
             <DayBg
               ref={bgRef}
-              className="animation-bg -z-50 h-full absolute border-2 border-red-500"
+              className="animation-bg -z-50 h-full absolute border-2 border-red-500 left-0"
             />
             <DayCityAndLightHouse
               ref={cityRef}
-              className="animation-city invisible absolute -z-40 h-full"
+              className="animation-city invisible absolute -z-40 h-full left-0"
             />
             <DayGrassAndTrees
               ref={grassRef}
-              className="animation-grass invisible h-full -z-30 absolute"
+              className="animation-grass invisible h-full -z-30 absolute left-0"
             />
           </div>
         )}
         <Train
           ref={trainRef}
-          className="animation-train w-120 train -z-40 transform -translate-y-6 right-1/2 md:translate-x-1/2"
+          className="animation-train w-120 train -z-40 transform right-1/2 md:translate-x-1/2"
         />
       </div>
 
