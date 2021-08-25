@@ -220,7 +220,7 @@ const Navbar = ({
               ref={navbarMobileRef}
               className={`${
                 darkTheme ? 'bg-indigo-900 text-white' : 'bg-white text-black'
-              } w-72 h-full flex flex-col items-center text-left top-0 z-60 transition-all ease-in-out duration-300 ${
+              } w-60 h-full flex flex-col items-center text-left top-0 z-60 transition-all ease-in-out duration-300 ${
                 navlinksOpen ? 'left-0 fixed' : '-left-96 absolute'
               }`}
             >
@@ -275,7 +275,7 @@ const Navbar = ({
 
           {/* Navbar desktop */}
           <div
-            className={`flex fixed items-center right-8 font-sora z-50 transition-all ease-in-out duration-300 ${
+            className={`flex fixed items-center right-8 font-sora pt-2 z-50 transition-all ease-in-out duration-300 ${
               startAnimation ? '-top-48' : 'top-6'
             }`}
           >
@@ -332,9 +332,9 @@ const Navbar = ({
             </div>
 
             {/* Login button */}
-            <div className='cursor-pointer z-50 px-10 py-2 rounded-md text-white border-solid text-lg font-bold font-sora border-2 bg-red-500 border-red-500 2xl:text-xl hover:bg-white hover:text-red-500 hover:border-white transition-all duration-300 ease-in-out'>
+            {/* <div className='cursor-pointer z-50 px-10 py-2 rounded-md text-white border-solid text-lg font-bold font-sora border-2 bg-red-500 border-red-500 2xl:text-xl hover:bg-white hover:text-red-500 hover:border-white transition-all duration-300 ease-in-out'>
               Login
-            </div>
+            </div> */}
           </div>
         </div>
 
