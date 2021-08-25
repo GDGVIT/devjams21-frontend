@@ -87,18 +87,19 @@ const Navbar = ({
       bg: bgRef.current.getBoundingClientRect().width,
       city: cityRef.current.getBoundingClientRect().width,
       grass: grassRef.current.getBoundingClientRect().width,
+      trainPos: trainRef.current.getBoundingClientRect().x,
+      train: trainRef.current.getBoundingClientRect().width,
     };
 
-    console.log("background position", bgRef.current.getBoundingClientRect());
+    console.log("lengths", lengths);
 
-    findMetrics(lengths, trainRef.current);
+    findMetrics(lengths);
   }, []);
 
   useEffect(() => {
     const { identifyCurrentLocation } = animations();
-
     identifyCurrentLocation(destination);
-  }, [destination]);
+  }, []); //eslint-disable-line
 
   useEffect(() => {
     if (startAnimation) {
@@ -144,21 +145,21 @@ const Navbar = ({
           <div>
             <DayBg
               ref={bgRef}
-              className="animation-bg -z-50 h-full absolute border-2 border-red-500 left-0"
+              className="animation-bg -z-50 h-full absolute left-0"
             />
             <DayCityAndLightHouse
               ref={cityRef}
-              className="animation-city invisible absolute -z-40 h-full left-0"
+              className="animation-city absolute -z-40 h-full left-0"
             />
             <DayGrassAndTrees
               ref={grassRef}
-              className="animation-grass invisible h-full -z-30 absolute left-0"
+              className="animation-grass h-full -z-30 absolute left-0"
             />
           </div>
         )}
         <Train
           ref={trainRef}
-          className="animation-train w-120 train -z-40 transform right-1/2 md:translate-x-1/2"
+          className="animation-train w-120 train right-1/2 -z-40 transform md:translate-x-1/2"
         />
       </div>
 

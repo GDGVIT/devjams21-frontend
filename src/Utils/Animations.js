@@ -16,12 +16,16 @@ const mapStationToIndex = {
 
 const TOTAL_DURATION = 5000;
 const END_TO_END_DURATION = 1000;
+const TRAIN_TIME_AT_ENDS = 3000;
+const TO_LOCATION = 500;
 
 // TODO: Currently hardcoded to avoid end cut off
 const subtractWidth = {
   bg: 960,
   city: 340,
   grass: -1220,
+  train: -128,
+  trainPos: 64,
 };
 
 // default values given
@@ -59,19 +63,19 @@ const animations = () => {
 
   const windowLength = window.screen.width;
 
-  const findMetrics = (lengths, trainRef) => {
-    x.train = trainRef.getBoundingClientRect().x;
-    metrics.totalSVGWidth.train = trainRef.getBoundingClientRect().width;
+  const findMetrics = (lengths) => {
+    x.train = lengths.trainPos - subtractWidth.trainPos;
 
     metrics.totalSVGWidth = {
-      bg: Math.floor(lengths.bg) - subtractWidth.bg,
-      city: Math.floor(lengths.city) - subtractWidth.city,
-      grass: Math.floor(lengths.grass) - subtractWidth.grass,
+      bg: lengths.bg - subtractWidth.bg,
+      city: lengths.city - subtractWidth.city,
+      grass: lengths.grass - subtractWidth.grass,
+      train: lengths.train - subtractWidth.train,
     };
     metrics.stationToStationDistance = {
-      bg: Math.floor(metrics.totalSVGWidth.bg / TOTAL_STATIONS),
-      city: Math.floor(metrics.totalSVGWidth.city / TOTAL_STATIONS),
-      grass: Math.floor(metrics.totalSVGWidth.grass / TOTAL_STATIONS),
+      bg: metrics.totalSVGWidth.bg / TOTAL_STATIONS,
+      city: metrics.totalSVGWidth.city / TOTAL_STATIONS,
+      grass: metrics.totalSVGWidth.grass / TOTAL_STATIONS,
     };
   };
 
@@ -94,18 +98,6 @@ const animations = () => {
     vector = arc1.length <= arc2.length ? arc1 : arc2;
   };
 
-  // const setValues = () => {
-  //   anime.set(ANIMATION_BG, {
-  //     translateX: () => x.bg,
-  //   });
-  //   anime.set(ANIMATION_CITY, {
-  //     translateX: () => x.city,
-  //   });
-  //   anime.set(ANIMATION_GRASS, {
-  //     translateX: () => x.grass,
-  //   });
-  // };
-
   const animationSequences = () => {
     const distanceToTravel = vector.length;
 
@@ -114,9 +106,7 @@ const animations = () => {
 
       // ---------------- TIME MANAGEMENT--------------------------
       const fractionTime = (endDistance / distanceToTravel) * TOTAL_DURATION;
-      const trainTimeAtEnds = (1 / distanceToTravel) * TOTAL_DURATION;
-      const remainingFractionTime =
-        TOTAL_DURATION - fractionTime - trainTimeAtEnds;
+      const remainingFractionTime = TOTAL_DURATION - fractionTime;
 
       // ---------------DISTANCE TO TRAVEL ------------------------
       const backgroundToCurrent = distanceToTravel - endDistance - 1;
@@ -136,7 +126,16 @@ const animations = () => {
             metrics.stationToStationDistance.grass *
             (vector.clockwise ? -1 : 1),
         },
-        moveTrainToEnd: windowLength * (vector.clockwise ? 1 : -1),
+        moveTrainToEnd:
+          (vector.clockwise
+            ? windowLength / 2 + metrics.totalSVGWidth.train / 2
+            : x.train + metrics.totalSVGWidth.train) *
+          (vector.clockwise ? 1 : -1),
+        moveTrainFromEnd:
+          (windowLength / 2 +
+            metrics.totalSVGWidth.train / 2 +
+            subtractWidth.trainPos * (vector.clockwise ? 0 : 1)) *
+          (vector.clockwise ? 1 : -1),
         endToEndShift: {
           bg:
             (metrics.totalSVGWidth.bg - metrics.stationToStationDistance.bg) *
@@ -149,6 +148,9 @@ const animations = () => {
             (metrics.totalSVGWidth.grass -
               metrics.stationToStationDistance.grass) *
             (vector.clockwise ? 1 : -1),
+          train:
+            (metrics.totalSVGWidth.train + windowLength) *
+            (vector.clockwise ? -1 : 1),
         },
         backgroundFromOtherEnd: {
           bg:
@@ -172,7 +174,9 @@ const animations = () => {
         const moveBgToEnd = anime({
           targets: ANIMATION_BG,
           translateX: [x.bg, x.bg + move.backgroundToEnd.bg],
-          complete: () => (x.bg += move.backgroundToEnd.bg),
+          complete: () => {
+            x.bg += move.backgroundToEnd.bg;
+          },
           duration: fractionTime,
           easing: "easeInQuad",
         }).finished;
@@ -199,21 +203,24 @@ const animations = () => {
       const shiftThingsToOtherSide = async () => {
         const bgShift = anime({
           targets: ANIMATION_BG,
-          translateX: move.endToEndShift.bg,
+          translateX: [x.bg, x.bg + move.endToEndShift.bg],
+          complete: () => (x.bg += move.endToEndShift.bg),
           easing: "easeInOutQuad",
           duration: END_TO_END_DURATION,
         }).finished;
 
         const cityShift = anime({
           targets: ANIMATION_CITY,
-          translateX: move.endToEndShift.city,
+          translateX: [x.city, x.city + move.endToEndShift.city],
+          complete: () => (x.city += move.endToEndShift.city),
           easing: "easeInOutQuad",
           duration: END_TO_END_DURATION,
         }).finished;
 
         const grassShift = anime({
           targets: ANIMATION_GRASS,
-          translateX: move.endToEndShift.grass,
+          translateX: [x.grass, x.grass + move.endToEndShift.grass],
+          complete: () => (x.grass += move.endToEndShift.grass),
           easing: "easeInOutQuad",
           duration: END_TO_END_DURATION,
         }).finished;
@@ -221,22 +228,51 @@ const animations = () => {
         await Promise.all([bgShift, cityShift, grassShift]);
       };
 
+      const moveFromOtherEnd = async () => {
+        console.log("move from other end");
+        const moveBgFromEnd = anime({
+          targets: ANIMATION_BG,
+          easing: "easeOutQuad",
+          translateX: [x.bg, x.bg + move.backgroundFromOtherEnd.bg],
+          complete: () => (x.bg += move.backgroundFromOtherEnd.bg),
+          duration: remainingFractionTime,
+        }).finished;
+        const moveCityFromEnd = anime({
+          targets: ANIMATION_CITY,
+          easing: "easeOutQuad",
+          translateX: [x.city, x.city + move.backgroundFromOtherEnd.city],
+          complete: () => (x.city += move.backgroundFromOtherEnd.city),
+          duration: remainingFractionTime,
+        }).finished;
+        const moveGrassFromEnd = anime({
+          targets: ANIMATION_GRASS,
+          easing: "easeOutQuad",
+          translateX: [x.grass, x.grass + move.backgroundFromOtherEnd.grass],
+          complete: () => (x.grass += move.backgroundFromOtherEnd.grass),
+          duration: remainingFractionTime,
+        }).finished;
+
+        await Promise.all([moveBgFromEnd, moveCityFromEnd, moveGrassFromEnd]);
+      };
+
       return new Promise((resolve, reject) => {
         moveToEnd()
           .then(() => {
             anime.set(ANIMATION_TRAIN, {
               translateX: () => {
-                if (windowLength > 768) return 320;
+                if (windowLength > 768) {
+                  return 320;
+                }
                 return 0;
               },
             });
 
             const runTrainToEnd = anime({
               targets: ANIMATION_TRAIN,
-              translateX: x.train + move.moveTrainToEnd,
-              duration: trainTimeAtEnds / 2,
-              complete: () => (x.train += x.train + move.moveTrainToEnd),
-              easing: "easeOutQuad",
+              translateX: [x.train, x.train + move.moveTrainToEnd],
+              duration: TRAIN_TIME_AT_ENDS / 2,
+              complete: () => (x.train += move.moveTrainToEnd),
+              easing: "linear",
             }).finished;
 
             return runTrainToEnd;
@@ -244,28 +280,25 @@ const animations = () => {
           .then(() => {
             shiftThingsToOtherSide()
               .then(() => {
-                // anime.set(ANIMATION_TRAIN, {
-                //   translateX: () =>
-                //     2 * move.moveTrainToEnd * (vector.clockwise ? 1 : -1),
-                // });
                 anime.set(ANIMATION_TRAIN, {
-                  translateX: () =>
-                    2 * windowLength * (vector.clockwise ? -1 : 1),
+                  translateX: () => {
+                    x.train += move.endToEndShift.train;
+                    return x.train;
+                  },
                 });
-
-                x.train += 2 * windowLength * (vector.clockwise ? -1 : 1);
 
                 const runTrainFromOtherEnd = anime({
                   targets: ANIMATION_TRAIN,
-                  duration: trainTimeAtEnds / 2,
+                  duration: TRAIN_TIME_AT_ENDS / 2,
                   easing: "easeOutQuad",
-                  translateX: () => [x.train, metrics.totalSVGWidth.train / 2],
+                  translateX: () => [x.train, x.train + move.moveTrainFromEnd],
+                  complete: () => (x.train += move.moveTrainFromEnd),
                 }).finished;
 
                 return runTrainFromOtherEnd;
               })
               .then(() => {
-                resolve();
+                moveFromOtherEnd().then(() => resolve());
               });
           });
       });
@@ -273,8 +306,6 @@ const animations = () => {
 
     const move = () => {
       const distanceToTravel = vector.length;
-
-      console.log("move is triggered", vector, metrics);
 
       const moveByDistance = {
         bg:
@@ -294,7 +325,7 @@ const animations = () => {
       return new Promise((resolve, reject) => {
         anime({
           targets: ANIMATION_BG,
-          translateX: x.bg + moveByDistance.bg,
+          translateX: [x.bg, x.bg + moveByDistance.bg],
           complete: () => {
             x.bg += moveByDistance.bg;
             resolve();
@@ -304,14 +335,14 @@ const animations = () => {
         });
         anime({
           targets: ANIMATION_CITY,
-          translateX: x.city + moveByDistance.city,
+          translateX: [x.city, x.city + moveByDistance.city],
           complete: () => (x.city += moveByDistance.city),
           duration: TOTAL_DURATION,
           easing: "easeInOutQuad",
         });
         anime({
           targets: ANIMATION_GRASS,
-          translateX: x.grass + moveByDistance.grass,
+          translateX: [x.grass, x.grass + moveByDistance.grass],
           complete: () => (x.grass += moveByDistance.grass),
           duration: TOTAL_DURATION,
           easing: "easeInOutQuad",
@@ -331,52 +362,50 @@ const animations = () => {
     return distanceToTravel > endDistance ? moveLoop(endDistance) : move();
   };
 
-  const identifyCurrentLocation = (current) => {
+  const identifyCurrentLocation = async (current) => {
     const translateBy = mapStationToIndex[current];
 
-    if (x.bg !== translateBy * metrics.stationToStationDistance.bg) {
-      return new Promise((resolve, reject) => {
-        anime({
-          targets: ANIMATION_BG,
-          translateX: [
-            x.bg,
-            x.bg + translateBy * metrics.stationToStationDistance.bg * -1,
-          ],
-          duration: 500,
-          complete: () => {
-            x.bg += translateBy * metrics.stationToStationDistance.bg * -1;
-            resolve();
-          },
-          easing: "easeInOutQuad",
-        });
-        anime({
-          targets: ANIMATION_CITY,
-          translateX: [
-            x.city,
-            x.city + translateBy * metrics.stationToStationDistance.city * -1,
-          ],
-          duration: 500,
-          complete: () => {
-            x.city += translateBy * metrics.stationToStationDistance.city * -1;
-          },
-          easing: "easeInOutQuad",
-        });
-        anime({
-          targets: ANIMATION_GRASS,
-          translateX: [
-            x.grass,
-            x.grass + translateBy * metrics.stationToStationDistance.grass * -1,
-          ],
-          duration: 500,
-          complete: () => {
-            x.grass +=
-              translateBy * metrics.stationToStationDistance.grass * -1;
-          },
-          easing: "easeInOutQuad",
-        });
-      });
-    }
-    console.log("current", current);
+    const identifyBg = anime({
+      targets: ANIMATION_BG,
+      translateX: [
+        x.bg,
+        x.bg + translateBy * metrics.stationToStationDistance.bg * -1,
+      ],
+      duration: TO_LOCATION,
+      complete: () => {
+        x.bg += translateBy * metrics.stationToStationDistance.bg * -1;
+      },
+      easing: "easeInOutQuad",
+    }).finished;
+
+    const identifyCity = anime({
+      targets: ANIMATION_CITY,
+      translateX: [
+        x.city,
+        x.city + translateBy * metrics.stationToStationDistance.city * -1,
+      ],
+      duration: TO_LOCATION,
+      complete: () => {
+        x.city += translateBy * metrics.stationToStationDistance.city * -1;
+      },
+      easing: "easeInOutQuad",
+    }).finished;
+
+    const identifyGrass = anime({
+      targets: ANIMATION_GRASS,
+      translateX: [
+        x.grass,
+        x.grass + translateBy * metrics.stationToStationDistance.grass * -1,
+      ],
+      duration: TO_LOCATION,
+      complete: () => {
+        x.grass += translateBy * metrics.stationToStationDistance.grass * -1;
+        console.log("After moving to current location :: ", x);
+      },
+      easing: "easeInOutQuad",
+    }).finished;
+
+    await Promise.all([identifyBg, identifyCity, identifyGrass]);
   };
 
   const trainAnimation = (current, dest) => {
