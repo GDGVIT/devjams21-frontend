@@ -16,7 +16,7 @@
 .close::after {
   position: absolute;
   left: 15px;
-  content: ' ';
+  content: " ";
   height: 25px;
   width: 2px;
   background-color: #ddd;
@@ -48,7 +48,7 @@
 }
 
 .discord-bg::before {
-  content: '';
+  content: "";
   background-color: #16387f;
   top: 0;
   left: 0;
@@ -59,7 +59,7 @@
 }
 
 .discord-bg::after {
-  content: '';
+  content: "";
   background-color: #16387f;
   opacity: 0.4;
   top: 0;
@@ -72,4 +72,9 @@
 
 .bottom-shadow {
   box-shadow: 0 5px 5px -5px #333;
+}
+
+.train {
+  position: absolute;
+  top: 63vh;
 }

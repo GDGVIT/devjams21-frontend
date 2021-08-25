@@ -12,11 +12,12 @@ import discord from '../Assets/Discord.svg'
 // Light
 import { ReactComponent as DayBg } from '../Assets/TrainAnimations/Day/DayBg.svg'
 import { ReactComponent as DayCityAndLightHouse } from '../Assets/TrainAnimations/Day/CityLightHouse.svg'
-import { ReactComponent as DayGrassAndTrees, ReactComponent as NightGrassAndTrees } from '../Assets/TrainAnimations/Night/GrassAndTrees.svg'
+import { ReactComponent as DayGrassAndTrees } from '../Assets/TrainAnimations/Day/GrassAndTrees.svg'
 
 // Dark
 import { ReactComponent as MoonBg } from '../Assets/TrainAnimations/Night/MoonBg.svg'
 import { ReactComponent as NightCityAndLightHouse } from '../Assets/TrainAnimations/Night/CityLighthouse.svg'
+import { ReactComponent as NightGrassAndTrees } from '../Assets/TrainAnimations/Night/GrassAndTrees.svg'
 
 import '../Styles/Navbar.css'
 
@@ -35,13 +36,14 @@ const Navbar = ({
   const bgRef = useRef(null)
   const cityRef = useRef(null)
   const grassRef = useRef(null)
+  const trainRef = useRef(null)
 
   const navbarMobileRef = useRef(null)
 
   const pathname = location.pathname
 
   // route we should go to
-  const [destination, setDestination] = useState('/')
+  const [destination, setDestination] = useState(pathname)
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -84,11 +86,20 @@ const Navbar = ({
     const lengths = {
       bg: bgRef.current.getBoundingClientRect().width,
       city: cityRef.current.getBoundingClientRect().width,
-      grass: grassRef.current.getBoundingClientRect().width
+      grass: grassRef.current.getBoundingClientRect().width,
+      trainPos: trainRef.current.getBoundingClientRect().x,
+      train: trainRef.current.getBoundingClientRect().width
     }
+
+    console.log('lengths', lengths)
 
     findMetrics(lengths)
   }, [])
+
+  useEffect(() => {
+    const { identifyCurrentLocation } = animations()
+    identifyCurrentLocation(destination)
+  }, []); //eslint-disable-line
 
   useEffect(() => {
     if (startAnimation) {
@@ -118,32 +129,38 @@ const Navbar = ({
           <div>
             <MoonBg
               ref={bgRef}
-              className='animation-bg -z-50 h-full absolute'
+              className='animation-bg -z-50 h-full absolute left-0'
             />
             <NightCityAndLightHouse
               ref={cityRef}
-              className='animation-city absolute -z-40 h-full'
+              className='animation-city absolute -z-40 h-full left-0'
             />
             <NightGrassAndTrees
               ref={grassRef}
-              className='animation-grass h-full -z-30 absolute'
+              className='animation-grass h-full -z-30 absolute left-0'
             />
           </div>
         )}
         {!darkTheme && (
           <div>
-            <DayBg ref={bgRef} className='animation-bg -z-50 h-full absolute' />
+            <DayBg
+              ref={bgRef}
+              className='animation-bg -z-50 h-full absolute left-0'
+            />
             <DayCityAndLightHouse
               ref={cityRef}
-              className='animation-city absolute -z-40 h-full'
+              className='animation-city absolute -z-40 h-full left-0'
             />
             <DayGrassAndTrees
               ref={grassRef}
-              className='animation-grass h-full -z-30 absolute'
+              className='animation-grass h-full -z-30 absolute left-0'
             />
           </div>
         )}
-        <Train className='w-120 -z-40 absolute top-2/3 transform -translate-y-6 right-1/2' />
+        <Train
+          ref={trainRef}
+          className='animation-train w-120 train right-1/2 -z-40 transform md:translate-x-1/2'
+        />
       </div>
 
       {/* Navbar */}
