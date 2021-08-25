@@ -1,30 +1,30 @@
-import React, { useRef } from 'react'
-import Events from '../Components/Events'
-import { ReactComponent as DevJamsLogo } from '../Assets/Logos/DevJams Logo.svg'
-import { ReactComponent as Mouse } from '../Assets/Mouse.svg'
-import '../Styles/Home.css'
+import React, { useRef } from "react";
+import Events from "../Components/Events";
+import { ReactComponent as DevJamsLogo } from "../Assets/Logos/DevJams Logo.svg";
+import { ReactComponent as Mouse } from "../Assets/Mouse.svg";
+import "../Styles/Home.css";
 
-export default function Home (props) {
-  const theme = props.darkTheme ? 'dark' : 'light'
-  const contentRef = useRef(null)
+export default function Home(props) {
+  const theme = props.darkTheme ? "dark" : "light";
+  const contentRef = useRef(null);
   const handleScroll = () => {
     if (contentRef) {
-      contentRef.current.scrollIntoView({ behavior: 'smooth' })
+      contentRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <>
       <DevJamsCard theme={theme} handleScroll={handleScroll} />
       <div
         className={`${
-          props.darkTheme ? 'bg-jams_black' : 'bg-white'
+          props.darkTheme ? "bg-jams_black" : "bg-white"
         } font-sora py-10`}
         ref={contentRef}
       >
         <div
           className={`${
-            props.darkTheme ? 'text-white' : 'text-black'
+            props.darkTheme ? "text-white" : "text-black"
           } text-2xl sm:text-3xl md:text-4xl my-5 sm:my-10 font-bold text-center`}
         >
           DevJams 2021
@@ -32,18 +32,21 @@ export default function Home (props) {
         <Events darkTheme={props.darkTheme} />
       </div>
     </>
-  )
+  );
 }
 
 const DevJamsCard = (props) => {
   return (
-    <div className='w-screen h-screen grid place-items-center relative bottom-20'>
+    <div className="w-screen h-screen grid place-items-center relative bottom-20">
       <div
-        className={`devjams-card--${props.theme} card-shadow grid place-items-center p-5 z-10 rounded-lg mx-5`}
+        className={`devjams-card--${props.theme} card-shadow grid place-items-center py-5 px-9 z-10 rounded-lg mx-5 transition-all duration-500 ease-in-out`}
       >
-        <DevJamsLogo className='w-full' />
-        <Mouse className={`w-5 mouse--${props.theme} cursor-pointer`} onClick={props.handleScroll} />
+        <DevJamsLogo className="w-60 lg:w-96" />
+        <Mouse
+          className={`w-5 mouse--${props.theme} cursor-pointer`}
+          onClick={props.handleScroll}
+        />
       </div>
     </div>
-  )
-}
+  );
+};
