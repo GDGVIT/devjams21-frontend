@@ -62,13 +62,15 @@ const Navbar = ({
   }, [navbarMobileRef, setNavlinksOpen])
 
   const handleClick = (route) => {
-    const dest = route
-    const currentStation = pathname
-    setNavlinksOpen(false)
+    if(!startAnimation) {
+      const dest = route
+      const currentStation = pathname
+      setNavlinksOpen(false)
 
-    if (dest && currentStation !== dest) {
-      setStartAnimation(true)
-      setDestination(dest)
+      if (dest && currentStation !== dest) {
+        setStartAnimation(true)
+        setDestination(dest)
+      }
     }
   }
 
@@ -165,26 +167,18 @@ const Navbar = ({
 
       {/* Navbar */}
       <div
-        className={`fixed z-40 h-24 w-full ${
-          navbarBg && !startAnimation
-            ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow`
-            : ''
-        } transition-all duration-300 ease-in-out`}
+        className={`fixed z-40 h-24 w-full ${navbarBg ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow` : ''} transition-all duration-300 ease-in-out`}
       >
         {/* GDSC Logo */}
         <div>
           {darkTheme && (
             <GDSCLogoNight
-              className={`w-96 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 ${
-                startAnimation ? '-top-48' : 'top-4'
-              }`}
+              className='w-96 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 top-4'
             />
           )}
           {!darkTheme && (
             <GDSCLogoDay
-              className={`w-72 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 ${
-                startAnimation ? '-top-48' : '-top-3'
-              }`}
+              className='w-72 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 -top-3'
             />
           )}
         </div>
@@ -195,9 +189,7 @@ const Navbar = ({
             {/* Hamburger */}
             <div
               onClick={handleNavbarOpen}
-              className={`fixed left-8 z-40 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-300 cursor-pointer lg:invisible ${
-                startAnimation ? '-top-48' : 'top-9'
-              }`}
+              className='fixed left-8 z-40 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-300 cursor-pointer lg:invisible top-9'
             >
               <span
                 className={`h-1 w-full  rounded-lg ${
@@ -226,47 +218,32 @@ const Navbar = ({
             >
               <div className='close' onClick={handleNavbarOpen} />
               <h4
-                className={`nav-link ${
-                  pathname === '/' && 'nav-link-active'
-                } mt-32 mb-10`}
+                className={`nav-link ${pathname === '/' && 'nav-link-active'} mt-32 mb-10 ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/')}
-                id='home'
               >
                 Home
               </h4>
               <h4
-                className={`nav-link ${
-                  pathname === '/about' && 'nav-link-active'
-                } mb-10`}
+                className={`nav-link ${pathname === '/about' && 'nav-link-active'} mb-10 ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/about')}
-                id='about'
               >
                 About Us
               </h4>
               <h4
-                className={`nav-link ${
-                  pathname === '/timeline' && 'nav-link-active'
-                } mb-10`}
+                className={`nav-link ${pathname === '/timeline' && 'nav-link-active'} mb-10 ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/timeline')}
-                id='timeline'
               >
                 Timeline
               </h4>
               <h4
-                className={`nav-link ${
-                  pathname === '/faq' && 'nav-link-active'
-                } mb-10`}
+                className={`nav-link ${pathname === '/faq' && 'nav-link-active'} mb-10 ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/faq')}
-                id='faq'
               >
                 FAQ
               </h4>
               <h4
-                className={`nav-link ${
-                  pathname === '/sponsors' && 'nav-link-active'
-                } mb-10`}
+                className={`nav-link ${pathname === '/sponsors' && 'nav-link-active'} mb-10 ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/sponsors')}
-                id='sponsors'
               >
                 Sponsors
               </h4>
@@ -275,9 +252,7 @@ const Navbar = ({
 
           {/* Navbar desktop */}
           <div
-            className={`flex fixed items-center right-8 font-sora pt-2 z-50 transition-all ease-in-out duration-300 ${
-              startAnimation ? '-top-48' : 'top-6'
-            }`}
+            className='flex fixed items-center right-8 font-sora pt-2 z-50 transition-all ease-in-out duration-300 top-6'
           >
             <div
               className={`hidden lg:flex ${
@@ -285,47 +260,32 @@ const Navbar = ({
               }`}
             >
               <h4
-                className={`nav-link ${
-                  pathname === '/' && 'nav-link-active'
-                } mr-8`}
+                className={`nav-link mr-8 ${pathname === '/' && 'nav-link-active'} ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/')}
-                id='home'
               >
                 Home
               </h4>
               <h4
-                className={`nav-link ${
-                  pathname === '/about' && 'nav-link-active'
-                } mr-8`}
+                className={`nav-link mr-8 ${pathname === '/about' && 'nav-link-active'} ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/about')}
-                id='about'
               >
                 About Us
               </h4>
               <h4
-                className={`nav-link ${
-                  pathname === '/timeline' && 'nav-link-active'
-                } mr-8`}
+                className={`nav-link mr-8 ${pathname === '/timeline' && 'nav-link-active'} ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/timeline')}
-                id='timeline'
               >
                 Timeline
               </h4>
               <h4
-                className={`nav-link ${
-                  pathname === '/faq' && 'nav-link-active'
-                } mr-8`}
+                className={`nav-link mr-8 ${pathname === '/faq' && 'nav-link-active'} ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/faq')}
-                id='faq'
               >
                 FAQ
               </h4>
               <h4
-                className={`nav-link ${
-                  pathname === '/sponsors' && 'nav-link-active'
-                } mr-8`}
+                className={`nav-link ${pathname === '/sponsors' && 'nav-link-active'} ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/sponsors')}
-                id='sponsors'
               >
                 Sponsors
               </h4>
@@ -348,9 +308,7 @@ const Navbar = ({
         {/* Discord button */}
         <a href='https://discord.com' target='_blank' rel='noopener noreferrer'>
           <div
-            className={`fixed items-center overflow-hidden flex w-14 h-14 z-50 hover:w-56 right-8 rounded transition-all duration-300 ease-in-out ${
-              startAnimation ? '-bottom-48' : 'bottom-5'
-            }`}
+            className='fixed items-center overflow-hidden flex w-14 h-14 z-50 hover:w-56 right-8 rounded transition-all duration-300 ease-in-out bottom-5'
           >
             <img src={discord} alt='Discord' className='h-full' />
             <span className='h-1/2 border-l-2 border-white' />
