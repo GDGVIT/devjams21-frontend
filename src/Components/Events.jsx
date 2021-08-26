@@ -23,7 +23,7 @@ export default function Events (props) {
       className='sm:px-5 mt-10 mb-5 overflow-x-hidden'
     >
       <div className='w-screen overflow-x-auto overflow-y-hidden'>
-        <div className='inline-flex gap-x-10 pb-10 px-10'>
+        <div className='inline-flex gap-x-10 pb-10 px-20'>
           <CurrentEventGrid event={events.knockathon} theme={theme}>
             <KnockathonsLogo className='w-52' />
           </CurrentEventGrid>
@@ -49,12 +49,12 @@ const DevJamsGrid = (props) => {
 
   return (
     <div
-      className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} event col-span-full relative shadow-md sm:rounded-3xl overflow-hidden`}
+      className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} mx-5 rounded-3xl relative shadow-md sm:rounded-3xl overflow-hidden`}
     >
       <div className='grid md:grid-cols-2 place-items-center pt-5 sm:py-5 px-10 relative z-10'>
         <div>
-          <DevJamsLogo className='w-48 md:w-60 h-auto my-5' />
-          <div className='pb-6 flex justify-center md:justify-start gap-x-2 font-semibold items-center text-jams_logo_blue'>
+          <DevJamsLogo className='w-40 sm:w-72 h-auto my-5' />
+          <div className='pb-2 flex justify-center md:justify-start gap-x-2 font-semibold items-center text-jams_logo_blue'>
             <span>Know More</span>
             <ChervonRight />
           </div>

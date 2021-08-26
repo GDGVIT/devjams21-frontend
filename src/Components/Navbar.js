@@ -32,10 +32,14 @@ const Navbar = ({
 
   const [startAnimation, setStartAnimation] = useState(false)
   const [navbarBg, setNavbarBg] = useState(false)
+  const [metrics, setMetrics] = useState(null)
 
-  const bgRef = useRef(null)
-  const cityRef = useRef(null)
-  const grassRef = useRef(null)
+  const bgRef1 = useRef(null)
+  const cityRef1 = useRef(null)
+  const grassRef1 = useRef(null)
+  const bgRef2 = useRef(null)
+  const cityRef2 = useRef(null)
+  const grassRef2 = useRef(null)
   const trainRef = useRef(null)
 
   const navbarMobileRef = useRef(null)
@@ -86,22 +90,22 @@ const Navbar = ({
     const { findMetrics } = animations()
 
     const lengths = {
-      bg: bgRef.current.getBoundingClientRect().width,
-      city: cityRef.current.getBoundingClientRect().width,
-      grass: grassRef.current.getBoundingClientRect().width,
+      bg: bgRef1.current.getBoundingClientRect().width,
+      city: cityRef1.current.getBoundingClientRect().width,
+      grass: grassRef1.current.getBoundingClientRect().width,
       trainPos: trainRef.current.getBoundingClientRect().x,
       train: trainRef.current.getBoundingClientRect().width
     }
-
-    console.log('lengths', lengths)
-
     findMetrics(lengths)
-  }, [])
+    setMetrics(lengths)
+  }, []); //eslint-disable-line
 
   useEffect(() => {
-    const { identifyCurrentLocation } = animations()
-    identifyCurrentLocation(destination)
-  }, []); //eslint-disable-line
+    if (metrics) {
+      const { identifyCurrentLocation } = animations()
+      identifyCurrentLocation(destination)
+    }
+  }, [metrics]); //eslint-disable-line
 
   useEffect(() => {
     if (startAnimation) {
@@ -129,33 +133,45 @@ const Navbar = ({
       <div className='h-screen w-screen fixed overflow-hidden'>
         {darkTheme && ( // dark
           <div>
-            <MoonBg
-              ref={bgRef}
-              className='animation-bg -z-50 h-full absolute left-0'
+            <MoonBg ref={bgRef1} className='animate-obj animation-bg-1 -z-50' />
+            <MoonBg ref={bgRef2} className='animate-obj animation-bg-2 -z-50' />
+            <NightCityAndLightHouse
+              ref={cityRef1}
+              className='animate-obj animation-city-1 -z-40'
             />
             <NightCityAndLightHouse
-              ref={cityRef}
-              className='animation-city absolute -z-40 h-full left-0'
+              ref={cityRef2}
+              className='animate-obj animation-city-2 -z-40'
             />
             <NightGrassAndTrees
-              ref={grassRef}
-              className='animation-grass h-full -z-30 absolute left-0'
+              ref={grassRef1}
+              className='animate-obj animation-grass-1 -z-30'
+            />
+            <NightGrassAndTrees
+              ref={grassRef2}
+              className='animate-obj animation-grass-2 -z-30'
             />
           </div>
         )}
         {!darkTheme && (
           <div>
-            <DayBg
-              ref={bgRef}
-              className='animation-bg -z-50 h-full absolute left-0'
+            <DayBg ref={bgRef1} className='animate-obj animation-bg-1 -z-50' />
+            <DayBg ref={bgRef2} className='animate-obj animation-bg-2 -z-50' />
+            <DayCityAndLightHouse
+              ref={cityRef1}
+              className='animate-obj animation-city-1 -z-40'
             />
             <DayCityAndLightHouse
-              ref={cityRef}
-              className='animation-city absolute -z-40 h-full left-0'
+              ref={cityRef2}
+              className='animate-obj animation-city-2 -z-40'
             />
             <DayGrassAndTrees
-              ref={grassRef}
-              className='animation-grass h-full -z-30 absolute left-0'
+              ref={grassRef1}
+              className='animate-obj animation-grass-1 -z-30'
+            />
+            <DayGrassAndTrees
+              ref={grassRef2}
+              className='animate-obj animation-grass-2 -z-30'
             />
           </div>
         )}
@@ -167,19 +183,19 @@ const Navbar = ({
 
       {/* Navbar */}
       <div
-        className={`fixed z-40 h-24 w-full ${navbarBg ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow` : ''} transition-all duration-300 ease-in-out`}
+        className={`fixed z-40 h-24 w-full ${
+          navbarBg
+            ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow`
+            : ''
+        } transition-all duration-300 ease-in-out`}
       >
         {/* GDSC Logo */}
         <div>
           {darkTheme && (
-            <GDSCLogoNight
-              className='w-96 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 top-4'
-            />
+            <GDSCLogoNight className='w-96 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 top-4' />
           )}
           {!darkTheme && (
-            <GDSCLogoDay
-              className='w-72 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 -top-3'
-            />
+            <GDSCLogoDay className='w-72 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 -top-3' />
           )}
         </div>
 
@@ -218,31 +234,51 @@ const Navbar = ({
             >
               <div className='close' onClick={handleNavbarOpen} />
               <h4
-                className={`nav-link ${pathname === '/' && 'nav-link-active'} mt-32 mb-10 ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                className={`nav-link ${
+                  pathname === '/' && 'nav-link-active'
+                } mt-32 mb-10 ${
+                  !startAnimation ? 'cursor-pointer hover:opacity-100' : ''
+                }`}
                 onClick={() => handleClick('/')}
               >
                 Home
               </h4>
               <h4
-                className={`nav-link ${pathname === '/about' && 'nav-link-active'} mb-10 ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                className={`nav-link ${
+                  pathname === '/about' && 'nav-link-active'
+                } mb-10 ${
+                  !startAnimation ? 'cursor-pointer hover:opacity-100' : ''
+                }`}
                 onClick={() => handleClick('/about')}
               >
                 About Us
               </h4>
               <h4
-                className={`nav-link ${pathname === '/timeline' && 'nav-link-active'} mb-10 ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                className={`nav-link ${
+                  pathname === '/timeline' && 'nav-link-active'
+                } mb-10 ${
+                  !startAnimation ? 'cursor-pointer hover:opacity-100' : ''
+                }`}
                 onClick={() => handleClick('/timeline')}
               >
                 Timeline
               </h4>
               <h4
-                className={`nav-link ${pathname === '/faq' && 'nav-link-active'} mb-10 ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                className={`nav-link ${
+                  pathname === '/faq' && 'nav-link-active'
+                } mb-10 ${
+                  !startAnimation ? 'cursor-pointer hover:opacity-100' : ''
+                }`}
                 onClick={() => handleClick('/faq')}
               >
                 FAQ
               </h4>
               <h4
-                className={`nav-link ${pathname === '/sponsors' && 'nav-link-active'} mb-10 ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                className={`nav-link ${
+                  pathname === '/sponsors' && 'nav-link-active'
+                } mb-10 ${
+                  !startAnimation ? 'cursor-pointer hover:opacity-100' : ''
+                }`}
                 onClick={() => handleClick('/sponsors')}
               >
                 Sponsors
@@ -251,40 +287,48 @@ const Navbar = ({
           </div>
 
           {/* Navbar desktop */}
-          <div
-            className='flex fixed items-center right-8 font-sora pt-2 z-50 transition-all ease-in-out duration-300 top-6'
-          >
+          <div className='flex fixed items-center right-8 font-sora pt-2 z-50 transition-all ease-in-out duration-300 top-6'>
             <div
               className={`hidden lg:flex ${
                 darkTheme ? 'text-white' : 'text-black'
               }`}
             >
               <h4
-                className={`nav-link mr-8 ${pathname === '/' && 'nav-link-active'} ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                className={`nav-link mr-8 ${
+                  pathname === '/' && 'nav-link-active'
+                } ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/')}
               >
                 Home
               </h4>
               <h4
-                className={`nav-link mr-8 ${pathname === '/about' && 'nav-link-active'} ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                className={`nav-link mr-8 ${
+                  pathname === '/about' && 'nav-link-active'
+                } ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/about')}
               >
                 About Us
               </h4>
               <h4
-                className={`nav-link mr-8 ${pathname === '/timeline' && 'nav-link-active'} ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                className={`nav-link mr-8 ${
+                  pathname === '/timeline' && 'nav-link-active'
+                } ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/timeline')}
               >
                 Timeline
               </h4>
               <h4
-                className={`nav-link mr-8 ${pathname === '/faq' && 'nav-link-active'} ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                className={`nav-link mr-8 ${
+                  pathname === '/faq' && 'nav-link-active'
+                } ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/faq')}
               >
                 FAQ
               </h4>
               <h4
-                className={`nav-link ${pathname === '/sponsors' && 'nav-link-active'} ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                className={`nav-link ${
+                  pathname === '/sponsors' && 'nav-link-active'
+                } ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
                 onClick={() => handleClick('/sponsors')}
               >
                 Sponsors
@@ -307,9 +351,7 @@ const Navbar = ({
 
         {/* Discord button */}
         <a href='https://discord.com' target='_blank' rel='noopener noreferrer'>
-          <div
-            className='fixed items-center overflow-hidden flex w-14 h-14 z-50 hover:w-56 right-8 rounded transition-all duration-300 ease-in-out bottom-5'
-          >
+          <div className='fixed items-center overflow-hidden flex w-14 h-14 z-50 hover:w-56 right-8 rounded transition-all duration-300 ease-in-out bottom-5'>
             <img src={discord} alt='Discord' className='h-full' />
             <span className='h-1/2 border-l-2 border-white' />
             <h1 className='discord-bg font-sora whitespace-nowrap font-semibold ml-3 text-white w-52 h-full'>
