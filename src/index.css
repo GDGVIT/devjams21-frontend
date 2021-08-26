@@ -17,7 +17,7 @@
 }
 
 .content-container {
-  @apply grid gap-4 py-5 px-10 text-xs text-center sm:text-sm sm:text-left relative z-10;
+  @apply grid gap-4 py-5 px-7 text-xs text-center sm:text-sm sm:text-left relative z-10;
 }
 
 .grid-btn {
