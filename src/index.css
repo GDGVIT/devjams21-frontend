@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .nav-link {
-  @apply cursor-pointer text-2xl lg:text-xl z-30 font-bold opacity-50 hover:opacity-100;
+  @apply text-2xl lg:text-xl z-30 font-bold opacity-50;
 }
 
 .nav-link-active {
