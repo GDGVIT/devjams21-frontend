@@ -73,8 +73,3 @@
 .bottom-shadow {
   box-shadow: 0 5px 5px -5px #333;
 }
-
-.train {
-  position: absolute;
-  top: 63vh;
-}

@@ -161,7 +161,7 @@ const Navbar = ({
         )}
         <Train
           ref={trainRef}
-          className='animation-train w-120 train right-1/2 -z-40 transform md:translate-x-1/2'
+          className='animation-train absolute bottom-3/10 w-120 train right-1/2 -z-40 transform md:translate-x-1/2'
         />
       </div>
 
