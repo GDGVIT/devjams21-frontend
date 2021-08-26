@@ -17,18 +17,11 @@ export default function Home (props) {
     <>
       <DevJamsCard theme={theme} handleScroll={handleScroll} />
       <div
-        className={`${
+        className={`h-screen flex items-center ${
           props.darkTheme ? 'bg-jams_black' : 'bg-white'
-        } font-sora py-10`}
+        } font-sora pt-20`}
         ref={contentRef}
       >
-        <div
-          className={`${
-            props.darkTheme ? 'text-white' : 'text-black'
-          } text-2xl sm:text-3xl md:text-4xl my-5 sm:my-10 font-bold text-center`}
-        >
-          DevJams 2021
-        </div>
         <Events darkTheme={props.darkTheme} />
       </div>
     </>

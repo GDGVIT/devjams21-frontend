@@ -20,10 +20,10 @@ export default function Events (props) {
   return (
     <div
       ref={homeContainerRef}
-      className='sm:px-5 mt-10 mb-5 overflow-x-hidden'
+      className='sm:px-5 overflow-x-hidden'
     >
       <div className='w-screen overflow-x-auto overflow-y-hidden'>
-        <div className='inline-flex gap-x-10 pb-10 px-20'>
+        <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12'>
           <CurrentEventGrid event={events.knockathon} theme={theme}>
             <KnockathonsLogo className='w-52' />
           </CurrentEventGrid>
@@ -59,7 +59,7 @@ const DevJamsGrid = (props) => {
             <ChervonRight />
           </div>
         </div>
-        <div className='text-jams_red grid font-bold gap-y-1 place-items-center pt-10 lg:pt-5'>
+        <div className='text-jams_red grid font-bold gap-y-1 place-items-center pt-5'>
           <div className='text-base sm:text-lg lg:text-xl xl:text-2xl'>
             {dateRange}
           </div>
@@ -84,7 +84,7 @@ const CurrentEventGrid = (props) => {
 
   return (
     <div
-      className={`grid--${theme} register-grid--${theme} w-85 pt-8 relative shadow-md rounded-3xl overflow-hidden`}
+      className={`grid--${theme} register-grid--${theme} w-80 pt-6 relative shadow-md rounded-3xl overflow-hidden`}
     >
       <div className='content-container'>
         <div className='grid place-items-center gap-y-4'>
@@ -113,7 +113,7 @@ const ComingSoonGrid = (props) => {
 
   return (
     <div
-      className={`grid--${theme} coming-soon-grid--${theme} w-85 pt-8 relative shadow-md rounded-3xl overflow-hidden`}
+      className={`grid--${theme} coming-soon-grid--${theme} w-80 pt-6 relative shadow-md rounded-3xl overflow-hidden`}
     >
       <div className='content-container'>
         <div className='grid place-items-center gap-y-4'>
