@@ -62,7 +62,7 @@ const Navbar = ({
   }, [navbarMobileRef, setNavlinksOpen])
 
   const handleClick = (route) => {
-    if(!startAnimation) {
+    if (!startAnimation) {
       const dest = route
       const currentStation = pathname
       setNavlinksOpen(false)

@@ -18,6 +18,11 @@
   border-bottom: 1px solid #f3f3f3 !important;
 }
 
+.ac-header {
+  padding: 10px 25px !important;
+  width: 100%;
+}
+
 .faq #ac-0,
 .faq #ac-0 .ac-header {
   border-top-left-radius: 10px !important;
@@ -30,13 +35,8 @@
   border-bottom-right-radius: 10px !important;
 }
 
-.ac-header {
-  padding: 10px 25px !important;
-  width: 100%;
-}
-
 .ac .ac-trigger {
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Sora", sans-serif !important;
   font-weight: 600 !important;
 }
 
@@ -91,8 +91,8 @@
 }
 
 .ac .ac-panel .ac-text {
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 400 !important;
+  font-family: "Sora", sans-serif !important;
+  font-weight: 200 !important;
 }
 
 .text {
