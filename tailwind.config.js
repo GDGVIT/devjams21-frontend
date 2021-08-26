@@ -12,24 +12,12 @@ module.exports = {
         '-20': '-20',
         '-10': '-10'
       },
-      inset: {
-        '27/100': '27%',
-        '28/100': '28%',
-        '3/10': '30%'
-      },
       fontFamily: {
-        sora: ['Sora', 'sans-serif'],
-        circularStd: ['Circular Std Black', 'sans-serif']
+        sora: ['Sora', 'sans-serif']
       },
       colors: {
-        jams_purple_faded: '#EDEEFF',
-        jams_purple: '#4244B4',
         jams_red: '#FF5E55',
         jams_logo_blue: '#3B7DED'
-      },
-      gridAutoRows: {
-        10: '10px',
-        1: '1px'
       },
       width: {
         85: '360px',
