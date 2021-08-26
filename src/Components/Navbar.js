@@ -167,7 +167,7 @@ const Navbar = ({
 
       {/* Navbar */}
       <div
-        className={`fixed z-40 h-24 w-full ${navbarBg ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow` : ''} transition-all duration-300 ease-in-out`}
+        className={`fixed z-40 h-20 lg:h-24 w-full ${navbarBg ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow` : ''} transition-all duration-300 ease-in-out`}
       >
         {/* GDSC Logo */}
         <div>
@@ -189,7 +189,7 @@ const Navbar = ({
             {/* Hamburger */}
             <div
               onClick={handleNavbarOpen}
-              className='fixed left-8 z-40 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-300 cursor-pointer lg:invisible top-9'
+              className='fixed left-8 z-40 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-300 cursor-pointer lg:invisible top-7 lg:top-9'
             >
               <span
                 className={`h-1 w-full  rounded-lg ${

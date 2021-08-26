@@ -3,7 +3,7 @@ import Baner from '../Components/Baner'
 
 const SponsorCard = (props) => {
   return (
-    <div className='w-28 h-28 sm:w-40 sm:h-40 lg:w-56 lg:h-56 bg-white shadow-lg rounded-2xl' />
+    <div className='w-28 h-28 sm:w-36 sm:h-36 lg:w-56 lg:h-56 bg-white shadow-lg rounded-2xl' />
   )
 }
 
@@ -30,7 +30,7 @@ export default function Sponsors () {
             <SponsorCard />
             <SponsorCard />
           </div>
-          <button className='mx-auto block bg-blue-600 w-full lg:w-1/2 py-4 rounded-md text-white text-lg md:text-2xl font-semibold font-sora mb-8 mt-6 md:mt-0 md:mb-4'>Sponsor Us</button>
+          <button className='mx-auto block bg-blue-600 w-full lg:w-1/2 py-4 rounded-md text-white text-lg md:text-2xl font-semibold font-sora mb-8 mt-6 md:mt-0 md:mb-4 hover:bg-blue-800'>Sponsor Us</button>
         </div>
       </div>
     </div>
