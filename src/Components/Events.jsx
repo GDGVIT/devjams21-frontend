@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react'
-import { resizing } from '../Utils/MasonryLayout'
+import React, { useRef } from 'react'
 import events from '../Data/EventsData'
 import '../Styles/Components/Events.css'
 
@@ -17,42 +16,32 @@ export default function Events (props) {
   const homeContainerRef = useRef(null)
   const theme = props.darkTheme ? 'dark' : 'light'
 
-  useEffect(() => {
-    const { resizeGridItem } = resizing()
-    const masonrify = () => resizeGridItem(homeContainerRef.current)
-    window.addEventListener('resize', masonrify)
-
-    masonrify()
-
-    return () => {
-      window.removeEventListener('resize', masonrify)
-    }
-  }, [])
-
   // Add auto-rows-10 if you want grid masonry layout
   return (
     <div
       ref={homeContainerRef}
-      className='sm:px-5 mt-10 grid gap-4 gap-y-10 sm:grid-cols-2 xl:grid-cols-4 mb-10 auto-rows-10'
+      className='sm:px-5 mt-10 mb-5 overflow-x-hidden'
     >
-      <CurrentEventGrid event={events.knockathon} theme={theme}>
-        <KnockathonsLogo className='w-52' />
-      </CurrentEventGrid>
-      <ComingSoonGrid event={events.devtalks} theme={theme}>
-        <DevTalksLogo className='w-40' />
-      </ComingSoonGrid>
-      <ComingSoonGrid event={events.designzzz} theme={theme}>
-        <HexathonLogo className='w-36 my-3' />
-      </ComingSoonGrid>
-      <ComingSoonGrid event={events.ctf} theme={theme}>
-        <KnockathonsLogo className='w-52' />
-      </ComingSoonGrid>
+      <div className='w-screen overflow-x-auto overflow-y-hidden'>
+        <div className='inline-flex gap-x-10 pb-10 px-10'>
+          <CurrentEventGrid event={events.knockathon} theme={theme}>
+            <KnockathonsLogo className='w-52' />
+          </CurrentEventGrid>
+          <ComingSoonGrid event={events.devtalks} theme={theme}>
+            <DevTalksLogo className='w-40' />
+          </ComingSoonGrid>
+          <ComingSoonGrid event={events.designzzz} theme={theme}>
+            <HexathonLogo className='w-36 my-3' />
+          </ComingSoonGrid>
+          <ComingSoonGrid event={events.ctf} theme={theme}>
+            <KnockathonsLogo className='w-52' />
+          </ComingSoonGrid>
+        </div>
+      </div>
       <DevJamsGrid event={events.devjams} theme={theme} />
     </div>
   )
 }
-
-// Don't remove event class its not for CSS
 
 const DevJamsGrid = (props) => {
   const theme = props.theme
@@ -63,7 +52,7 @@ const DevJamsGrid = (props) => {
       className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} event col-span-full relative shadow-md sm:rounded-3xl overflow-hidden`}
     >
       <div className='grid md:grid-cols-2 place-items-center pt-5 sm:py-5 px-10 relative z-10'>
-        <div className=''>
+        <div>
           <DevJamsLogo className='w-48 md:w-60 h-auto my-5' />
           <div className='pb-6 flex justify-center md:justify-start gap-x-2 font-semibold items-center text-jams_logo_blue'>
             <span>Know More</span>
@@ -95,7 +84,7 @@ const CurrentEventGrid = (props) => {
 
   return (
     <div
-      className={`grid--${theme} register-grid--${theme} event pt-8 relative shadow-md sm:rounded-3xl overflow-hidden`}
+      className={`grid--${theme} register-grid--${theme} w-85 pt-8 relative shadow-md rounded-3xl overflow-hidden`}
     >
       <div className='content-container'>
         <div className='grid place-items-center gap-y-4'>
@@ -124,7 +113,7 @@ const ComingSoonGrid = (props) => {
 
   return (
     <div
-      className={`grid--${theme} coming-soon-grid--${theme} event pt-8 relative shadow-md sm:rounded-3xl overflow-hidden`}
+      className={`grid--${theme} coming-soon-grid--${theme} w-85 pt-8 relative shadow-md rounded-3xl overflow-hidden`}
     >
       <div className='content-container'>
         <div className='grid place-items-center gap-y-4'>

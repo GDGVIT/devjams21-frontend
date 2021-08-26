@@ -39,10 +39,13 @@ const DevJamsCard = (props) => {
   return (
     <div className='w-screen h-screen grid place-items-center relative bottom-20'>
       <div
-        className={`devjams-card--${props.theme} card-shadow grid place-items-center p-5 z-10 rounded-lg mx-5`}
+        className={`devjams-card--${props.theme} card-shadow grid place-items-center py-5 px-9 z-10 rounded-lg mx-5 transition-all duration-500 ease-in-out`}
       >
-        <DevJamsLogo className='w-full' />
-        <Mouse className={`w-5 mouse--${props.theme} cursor-pointer`} onClick={props.handleScroll} />
+        <DevJamsLogo className='w-48 md:w-60 lg:w-96' />
+        <Mouse
+          className={`w-5 sm:w-5 mouse--${props.theme} cursor-pointer`}
+          onClick={props.handleScroll}
+        />
       </div>
     </div>
   )
