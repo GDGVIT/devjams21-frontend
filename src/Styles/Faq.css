@@ -8,7 +8,7 @@
 }
 
 .accordion-container {
-  border-radius: 10px !important;
+  border-radius: 10px;
 }
 
 .faq .ac {
@@ -18,12 +18,14 @@
   border-bottom: 1px solid #f3f3f3 !important;
 }
 
-.faq #ac-0 {
+.faq #ac-0,
+.faq #ac-0 .ac-header {
   border-top-left-radius: 10px !important;
   border-top-right-radius: 10px !important;
 }
 
-.faq #ac-14 {
+.faq #ac-14,
+.faq #ac-14 .ac-header {
   border-bottom-left-radius: 10px !important;
   border-bottom-right-radius: 10px !important;
 }
