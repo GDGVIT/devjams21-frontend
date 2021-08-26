@@ -84,7 +84,7 @@ const CurrentEventGrid = (props) => {
 
   return (
     <div
-      className={`grid--${theme} register-grid--${theme} w-85 pt-8 relative shadow-md sm:rounded-3xl overflow-hidden`}
+      className={`grid--${theme} register-grid--${theme} w-85 pt-8 relative shadow-md rounded-3xl overflow-hidden`}
     >
       <div className='content-container'>
         <div className='grid place-items-center gap-y-4'>
@@ -113,7 +113,7 @@ const ComingSoonGrid = (props) => {
 
   return (
     <div
-      className={`grid--${theme} coming-soon-grid--${theme} w-85 pt-8 relative shadow-md sm:rounded-3xl overflow-hidden`}
+      className={`grid--${theme} coming-soon-grid--${theme} w-85 pt-8 relative shadow-md rounded-3xl overflow-hidden`}
     >
       <div className='content-container'>
         <div className='grid place-items-center gap-y-4'>
