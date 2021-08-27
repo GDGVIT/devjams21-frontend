@@ -17,7 +17,8 @@ module.exports = {
       },
       colors: {
         jams_red: '#FF5E55',
-        jams_logo_blue: '#3B7DED'
+        jams_logo_blue: '#3B7DED',
+        jams_dark_blue: '#1e1e38'
       },
       width: {
         85: '360px',
