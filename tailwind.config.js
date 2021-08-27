@@ -20,8 +20,10 @@ module.exports = {
         jams_logo_blue: '#3B7DED'
       },
       width: {
-        85: '360px',
         120: '40rem'
+      },
+      minWidth: {
+        80: '320px'
       }
     }
   },

@@ -7,6 +7,7 @@ import { ReactComponent as DevJamsLogo } from '../Assets/Logos/DevJams Logo.svg'
 import { ReactComponent as KnockathonsLogo } from '../Assets/Logos/Knockathons Logo.svg'
 import { ReactComponent as DevTalksLogo } from '../Assets/Logos/DevTalks Logo.svg'
 import { ReactComponent as HexathonLogo } from '../Assets/Logos/Hexathon Logo.svg'
+import Brochure from '../Assets/Brochure.pdf'
 // import { ReactComponent as CTFLogo } from "../Assets/Logos/CTF Logo.svg";
 
 // Devjams Grid SVGs
@@ -18,10 +19,7 @@ export default function Events (props) {
 
   // Add auto-rows-10 if you want grid masonry layout
   return (
-    <div
-      ref={homeContainerRef}
-      className='sm:px-5 overflow-x-hidden'
-    >
+    <div ref={homeContainerRef} className='overflow-x-hidden'>
       <div className='w-screen overflow-x-auto overflow-y-hidden'>
         <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12'>
           <CurrentEventGrid event={events.knockathon} theme={theme}>
@@ -47,14 +45,21 @@ const DevJamsGrid = (props) => {
   const theme = props.theme
   const { dateRange, month } = props.event
 
+  const openPdf = () => {
+    window.open(Brochure)
+  }
+
   return (
     <div
-      className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} mx-5 rounded-3xl relative shadow-md sm:rounded-3xl overflow-hidden`}
+      className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} sm:mx-5 mx-2 rounded-3xl relative shadow-md sm:rounded-3xl overflow-hidden`}
     >
       <div className='grid md:grid-cols-2 place-items-center pt-5 sm:py-5 px-10 relative z-10'>
         <div>
           <DevJamsLogo className='w-40 sm:w-72 h-auto my-5' />
-          <div className='pb-2 flex justify-center md:justify-start gap-x-2 font-semibold items-center text-jams_logo_blue'>
+          <div
+            onClick={openPdf}
+            className='pb-2 cursor-pointer flex justify-center md:justify-start gap-x-2 font-semibold items-center text-jams_logo_blue'
+          >
             <span>Know More</span>
             <ChervonRight />
           </div>
@@ -84,7 +89,7 @@ const CurrentEventGrid = (props) => {
 
   return (
     <div
-      className={`grid--${theme} register-grid--${theme} w-80 pt-6 relative shadow-md rounded-3xl overflow-hidden`}
+      className={`grid--${theme} register-grid--${theme} min-w-80 pt-6 relative shadow-md rounded-3xl overflow-hidden`}
     >
       <div className='content-container'>
         <div className='grid place-items-center gap-y-4'>
@@ -113,7 +118,7 @@ const ComingSoonGrid = (props) => {
 
   return (
     <div
-      className={`grid--${theme} coming-soon-grid--${theme} w-80 pt-6 relative shadow-md rounded-3xl overflow-hidden`}
+      className={`grid--${theme} coming-soon-grid--${theme} min-w-80 pt-6 relative shadow-md rounded-3xl overflow-hidden`}
     >
       <div className='content-container'>
         <div className='grid place-items-center gap-y-4'>

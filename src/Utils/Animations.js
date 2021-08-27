@@ -22,14 +22,6 @@ const mapStationToIndex = {
 
 const TOTAL_DURATION = 6000
 
-const subtractWidth = {
-  bg: 960,
-  city: 340,
-  grass: -1220,
-  train: -128,
-  trainPos: 64
-}
-
 // default values given
 const metrics = {
   totalSVGWidth: {
@@ -65,6 +57,9 @@ const pos = {
   }
 }
 
+// hardcoded value
+const subtractTrainPos = 64
+
 const animations = () => {
   const endPoints = {
     start: 0,
@@ -92,16 +87,14 @@ const animations = () => {
   }
 
   const findMetrics = (lengths) => {
-    x.train = lengths.trainPos - subtractWidth.trainPos
+    x.train = lengths.trainPos
 
     metrics.totalSVGWidth = {
       bg: Math.floor(lengths.bg),
       city: Math.floor(lengths.city),
       grass: Math.floor(lengths.grass),
-      train: lengths.train
+      train: lengths.train - subtractTrainPos
     }
-
-    console.log('initial lengths', lengths)
 
     metrics.stationToStationDistance = {
       bg: metrics.totalSVGWidth.bg / TOTAL_STATIONS,
@@ -220,17 +213,17 @@ const animations = () => {
         x.grass = Math.abs(Math.min(pos.set1.grass, pos.set2.grass))
 
         if (
-          x.bg >
+          x.bg >=
           metrics.totalSVGWidth.bg + metrics.stationToStationDistance.bg
         ) {
-          x.bg -= metrics.stationToStationDistance.bg
-          x.city -= metrics.stationToStationDistance.city
-          x.grass -= metrics.stationToStationDistance.grass
-
           // set 1 or 2 to shift
           const set = pos.set1.bg < pos.set2.bg ? 1 : 2
 
           translateSet(set)
+
+          x.bg -= metrics.stationToStationDistance.bg
+          x.city -= metrics.stationToStationDistance.city
+          x.grass -= metrics.stationToStationDistance.grass
         }
 
         resolve()
