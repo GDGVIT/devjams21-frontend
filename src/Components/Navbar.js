@@ -3,6 +3,7 @@ import { useLocation, useHistory } from 'react-router-dom'
 import { ReactComponent as GDSCLogoNight } from '../Assets/Logos/GDSC Logo Night.svg'
 import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg'
 // import { ReactComponent as GDSCLogoMobile } from '../Assets/Logos/GDSC Logo Mobile.svg'
+import GDSCLogoMobile from '../Assets/Logos/GDSC Logo Mobile.png'
 import { animations } from '../Utils/Animations'
 import { moveIntoView } from '../Utils/Scroll'
 
@@ -180,7 +181,6 @@ const Navbar = ({
           className='animation-train absolute bottom-3/10 w-120 train right-1/2 -z-40 transform md:translate-x-1/2'
         />
       </div>
-
       {/* Navbar */}
       <div
         className={`fixed z-40 h-20 lg:h-24 w-full ${
@@ -342,13 +342,6 @@ const Navbar = ({
           </div>
         </div>
 
-        {/* <div className={`sticky visible lg:invisible w-1/2 md:w-1/4 h-24 md:h-24 z-30 left-28 md:left-1/3 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out  ${
-            startAnimation ? '-bottom-48' : '-bottom-2'
-          }`}
-        >
-          <img src={GDSCLogoMobile} alt='logo mobile' />
-        </div> */}
-
         {/* Discord button */}
         <a href='https://discord.com' target='_blank' rel='noopener noreferrer'>
           <div className='fixed items-center overflow-hidden flex w-14 h-14 z-50 hover:w-56 right-8 rounded transition-all duration-300 ease-in-out bottom-5'>
@@ -359,6 +352,9 @@ const Navbar = ({
             </h1>
           </div>
         </a>
+      </div>
+      <div className={`absolute -bottom-2 visible lg:invisible w-1/2 left-1/4 md:left-1/3 md:w-1/3 h-24 md:h-32 z-30 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out`}>
+        <img src={GDSCLogoMobile} alt='Logo mobile' className='w-full' />
       </div>
     </>
   )

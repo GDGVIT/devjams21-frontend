@@ -17,7 +17,7 @@
   width: 80vw;
   margin: 0 !important;
   align-items: flex-start;
-  background-color: #fbfbff !important;
+  background-color: #ffffff !important;
   border-bottom: 1px solid #fbfbff !important;
 }
 
@@ -113,7 +113,7 @@
 }
 
 .ac.blue .ac-panel {
-  background-color: #afd7f1 !important;
+  background-color: #a3daff !important;
 }
 
 .ac.red .ac-panel {

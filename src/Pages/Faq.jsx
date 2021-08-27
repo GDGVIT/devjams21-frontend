@@ -6,7 +6,7 @@ import Baner from '../Components/Baner'
 const Accordian = ({ color, question, answer, darkTheme }) => {
   return (
     <div className={`ac ${color}`}>
-      <h2 className={`ac-header ${!darkTheme ? 'bg-jams_dark_blue' : ''}`}>
+      <h2 className={`ac-header ${darkTheme ? 'bg-jams_dark_blue' : ''}`}>
         <button className='ac-trigger font-sora md:text-lg'>{question}</button>
       </h2>
       <div className='ac-panel h-28'>
@@ -35,7 +35,10 @@ export default function Faq (props) {
   return (
     <div className='absolute'>
       <Baner title='FAQ' color='#2BA24C' handleScroll={handleScroll} />
-      <div className={`faq ${!props.darkTheme ? 'dark' : ''} font-sora pt-28`} ref={accordionRef}>
+      <div>
+        
+      </div>
+      <div className={`faq ${props.darkTheme ? 'dark' : ''} font-sora pt-28`} ref={accordionRef}>
         <Accordian
           color='blue'
           question='Do I need to pay any money to register for the Hackathon?'
