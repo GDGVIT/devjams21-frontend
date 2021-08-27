@@ -35,9 +35,7 @@ export default function Faq (props) {
   return (
     <div className='absolute'>
       <Baner title='FAQ' color='#2BA24C' handleScroll={handleScroll} />
-      <div>
-        
-      </div>
+      <div />
       <div className={`faq ${props.darkTheme ? 'dark' : ''} font-sora pt-28`} ref={accordionRef}>
         <Accordian
           color='blue'

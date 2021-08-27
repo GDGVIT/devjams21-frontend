@@ -24,9 +24,8 @@ export default function About (props) {
             </h2>
             <p className='text-sm leading-relaxed text-justify mb-3 xl:text-lg 2xl:text-xl'>
               DevJams is one of a kind hackathon conducted by Google Developer Student Clubs VIT every year to encourage tech enthusiasts from across the country to develop their ideas for the future.
-              The hackathon focuses on providing students and upcoming entrepreneurs with a platform to develop, compete, network and present their ideas to solve real-world problems.
-              We have been successfully conducting DevJams (previously known as Devfest) for 5 years now.
-              DevJams’21 will be the sixth edition through which we hope to bring innovative minds from all around the country under one banner.
+              The hackathon focuses on providing students and upcoming entrepreneurs with a platform to develop, compete, network and present their ideas to solve real-world problems. We have been successfully conducting DevJams (previously known as Devfest) for 5 years now.
+              DevJams’21 will be the sixth edition through which we hope to bring innovative minds from all around the globe under one banner.
             </p>
           </div>
           <Devjams className='h-56 md:h-auto md:col-span-6 md:mt-8 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9' />
@@ -38,9 +37,9 @@ export default function About (props) {
               GDSC Vit, Vellore
             </h2>
             <p className='text-sm leading-relaxed text-justify xl:text-lg 2xl:text-xl'>
-              GDSC VIT powered by Google Developers is a student community at VIT Vellore.
+              GDSC VIT powered by Google Developers is a student community at VIT, Vellore.
               We strive to bring about technological innovations among students and we do so by providing a platform for them to exhibit their talents.
-              We are a group of passionate designers, developers and managers who work together to bring about collaborative results that better the lives of everyone around us.
+              We are a group of passionate designers, developers, and managers who work together to bring about collaborative results that better the lives of everyone around us.
             </p>
           </div>
           <Gdsc className='h-56 md:h-auto md:col-span-6 md:mt-8 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9' />
@@ -52,9 +51,9 @@ export default function About (props) {
               Vellore Institute of Technology , Vellore
             </h2>
             <p className='text-sm leading-relaxed text-justify xl:text-lg 2xl:text-xl'>
-              Vellore Institute of Technology, Vellore VIT, Vellore is one of the top-rated engineering colleges in India.
-              Diversity is the strongest aspect of the institute and the students from various states and nations, the key to its reputation.
-              The university works on ideas and executes tasks of different domains under Clubs and Chapters.
+              Vellore Institute of Technology, Vellore founded in 1984 is one of the largest and top-rated engineering colleges in India.
+              It is a highly diverse campus with students from all around the globe. Its aspiring and dedicated students are the key to its reputation.
+              The global standards set at VIT in the field of teaching and research spur us on in our relentless pursuit of excellence.
             </p>
           </div>
           <Vit className='h-56 md:h-auto md:col-span-6 w-full md:mt-10 mx-auto lg:col-span-3 lg:w-11/12 lg:my-auto lg:ml-9' />
