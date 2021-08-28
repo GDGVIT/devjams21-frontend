@@ -253,8 +253,8 @@ const Navbar = ({
         <a href='https://discord.com' target='_blank' rel='noopener noreferrer'>
           <div className='fixed items-center overflow-hidden flex w-14 h-14 z-50 hover:w-56 right-6 rounded transition-all duration-300 ease-in-out bottom-5'>
             <Discord className='h-full' />
-            <span className={`h-1/2 border-l-2 ${darkTheme ? 'border-blue-900' : 'border-white'}`} />
-            <h1 className={`discord-bg--${darkTheme ? 'dark' : 'light'} font-sora whitespace-nowrap font-semibold ml-3 ${darkTheme ? 'text-blue-900' : 'text-white'} w-52 h-full`}>
+            <span className={`h-1/2 border-l-2 ${darkTheme ? 'border-discord_violet' : 'border-white'}`} />
+            <h1 className={`discord-bg--${darkTheme ? 'dark' : 'light'} font-sora whitespace-nowrap font-semibold ml-3 ${darkTheme ? 'text-discord_violet' : 'text-discord_white'} w-52 h-full`}>
               Join our Discord
             </h1>
           </div>
