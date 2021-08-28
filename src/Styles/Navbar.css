@@ -43,11 +43,12 @@
   height: 100%;
 }
 
-.discord-bg {
+.discord-bg--light,
+.discord-bg--dark {
   line-height: 56px;
 }
 
-.discord-bg::before {
+.discord-bg--light::before {
   content: "";
   background-color: #16387f;
   top: 0;
@@ -58,9 +59,32 @@
   z-index: -1;
 }
 
-.discord-bg::after {
+.discord-bg--light::after {
   content: "";
   background-color: #16387f;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.discord-bg--dark::before {
+  content: "";
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.discord-bg--dark::after {
+  content: "";
+  background-color: #fff;
   opacity: 0.4;
   top: 0;
   left: 0;

@@ -5,10 +5,8 @@ import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg
 import GDSCLogoMobile from '../Assets/Logos/GDSC Logo Mobile.png'
 import { animations } from '../Utils/Animations'
 import { moveIntoView } from '../Utils/Scroll'
-
-import discord from '../Assets/Discord.svg'
-
 import '../Styles/Navbar.css'
+import Discord from '../Assets/Discord'
 
 const Navbar = ({
   darkTheme,
@@ -253,16 +251,16 @@ const Navbar = ({
 
         {/* Discord button */}
         <a href='https://discord.com' target='_blank' rel='noopener noreferrer'>
-          <div className='fixed items-center overflow-hidden flex w-14 h-14 z-50 hover:w-56 right-8 rounded transition-all duration-300 ease-in-out bottom-5'>
-            <img src={discord} alt='Discord' className='h-full' />
-            <span className='h-1/2 border-l-2 border-white' />
-            <h1 className='discord-bg font-sora whitespace-nowrap font-semibold ml-3 text-white w-52 h-full'>
+          <div className='fixed items-center overflow-hidden flex w-14 h-14 z-50 hover:w-56 right-6 rounded transition-all duration-300 ease-in-out bottom-5'>
+            <Discord className='h-full' />
+            <span className={`h-1/2 border-l-2 ${darkTheme ? 'border-blue-900' : 'border-white'}`} />
+            <h1 className={`discord-bg--${darkTheme ? 'dark' : 'light'} font-sora whitespace-nowrap font-semibold ml-3 ${darkTheme ? 'text-blue-900' : 'text-white'} w-52 h-full`}>
               Join our Discord
             </h1>
           </div>
         </a>
       </div>
-      <div className='absolute -bottom-2 visible lg:invisible w-1/2 left-1/4 md:left-1/3 md:w-1/3 h-24 md:h-32 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out'>
+      <div className='absolute -bottom-2 z-30 visible lg:invisible w-1/2 left-1/4 md:left-1/3 md:w-1/3 h-24 md:h-32 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out'>
         <img src={GDSCLogoMobile} alt='Logo mobile' className='w-full' />
       </div>
     </>
