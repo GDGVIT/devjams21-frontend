@@ -60,13 +60,13 @@ const pos = {
 // hardcoded value
 const subtractTrainPos = 64
 
+let distanceToTravel = 0
+
 const animations = () => {
   const endPoints = {
     start: 0,
     end: TOTAL_STATIONS
   }
-
-  let distanceToTravel = 0
 
   const translateSet = (set) => {
     if (set === 1) {
@@ -114,89 +114,82 @@ const animations = () => {
     anime.set(ANIMATION_SET2.grass, { translateX: () => pos.set2.grass })
   }
 
-  const animationSequences = () => {
-    const move = async () => {
-      const moveByDistance = {
-        bg: distanceToTravel * metrics.stationToStationDistance.bg * -1,
-        city: distanceToTravel * metrics.stationToStationDistance.city * -1,
-        grass: distanceToTravel * metrics.stationToStationDistance.grass * -1
-      }
-      setBeforeAnimating()
-
-      const bg1Shift = anime({
-        targets: ANIMATION_SET1.bg,
-        translateX: [pos.set1.bg, pos.set1.bg + moveByDistance.bg],
-        complete: () => {
-          pos.set1.bg += moveByDistance.bg
-        },
-        duration: TOTAL_DURATION,
-        easing: 'easeInOutQuad'
-      }).finished
-
-      const bg2Shift = anime({
-        targets: ANIMATION_SET2.bg,
-        translateX: [pos.set2.bg, pos.set2.bg + moveByDistance.bg],
-        complete: () => {
-          pos.set2.bg += moveByDistance.bg
-        },
-        duration: TOTAL_DURATION,
-        easing: 'easeInOutQuad'
-      }).finished
-
-      const city1Shift = anime({
-        targets: ANIMATION_SET1.city,
-        translateX: [pos.set1.city, pos.set1.city + moveByDistance.city],
-        complete: () => (pos.set1.city += moveByDistance.city),
-        duration: TOTAL_DURATION,
-        easing: 'easeInOutQuad'
-      }).finished
-
-      const city2Shift = anime({
-        targets: ANIMATION_SET2.city,
-        translateX: [pos.set2.city, pos.set2.city + moveByDistance.city],
-        complete: () => (pos.set2.city += moveByDistance.city),
-        duration: TOTAL_DURATION,
-        easing: 'easeInOutQuad'
-      }).finished
-
-      const grass1Shift = anime({
-        targets: ANIMATION_SET1.grass,
-        translateX: [pos.set1.grass, pos.set1.grass + moveByDistance.grass],
-        complete: () => (pos.set1.grass += moveByDistance.grass),
-        duration: TOTAL_DURATION,
-        easing: 'easeInOutQuad'
-      }).finished
-
-      const grass2Shift = anime({
-        targets: ANIMATION_SET2.grass,
-        translateX: [pos.set2.grass, pos.set2.grass + moveByDistance.grass],
-        complete: () => (pos.set2.grass += moveByDistance.grass),
-        duration: TOTAL_DURATION,
-        easing: 'easeInOutQuad'
-      }).finished
-
-      await Promise.all([
-        bg1Shift,
-        bg2Shift,
-        city1Shift,
-        city2Shift,
-        grass1Shift,
-        grass2Shift
-      ])
+  const move = async () => {
+    const moveByDistance = {
+      bg: distanceToTravel * metrics.stationToStationDistance.bg * -1,
+      city: distanceToTravel * metrics.stationToStationDistance.city * -1,
+      grass: distanceToTravel * metrics.stationToStationDistance.grass * -1
     }
+    setBeforeAnimating()
 
-    return { move }
+    const bg1Shift = anime({
+      targets: ANIMATION_SET1.bg,
+      translateX: [pos.set1.bg, pos.set1.bg + moveByDistance.bg],
+      complete: () => {
+        pos.set1.bg += moveByDistance.bg
+      },
+      duration: TOTAL_DURATION,
+      easing: 'easeInOutQuad'
+    }).finished
+
+    const bg2Shift = anime({
+      targets: ANIMATION_SET2.bg,
+      translateX: [pos.set2.bg, pos.set2.bg + moveByDistance.bg],
+      complete: () => {
+        pos.set2.bg += moveByDistance.bg
+      },
+      duration: TOTAL_DURATION,
+      easing: 'easeInOutQuad'
+    }).finished
+
+    const city1Shift = anime({
+      targets: ANIMATION_SET1.city,
+      translateX: [pos.set1.city, pos.set1.city + moveByDistance.city],
+      complete: () => (pos.set1.city += moveByDistance.city),
+      duration: TOTAL_DURATION,
+      easing: 'easeInOutQuad'
+    }).finished
+
+    const city2Shift = anime({
+      targets: ANIMATION_SET2.city,
+      translateX: [pos.set2.city, pos.set2.city + moveByDistance.city],
+      complete: () => (pos.set2.city += moveByDistance.city),
+      duration: TOTAL_DURATION,
+      easing: 'easeInOutQuad'
+    }).finished
+
+    const grass1Shift = anime({
+      targets: ANIMATION_SET1.grass,
+      translateX: [pos.set1.grass, pos.set1.grass + moveByDistance.grass],
+      complete: () => (pos.set1.grass += moveByDistance.grass),
+      duration: TOTAL_DURATION,
+      easing: 'easeInOutQuad'
+    }).finished
+
+    const grass2Shift = anime({
+      targets: ANIMATION_SET2.grass,
+      translateX: [pos.set2.grass, pos.set2.grass + moveByDistance.grass],
+      complete: () => (pos.set2.grass += moveByDistance.grass),
+      duration: TOTAL_DURATION,
+      easing: 'easeInOutQuad'
+    }).finished
+
+    await Promise.all([
+      bg1Shift,
+      bg2Shift,
+      city1Shift,
+      city2Shift,
+      grass1Shift,
+      grass2Shift
+    ])
   }
 
   const identifyCurrentLocation = async (current) => {
     distanceToTravel = mapStationToIndex[current]
-    const { move } = animationSequences()
     await move()
   }
 
   const trainAnimation = (current, dest) => {
-    const { move } = animationSequences()
-
     endPoints.start = mapStationToIndex[current]
     endPoints.end = mapStationToIndex[dest]
 
