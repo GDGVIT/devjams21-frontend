@@ -21,7 +21,7 @@ export default function Events (props) {
   return (
     <div ref={homeContainerRef} className='overflow-x-hidden'>
       <div className='w-screen overflow-x-auto overflow-y-hidden'>
-        <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12'>
+        <div className='inline-flex gap-x-10 pb-10 mx-5'>
           <CurrentEventGrid event={events.knockathon} theme={theme}>
             <KnockathonsLogo className='w-52' />
           </CurrentEventGrid>
