@@ -6,18 +6,7 @@ import GDSCLogoMobile from '../Assets/Logos/GDSC Logo Mobile.png'
 import { animations } from '../Utils/Animations'
 import { moveIntoView } from '../Utils/Scroll'
 
-import { ReactComponent as Train } from '../Assets/TrainAnimations/Train.svg'
 import discord from '../Assets/Discord.svg'
-
-// Light
-import { ReactComponent as DayBg } from '../Assets/TrainAnimations/Day/DayBg.svg'
-import { ReactComponent as DayCityAndLightHouse } from '../Assets/TrainAnimations/Day/CityLightHouse.svg'
-import { ReactComponent as DayGrassAndTrees } from '../Assets/TrainAnimations/Day/GrassAndTrees.svg'
-
-// Dark
-import { ReactComponent as MoonBg } from '../Assets/TrainAnimations/Night/MoonBg.svg'
-import { ReactComponent as NightCityAndLightHouse } from '../Assets/TrainAnimations/Night/CityLighthouse.svg'
-import { ReactComponent as NightGrassAndTrees } from '../Assets/TrainAnimations/Night/GrassAndTrees.svg'
 
 import '../Styles/Navbar.css'
 
@@ -30,24 +19,16 @@ const Navbar = ({
   const location = useLocation()
   const history = useHistory()
 
+  const pathname = location.pathname
+
   const [startAnimation, setStartAnimation] = useState(false)
   const [navbarBg, setNavbarBg] = useState(false)
-  const [metrics, setMetrics] = useState(null)
-
-  const bgRef1 = useRef(null)
-  const cityRef1 = useRef(null)
-  const grassRef1 = useRef(null)
-  const bgRef2 = useRef(null)
-  const cityRef2 = useRef(null)
-  const grassRef2 = useRef(null)
-  const trainRef = useRef(null)
-
   const navbarMobileRef = useRef(null)
-
-  const pathname = location.pathname
 
   // route we should go to
   const [destination, setDestination] = useState(pathname)
+
+  console.log(destination)
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -87,27 +68,6 @@ const Navbar = ({
   })
 
   useEffect(() => {
-    const { findMetrics } = animations()
-
-    const lengths = {
-      bg: bgRef1.current.getBoundingClientRect().width,
-      city: cityRef1.current.getBoundingClientRect().width,
-      grass: grassRef1.current.getBoundingClientRect().width,
-      trainPos: trainRef.current.getBoundingClientRect().x,
-      train: trainRef.current.getBoundingClientRect().width
-    }
-    findMetrics(lengths)
-    setMetrics(lengths)
-  }, []); //eslint-disable-line
-
-  useEffect(() => {
-    if (metrics) {
-      const { identifyCurrentLocation } = animations()
-      identifyCurrentLocation(destination)
-    }
-  }, [metrics]); //eslint-disable-line
-
-  useEffect(() => {
     if (startAnimation) {
       const { trainAnimation } = animations()
 
@@ -130,56 +90,6 @@ const Navbar = ({
 
   return (
     <>
-      <div className='h-screen w-screen fixed overflow-hidden'>
-        {darkTheme && ( // dark
-          <div>
-            <MoonBg ref={bgRef1} className='animate-obj animation-bg-1 -z-50' />
-            <MoonBg ref={bgRef2} className='animate-obj animation-bg-2 -z-50' />
-            <NightCityAndLightHouse
-              ref={cityRef1}
-              className='animate-obj animation-city-1 -z-40'
-            />
-            <NightCityAndLightHouse
-              ref={cityRef2}
-              className='animate-obj animation-city-2 -z-40'
-            />
-            <NightGrassAndTrees
-              ref={grassRef1}
-              className='animate-obj animation-grass-1 -z-30'
-            />
-            <NightGrassAndTrees
-              ref={grassRef2}
-              className='animate-obj animation-grass-2 -z-30'
-            />
-          </div>
-        )}
-        {!darkTheme && (
-          <div>
-            <DayBg ref={bgRef1} className='animate-obj animation-bg-1 -z-50' />
-            <DayBg ref={bgRef2} className='animate-obj animation-bg-2 -z-50' />
-            <DayCityAndLightHouse
-              ref={cityRef1}
-              className='animate-obj animation-city-1 -z-40'
-            />
-            <DayCityAndLightHouse
-              ref={cityRef2}
-              className='animate-obj animation-city-2 -z-40'
-            />
-            <DayGrassAndTrees
-              ref={grassRef1}
-              className='animate-obj animation-grass-1 -z-30'
-            />
-            <DayGrassAndTrees
-              ref={grassRef2}
-              className='animate-obj animation-grass-2 -z-30'
-            />
-          </div>
-        )}
-        <Train
-          ref={trainRef}
-          className='animation-train absolute bottom-3/10 w-120 train right-1/2 -z-40 transform md:translate-x-1/2'
-        />
-      </div>
       {/* Navbar */}
       <div
         className={`fixed z-40 h-16 lg:h-20 w-full ${

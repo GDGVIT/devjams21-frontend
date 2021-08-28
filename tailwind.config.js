@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       zIndex: {
         60: '60',
+        '-60': '-60',
         '-50': '-50',
         '-40': '-40',
         '-30': '-30',
@@ -21,8 +22,10 @@ module.exports = {
         jams_dark_blue: '#1e1e38'
       },
       width: {
-        85: '360px',
         120: '40rem'
+      },
+      minWidth: {
+        80: '320px'
       }
     }
   },
