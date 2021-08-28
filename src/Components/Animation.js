@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 // Light
 import { ReactComponent as Sun } from '../Assets/TrainAnimations/Day/Sun.svg'
 import { ReactComponent as DayBg } from '../Assets/TrainAnimations/Day/DayBg.svg'
-import { ReactComponent as DayCityAndLightHouse } from '../Assets/TrainAnimations/Day/CityLighthouse.svg'
+import { ReactComponent as DayCityAndLightHouse } from '../Assets/TrainAnimations/Day/CityLightHouse.svg'
 import { ReactComponent as DayGrassAndTrees } from '../Assets/TrainAnimations/Day/GrassAndTrees.svg'
 
 // Dark
