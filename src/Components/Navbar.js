@@ -182,19 +182,19 @@ const Navbar = ({
       </div>
       {/* Navbar */}
       <div
-        className={`fixed z-40 h-20 lg:h-24 w-full ${
+        className={`fixed z-40 h-16 lg:h-20 w-full ${
           navbarBg
             ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow`
             : ''
         } transition-all duration-300 ease-in-out`}
       >
         {/* GDSC Logo */}
-        <div>
+        <div className='hidden lg:block'>
           {darkTheme && (
-            <GDSCLogoNight className='w-96 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 top-4' />
+            <GDSCLogoNight className='w-72 invisible hidden lg:visible lg:absolute z-50 left-6 transition-all ease-in-out duration-300 top-5' />
           )}
           {!darkTheme && (
-            <GDSCLogoDay className='w-72 invisible lg:visible lg:absolute z-50 left-8 transition-all ease-in-out duration-300 -top-3' />
+            <GDSCLogoDay className='w-72 invisible lg:visible lg:absolute z-50 left-6 transition-all ease-in-out duration-300 top-5' />
           )}
         </div>
 
@@ -204,7 +204,7 @@ const Navbar = ({
             {/* Hamburger */}
             <div
               onClick={handleNavbarOpen}
-              className='fixed left-8 z-40 flex flex-col justify-between w-8 h-5 transition-all ease-in-out duration-300 cursor-pointer lg:invisible top-7 lg:top-9'
+              className='z-40 flex flex-col mt-5 ml-5 justify-between w-8 h-5 transition-all ease-in-out duration-300 cursor-pointer lg:invisible'
             >
               <span
                 className={`h-1 w-full  rounded-lg ${
@@ -286,7 +286,7 @@ const Navbar = ({
           </div>
 
           {/* Navbar desktop */}
-          <div className='flex fixed items-center right-8 font-sora pt-2 z-50 transition-all ease-in-out duration-300 top-6'>
+          <div className='flex fixed items-center right-8 font-sora z-50 transition-all ease-in-out duration-300 top-6'>
             <div
               className={`hidden lg:flex ${
                 darkTheme ? 'text-white' : 'text-black'
