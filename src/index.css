@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .nav-link {
-  @apply text-2xl lg:text-xl z-30 font-bold opacity-50;
+  @apply text-xl lg:text-lg z-30 font-bold opacity-50;
 }
 
 .nav-link-active {

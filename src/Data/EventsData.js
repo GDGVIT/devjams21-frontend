@@ -13,7 +13,7 @@ const events = {
     name: 'Knockathons 21',
     date: '27th - 28th Aug 2021',
     content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero odit praesentium facilis non placeat nisi inventore sapiente nulla alias dolores',
+      'Have what it takes to be a winner? Team up with your friends to solve an innovative problem and pitch your ideas while competing against other teams to come out on top!',
     // bgColor: "rgba(24, 26, 175, 0.17)",
     // borderColor: "#1F1F1F",
     classname: 'knockathon-grid',
@@ -23,7 +23,7 @@ const events = {
     name: 'DevTalks 21',
     date: '25th Sep 2021',
     content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit est nobis ad neque culpa, temporibus vitae dolorem asperiores consequatur placeat!',
+      'Interact and meet with a few of the most prestigious and renowned figures in the ever-changing tech industry!',
     // borderColor: "#E3E3FF",
     // bgColor: "rgba(216, 61, 52, 0.06)",
     classname: 'devtalks-grid',
@@ -33,7 +33,7 @@ const events = {
     name: 'CTF 21',
     date: '2nd - 3rd Oct 2021',
     content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi veritatis asperiores dicta eius dolorum dolore earum et! Hic, dignissimos ipsam?',
+      'A 24 hour jeopardy style CTF, ranging to five different domains, namely, web, forensics, cryptography, OSINT and miscellaneous!',
     // bgColor: "rgba(76, 137, 255, 0.08)",
     // borderColor: "#1F1F1F",
     classname: 'ctf-grid',
@@ -43,7 +43,7 @@ const events = {
     name: 'Designzzz',
     date: '10th Oct 2021',
     content:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, consequuntur deleniti! Natus quo dolores est, consequuntur perspiciatis dolore quidem aliquam.',
+      'Channel your inner passion and creativity to create innovative and ingenious design solutions to current problems and win exciting prizes!',
     // bgColor: "rgba(0, 91, 56, 0.1)",
     // borderColor: "#1F1F1F",
     classname: 'designzzz-grid',
