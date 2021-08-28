@@ -260,7 +260,9 @@ const Navbar = ({
           </div>
         </a>
       </div>
-      <div className='absolute -bottom-2 z-30 visible lg:invisible w-1/2 left-1/4 md:left-1/3 md:w-1/3 h-24 md:h-32 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out'>
+
+      {/* GDSC Mobile */}
+      <div className={`absolute -bottom-2 ${window.scrollY > 0 ? '-left-2/4 md:-left-2/3' : 'left-1/4 md:left-1/3'}  z-30 visible lg:invisible w-1/2 md:w-1/3 h-24 md:h-32 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out`}>
         <img src={GDSCLogoMobile} alt='Logo mobile' className='w-full' />
       </div>
     </>
