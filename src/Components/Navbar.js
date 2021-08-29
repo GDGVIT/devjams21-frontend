@@ -28,8 +28,6 @@ const Navbar = ({
   // route we should go to
   const [destination, setDestination] = useState(pathname)
 
-  console.log(destination)
-
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
