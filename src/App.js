@@ -1,25 +1,25 @@
-import React, { useState } from "react";
-import "./App.css";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import About from "./Pages/About.jsx";
-import Timeline from "./Pages/Timeline";
-import Sponsors from "./Pages/Sponsors";
-import Faq from "./Pages/Faq";
-import Home from "./Pages/Home";
-import Animation from "./Components/Animation";
-import Contact from "./Components/Contact";
+import React, { useState } from 'react'
+import './App.css'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import Navbar from './Components/Navbar'
+import About from './Pages/About.jsx'
+import Timeline from './Pages/Timeline'
+import Sponsors from './Pages/Sponsors'
+import Faq from './Pages/Faq'
+import Home from './Pages/Home'
+import Animation from './Components/Animation'
+import Contact from './Components/Contact'
 
-function App() {
-  const [bodyRender, setBodyRender] = useState(true);
-  const [navlinksOpen, setNavlinksOpen] = useState(false);
+function App () {
+  const [bodyRender, setBodyRender] = useState(true)
+  const [navlinksOpen, setNavlinksOpen] = useState(false)
 
-  const date = new Date();
-  const time = date.getHours();
-  const darkTheme = !(time > 5 && time < 18);
+  const date = new Date()
+  const time = date.getHours()
+  const darkTheme = !(time > 5 && time < 18)
 
   return (
-    <div className="App">
+    <div className='App'>
       <BrowserRouter>
         <Navbar
           setBodyRender={setBodyRender}
@@ -28,42 +28,42 @@ function App() {
           setNavlinksOpen={setNavlinksOpen}
         />
         {navlinksOpen && (
-          <div className="bg-white fixed top-0 left-0 opacity-50 z-30 w-screen h-full transition-all ease-in-out duration-300" />
+          <div className='bg-white fixed top-0 left-0 opacity-50 z-30 w-screen h-full transition-all ease-in-out duration-300' />
         )}
         <Animation darkTheme={darkTheme} />
         {bodyRender && (
           <Switch>
             <Route
               exact
-              path="/"
+              path='/'
               component={() => <Home darkTheme={darkTheme} />}
             />
             <Route
               exact
-              path="/timeline"
+              path='/timeline'
               component={() => <Timeline darkTheme={darkTheme} />}
             />
             <Route
               exact
-              path="/sponsors"
+              path='/sponsors'
               component={() => <Sponsors darkTheme={darkTheme} />}
             />
             <Route
               exact
-              path="/faq"
+              path='/faq'
               component={() => <Faq darkTheme={darkTheme} />}
             />
             <Route
               exact
-              path="/about"
+              path='/about'
               component={() => <About darkTheme={darkTheme} />}
             />
-            <Redirect to="/" />
+            <Redirect to='/' />
           </Switch>
         )}
       </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
