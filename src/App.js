@@ -8,7 +8,6 @@ import Sponsors from './Pages/Sponsors'
 import Faq from './Pages/Faq'
 import Home from './Pages/Home'
 import Animation from './Components/Animation'
-import Contact from './Components/Contact'
 
 function App () {
   const [bodyRender, setBodyRender] = useState(true)

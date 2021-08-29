@@ -1,5 +1,4 @@
 import { ReactComponent as YouTube } from '../Assets/SocialMedia/YouTube.svg'
-import { ReactComponent as Behance } from '../Assets/SocialMedia/Behance.svg'
 import { ReactComponent as Facebook } from '../Assets/SocialMedia/Facebook.svg'
 import { ReactComponent as Github } from '../Assets/SocialMedia/Github.svg'
 import { ReactComponent as Instagram } from '../Assets/SocialMedia/Instagram.svg'
