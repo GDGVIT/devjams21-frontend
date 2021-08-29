@@ -106,7 +106,7 @@ const Navbar = ({
         {/* GDSC Logo */}
         <div className='hidden lg:block'>
           {darkTheme && (
-            <GDSCLogoNight className='w-72 invisible hidden lg:visible lg:absolute z-50 left-6 transition-all ease-in-out duration-300 top-5' />
+            <GDSCLogoNight className='w-72 invisible lg:visible lg:absolute z-50 left-6 transition-all ease-in-out duration-300 top-5' />
           )}
           {!darkTheme && (
             <GDSCLogoDay className='w-72 invisible lg:visible lg:absolute z-50 left-6 transition-all ease-in-out duration-300 top-5' />
