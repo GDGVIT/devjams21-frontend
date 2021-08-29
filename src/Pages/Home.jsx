@@ -17,10 +17,7 @@ export default function Home (props) {
   return (
     <div className='absolute'>
       <DevJamsCard theme={theme} handleScroll={handleScroll} />
-      <div
-        className='h-screen flex items-center font-sora pt-20'
-        ref={contentRef}
-      >
+      <div className='flex items-center font-sora pt-20' ref={contentRef}>
         <Events darkTheme={props.darkTheme} />
       </div>
       <Contact darkTheme={props.darkTheme} />

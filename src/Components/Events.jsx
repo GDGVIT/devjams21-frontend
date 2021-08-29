@@ -20,7 +20,7 @@ export default function Events (props) {
   // Add auto-rows-10 if you want grid masonry layout
   return (
     <div ref={homeContainerRef} className='overflow-x-hidden'>
-      <div className='w-screen overflow-x-auto overflow-y-hidden'>
+      <div className='cards w-screen overflow-x-auto overflow-y-hidden'>
         <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12 2xl:flex 2xl:justify-around'>
           <ComingSoonGrid event={events.knockathon} theme={theme}>
             <KnockathonsLogo className='w-52' />
@@ -71,7 +71,7 @@ const DevJamsGrid = (props) => {
           <div className='text-sm sm:text-base lg:text-lg xl:text-xl'>
             {month}
           </div>
-          <div>
+          <div class='grid justify-items-end'>
             <button className='bg-red-100 border-2 border-jams_red px-10 py-2 font-bold grid-btn'>
               Coming Soon
             </button>
