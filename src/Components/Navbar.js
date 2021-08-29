@@ -248,11 +248,11 @@ const Navbar = ({
         </div>
 
         {/* Discord button */}
-        <a href='https://discord.com' target='_blank' rel='noopener noreferrer'>
+        <a href='https://discord.gg/kuFe2JaTsf' target='_blank' rel='noopener noreferrer'>
           <div className='fixed items-center overflow-hidden flex w-14 h-14 z-50 hover:w-56 right-6 rounded transition-all duration-300 ease-in-out bottom-5'>
-            <Discord className='h-full' />
+            <Discord className='h-full' darkTheme={darkTheme} />
             <span className={`h-1/2 border-l-2 ${darkTheme ? 'border-discord_violet' : 'border-white'}`} />
-            <h1 className={`discord-bg--${darkTheme ? 'dark' : 'light'} font-sora whitespace-nowrap font-semibold ml-3 ${darkTheme ? 'text-discord_violet' : 'text-discord_white'} w-52 h-full`}>
+            <h1 className={`discord-bg--${darkTheme ? 'dark text-discord_violet' : 'light text-discord_white'} font-sora whitespace-nowrap font-semibold ml-3 w-52 h-full`}>
               Join our Discord
             </h1>
           </div>
@@ -260,7 +260,7 @@ const Navbar = ({
       </div>
 
       {/* GDSC Mobile */}
-      <div className={`absolute -bottom-2 ${window.scrollY > 0 ? '-left-2/4 md:-left-2/3' : 'left-1/4 md:left-1/3'}  z-30 visible lg:invisible w-1/2 md:w-1/3 h-24 md:h-32 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-500 ease-in-out`}>
+      <div className={`absolute -bottom-2 ${window.scrollY > 0 ? '-left-2/4 md:-left-2/3' : 'left-1/4 md:left-1/3'}  z-30 visible lg:invisible w-1/2 md:w-1/3 h-24 md:h-32 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-300 ease-in-out`}>
         <img src={GDSCLogoMobile} alt='Logo mobile' className='w-full' />
       </div>
     </>
