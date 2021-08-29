@@ -28,7 +28,7 @@ const SponsorCard = (props) => {
   )
 }
 
-export default function Sponsors () {
+export default function Sponsors (props) {
   const contentRef = useRef(null)
   const handleScroll = () => {
     if (contentRef) {
@@ -62,7 +62,7 @@ export default function Sponsors () {
           </button>
         </div>
       </div>
-      <Contact className='z-20' />
+      <Contact darkTheme={props.darkTheme} />
     </div>
   )
 }

@@ -31,7 +31,7 @@ const Animation = ({ darkTheme }) => {
 
   useEffect(() => {
     const { findMetrics } = animations()
-
+    console.log(grassRef1)
     const lengths = {
       bg: bgRef1.current.getBoundingClientRect().width,
       city: cityRef1.current.getBoundingClientRect().width,
@@ -64,7 +64,10 @@ const Animation = ({ darkTheme }) => {
           />
           <NightCityAndLightHouse className='animate-obj animation-city-2 -z-40' />
           <NightCityAndLightHouse className='animate-obj animation-city-3 -z-40' />
-          <NightGrassAndTrees className='animate-obj animation-grass-1 -z-30' />
+          <NightGrassAndTrees
+            ref={grassRef1}
+            className='animate-obj animation-grass-1 -z-30'
+          />
           <NightGrassAndTrees className='animate-obj animation-grass-2 -z-30' />
           <NightGrassAndTrees className='animate-obj animation-grass-3 -z-30' />
         </div>

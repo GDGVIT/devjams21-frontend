@@ -6,9 +6,9 @@ import { ReactComponent as LinkedIn } from '../Assets/SocialMedia/Linkedin.svg'
 import { ReactComponent as Medium } from '../Assets/SocialMedia/Medium.svg'
 import { ReactComponent as Twitter } from '../Assets/SocialMedia/Twitter.svg'
 
-const Contact = () => {
+const Contact = ({ darkTheme }) => {
   return (
-    <div className='mt-10 px-10 py-12 text-center font-sora bg-white'>
+    <div className={`mt-10 px-10 py-12 text-center font-sora ${darkTheme ? 'bg-jams_dark_blue text-white' : 'bg-white text-black'}`}>
       <div className='text-xl  font-bold py-1 border-b-2 border-jams_blue w-36 mx-auto'>
         Contact Us
       </div>
@@ -47,7 +47,7 @@ const Contact = () => {
             <Facebook className='fill-current hover:text-jams_blue' />
           </a>
           <a href='https://github.com/GDGVIT' target='_blank' rel='noreferrer'>
-            <Github className='fill-current hover:text-jams_blue' />
+            <Github className='fill-current hover:text-gray-500' />
           </a>
           <a
             href='https://www.linkedin.com/company/dscvit'
@@ -57,7 +57,7 @@ const Contact = () => {
             <LinkedIn className='fill-current hover:text-jams_blue' />
           </a>
           <a href='https://medium.com/gdg-vit' target='_blank' rel='noreferrer'>
-            <Medium className='fill-current hover:text-jams_blue' />
+            <Medium className='fill-current hover:text-gray-700' />
           </a>
         </div>
         <div className='grid grid-cols-3 place-items-center w-44 mx-auto'>
@@ -66,7 +66,7 @@ const Contact = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <YouTube className='fill-current hover:text-jams_blue' />
+            <YouTube className='fill-current hover:text-red-600' />
           </a>
           <a
             href='https://twitter.com/gdscvit'
@@ -80,7 +80,7 @@ const Contact = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <Instagram className='fill-current hover:text-jams_blue' />
+            <Instagram className='fill-current hover:text-pink-600' />
           </a>
         </div>
       </div>
