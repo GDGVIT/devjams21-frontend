@@ -37,7 +37,7 @@ export default function Sponsors () {
   }
 
   return (
-    <div>
+    <div className='absolute'>
       <Baner color='#3B7DED' title='Sponsors' handleScroll={handleScroll} />
       <div className='flex w-screen' ref={contentRef}>
         <div className='m-auto z-20'>

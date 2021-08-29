@@ -21,10 +21,18 @@ const Navbar = ({
 
   const [startAnimation, setStartAnimation] = useState(false)
   const [navbarBg, setNavbarBg] = useState(false)
+  const [discoom, setDiscoom] = useState(true)
   const navbarMobileRef = useRef(null)
 
   // route we should go to
   const [destination, setDestination] = useState(pathname)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDiscoom(false)
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [discoom])
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -76,6 +84,7 @@ const Navbar = ({
         setStartAnimation(false)
         history.push(destination)
         setBodyRender(true)
+        setDiscoom(true)
       })
     }
   }, [startAnimation, destination, setBodyRender, pathname, history])
@@ -133,7 +142,7 @@ const Navbar = ({
               ref={navbarMobileRef}
               className={`${
                 darkTheme ? 'bg-indigo-900 text-white' : 'bg-white text-black'
-              } w-60 h-full flex flex-col items-center text-left top-0 z-60 transition-all ease-in-out duration-300 ${
+              } w-60 h-full flex flex-col font-sora items-center text-left top-0 z-60 transition-all ease-in-out duration-300 ${
                 navlinksOpen ? 'left-0 fixed' : '-left-96 absolute'
               }`}
             >
@@ -249,7 +258,7 @@ const Navbar = ({
 
         {/* Discord button */}
         <a href='https://discord.gg/kuFe2JaTsf' target='_blank' rel='noopener noreferrer'>
-          <div className='fixed items-center overflow-hidden flex w-14 h-14 z-50 hover:w-56 right-6 rounded transition-all duration-300 ease-in-out bottom-5'>
+          <div className={`fixed items-center overflow-hidden flex ${discoom ? 'w-56' : 'w-14'} h-14 z-50 hover:w-56 right-6 rounded transition-all duration-500 ease-in-out bottom-5`}>
             <Discord className='h-full' darkTheme={darkTheme} />
             <span className={`h-1/2 border-l-2 ${darkTheme ? 'border-discord_violet' : 'border-white'}`} />
             <h1 className={`discord-bg--${darkTheme ? 'dark text-discord_violet' : 'light text-discord_white'} font-sora whitespace-nowrap font-semibold ml-3 w-52 h-full`}>

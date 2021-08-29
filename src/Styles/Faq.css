@@ -45,18 +45,6 @@
   border: 1px solid #2b2b5a !important;
 }
 
-.faq #ac-0,
-.faq #ac-0 .ac-header {
-  border-top-left-radius: 10px !important;
-  border-top-right-radius: 10px !important;
-}
-
-.faq #ac-21,
-.faq #ac-21 .ac-header {
-  border-bottom-left-radius: 10px !important;
-  border-bottom-right-radius: 10px !important;
-}
-
 .ac .ac-trigger {
   font-family: "Sora", sans-serif !important;
   font-weight: 600 !important;
@@ -118,6 +106,19 @@
 
 .ac.red .ac-panel {
   background-color: #f8a0b3 !important;
+}
+
+.faq #ac-0,
+.faq #ac-0 .ac-header {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+}
+
+.faq #ac-19,
+.faq #ac-19 .ac-header,
+.faq #ac-19 .ac-panel {
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
 }
 
 .ac .ac-panel .ac-text {
