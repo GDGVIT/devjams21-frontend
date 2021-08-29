@@ -18,10 +18,12 @@ module.exports = {
       },
       colors: {
         jams_red: '#FF5E55',
-        jams_logo_blue: '#3B7DED',
+        jams_blue: '#3B7DED',
         jams_dark_blue: '#1e1e38',
         discord_violet: '#4362cc',
-        discord_white: '#f4f8fc'
+        discord_white: '#f4f8fc',
+        jams_green: '#39AA68',
+        jams_yellow: '#F9C531'
       },
       width: {
         120: '40rem'

@@ -58,7 +58,7 @@ const DevJamsGrid = (props) => {
           <DevJamsLogo className='w-40 sm:w-72 h-auto my-5' />
           <div
             onClick={openPdf}
-            className='pb-2 cursor-pointer flex justify-center md:justify-start gap-x-2 font-semibold items-center text-jams_logo_blue'
+            className='pb-2 cursor-pointer flex justify-center md:justify-start gap-x-2 font-semibold items-center text-jams_blue'
           >
             <span>Know More</span>
             <ChervonRight />

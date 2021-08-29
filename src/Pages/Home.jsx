@@ -3,6 +3,7 @@ import Events from '../Components/Events'
 import { ReactComponent as DevJamsLogo } from '../Assets/Logos/DevJams Logo.svg'
 import { ReactComponent as Mouse } from '../Assets/Mouse.svg'
 import '../Styles/Home.css'
+import Contact from '../Components/Contact'
 
 export default function Home (props) {
   const theme = props.darkTheme ? 'dark' : 'light'
@@ -24,6 +25,7 @@ export default function Home (props) {
       >
         <Events darkTheme={props.darkTheme} />
       </div>
+      <Contact />
     </>
   )
 }

@@ -3,6 +3,7 @@ import Accordion from 'accordion-js'
 import '../Styles/Faq.css'
 import Baner from '../Components/Baner'
 import faq from '../Data/FaqData'
+import Contact from '../Components/Contact'
 
 const Accordian = ({ color, question, answer, darkTheme }) => {
   return (
@@ -11,7 +12,9 @@ const Accordian = ({ color, question, answer, darkTheme }) => {
         <button className='ac-trigger font-sora md:text-lg'>{question}</button>
       </h2>
       <div className='ac-panel h-28'>
-        <p><span className='text md:text-lg'>{answer}</span></p>
+        <p>
+          <span className='text'>{answer}</span>
+        </p>
       </div>
     </div>
   )
@@ -36,9 +39,11 @@ export default function Faq (props) {
   return (
     <div className='absolute'>
       <Baner title='FAQ' color='#2BA24C' handleScroll={handleScroll} />
-      <div />
-      <div className={`faq ${props.darkTheme ? 'dark' : ''} font-sora pt-28`} ref={accordionRef}>
-        {faq.map(el => {
+      <div
+        className={`faq ${props.darkTheme ? 'dark' : ''} font-sora pt-28`}
+        ref={accordionRef}
+      >
+        {faq.map((el) => {
           return (
             <Accordian
               key={el.key}
@@ -50,6 +55,7 @@ export default function Faq (props) {
           )
         })}
       </div>
+      <Contact />
     </div>
   )
 }
