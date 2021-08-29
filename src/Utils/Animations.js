@@ -10,6 +10,11 @@ const ANIMATION_SET2 = {
   city: '.animation-city-2',
   grass: '.animation-grass-2'
 }
+const ANIMATION_SET3 = {
+  bg: '.animation-bg-3',
+  city: '.animation-city-3',
+  grass: '.animation-grass-3'
+}
 
 const TOTAL_STATIONS = 5
 const mapStationToIndex = {
@@ -21,6 +26,14 @@ const mapStationToIndex = {
 }
 
 const TOTAL_DURATION = 6000
+
+// hardcoded value
+const subtractTrainPos = 64
+
+const windowLength = window.screen.width
+const midPoint = TOTAL_STATIONS / 2
+
+let distanceToTravel = 0
 
 // default values given
 const metrics = {
@@ -54,13 +67,15 @@ const pos = {
     bg: 0,
     city: 0,
     grass: 0
+  },
+  set3: {
+    bg: 0,
+    city: 0,
+    grass: 0
   }
 }
 
-// hardcoded value
-const subtractTrainPos = 64
-
-let distanceToTravel = 0
+let setTurnToShift = 1
 
 const animations = () => {
   const endPoints = {
@@ -70,20 +85,41 @@ const animations = () => {
 
   const translateSet = (set) => {
     if (set === 1) {
-      pos.set1.bg += metrics.totalSVGWidth.bg * 2
-      pos.set1.city += metrics.totalSVGWidth.city * 2
-      pos.set1.grass += metrics.totalSVGWidth.grass * 2
+      pos.set1.bg += metrics.totalSVGWidth.bg * 3
+      pos.set1.city += metrics.totalSVGWidth.city * 3
+      pos.set1.grass += metrics.totalSVGWidth.grass * 3
+    } else if (set === 2) {
+      pos.set2.bg += metrics.totalSVGWidth.bg * 3
+      pos.set2.city += metrics.totalSVGWidth.city * 3
+      pos.set2.grass += metrics.totalSVGWidth.grass * 3
     } else {
-      pos.set2.bg += metrics.totalSVGWidth.bg * 2
-      pos.set2.city += metrics.totalSVGWidth.city * 2
-      pos.set2.grass += metrics.totalSVGWidth.grass * 2
+      pos.set3.bg += metrics.totalSVGWidth.bg * 3
+      pos.set3.city += metrics.totalSVGWidth.city * 3
+      pos.set3.grass += metrics.totalSVGWidth.grass * 3
     }
   }
 
+  const calculateOffset = () => {
+    const offset = windowLength / 2 - metrics.stationToStationDistance.city / 2
+
+    pos.set1.bg += offset
+    pos.set1.city += offset
+    pos.set1.grass += offset
+    pos.set2.bg += offset
+    pos.set2.city += offset
+    pos.set2.grass += offset
+    pos.set3.bg += offset
+    pos.set3.city += offset
+    pos.set3.grass += offset
+  }
+
   const initialTranslation = async () => {
-    pos.set2.bg += metrics.totalSVGWidth.bg
-    pos.set2.city += metrics.totalSVGWidth.city
-    pos.set2.grass += metrics.totalSVGWidth.grass
+    pos.set1.bg -= metrics.totalSVGWidth.bg
+    pos.set1.city -= metrics.totalSVGWidth.city
+    pos.set1.grass -= metrics.totalSVGWidth.grass
+    pos.set3.bg += metrics.totalSVGWidth.bg
+    pos.set3.city += metrics.totalSVGWidth.city
+    pos.set3.grass += metrics.totalSVGWidth.grass
   }
 
   const findMetrics = (lengths) => {
@@ -103,15 +139,19 @@ const animations = () => {
     }
 
     initialTranslation()
+    calculateOffset()
   }
 
   const setBeforeAnimating = () => {
     anime.set(ANIMATION_SET1.bg, { translateX: () => pos.set1.bg })
     anime.set(ANIMATION_SET2.bg, { translateX: () => pos.set2.bg })
+    anime.set(ANIMATION_SET3.bg, { translateX: () => pos.set3.bg })
     anime.set(ANIMATION_SET1.city, { translateX: () => pos.set1.city })
     anime.set(ANIMATION_SET2.city, { translateX: () => pos.set2.city })
+    anime.set(ANIMATION_SET3.city, { translateX: () => pos.set3.city })
     anime.set(ANIMATION_SET1.grass, { translateX: () => pos.set1.grass })
     anime.set(ANIMATION_SET2.grass, { translateX: () => pos.set2.grass })
+    anime.set(ANIMATION_SET3.grass, { translateX: () => pos.set3.grass })
   }
 
   const move = async () => {
@@ -142,6 +182,16 @@ const animations = () => {
       easing: 'easeInOutQuad'
     }).finished
 
+    const bg3Shift = anime({
+      targets: ANIMATION_SET3.bg,
+      translateX: [pos.set3.bg, pos.set3.bg + moveByDistance.bg],
+      complete: () => {
+        pos.set3.bg += moveByDistance.bg
+      },
+      duration: TOTAL_DURATION,
+      easing: 'easeInOutQuad'
+    }).finished
+
     const city1Shift = anime({
       targets: ANIMATION_SET1.city,
       translateX: [pos.set1.city, pos.set1.city + moveByDistance.city],
@@ -154,6 +204,14 @@ const animations = () => {
       targets: ANIMATION_SET2.city,
       translateX: [pos.set2.city, pos.set2.city + moveByDistance.city],
       complete: () => (pos.set2.city += moveByDistance.city),
+      duration: TOTAL_DURATION,
+      easing: 'easeInOutQuad'
+    }).finished
+
+    const city3Shift = anime({
+      targets: ANIMATION_SET3.city,
+      translateX: [pos.set3.city, pos.set3.city + moveByDistance.city],
+      complete: () => (pos.set3.city += moveByDistance.city),
       duration: TOTAL_DURATION,
       easing: 'easeInOutQuad'
     }).finished
@@ -174,13 +232,24 @@ const animations = () => {
       easing: 'easeInOutQuad'
     }).finished
 
+    const grass3Shift = anime({
+      targets: ANIMATION_SET3.grass,
+      translateX: [pos.set3.grass, pos.set3.grass + moveByDistance.grass],
+      complete: () => (pos.set3.grass += moveByDistance.grass),
+      duration: TOTAL_DURATION,
+      easing: 'easeInOutQuad'
+    }).finished
+
     await Promise.all([
       bg1Shift,
       bg2Shift,
+      bg3Shift,
       city1Shift,
       city2Shift,
+      city3Shift,
       grass1Shift,
-      grass2Shift
+      grass2Shift,
+      grass3Shift
     ])
   }
 
@@ -201,22 +270,20 @@ const animations = () => {
 
     return new Promise((resolve, reject) => {
       move().then(() => {
-        x.bg = Math.abs(Math.min(pos.set1.bg, pos.set2.bg))
-        x.city = Math.abs(Math.min(pos.set1.city, pos.set2.city))
-        x.grass = Math.abs(Math.min(pos.set1.grass, pos.set2.grass))
+        const middleSet = (setTurnToShift % 3) + 1
 
-        if (
-          x.bg >=
-          metrics.totalSVGWidth.bg + metrics.stationToStationDistance.bg
-        ) {
-          // set 1 or 2 to shift
-          const set = pos.set1.bg < pos.set2.bg ? 1 : 2
+        x.bg = Math.abs(pos[`set${middleSet}`].bg)
+        x.city = Math.abs(pos[`set${middleSet}`].city)
+        x.grass = Math.abs(pos[`set${middleSet}`].grass)
 
-          translateSet(set)
+        if (x.bg >= midPoint * metrics.stationToStationDistance.bg) {
+          translateSet(setTurnToShift)
 
-          x.bg -= metrics.stationToStationDistance.bg
-          x.city -= metrics.stationToStationDistance.city
-          x.grass -= metrics.stationToStationDistance.grass
+          setTurnToShift = middleSet
+
+          x.bg -= metrics.totalSVGWidth.bg
+          x.city -= metrics.totalSVGWidth.city
+          x.grass -= metrics.totalSVGWidth.grass
         }
 
         resolve()

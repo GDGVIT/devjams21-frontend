@@ -24,14 +24,9 @@ const Animation = ({ darkTheme }) => {
 
   const initialLocation = useRef(pathname)
 
-  console.log('Animation js is being rendered')
-
   const bgRef1 = useRef(null)
   const cityRef1 = useRef(null)
   const grassRef1 = useRef(null)
-  const bgRef2 = useRef(null)
-  const cityRef2 = useRef(null)
-  const grassRef2 = useRef(null)
   const trainRef = useRef(null)
 
   useEffect(() => {
@@ -46,8 +41,6 @@ const Animation = ({ darkTheme }) => {
     }
     findMetrics(lengths)
     setMetrics(lengths)
-
-    console.log('metrics set to', lengths)
   }, [])
 
   useEffect(() => {
@@ -63,47 +56,37 @@ const Animation = ({ darkTheme }) => {
         <div>
           <Moon className='-z-60 h-screen animate-obj' />
           <NightBg ref={bgRef1} className='animate-obj animation-bg-1 -z-50' />
-          <NightBg ref={bgRef2} className='animate-obj animation-bg-2 -z-50' />
+          <NightBg className='animate-obj animation-bg-2 -z-50' />
+          <NightBg className='animate-obj animation-bg-3 -z-50' />
           <NightCityAndLightHouse
             ref={cityRef1}
             className='animate-obj animation-city-1 -z-40'
           />
-          <NightCityAndLightHouse
-            ref={cityRef2}
-            className='animate-obj animation-city-2 -z-40'
-          />
-          <NightGrassAndTrees
-            ref={grassRef1}
-            className='animate-obj animation-grass-1 -z-30'
-          />
-          <NightGrassAndTrees
-            ref={grassRef2}
-            className='animate-obj animation-grass-2 -z-30'
-          />
+          <NightCityAndLightHouse className='animate-obj animation-city-2 -z-40' />
+          <NightCityAndLightHouse className='animate-obj animation-city-3 -z-40' />
+          <NightGrassAndTrees className='animate-obj animation-grass-1 -z-30' />
+          <NightGrassAndTrees className='animate-obj animation-grass-2 -z-30' />
+          <NightGrassAndTrees className='animate-obj animation-grass-3 -z-30' />
         </div>
       )}
       {!darkTheme && (
         <div>
           <Sun className='-z-60 animate-obj' />
-          {/* TODO: Chane=ge daybg from figma */}
           <DayBg ref={bgRef1} className='animate-obj animation-bg-1 -z-50' />
-          <DayBg ref={bgRef2} className='animate-obj animation-bg-2 -z-50' />
+          <DayBg className='animate-obj animation-bg-2 -z-50' />
+          <DayBg className='animate-obj animation-bg-3 -z-50' />
           <DayCityAndLightHouse
             ref={cityRef1}
             className='animate-obj animation-city-1 -z-40'
           />
-          <DayCityAndLightHouse
-            ref={cityRef2}
-            className='animate-obj animation-city-2 -z-40'
-          />
+          <DayCityAndLightHouse className='animate-obj animation-city-2 -z-40' />
+          <DayCityAndLightHouse className='animate-obj animation-city-3 -z-40' />
           <DayGrassAndTrees
             ref={grassRef1}
             className='animate-obj animation-grass-1 -z-30'
           />
-          <DayGrassAndTrees
-            ref={grassRef2}
-            className='animate-obj animation-grass-2 -z-30'
-          />
+          <DayGrassAndTrees className='animate-obj animation-grass-2 -z-30' />
+          <DayGrassAndTrees className='animate-obj animation-grass-3 -z-30' />
         </div>
       )}
       <Train
