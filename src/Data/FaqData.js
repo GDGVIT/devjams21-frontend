@@ -49,8 +49,8 @@ const faq = [
   },
   {
     key: 9,
-    question: 'I still got some doubts? How can I resolve those?',
-    answer: "Feel free to ping us on @dscvit on Twitter, @dscvitvellore on Instagram or you can mail us at <a href: 'mailto:dscvitvellore@gmail.com'>dscvitvellore@gmail.com</a>  at any time of the day. We will try to respond as soon as possible.",
+    question: 'Who will own the IP (Intellectual Property) Rights to the product that I have built?',
+    answer: 'The developer/developers of the web/mobile application will have all rights and own the IP of the product. However, all code needs to be in the public domain (open source) so that it can be evaluated by the judges.',
     color: 'yellow'
   },
   {
@@ -115,21 +115,9 @@ const faq = [
   },
   {
     key: 20,
-    question: 'Who will own the IP (Intellectual Property) Rights to the product that I have built?',
-    answer: 'The developer/developers of the web/mobile application will have all rights and own the IP of the product. However, all code needs to be in the public domain (open source) so that it can be evaluated by the judges.',
+    question: 'I still got some doubts? How can I resolve those?',
+    answer: 'Feel free to ping us on @dscvit on Twitter, @dscvitvellore on Instagram or you can mail us at dscvitvellore@gmail.com at any time of the day. We will try to respond as soon as possible.',
     color: 'green'
-  },
-  {
-    key: 21,
-    question: 'If I already applied on Devfolio do I have to apply again?',
-    answer: 'Yes, because of unforeseen circumstances we had to shift to HackerEarth. You will be an eligible participant only if you register on HackerEarth.',
-    color: 'yellow'
-  },
-  {
-    key: 22,
-    question: 'Do we have to miss classes on 15th March, Monday?',
-    answer: 'No, On Duty attendance will be provided to all VIT participants on the 15th.',
-    color: 'blue'
   }
 ]
 

@@ -15,18 +15,16 @@ export default function Home (props) {
   }
 
   return (
-    <>
+    <div className='absolute'>
       <DevJamsCard theme={theme} handleScroll={handleScroll} />
       <div
-        className={`h-screen flex items-center ${
-          props.darkTheme ? 'bg-jams_black' : 'bg-white'
-        } font-sora pt-20`}
+        className='h-screen flex items-center font-sora pt-20'
         ref={contentRef}
       >
         <Events darkTheme={props.darkTheme} />
       </div>
       <Contact />
-    </>
+    </div>
   )
 }
 
