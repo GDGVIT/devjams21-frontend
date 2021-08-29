@@ -39,7 +39,7 @@ export default function About (props) {
               bring innovative minds from all around the globe under one banner.
             </p>
           </div>
-          <Devjams className='h-56 md:h-auto md:col-span-6 md:mt-8 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9' />
+          <Devjams className='h-56 md:h-auto md:col-span-6 mt-10 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9' />
         </div>
 
         <div
@@ -60,7 +60,7 @@ export default function About (props) {
               collaborative results that better the lives of everyone around us.
             </p>
           </div>
-          <Gdsc className='h-56 md:h-auto md:col-span-6 md:mt-8 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9' />
+          <Gdsc className='h-56 md:h-auto md:col-span-6 mt-10 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9' />
         </div>
 
         <div
@@ -70,7 +70,7 @@ export default function About (props) {
         >
           <div className='col-span-6 lg:col-span-3'>
             <h2 className='text-2xl sm:text-3xl font-semibold mb-5 md:mb-8'>
-              Vellore Institute of Technology , Vellore
+              Vellore Institute of Technology, Vellore
             </h2>
             <p className='text-sm leading-relaxed text-justify xl:text-lg'>
               Vellore Institute of Technology, Vellore founded in 1984 is one of
@@ -81,7 +81,7 @@ export default function About (props) {
               spur us on in our relentless pursuit of excellence.
             </p>
           </div>
-          <Vit className='h-56 md:h-auto md:col-span-6 w-full md:mt-10 mx-auto lg:col-span-3 lg:w-11/12 lg:my-auto lg:ml-9' />
+          <Vit className='h-56 md:h-auto md:col-span-6 w-full mt-10 mx-auto lg:col-span-3 lg:w-11/12 lg:my-auto lg:ml-9' />
         </div>
       </div>
       <Contact darkTheme={props.darkTheme} />

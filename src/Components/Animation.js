@@ -31,7 +31,6 @@ const Animation = ({ darkTheme }) => {
 
   useEffect(() => {
     const { findMetrics } = animations()
-    console.log(grassRef1)
     const lengths = {
       bg: bgRef1.current.getBoundingClientRect().width,
       city: cityRef1.current.getBoundingClientRect().width,
