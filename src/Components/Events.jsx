@@ -92,11 +92,13 @@ const DevJamsGrid = (props) => {
 //       className={`grid--${theme} register-grid--${theme} w-80 pt-6 relative shadow-md rounded-3xl overflow-hidden`}
 //     >
 //       <div className='content-container'>
-//         <div className='grid place-items-center gap-y-4'>
-//           {props.children}
-//           <div className='text-jams_red font-bold'>{date}</div>
+//         <div className='h-56 grid gap-y-4'>
+//           <div className='grid place-items-center gap-y-4'>
+//             {props.children}
+//             <div className='text-jams_red font-bold'>{date}</div>
+//           </div>
+//           <div className={`content--${theme}`}>{content}</div>
 //         </div>
-//         <div className={`content--${theme}`}>{content}</div>
 //         <div className='text-center'>
 //           <button className={`btn__register--${theme} grid-btn`}>
 //             Register
@@ -120,11 +122,13 @@ const ComingSoonGrid = (props) => {
       className={`relative grid--${theme} coming-soon-grid--${theme} w-80 pt-6 2xl:pt-3 relative shadow-md rounded-3xl overflow-hidden`}
     >
       <div className='content-container'>
-        <div className='grid place-items-center gap-y-4'>
-          {props.children}
-          <div className='text-jams_red font-bold'>{date}</div>
+        <div className='h-56 grid gap-y-4'>
+          <div className='grid place-items-center gap-y-4'>
+            {props.children}
+            <div className='text-jams_red font-bold'>{date}</div>
+          </div>
+          <div className={`content--${theme}`}>{content}</div>
         </div>
-        <div className={`content--${theme}`}>{content}</div>
         <div className='text-center'>
           <div
             className={`btn__coming-soon--${theme} absolte bottom-4 grid-btn`}
