@@ -20,7 +20,7 @@ export default function About (props) {
       <div className='p-4 md:p-10 font-sora z-30 lg:mx-28' ref={contentRef}>
         <div
           className={`my-24 lg:mx-8 rounded-2xl z-30 shadow-lg pt-10 md:pt-14 px-8 md:px-14 pb-10 lg:pb-14 md:grid md:grid-cols-6 ${
-            props.darkTheme ? 'about-content' : 'bg-white'
+            props.darkTheme ? 'bg-jams_dark_blue text-white' : 'bg-white'
           }`}
         >
           <div className='md:col-span-6 lg:col-span-3 '>
@@ -44,7 +44,7 @@ export default function About (props) {
 
         <div
           className={`my-36 lg:mx-8 rounded-2xl shadow-lg pt-10 md:pt-14 px-8 md:px-14 pb-10 lg:pb-14 md:grid md:grid-cols-6 ${
-            props.darkTheme ? 'about-content' : 'bg-white'
+            props.darkTheme ? 'bg-jams_dark_blue text-white' : 'bg-white'
           }`}
         >
           <div className='md:col-span-6 lg:col-span-3'>
@@ -65,7 +65,7 @@ export default function About (props) {
 
         <div
           className={`mt-24 mb-10 lg:mx-8 rounded-2xl shadow-lg pt-10 md:pt-14 px-8 md:px-14 pb-10 lg:pb-14 md:grid md:grid-cols-6 ${
-            props.darkTheme ? 'about-content' : 'bg-white'
+            props.darkTheme ? 'bg-jams_dark_blue text-white' : 'bg-white'
           }`}
         >
           <div className='col-span-6 lg:col-span-3'>
@@ -84,7 +84,7 @@ export default function About (props) {
           <Vit className='h-56 md:h-auto md:col-span-6 w-full md:mt-10 mx-auto lg:col-span-3 lg:w-11/12 lg:my-auto lg:ml-9' />
         </div>
       </div>
-      <Contact />
+      <Contact darkTheme={props.darkTheme} />
     </div>
   )
 }

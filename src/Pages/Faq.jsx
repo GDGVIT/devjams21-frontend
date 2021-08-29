@@ -55,7 +55,7 @@ export default function Faq (props) {
           )
         })}
       </div>
-      <Contact />
+      <Contact darkTheme={props.darkTheme} />
     </div>
   )
 }

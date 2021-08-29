@@ -23,7 +23,7 @@ export default function Home (props) {
       >
         <Events darkTheme={props.darkTheme} />
       </div>
-      <Contact />
+      <Contact darkTheme={props.darkTheme} />
     </div>
   )
 }

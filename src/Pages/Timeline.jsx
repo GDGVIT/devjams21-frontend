@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import Baner from '../Components/Baner'
 import Contact from '../Components/Contact'
 
-export default function Timeline () {
+export default function Timeline (props) {
   const contentRef = useRef(null)
   const handleScroll = () => {
     if (contentRef) {
@@ -18,7 +18,7 @@ export default function Timeline () {
           Coming Soon ...
         </div>
       </div>
-      <Contact />
+      <Contact darkTheme={props.darkTheme} />
     </div>
   )
 }
