@@ -7,7 +7,7 @@ import { ReactComponent as DevJamsLogo } from '../Assets/Logos/DevJams Logo.svg'
 import { ReactComponent as KnockathonsLogo } from '../Assets/Logos/Knockathons Logo.svg'
 import { ReactComponent as DevTalksLogo } from '../Assets/Logos/DevTalks Logo.svg'
 import { ReactComponent as HexathonLogo } from '../Assets/Logos/Hexathon Logo.svg'
-import { ReactComponent as CTFLogo } from "../Assets/Logos/CTF Logo.svg";
+import { ReactComponent as CTFLogo } from '../Assets/Logos/CTF Logo.svg'
 import Brochure from '../Assets/Brochure.pdf'
 
 // Devjams Grid SVGs
@@ -71,7 +71,7 @@ const DevJamsGrid = (props) => {
           <div className='text-sm sm:text-base lg:text-lg xl:text-xl'>
             {month}
           </div>
-          <div class='grid justify-items-end'>
+          <div className='grid justify-items-end'>
             <button className='bg-red-100 border-2 border-jams_red px-10 py-2 font-bold grid-btn'>
               Coming Soon
             </button>
