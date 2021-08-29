@@ -21,7 +21,7 @@ export default function Events (props) {
   return (
     <div ref={homeContainerRef} className='overflow-x-hidden'>
       <div className='w-screen overflow-x-auto overflow-y-hidden'>
-        <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12 2xl:mx-28 2xl:flex 2xl:justify-around'>
+        <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12 2xl:flex 2xl:justify-around'>
           <ComingSoonGrid event={events.knockathon} theme={theme}>
             <KnockathonsLogo className='w-52' />
           </ComingSoonGrid>
@@ -51,7 +51,7 @@ const DevJamsGrid = (props) => {
 
   return (
     <div
-      className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} mx-5 rounded-3xl relative shadow-md sm:rounded-3xl overflow-hidden 2xl:mx-44`}
+      className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} mx-5 rounded-3xl relative shadow-md sm:rounded-3xl overflow-hidden xl:mx-12`}
     >
       <div className='grid md:grid-cols-2 place-items-center pt-5 sm:py-5 px-10 relative z-10'>
         <div>
@@ -126,7 +126,9 @@ const ComingSoonGrid = (props) => {
         </div>
         <div className={`content--${theme}`}>{content}</div>
         <div className='text-center'>
-          <div className={`btn__coming-soon--${theme} absolte bottom-4 grid-btn`}>
+          <div
+            className={`btn__coming-soon--${theme} absolte bottom-4 grid-btn`}
+          >
             Coming Soon
           </div>
         </div>
