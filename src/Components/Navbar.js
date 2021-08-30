@@ -257,7 +257,7 @@ const Navbar = ({
         </div>
 
         {/* Discord button */}
-        <a href='https://discord.gg/kuFe2JaTsf' target='_blank' rel='noopener noreferrer'>
+        <a href='https://discord.com/invite/8KMMjA2qRC' target='_blank' rel='noopener noreferrer'>
           <div className={`fixed items-center overflow-hidden flex ${discoom ? 'w-56' : 'w-14'} h-14 z-50 hover:w-56 right-6 rounded transition-all duration-500 ease-in-out bottom-5`}>
             <Discord className='h-full' darkTheme={darkTheme} />
             <span className={`h-1/2 border-l-2 ${darkTheme ? 'border-discord_violet' : 'border-white'}`} />

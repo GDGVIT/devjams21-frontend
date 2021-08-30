@@ -3,8 +3,8 @@
 const events = {
   devjams: {
     name: "DevJams'21",
-    dateRange: '17th - 19th',
-    month: 'October 2021',
+    dateRange: 'To Be Announced',
+    month: '',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero odit praesentium facilis non placeat nisi inventore sapiente nulla alias dolores',
     classname: 'devjams-grid'
@@ -21,7 +21,7 @@ const events = {
   },
   knockathon: {
     name: 'Knockathons 21',
-    date: '25th - 26th Sep 2021',
+    date: 'To Be Announced',
     content:
       'Have what it takes to be a winner? Team up with your friends to solve an innovative problem and pitch your ideas while competing against other teams to come out on top!',
     // bgColor: "rgba(24, 26, 175, 0.17)",
@@ -30,8 +30,8 @@ const events = {
     coords: { circle1: '-top-32 -right-20', circle2: '-bottom-20 -left-20' }
   },
   ctf: {
-    name: 'CTF 21',
-    date: '2nd - 3rd Oct 2021',
+    name: 'DeconstruCTF',
+    date: 'To Be Announced',
     content:
       'A 24 hour jeopardy style CTF, ranging to five different domains, namely, web, forensics, cryptography, OSINT and miscellaneous!',
     // bgColor: "rgba(76, 137, 255, 0.08)",
@@ -40,8 +40,8 @@ const events = {
     coords: { circle1: '-top-0 -right-32', circle2: '-bottom-20 -left-20' }
   },
   designzzz: {
-    name: 'Designzzz',
-    date: '10th Oct 2021',
+    name: 'Hexathon',
+    date: 'To Be Announced',
     content:
       'Channel your inner passion and creativity to create innovative and ingenious design solutions to current problems and win exciting prizes!',
     // bgColor: "rgba(0, 91, 56, 0.1)",
