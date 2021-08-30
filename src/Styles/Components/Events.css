@@ -106,3 +106,7 @@
 .content--dark {
   color: white;
 }
+
+.cards::-webkit-scrollbar {
+  display: none;
+}

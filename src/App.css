@@ -5,11 +5,11 @@ body {
   box-sizing: border-box;
 }
 
-body {
+html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-body::-webkit-scrollbar {
+html::-webkit-scrollbar {
   display: none;
 }

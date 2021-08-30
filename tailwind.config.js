@@ -6,33 +6,30 @@ module.exports = {
     extend: {
       zIndex: {
         60: '60',
+        '-60': '-60',
         '-50': '-50',
         '-40': '-40',
         '-30': '-30',
         '-20': '-20',
         '-10': '-10'
       },
-      inset: {
-        '27/100': '27%',
-        '28/100': '28%',
-        '3/10': '30%'
-      },
       fontFamily: {
-        sora: ['Sora', 'sans-serif'],
-        circularStd: ['Circular Std Black', 'sans-serif']
+        sora: ['Sora', 'sans-serif']
       },
       colors: {
-        jams_purple_faded: '#EDEEFF',
-        jams_purple: '#4244B4',
         jams_red: '#FF5E55',
-        jams_logo_blue: '#3B7DED'
-      },
-      gridAutoRows: {
-        10: '10px',
-        1: '1px'
+        jams_blue: '#3B7DED',
+        jams_dark_blue: '#1e1e38',
+        discord_violet: '#4362cc',
+        discord_white: '#f4f8fc',
+        jams_green: '#39AA68',
+        jams_yellow: '#F9C531'
       },
       width: {
         120: '40rem'
+      },
+      minWidth: {
+        80: '320px'
       }
     }
   },
