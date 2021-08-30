@@ -22,17 +22,17 @@ export default function Events (props) {
     <div ref={homeContainerRef} className='overflow-x-hidden'>
       <div className='cards w-screen overflow-x-auto overflow-y-hidden'>
         <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12 2xl:flex 2xl:justify-around'>
-          <ComingSoonGrid event={events.knockathon} theme={theme}>
-            <KnockathonsLogo className='w-52' />
-          </ComingSoonGrid>
           <ComingSoonGrid event={events.devtalks} theme={theme}>
             <DevTalksLogo className='w-40' />
           </ComingSoonGrid>
-          <ComingSoonGrid event={events.designzzz} theme={theme}>
-            <HexathonLogo className='w-36 my-3' />
+          <ComingSoonGrid event={events.knockathon} theme={theme}>
+            <KnockathonsLogo className='w-52' />
           </ComingSoonGrid>
           <ComingSoonGrid event={events.ctf} theme={theme}>
             <CTFLogo className='w-52' />
+          </ComingSoonGrid>
+          <ComingSoonGrid event={events.designzzz} theme={theme}>
+            <HexathonLogo className='w-36 my-3' />
           </ComingSoonGrid>
         </div>
       </div>

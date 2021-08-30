@@ -110,14 +110,8 @@ const faq = [
   {
     key: 19,
     question: 'If it is a team submission, does that mean all team members will have access to work at the same time?',
-    answer: 'Yes, all team members can log in from their account and do application submission on HackerEarth.',
+    answer: 'Yes, all team members can log in from their account and do application submission on the Devjams Portal.',
     color: 'red'
-  },
-  {
-    key: 20,
-    question: 'I still got some doubts? How can I resolve those?',
-    answer: 'Feel free to ping us on @dscvit on Twitter, @dscvitvellore on Instagram or you can mail us at dscvitvellore@gmail.com at any time of the day. We will try to respond as soon as possible.',
-    color: 'green'
   }
 ]
 

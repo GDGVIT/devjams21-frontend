@@ -41,7 +41,7 @@ export default function Sponsors (props) {
       <Baner color='#3B7DED' title='Sponsors' handleScroll={handleScroll} />
       <div className='flex w-screen' ref={contentRef}>
         <div className='m-auto z-20'>
-          <div className='grid gap-8 sm:gap-12 md:gap-16 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 sm:pb-16 md:pb-10 pt-24 md:pt-28'>
+          <div className='grid gap-8 sm:gap-12 lg:gap-16 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 sm:pb-16 md:pb-10 pt-24 md:pt-28'>
             <SponsorCard image={DigitalOcean} name='Digital Ocean' />
             <SponsorCard image={HashiCorp} name='HashiCorp' />
             <SponsorCard image={Deepnote} name='Deepnote' />
@@ -54,6 +54,8 @@ export default function Sponsors (props) {
             <SponsorCard image={Replit} name='Replit' />
             <SponsorCard image={Framer} name='Framer' />
             <SponsorCard image={Ren} name='Ren' />
+          </div>
+          <div className='grid gap-8 sm:gap-12 lg:gap-16 grid-cols-2 place-items-center md:w-2/3 xl:w-1/2 mx-auto sm:pb-16 md:pb-10 pt-6'>
             <SponsorCard image={Genxyz} name='Genxyz' />
             <SponsorCard image={Clerky} name='Clerky' />
           </div>

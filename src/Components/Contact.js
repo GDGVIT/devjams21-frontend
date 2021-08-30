@@ -20,71 +20,71 @@ const Contact = ({ darkTheme }) => {
         <li className='grid'>
           <div className='font-bold sm:text-lg'>Riddhi Gupta</div>
           <a
-            className='text-xs sm:text-sm hover:text-jams_blue'
+            className='text-sm sm:text-md hover:text-jams_blue'
             href='mailto:mailriddhigupta@gmail.com'
           >
             mailriddhigupta@gmail.com
           </a>
-          <span className='text-xs sm:text-sm'>+91 9408955501</span>
+          <span className='text-sm sm:text-md'>+91 9408955501</span>
         </li>
         <li className='grid'>
           <div className='font-bold sm:text-lg'>Shubham Srivastava</div>
           <a
-            className='text-xs sm:text-sm hover:text-jams_blue'
+            className='text-sm sm:text-md hover:text-jams_blue'
             href='mailto:shubhamsriv99@outlook.com'
           >
             shubhamsriv99@outlook.com
           </a>
-          <span className='text-xs sm:text-sm'>+91 9818891967</span>
+          <span className='text-sm sm:text-md'>+91 9818891967</span>
         </li>
       </ul>
       <div className='font-bold text-xl py-1 border-b-2 border-jams_blue w-36 mx-auto'>
         Social Media
       </div>
       <div className='py-4'>
-        <div className='grid grid-cols-4 w-56 gap-5 py-5 mx-auto'>
+        <div className='grid grid-cols-4 w-44 md:w-56 gap-5 py-5 mx-auto'>
           <a
             href='https://facebook.com/gdscvitvellore'
             target='_blank'
             rel='noreferrer'
           >
-            <Facebook className='fill-current hover:text-jams_blue' />
+            <Facebook className='fill-current w-8 md:w-full hover:text-jams_blue' />
           </a>
           <a href='https://github.com/GDGVIT' target='_blank' rel='noreferrer'>
-            <Github className='fill-current hover:text-jams_blue' />
+            <Github className='fill-current w-8 md:w-full hover:text-jams_blue' />
           </a>
           <a
             href='https://www.linkedin.com/company/dscvit'
             target='_blank'
             rel='noreferrer'
           >
-            <LinkedIn className='fill-current hover:text-jams_blue' />
+            <LinkedIn className='fill-current w-8 md:w-full hover:text-jams_blue' />
           </a>
           <a href='https://medium.com/gdg-vit' target='_blank' rel='noreferrer'>
-            <Medium className='fill-current hover:text-jams_blue' />
+            <Medium className='fill-current w-8 md:w-full hover:text-jams_blue' />
           </a>
         </div>
-        <div className='grid grid-cols-3 place-items-center w-44 mx-auto'>
+        <div className='grid grid-cols-3 place-items-center w-36 md:w-44 mx-auto'>
           <a
             href='https://www.youtube.com/channel/UCvT-ZJF7fXHJi9kDeCPR-zg'
             target='_blank'
             rel='noreferrer'
           >
-            <YouTube className='fill-current hover:text-jams_blue' />
+            <YouTube className='fill-current w-8 md:w-full hover:text-jams_blue' />
           </a>
           <a
             href='https://twitter.com/gdscvit'
             target='_blank'
             rel='noreferrer'
           >
-            <Twitter className='fill-current hover:text-jams_blue' />
+            <Twitter className='fill-current w-8 md:w-full hover:text-jams_blue' />
           </a>
           <a
             href='https://instagram.com/gdscvitvellore'
             target='_blank'
             rel='noreferrer'
           >
-            <Instagram className='fill-current hover:text-jams_blue' />
+            <Instagram className='fill-current w-8 md:w-full hover:text-jams_blue' />
           </a>
         </div>
       </div>
