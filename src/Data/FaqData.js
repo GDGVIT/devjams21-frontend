@@ -2,7 +2,7 @@ const faq = [
   {
     key: 1,
     question: 'What is DevJams?',
-    answer: 'DevJams is an annual 36-hour long hackathon, that aims to bring together great developers and designers under one roof and pitting them against each other in a healthy competition. Under focussed mentorship from a dedicated and experienced technical team, and an equally challenging and innovative panel of themes, participants can test their skills and use them to build projects to solve real-world problems.',
+    answer: 'DevJams is an annual 36-hour long hackathon, that aims to bring together great developers and designers under one roof and pitting them against each other in a healthy competition. Under focused mentorship from a dedicated and experienced technical team, and an equally challenging and innovative panel of themes, participants can test their skills and use them to build projects to solve real-world problems.',
     color: 'yellow'
   },
   {
@@ -44,7 +44,7 @@ const faq = [
   {
     key: 8,
     question: 'Who will own the IP (Intellectual Property) Rights to the product that I have built?',
-    answer: 'The developer/developers of the web/mobile application will have all rights and own the IP of the product. However, all code needs to be in the public domain (open source) so that it can be evaluated by the judges.',
+    answer: 'The developer/developers of the web/mobile application will have all rights and own the IP of the product. However, all the code needs to be in the public domain (open source) so that it can be evaluated by the judges.',
     color: 'yellow'
   },
   {
@@ -68,19 +68,19 @@ const faq = [
   {
     key: 12,
     question: 'How do I submit what I have made for the Hackathon?',
-    answer: 'You have to develop the application on your local system and add your code to a GitHub repository and submit its link. Update the ReadMe with all the details about your application and instructions to run the code.',
+    answer: 'You have to develop the application on your local system, add your code to a GitHub repository and submit its link. Also, the you have to update the README of your repository with all the details about your application along with the instructions to run.',
     color: 'yellow'
   },
   {
     key: 13,
     question: 'Do we need to have the entire idea fully working?',
-    answer: 'The entire idea need not be fully implemented however, the submission should be functional so that it can be reviewed by the judges.',
+    answer: 'The entire idea need not be fully implemented. However, the submission should be functional so that it can be reviewed by the judges.',
     color: 'blue'
   },
   {
     key: 14,
     question: 'How is the environment? Will your environment support any language? Will you provide any IDE and DB for us to work on ideas?',
-    answer: 'You have to develop the application on your local system and add your code to a GitHub repository and submit its link. Update the ReadMe with all the details about your application and instructions to run the code.',
+    answer: 'You have to develop the application on your local system, add your code to a GitHub repository and submit its link. Update the README with all the details about your application and the instructions to run the code.',
     color: 'red'
   },
   {
@@ -91,8 +91,8 @@ const faq = [
   },
   {
     key: 16,
-    question: 'Do I need to give a demo for the product that I have built?',
-    answer: "If you want you can submit a small presentation or video that demos your submission, however, it's not mandatory, and only good to have. In case you are one of the winners, you might be invited to demo your application details of which will be shared with sufficient advance notice.",
+    question: 'Do I need to give a demonstration for the product that I have built?',
+    answer: "If you want, you can submit a small presentation or a video that demonstrates your submission. However, it's not mandatory, and only good to have. In case you are one of the winners, you might be invited to demonstrate your application, details of which will be shared with sufficient advance notice.",
     color: 'yellow'
   },
   {
@@ -104,7 +104,7 @@ const faq = [
   {
     key: 18,
     question: 'If it is a team submission, does that mean all team members will have access to work at the same time?',
-    answer: 'Yes, all team members can log in from their account and do application submission on the Devjams Portal.',
+    answer: 'Yes, all team members can log in from their account and submit their project on the DevJams portal.',
     color: 'red'
   }
 ]

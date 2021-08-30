@@ -59,9 +59,14 @@ export default function Sponsors (props) {
             <SponsorCard image={Genxyz} name='Genxyz' />
             <SponsorCard image={Clerky} name='Clerky' />
           </div>
-          {/* <button disabled={true} className={`mx-auto block ${props.darkTheme ? 'bg-white text-blue-600 hover:bg-gray-200' : 'bg-blue-600 text-white hover:bg-blue-800'} w-full lg:w-1/2 py-4 rounded-md text-lg md:text-2xl font-semibold font-sora mb-8 mt-6 md:mt-0 md:mb-4`}>
+          <a
+            href='https://form.jotform.com/212415124747047'
+            target='_blank'
+            rel='noopener noreferrer'
+            className={`mx-auto block text-center ${props.darkTheme ? 'bg-white text-blue-600 hover:bg-gray-200' : 'bg-blue-600 text-white hover:bg-blue-800'} w-full lg:w-2/3 xl:w-1/2 py-4 rounded-md text-lg md:text-2xl font-semibold font-sora mt-8 md:mt-0 md:mb-4`}
+          >
             Sponsor Us
-          </button> */}
+          </a>
         </div>
       </div>
       <Contact darkTheme={props.darkTheme} />
