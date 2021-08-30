@@ -7,7 +7,7 @@ import { ReactComponent as DevJamsLogo } from '../Assets/Logos/DevJams Logo.svg'
 import { ReactComponent as KnockathonsLogo } from '../Assets/Logos/Knockathons Logo.svg'
 import { ReactComponent as DevTalksLogo } from '../Assets/Logos/DevTalks Logo.svg'
 import { ReactComponent as HexathonLogo } from '../Assets/Logos/Hexathon Logo.svg'
-import { ReactComponent as CTFLogo } from "../Assets/Logos/CTF Logo.svg";
+import { ReactComponent as CTFLogo } from '../Assets/Logos/CTF Logo.svg'
 import Brochure from '../Assets/Brochure.pdf'
 
 // Devjams Grid SVGs
