@@ -9,11 +9,9 @@ import Replit from '../Assets/Logos/Sponsors/Replit.svg'
 import EchoAR from '../Assets/Logos/Sponsors/EchoAR.png'
 import Voiceflow from '../Assets/Logos/Sponsors/Voiceflow.png'
 import Taskade from '../Assets/Logos/Sponsors/Taskade.png'
-import Qoom from '../Assets/Logos/Sponsors/Qoom.png'
 import Deepnote from '../Assets/Logos/Sponsors/Deepnote.png'
 import Ren from '../Assets/Logos/Sponsors/Ren.png'
 import Genxyz from '../Assets/Logos/Sponsors/genxyz.png'
-import Clerky from '../Assets/Logos/Sponsors/Clerky.png'
 import Contact from '../Components/Contact'
 
 const SponsorCard = (props) => {
@@ -48,16 +46,12 @@ export default function Sponsors (props) {
             <SponsorCard image={EchoAR} name='EchoAR' />
             <SponsorCard image={Voiceflow} name='Voiceflow' />
             <SponsorCard image={Taskade} name='Taskade' />
-            <SponsorCard image={Qoom} name='Qoom' />
             <SponsorCard image={Egghead} name='Egghead' />
             <SponsorCard image={_1Password} name='1Password' />
             <SponsorCard image={Replit} name='Replit' />
             <SponsorCard image={Framer} name='Framer' />
             <SponsorCard image={Ren} name='Ren' />
-          </div>
-          <div className='grid gap-8 sm:gap-12 lg:gap-16 grid-cols-2 place-items-center md:w-2/3 xl:w-1/2 mx-auto sm:pb-16 md:pb-10 pt-6'>
             <SponsorCard image={Genxyz} name='Genxyz' />
-            <SponsorCard image={Clerky} name='Clerky' />
           </div>
           <a
             href='https://form.jotform.com/212415124747047'
