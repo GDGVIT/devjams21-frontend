@@ -49,7 +49,7 @@ export default function About (props) {
         >
           <div className='md:col-span-6 lg:col-span-3'>
             <h2 className='text-2xl sm:text-3xl font-semibold mb-5 md:mb-8'>
-              GDSC Vit, Vellore
+              GDSC VIT, Vellore
             </h2>
             <p className='text-sm leading-relaxed text-justify xl:text-lg'>
               GDSC VIT powered by Google Developers is a student community at
