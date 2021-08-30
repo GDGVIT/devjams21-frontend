@@ -12,8 +12,8 @@ const Accordian = ({ color, question, answer, darkTheme }) => {
         <button className='ac-trigger font-sora md:text-lg'>{question}</button>
       </h2>
       <div className='ac-panel h-28'>
-        <p>
-          <span className='text'>{answer}</span>
+        <p className='text'>
+          {answer}
         </p>
       </div>
     </div>
@@ -54,6 +54,21 @@ export default function Faq (props) {
             />
           )
         })}
+        <div className='ac green'>
+          <h2 className={`ac-header ${props.darkTheme ? 'bg-jams_dark_blue' : ''}`}>
+            <button className='ac-trigger font-sora md:text-lg'>
+              I still got some doubts? How can I resolve those?
+            </button>
+          </h2>
+          <div className='ac-panel h-28'>
+            <p className='text'>
+              Feel free to ping us
+              on <a className='underline' target='_blank' rel='noopener noreferrer' href='https://twitter.com/gdscvit'>Twitter</a>,
+              on <a className='underline' target='_blank' rel='noopener noreferrer' href='https://www.instagram.com/gdscvitvellore/'>Instagram</a> or you can mail us
+              at <a className='underline' href='mailto:gdscvitvellore@gmail.com'>gdscvitvellore@gmail.com</a> at any time of the day. We will try to respond as soon as possible.
+            </p>
+          </div>
+        </div>
       </div>
       <Contact darkTheme={props.darkTheme} />
     </div>

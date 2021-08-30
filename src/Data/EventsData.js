@@ -3,31 +3,31 @@
 const events = {
   devjams: {
     name: "DevJams'21",
-    dateRange: '27th - 28th',
-    month: 'September 2021',
+    dateRange: '17th - 19th',
+    month: 'October 2021',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero odit praesentium facilis non placeat nisi inventore sapiente nulla alias dolores',
     classname: 'devjams-grid'
   },
-  knockathon: {
-    name: 'Knockathons 21',
-    date: '27th - 28th Aug 2021',
-    content:
-      'Have what it takes to be a winner? Team up with your friends to solve an innovative problem and pitch your ideas while competing against other teams to come out on top!',
-    // bgColor: "rgba(24, 26, 175, 0.17)",
-    // borderColor: "#1F1F1F",
-    classname: 'knockathon-grid',
-    coords: { circle1: '-top-32 -right-20', circle2: '-bottom-20 -left-20' }
-  },
   devtalks: {
     name: 'DevTalks 21',
-    date: '25th Sep 2021',
+    date: '19th Sep 2021',
     content:
       'Interact and meet with a few of the most prestigious and renowned figures in the ever-changing tech industry!',
     // borderColor: "#E3E3FF",
     // bgColor: "rgba(216, 61, 52, 0.06)",
     classname: 'devtalks-grid',
     coords: { circle1: '-top-32 -right-0', circle2: '-bottom-20 left-0' }
+  },
+  knockathon: {
+    name: 'Knockathons 21',
+    date: '25th - 26th Sep 2021',
+    content:
+      'Have what it takes to be a winner? Team up with your friends to solve an innovative problem and pitch your ideas while competing against other teams to come out on top!',
+    // bgColor: "rgba(24, 26, 175, 0.17)",
+    // borderColor: "#1F1F1F",
+    classname: 'knockathon-grid',
+    coords: { circle1: '-top-32 -right-20', circle2: '-bottom-20 -left-20' }
   },
   ctf: {
     name: 'CTF 21',
