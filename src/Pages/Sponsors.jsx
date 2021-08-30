@@ -59,9 +59,9 @@ export default function Sponsors (props) {
             <SponsorCard image={Genxyz} name='Genxyz' />
             <SponsorCard image={Clerky} name='Clerky' />
           </div>
-          <button className='mx-auto block bg-blue-600 w-full lg:w-1/2 py-4 rounded-md text-white text-lg md:text-2xl font-semibold font-sora mb-8 mt-6 md:mt-0 md:mb-4 hover:bg-blue-800'>
+          {/* <button disabled={true} className={`mx-auto block ${props.darkTheme ? 'bg-white text-blue-600 hover:bg-gray-200' : 'bg-blue-600 text-white hover:bg-blue-800'} w-full lg:w-1/2 py-4 rounded-md text-lg md:text-2xl font-semibold font-sora mb-8 mt-6 md:mt-0 md:mb-4`}>
             Sponsor Us
-          </button>
+          </button> */}
         </div>
       </div>
       <Contact darkTheme={props.darkTheme} />
