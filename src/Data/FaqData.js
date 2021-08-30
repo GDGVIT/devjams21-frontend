@@ -14,7 +14,7 @@ const faq = [
   {
     key: 3,
     question: 'How can I register for DevTalks?',
-    answer: 'You can register for DevTalks via the Gravitas Website. Head over to the “Technical Events” section and search for DevTalks, then click on ‘Register’ to register for the event.',
+    answer: 'The details for registering for DevTalks will be released soon. Stay Tuned!',
     color: 'red'
   },
   {
@@ -38,7 +38,7 @@ const faq = [
   {
     key: 7,
     question: 'When is DevTalks being held?',
-    answer: 'DevTalks will be conducted as an online event on 4th October 2020 from 6:OO PM to 9:00 PM.',
+    answer: 'DevTalks will be conducted as an online event on 19th September 2021 from 5:OO PM to 7:30 PM.',
     color: 'red'
   },
   {
@@ -92,7 +92,7 @@ const faq = [
   {
     key: 16,
     question: 'Does one have to be online and available for the entire duration of the Hackathon?',
-    answer: 'No, one does not need to be online for the entire duration. You can develop the application on your local system based on the given themes and then submit it on HackerEarth, on the specific challenge page.',
+    answer: 'No, one does not need to be online for the entire duration. You can develop the application on your local system based on the given themes and then submit it on the DevJams portal, on the specific challenge page.',
     color: 'green'
   },
   {
