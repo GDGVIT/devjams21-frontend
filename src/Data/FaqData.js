@@ -68,7 +68,7 @@ const faq = [
   {
     key: 12,
     question: 'How do I submit what I have made for the Hackathon?',
-    answer: 'You have to develop the application on your local system, add your code to a GitHub repository and submit its link. Also, the you have to update the README of your repository with all the details about your application along with the instructions to run.',
+    answer: 'You have to develop the application on your local system, add your code to a GitHub repository and submit its link. Also, you have to update the README of your repository with all the details about your application along with the instructions to run.',
     color: 'yellow'
   },
   {
