@@ -8,7 +8,6 @@ import { ReactComponent as KnockathonsLogo } from '../Assets/Logos/Knockathons L
 import { ReactComponent as DevTalksLogo } from '../Assets/Logos/DevTalks Logo.svg'
 import { ReactComponent as HexathonLogo } from '../Assets/Logos/Hexathon Logo.svg'
 import { ReactComponent as CTFLogo } from '../Assets/Logos/CTF Logo.svg'
-import Brochure from '../Assets/Brochure.pdf'
 
 // Devjams Grid SVGs
 import DevJamsGridGround from '../Assets/Home/DevJamsGridGround'
@@ -45,22 +44,18 @@ const DevJamsGrid = (props) => {
   const theme = props.theme
   const { dateRange, month } = props.event
 
-  const openPdf = () => {
-    window.open(Brochure)
-  }
-
   return (
     <div
       className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} mx-5 rounded-3xl relative shadow-md sm:rounded-3xl overflow-hidden xl:mx-12`}
     >
       <div className='grid md:grid-cols-2 place-items-center pt-5 sm:py-5 px-10 relative z-10'>
-        <div>
+        <div className='flex flex-col items-center md:items-start'>
           <DevJamsLogo className='w-40 sm:w-72 h-auto my-5' />
           <div
-            onClick={openPdf}
-            className='pb-2 cursor-pointer flex justify-center md:justify-start gap-x-2 font-semibold items-center text-jams_blue'
+            onClick={() => window.open('./Brochure.pdf')}
+            className='pb-2 cursor-pointer flex justify-center md:justify-start gap-x-2 bg-jams_blue md:text-lg font-semibold items-center text-white px-3 py-2 rounded-md'
           >
-            <span>Know More</span>
+            <span>Download Brochure</span>
             <ChervonRight />
           </div>
         </div>
