@@ -52,8 +52,8 @@ const DevJamsGrid = (props) => {
         <div className='flex flex-col items-center md:items-start'>
           <DevJamsLogo className='w-40 sm:w-72 h-auto my-5' />
           <div
-            onClick={() => window.open('./Brochure.pdf')}
-            className={`pb-2 cursor-pointer flex justify-center md:justify-start gap-x-2 ${props.darkTheme ? 'bg-gray-100 hover:bg-white text-jams_blue' : 'bg-jams_blue hover:bg-blue-700 text-white'} md:text-lg font-semibold items-center px-3 py-2 rounded-md`}
+            onClick={() => window.open('https://drive.google.com/file/d/1uimCiR55PxBTEGvQnJCgDYQ2uM2ci2dD/view')}
+            className='cursor-pointer flex justify-center md:justify-start gap-x-2 text-jams_blue md:text-xl lg:text-2xl font-semibold items-center md:px-0 py-2 md:pb-4 md:pt-0'
           >
             <span>Download Brochure</span>
             <ChervonRight />
@@ -67,7 +67,7 @@ const DevJamsGrid = (props) => {
             {month}
           </div>
           <div className='grid justify-items-end'>
-            <button className='bg-red-100 border-2 border-jams_red px-10 py-2 font-bold grid-btn'>
+            <button className='bg-red-100 border-2 cursor-default border-jams_red cur px-10 py-2 font-bold grid-btn'>
               Coming Soon
             </button>
           </div>
