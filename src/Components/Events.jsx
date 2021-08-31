@@ -35,7 +35,11 @@ export default function Events (props) {
           </ComingSoonGrid>
         </div>
       </div>
-      <DevJamsGrid event={events.devjams} theme={theme} darkTheme={props.darkTheme} />
+      <DevJamsGrid
+        event={events.devjams}
+        theme={theme}
+        darkTheme={props.darkTheme}
+      />
     </div>
   )
 }
@@ -50,7 +54,7 @@ const DevJamsGrid = (props) => {
     >
       <div className='grid md:grid-cols-2 place-items-center pt-5 sm:py-5 px-10 relative z-10'>
         <div className='flex flex-col items-center md:items-start'>
-          <DevJamsLogo className='w-40 sm:w-72 h-auto my-5' />
+          <DevJamsLogo className='w-40 sm:w-72 h-auto py-5' />
           <div
             onClick={() => window.open('./Brochure.pdf')}
             className={`cursor-pointer flex justify-center md:justify-start gap-x-2 ${props.darkTheme ? 'text-gray-100 hover:text-white' : 'text-jams_blue hover:text-blue-600'} md:text-xl lg:text-2xl font-semibold items-center md:px-0 py-2 md:pb-4 md:pt-0`}

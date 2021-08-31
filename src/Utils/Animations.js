@@ -30,7 +30,7 @@ const TOTAL_DURATION = 3000
 // hardcoded value
 const subtractTrainPos = 64
 
-const windowLength = window.screen.width
+const windowLength = window.innerWidth
 const midPoint = TOTAL_STATIONS / 2
 
 let distanceToTravel = 0

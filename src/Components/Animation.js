@@ -14,12 +14,13 @@ import { ReactComponent as NightGrassAndTrees } from '../Assets/TrainAnimations/
 
 import { ReactComponent as Train } from '../Assets/TrainAnimations/Train.svg'
 import { animations } from '../Utils/Animations'
-import { useLocation } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 
 const Animation = ({ darkTheme }) => {
   const [metrics, setMetrics] = useState(null)
 
   const location = useLocation()
+  const history = useHistory()
   const pathname = location.pathname
 
   const initialLocation = useRef(pathname)
@@ -48,6 +49,17 @@ const Animation = ({ darkTheme }) => {
       identifyCurrentLocation(initialLocation.current)
     }
   }, [metrics])
+
+  useEffect(() => {
+    const reloadPage = () => {
+      history.go(0)
+    }
+
+    window.addEventListener('resize', reloadPage)
+    return () => {
+      window.removeEventListener('resize', reloadPage)
+    }
+  }, [history])
 
   return (
     <div className='h-screen w-screen fixed overflow-hidden'>
