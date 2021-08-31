@@ -57,12 +57,6 @@ function App () {
               path='/about'
               component={() => <About darkTheme={darkTheme} />}
             />
-            <Route
-              path='/Brochure.pdf' component={() => {
-                window.open('https://drive.google.com/file/d/1uimCiR55PxBTEGvQnJCgDYQ2uM2ci2dD/view', '_self')
-                return null
-              }}
-            />
             <Redirect to='/' />
           </Switch>
         )}
