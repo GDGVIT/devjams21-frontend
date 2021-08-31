@@ -56,11 +56,8 @@ const DevJamsGrid = (props) => {
         <div className='flex flex-col items-center md:items-start'>
           <DevJamsLogo className='w-40 sm:w-72 h-auto py-5' />
           <div
-            onClick={() =>
-              window.open(
-                'https://drive.google.com/file/d/1uimCiR55PxBTEGvQnJCgDYQ2uM2ci2dD/view'
-              )}
-            className='cursor-pointer flex justify-center md:justify-start gap-x-2 text-jams_blue md:text-xl font-semibold items-center md:px-0 py-2 md:pb-4 md:pt-0'
+            onClick={() => window.open('./Brochure.pdf')}
+            className={`cursor-pointer flex justify-center md:justify-start gap-x-2 ${props.darkTheme ? 'text-gray-100 hover:text-white' : 'text-jams_blue hover:text-blue-600'} md:text-xl lg:text-2xl font-semibold items-center md:px-0 py-2 md:pb-4 md:pt-0`}
           >
             <span>Download Brochure</span>
             <ChervonRight />
