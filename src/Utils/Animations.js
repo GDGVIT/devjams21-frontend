@@ -25,7 +25,7 @@ const mapStationToIndex = {
   '/sponsors': 4
 }
 
-const TOTAL_DURATION = 6000
+const TOTAL_DURATION = 4000
 
 // hardcoded value
 const subtractTrainPos = 64
