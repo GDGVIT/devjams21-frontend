@@ -33,6 +33,14 @@ const Animation = ({ darkTheme, setMetrics }) => {
     setMetrics(lengths)
   }, [setMetrics])
 
+  useEffect(() => {
+    const recalc = () => {
+      window.location.reload()
+    }
+    window.addEventListener('resize', recalc)
+    return () => window.removeEventListener('resize', recalc)
+  }, [])
+
   return (
     <div className='h-screen w-screen fixed overflow-hidden'>
       {darkTheme && ( // dark

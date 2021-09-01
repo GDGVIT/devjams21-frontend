@@ -154,7 +154,7 @@ const findMetrics = (lengths) => {
 const move = async () => {
   if (!distanceToTravel) distanceToTravel = endPoints.end
 
-  console.log('distance to travel', distanceToTravel)
+  if (endPoints.end === 0) return
 
   const moveByDistance = {
     bg: distanceToTravel * metrics.stationToStationDistance.bg * -1,
