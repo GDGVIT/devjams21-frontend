@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 // Light
 import { ReactComponent as Sun } from '../Assets/TrainAnimations/Day/Sun.svg'
@@ -13,48 +13,15 @@ import { ReactComponent as NightCityAndLightHouse } from '../Assets/TrainAnimati
 import { ReactComponent as NightGrassAndTrees } from '../Assets/TrainAnimations/Night/GrassAndTrees.svg'
 
 import { ReactComponent as Train } from '../Assets/TrainAnimations/Train.svg'
-import { animations } from '../Utils/Animations'
-import { useLocation } from 'react-router-dom'
+import { findMetrics } from '../Utils/Animations'
 
-const Animation = ({ darkTheme }) => {
-  const [metrics, setMetrics] = useState(null)
-  const [windowDimensions, setWindowDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight
-  })
-
-  const location = useLocation()
-  const pathname = location.pathname
-
-  const initialLocation = useRef(pathname)
-
+const Animation = ({ darkTheme, setMetrics }) => {
   const bgRef1 = useRef(null)
   const cityRef1 = useRef(null)
   const grassRef1 = useRef(null)
   const trainRef = useRef(null)
 
   useEffect(() => {
-    const pageReload = () => {
-      const { innerWidth, innerHeight } = window
-      if (
-        innerWidth !== windowDimensions.width ||
-        innerHeight !== windowDimensions.height
-      ) {
-        window.location.reload()
-        setWindowDimensions({
-          width: innerWidth,
-          height: innerHeight
-        })
-      }
-    }
-    window.addEventListener('resize', pageReload)
-    return () => {
-      window.removeEventListener('resize', pageReload)
-    }
-  }, [windowDimensions])
-
-  useEffect(() => {
-    const { findMetrics } = animations()
     const lengths = {
       bg: bgRef1.current.getBoundingClientRect().width,
       city: cityRef1.current.getBoundingClientRect().width,
@@ -64,14 +31,7 @@ const Animation = ({ darkTheme }) => {
     }
     findMetrics(lengths)
     setMetrics(lengths)
-  }, [])
-
-  useEffect(() => {
-    if (metrics) {
-      const { identifyCurrentLocation } = animations()
-      identifyCurrentLocation(initialLocation.current)
-    }
-  }, [metrics])
+  }, [setMetrics])
 
   return (
     <div className='h-screen w-screen fixed overflow-hidden'>

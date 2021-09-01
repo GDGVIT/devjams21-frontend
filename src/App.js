@@ -10,7 +10,8 @@ import Home from './Pages/Home'
 import Animation from './Components/Animation'
 
 function App () {
-  const [bodyRender, setBodyRender] = useState(true)
+  const [bodyRender, setBodyRender] = useState(false)
+  const [metrics, setMetrics] = useState(null)
   const [navlinksOpen, setNavlinksOpen] = useState(false)
 
   const date = new Date()
@@ -25,11 +26,12 @@ function App () {
           darkTheme={darkTheme}
           navlinksOpen={navlinksOpen}
           setNavlinksOpen={setNavlinksOpen}
+          metrics={metrics}
         />
         {navlinksOpen && (
           <div className='bg-white fixed top-0 left-0 opacity-50 z-30 w-screen h-full transition-all ease-in-out duration-300' />
         )}
-        <Animation darkTheme={darkTheme} />
+        <Animation darkTheme={darkTheme} setMetrics={setMetrics} />
         {bodyRender && (
           <Switch>
             <Route
