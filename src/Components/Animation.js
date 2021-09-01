@@ -18,6 +18,10 @@ import { useLocation } from 'react-router-dom'
 
 const Animation = ({ darkTheme }) => {
   const [metrics, setMetrics] = useState(null)
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  })
 
   const location = useLocation()
   const pathname = location.pathname
@@ -28,6 +32,26 @@ const Animation = ({ darkTheme }) => {
   const cityRef1 = useRef(null)
   const grassRef1 = useRef(null)
   const trainRef = useRef(null)
+
+  useEffect(() => {
+    const pageReload = () => {
+      const { innerWidth, innerHeight } = window
+      if (
+        innerWidth !== windowDimensions.width ||
+        innerHeight !== windowDimensions.height
+      ) {
+        window.location.reload()
+        setWindowDimensions({
+          width: innerWidth,
+          height: innerHeight
+        })
+      }
+    }
+    window.addEventListener('resize', pageReload)
+    return () => {
+      window.removeEventListener('resize', pageReload)
+    }
+  }, [windowDimensions])
 
   useEffect(() => {
     const { findMetrics } = animations()
