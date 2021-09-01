@@ -52,7 +52,7 @@ const Animation = ({ darkTheme }) => {
 
   useEffect(() => {
     const reloadPage = () => {
-      history.go(0)
+      window.location.reload()
     }
 
     window.addEventListener('resize', reloadPage)
