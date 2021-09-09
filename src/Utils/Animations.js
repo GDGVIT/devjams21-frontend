@@ -28,7 +28,7 @@ const TOTAL_DURATION = 3000
 const midPoint = TOTAL_STATIONS / 2
 
 // hardcoded value
-const subtractTrainPos = 64
+// const subtractTrainPos = 64;
 
 // default values given
 const metrics = {
@@ -45,14 +45,13 @@ const metrics = {
   }
 }
 
-const x = {
+let x = {
   bg: 0,
   city: 0,
-  grass: 0,
-  train: 0
+  grass: 0
 }
 
-const pos = {
+let pos = {
   set1: {
     bg: 0,
     city: 0,
@@ -73,7 +72,7 @@ const pos = {
 let setTurnToShift = 1
 let distanceToTravel = 0
 
-const endPoints = {
+let endPoints = {
   start: 0,
   end: TOTAL_STATIONS
 }
@@ -131,13 +130,10 @@ const setBeforeAnimating = () => {
 }
 
 const findMetrics = (lengths) => {
-  x.train = lengths.trainPos
-
   metrics.totalSVGWidth = {
     bg: Math.floor(lengths.bg),
     city: Math.floor(lengths.city),
-    grass: Math.floor(lengths.grass),
-    train: lengths.train - subtractTrainPos
+    grass: Math.floor(lengths.grass)
   }
 
   metrics.stationToStationDistance = {
@@ -152,9 +148,8 @@ const findMetrics = (lengths) => {
 }
 
 const move = async () => {
+  if (!distanceToTravel && endPoints.end === 0) return
   if (!distanceToTravel) distanceToTravel = endPoints.end
-
-  if (endPoints.end === 0) return
 
   const moveByDistance = {
     bg: distanceToTravel * metrics.stationToStationDistance.bg * -1,
@@ -259,8 +254,6 @@ const trainAnimation = (current, dest) => {
   endPoints.start = mapStationToIndex[current]
   endPoints.end = mapStationToIndex[dest]
 
-  console.log('start point and end points are', endPoints.start, endPoints.end)
-
   const distance = endPoints.end - endPoints.start
 
   if (endPoints.end < endPoints.start) {
@@ -290,9 +283,43 @@ const trainAnimation = (current, dest) => {
   })
 }
 
-const reachInitialStation = async (current) => {
-  distanceToTravel = mapStationToIndex[current]
-  await move()
+const reset = async (current) => {
+  pos = {
+    set1: {
+      bg: 0,
+      city: 0,
+      grass: 0
+    },
+    set2: {
+      bg: 0,
+      city: 0,
+      grass: 0
+    },
+    set3: {
+      bg: 0,
+      city: 0,
+      grass: 0
+    }
+  }
+
+  x = {
+    bg: 0,
+    city: 0,
+    grass: 0
+  }
+
+  setTurnToShift = 1
+  distanceToTravel = 0
+
+  endPoints = {
+    start: 0,
+    end: TOTAL_STATIONS
+  }
+
+  initialTranslation()
+  calculateOffset()
+  setBeforeAnimating()
+  await trainAnimation(current, current)
 }
 
-export { trainAnimation, findMetrics, reachInitialStation }
+export { trainAnimation, findMetrics, reset }

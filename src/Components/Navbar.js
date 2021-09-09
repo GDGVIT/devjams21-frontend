@@ -3,7 +3,7 @@ import { useLocation, useHistory } from 'react-router-dom'
 import { ReactComponent as GDSCLogoNight } from '../Assets/Logos/GDSC Logo Night.svg'
 import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg'
 import GDSCLogoMobile from '../Assets/Logos/GDSC Logo Mobile.png'
-import { trainAnimation } from '../Utils/Animations'
+import { reset, trainAnimation } from '../Utils/Animations'
 import { moveIntoView } from '../Utils/Scroll'
 import '../Styles/Navbar.css'
 import Discord from '../Assets/Discord'
@@ -73,6 +73,15 @@ const Navbar = ({
       setNavbarBg(false)
     }
   })
+
+  useEffect(() => {
+    const recalc = () => {
+      setBodyRender(false)
+      reset(pathname).then(() => setBodyRender(true))
+    }
+    window.addEventListener('resize', recalc)
+    return () => window.removeEventListener('resize', recalc)
+  }, [pathname, setBodyRender])
 
   useEffect(() => {
     if (startAnimation && metrics) {

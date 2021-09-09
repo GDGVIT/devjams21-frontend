@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 // Light
 import { ReactComponent as Sun } from '../Assets/TrainAnimations/Day/Sun.svg'
@@ -21,11 +21,6 @@ const Animation = ({ darkTheme, setMetrics }) => {
   const grassRef1 = useRef(null)
   const trainRef = useRef(null)
 
-  const [dimensions, setDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight
-  })
-
   useEffect(() => {
     const lengths = {
       bg: bgRef1.current.getBoundingClientRect().width,
@@ -37,24 +32,6 @@ const Animation = ({ darkTheme, setMetrics }) => {
     findMetrics(lengths)
     setMetrics(lengths)
   }, [setMetrics])
-
-  useEffect(() => {
-    const recalc = () => {
-      const { innerHeight, innerWidth } = window
-      if (
-        dimensions.width !== innerWidth ||
-        dimensions.height !== innerHeight
-      ) {
-        setDimensions({
-          width: innerWidth,
-          height: innerHeight
-        })
-        window.location.reload()
-      }
-    }
-    window.addEventListener('resize', recalc)
-    return () => window.removeEventListener('resize', recalc)
-  }, [dimensions])
 
   return (
     <div className='h-screen w-screen fixed overflow-hidden'>

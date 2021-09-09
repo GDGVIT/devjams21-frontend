@@ -11,11 +11,9 @@ const events = {
   },
   devtalks: {
     name: 'DevTalks 21',
-    date: '19th Sep 2021',
+    date: 'To Be Announced',
     content:
       'Interact and meet with a few of the most prestigious and renowned figures in the ever-changing tech industry!',
-    // borderColor: "#E3E3FF",
-    // bgColor: "rgba(216, 61, 52, 0.06)",
     classname: 'devtalks-grid',
     coords: { circle1: '-top-32 -right-0', circle2: '-bottom-20 left-0' }
   },
