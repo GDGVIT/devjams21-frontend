@@ -81,7 +81,11 @@
 }
 
 /* buttons */
-.btn__register--dark,
+.btn__register--dark {
+  background: #5d60ff;
+  color: white;
+}
+
 .btn__coming-soon--dark {
   background: #272841;
   color: #5d60ff;
