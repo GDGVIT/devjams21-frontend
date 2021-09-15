@@ -21,9 +21,9 @@ export default function Events (props) {
     <div ref={homeContainerRef} className='overflow-x-hidden'>
       <div className='cards w-screen overflow-x-auto overflow-y-hidden'>
         <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12 2xl:flex 2xl:justify-around'>
-          <ComingSoonGrid event={events.ctf} theme={theme}>
+          <CurrentEventGrid event={events.ctf} theme={theme}>
             <CTFLogo className='w-52' />
-          </ComingSoonGrid>
+          </CurrentEventGrid>
           <ComingSoonGrid event={events.knockathon} theme={theme}>
             <KnockathonsLogo className='w-52' />
           </ComingSoonGrid>
@@ -86,35 +86,37 @@ const DevJamsGrid = (props) => {
   )
 }
 
-// const CurrentEventGrid = (props) => {
-//   const { event, theme } = props
-//   const { date, content } = event
+const CurrentEventGrid = (props) => {
+  const { event, theme } = props
+  const { date, content, link } = event
 
-//   return (
-//     <div
-//       className={`grid--${theme} register-grid--${theme} w-80 pt-6 relative shadow-md rounded-3xl overflow-hidden`}
-//     >
-//       <div className='content-container'>
-//         <div className='h-56 grid gap-y-4'>
-//           <div className='grid place-items-center gap-y-4'>
-//             {props.children}
-//             <div className='text-jams_red font-bold'>{date}</div>
-//           </div>
-//           <div className={`content--${theme}`}>{content}</div>
-//         </div>
-//         <div className='text-center'>
-//           <button className={`btn__register--${theme} grid-btn`}>
-//             Register
-//           </button>
-//         </div>
-//       </div>
-//       {/* circles */}
-//       <div className='absolute top-0 left-0 right-0 bottom-0'>
-//         <Circles info={props.event} theme={theme} />
-//       </div>
-//     </div>
-//   )
-// }
+  return (
+    <div
+      className={`grid--${theme} register-grid--${theme} w-80 pt-6 relative shadow-md rounded-3xl overflow-hidden`}
+    >
+      <div className='content-container'>
+        <div className='h-56 grid gap-y-4'>
+          <div className='grid place-items-center gap-y-4'>
+            {props.children}
+            <div className='text-jams_red font-bold'>{date}</div>
+          </div>
+          <div className={`content--${theme}`}>{content}</div>
+        </div>
+        <div className='text-center'>
+          <a href={link || '#'} rel='noreferrer' target='_blank'>
+            <button className={`btn__register--${theme} grid-btn`}>
+              Register
+            </button>
+          </a>
+        </div>
+      </div>
+      {/* circles */}
+      <div className='absolute top-0 left-0 right-0 bottom-0'>
+        <Circles info={props.event} theme={theme} />
+      </div>
+    </div>
+  )
+}
 
 const ComingSoonGrid = (props) => {
   const { theme, event } = props

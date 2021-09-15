@@ -27,11 +27,12 @@ const events = {
   },
   ctf: {
     name: 'DeconstruCTF',
-    date: 'To Be Announced',
+    date: '1st - 2nd October',
     content:
       'A 24 hour jeopardy style CTF, ranging to five different domains, namely, web, forensics, cryptography, OSINT and miscellaneous!',
     classname: 'ctf-grid',
-    coords: { circle1: '-top-0 -right-32', circle2: '-bottom-20 -left-20' }
+    coords: { circle1: '-top-0 -right-32', circle2: '-bottom-20 -left-20' },
+    link: 'https://ctf.dscvit.com/'
   },
   designzzz: {
     name: 'Hexathon',
