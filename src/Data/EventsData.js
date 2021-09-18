@@ -3,7 +3,7 @@
 const events = {
   devjams: {
     name: "DevJams'21",
-    dateRange: 'To Be Announced',
+    dateRange: '12th - 14th November',
     month: '',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero odit praesentium facilis non placeat nisi inventore sapiente nulla alias dolores',
@@ -11,7 +11,7 @@ const events = {
   },
   devtalks: {
     name: 'DevTalks 21',
-    date: 'To Be Announced',
+    date: 'Along with DevJams',
     content:
       'Interact and meet with a few of the most prestigious and renowned figures in the ever-changing tech industry!',
     classname: 'devtalks-grid',
@@ -19,7 +19,7 @@ const events = {
   },
   knockathon: {
     name: 'Knockathons 21',
-    date: 'To Be Announced',
+    date: '9th - 10th October',
     content:
       'Have what it takes to be a winner? Team up with your friends to solve an innovative problem and pitch your ideas while competing against other teams to come out on top!',
     classname: 'knockathon-grid',
@@ -34,12 +34,12 @@ const events = {
     coords: { circle1: '-top-0 -right-32', circle2: '-bottom-20 -left-20' },
     link: 'https://ctf.dscvit.com/'
   },
-  designzzz: {
+  hexathon: {
     name: 'Hexathon',
-    date: 'To Be Announced',
+    date: '31st October',
     content:
       'Channel your inner passion and creativity to create innovative and ingenious design solutions to current problems and win exciting prizes!',
-    classname: 'designzzz-grid',
+    classname: 'hexathon-grid',
     coords: { circle1: '-top-32 -right-32', circle2: 'bottom-10 -left-20' }
   }
 }
