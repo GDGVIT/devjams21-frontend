@@ -26,6 +26,7 @@ const Navbar = ({
 
   const navbarMobileRef = useRef(null)
   const movedToInitialStation = useRef(false)
+  const windowWidthRef = useRef(window.innerWidth)
 
   // route we should go to
   const [destination, setDestination] = useState(pathname)
@@ -76,8 +77,11 @@ const Navbar = ({
 
   useEffect(() => {
     const recalc = () => {
-      setBodyRender(false)
-      reset(pathname).then(() => setBodyRender(true))
+      if (window.innerWidth !== windowWidthRef.current) {
+        windowWidthRef.current = window.innerWidth
+        setBodyRender(false)
+        reset(pathname).then(() => setBodyRender(true))
+      }
     }
     window.addEventListener('resize', recalc)
     return () => window.removeEventListener('resize', recalc)
