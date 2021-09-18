@@ -309,7 +309,7 @@ const reset = async (current) => {
   }
 
   setTurnToShift = 1
-  distanceToTravel = 0
+  distanceToTravel = mapStationToIndex[current]
 
   endPoints = {
     start: 0,
@@ -318,8 +318,25 @@ const reset = async (current) => {
 
   initialTranslation()
   calculateOffset()
+  const moveByDistance = {
+    bg: distanceToTravel * metrics.stationToStationDistance.bg * -1,
+    city: distanceToTravel * metrics.stationToStationDistance.city * -1,
+    grass: distanceToTravel * metrics.stationToStationDistance.grass * -1
+  }
+
+  pos.set1.bg += moveByDistance.bg
+  pos.set2.bg += moveByDistance.bg
+  pos.set3.bg += moveByDistance.bg
+
+  pos.set1.city += moveByDistance.city
+  pos.set2.city += moveByDistance.city
+  pos.set3.city += moveByDistance.city
+
+  pos.set1.grass += moveByDistance.grass
+  pos.set2.grass += moveByDistance.grass
+  pos.set3.grass += moveByDistance.grass
+
   setBeforeAnimating()
-  await trainAnimation(current, current)
 }
 
 export { trainAnimation, findMetrics, reset }
