@@ -3,7 +3,7 @@ import { useLocation, useHistory } from 'react-router-dom'
 import { ReactComponent as GDSCLogoNight } from '../Assets/Logos/GDSC Logo Night.svg'
 import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg'
 import GDSCLogoMobile from '../Assets/Logos/GDSC Logo Mobile.png'
-import { animations } from '../Utils/Animations'
+import { trainAnimation, reset } from '../Utils/Animations'
 import { moveIntoView } from '../Utils/Scroll'
 import '../Styles/Navbar.css'
 import Discord from '../Assets/Discord'
@@ -12,17 +12,20 @@ const Navbar = ({
   darkTheme,
   setBodyRender,
   navlinksOpen,
-  setNavlinksOpen
+  setNavlinksOpen,
+  metrics
 }) => {
+  const [startAnimation, setStartAnimation] = useState(true)
   const location = useLocation()
   const history = useHistory()
 
   const pathname = location.pathname
-
-  const [startAnimation, setStartAnimation] = useState(false)
   const [navbarBg, setNavbarBg] = useState(false)
   const [discoom, setDiscoom] = useState(true)
+
   const navbarMobileRef = useRef(null)
+  const movedToInitialStation = useRef(false)
+  const windowWidthRef = useRef(window.innerWidth)
 
   // route we should go to
   const [destination, setDestination] = useState(pathname)
@@ -72,12 +75,28 @@ const Navbar = ({
   })
 
   useEffect(() => {
-    if (startAnimation) {
-      const { trainAnimation } = animations()
+    const recalc = () => {
+      if (window.innerWidth !== windowWidthRef.current) {
+        windowWidthRef.current = window.innerWidth
+        setBodyRender(false)
+        reset(pathname).then(() => setBodyRender(true))
+      }
+    }
+    window.addEventListener('resize', recalc)
+    return () => window.removeEventListener('resize', recalc)
+  }, [pathname, setBodyRender])
 
+  useEffect(() => {
+    if (startAnimation && metrics) {
       moveIntoView(setBodyRender)
 
-      const currentStation = pathname
+      let currentStation = pathname
+
+      if (!movedToInitialStation.current) {
+        currentStation = '/'
+        movedToInitialStation.current = true
+      }
+
       const destinationStation = destination
 
       trainAnimation(currentStation, destinationStation).then(() => {
@@ -87,7 +106,15 @@ const Navbar = ({
         setDiscoom(true)
       })
     }
-  }, [startAnimation, destination, setBodyRender, pathname, history])
+  }, [
+    startAnimation,
+    destination,
+    setBodyRender,
+    pathname,
+    history,
+    setStartAnimation,
+    metrics
+  ])
 
   const handleNavbarOpen = () => {
     setNavlinksOpen(!navlinksOpen)
@@ -104,7 +131,12 @@ const Navbar = ({
         } transition-all duration-300 ease-in-out`}
       >
         {/* GDSC Logo */}
-        <a href='https://dscvit.com/' target='_blank' rel='noopener noreferrer' className='hidden lg:block'>
+        <a
+          href='https://dscvit.com/'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='hidden lg:block'
+        >
           {darkTheme && (
             <GDSCLogoNight className='w-72 invisible lg:visible lg:absolute z-50 left-6 transition-all ease-in-out duration-300 top-5' />
           )}
@@ -201,7 +233,7 @@ const Navbar = ({
           </div>
 
           {/* Navbar desktop */}
-          <div className='flex fixed items-center right-8 font-sora z-50 transition-all ease-in-out duration-300 top-6'>
+          <div className='flex fixed items-center right-44 font-sora z-50 transition-all ease-in-out duration-300 top-6'>
             <div
               className={`hidden lg:flex ${
                 darkTheme ? 'text-white' : 'text-black'
@@ -257,11 +289,29 @@ const Navbar = ({
         </div>
 
         {/* Discord button */}
-        <a href='https://discord.com/invite/8KMMjA2qRC' target='_blank' rel='noopener noreferrer'>
-          <div className={`fixed items-center overflow-hidden flex ${discoom ? 'w-56' : 'w-14'} h-14 z-50 hover:w-56 right-6 rounded transition-all duration-500 ease-in-out bottom-5`}>
+        <a
+          href='https://discord.com/invite/8KMMjA2qRC'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <div
+            className={`fixed items-center overflow-hidden flex ${
+              discoom ? 'w-56' : 'w-14'
+            } h-14 z-50 hover:w-56 right-6 rounded transition-all duration-500 ease-in-out bottom-5`}
+          >
             <Discord className='h-full' darkTheme={darkTheme} />
-            <span className={`h-1/2 border-l-2 ${darkTheme ? 'border-discord_violet' : 'border-white'}`} />
-            <h1 className={`discord-bg--${darkTheme ? 'dark text-discord_violet' : 'light text-discord_white'} font-sora whitespace-nowrap font-semibold ml-3 w-52 h-full`}>
+            <span
+              className={`h-1/2 border-l-2 ${
+                darkTheme ? 'border-discord_violet' : 'border-white'
+              }`}
+            />
+            <h1
+              className={`discord-bg--${
+                darkTheme
+                  ? 'dark text-discord_violet'
+                  : 'light text-discord_white'
+              } font-sora whitespace-nowrap font-semibold ml-3 w-52 h-full`}
+            >
               Join our Discord
             </h1>
           </div>
@@ -269,7 +319,14 @@ const Navbar = ({
       </div>
 
       {/* GDSC Mobile */}
-      <a href='https://dscvit.com/' target='_blank' rel='noopener noreferrer' className={`absolute -bottom-2 ${window.scrollY > 0 ? '-left-2/4 md:-left-2/3' : 'left-1/4 md:left-1/3'}  z-30 visible lg:invisible w-1/2 md:w-1/3 h-24 md:h-32 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-300 ease-in-out`}>
+      <a
+        href='https://dscvit.com/'
+        target='_blank'
+        rel='noopener noreferrer'
+        className={`absolute -bottom-2 ${
+          window.scrollY > 0 ? '-left-2/4 md:-left-2/3' : 'left-1/4 md:left-1/3'
+        }  z-30 visible lg:invisible w-1/2 md:w-1/3 h-24 md:h-32 bg-white rounded-xl px-6 pt-4 pb-6 transition-all duration-300 ease-in-out`}
+      >
         <img src={GDSCLogoMobile} alt='Logo mobile' className='w-full' />
       </a>
     </>
