@@ -65,7 +65,7 @@ export default function Faq (props) {
               Feel free to ping us
               on <a className='underline' target='_blank' rel='noopener noreferrer' href='https://twitter.com/gdscvit'>Twitter</a>,
               on <a className='underline' target='_blank' rel='noopener noreferrer' href='https://www.instagram.com/gdscvitvellore/'>Instagram</a> or you can mail us
-              at <a className='underline' href='mailto:gdscvitvellore@gmail.com'>gdscvitvellore@gmail.com</a> at any time of the day. We will try to respond as soon as possible.
+              at <a className='underline' href='mailto:dscvitvellore@gmail.com'>dscvitvellore@gmail.com</a> at any time of the day. We will try to respond as soon as possible.
             </p>
           </div>
         </div>
