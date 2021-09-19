@@ -3,7 +3,7 @@ import { useLocation, useHistory } from 'react-router-dom'
 import { ReactComponent as GDSCLogoNight } from '../Assets/Logos/GDSC Logo Night.svg'
 import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg'
 import GDSCLogoMobile from '../Assets/Logos/GDSC Logo Mobile.png'
-import { reset, trainAnimation } from '../Utils/Animations'
+import { trainAnimation, reset } from '../Utils/Animations'
 import { moveIntoView } from '../Utils/Scroll'
 import '../Styles/Navbar.css'
 import Discord from '../Assets/Discord'
@@ -20,7 +20,6 @@ const Navbar = ({
   const history = useHistory()
 
   const pathname = location.pathname
-
   const [navbarBg, setNavbarBg] = useState(false)
   const [discoom, setDiscoom] = useState(true)
 
@@ -234,7 +233,7 @@ const Navbar = ({
           </div>
 
           {/* Navbar desktop */}
-          <div className='flex fixed items-center right-8 font-sora z-50 transition-all ease-in-out duration-300 top-6'>
+          <div className='flex fixed items-center right-44 font-sora z-50 transition-all ease-in-out duration-300 top-6'>
             <div
               className={`hidden lg:flex ${
                 darkTheme ? 'text-white' : 'text-black'

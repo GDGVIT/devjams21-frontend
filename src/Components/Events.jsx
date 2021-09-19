@@ -27,7 +27,7 @@ export default function Events (props) {
           <ComingSoonGrid event={events.knockathon} theme={theme}>
             <KnockathonsLogo className='w-52' />
           </ComingSoonGrid>
-          <ComingSoonGrid event={events.designzzz} theme={theme}>
+          <ComingSoonGrid event={events.hexathon} theme={theme}>
             <HexathonLogo className='w-36 my-3' />
           </ComingSoonGrid>
           <ComingSoonGrid event={events.devtalks} theme={theme}>

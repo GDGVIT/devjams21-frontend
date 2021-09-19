@@ -25,7 +25,7 @@ export default function About (props) {
         >
           <div className='md:col-span-6 lg:col-span-3 '>
             <h2 className='text-2xl sm:text-3xl font-semibold mb-5 md:mb-8'>
-              DevJams
+              <span className='border-b-4 border-jams_blue'>DevJams</span>
             </h2>
             <p className='text-sm leading-relaxed text-justify mb-3 xl:text-lg'>
               DevJams is one of a kind hackathon conducted by Google Developer
@@ -39,7 +39,7 @@ export default function About (props) {
               bring innovative minds from all around the globe under one banner.
             </p>
           </div>
-          <Devjams className='h-56 md:h-auto md:col-span-6 mt-10 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9' />
+          <Devjams className='h-56 md:h-auto md:col-span-6 mt-10 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9 px-4' />
         </div>
 
         <div
@@ -49,7 +49,9 @@ export default function About (props) {
         >
           <div className='md:col-span-6 lg:col-span-3'>
             <h2 className='text-2xl sm:text-3xl font-semibold mb-5 md:mb-8'>
-              GDSC VIT, Vellore
+              <span className='border-b-4 border-jams_blue'>
+                GDSC VIT, Vellore
+              </span>
             </h2>
             <p className='text-sm leading-relaxed text-justify xl:text-lg'>
               GDSC VIT powered by Google Developers is a student community at
@@ -60,7 +62,7 @@ export default function About (props) {
               collaborative results that better the lives of everyone around us.
             </p>
           </div>
-          <Gdsc className='h-56 md:h-auto md:col-span-6 mt-10 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9' />
+          <Gdsc className='h-56 md:h-auto md:col-span-6 mt-10 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9 px-4' />
         </div>
 
         <div
@@ -70,7 +72,9 @@ export default function About (props) {
         >
           <div className='col-span-6 lg:col-span-3'>
             <h2 className='text-2xl sm:text-3xl font-semibold mb-5 md:mb-8'>
-              Vellore Institute of Technology, Vellore
+              <span className='border-b-4 border-jams_blue leading-relaxed'>
+                Vellore Institute of Technology, Vellore
+              </span>
             </h2>
             <p className='text-sm leading-relaxed text-justify xl:text-lg'>
               Vellore Institute of Technology, Vellore founded in 1984 is one of
@@ -81,7 +85,7 @@ export default function About (props) {
               spur us on in our relentless pursuit of excellence.
             </p>
           </div>
-          <Vit className='h-56 md:h-auto md:col-span-6 w-full mt-10 mx-auto lg:col-span-3 lg:w-11/12 lg:my-auto lg:ml-9' />
+          <Vit className='h-56 md:h-auto md:col-span-6 w-full mt-10 mx-auto lg:col-span-3 lg:w-11/12 lg:my-auto lg:ml-9 px-4' />
         </div>
       </div>
       <Contact darkTheme={props.darkTheme} />
