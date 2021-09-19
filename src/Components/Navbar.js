@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useLocation, useHistory } from "react-router-dom";
-import { ReactComponent as GDSCLogoNight } from "../Assets/Logos/GDSC Logo Night.svg";
-import { ReactComponent as GDSCLogoDay } from "../Assets/Logos/GDSC Logo Day.svg";
-import GDSCLogoMobile from "../Assets/Logos/GDSC Logo Mobile.png";
-import { animations } from "../Utils/Animations";
-import { moveIntoView } from "../Utils/Scroll";
-import "../Styles/Navbar.css";
-import Discord from "../Assets/Discord";
+import React, { useEffect, useState, useRef } from 'react'
+import { useLocation, useHistory } from 'react-router-dom'
+import { ReactComponent as GDSCLogoNight } from '../Assets/Logos/GDSC Logo Night.svg'
+import { ReactComponent as GDSCLogoDay } from '../Assets/Logos/GDSC Logo Day.svg'
+import GDSCLogoMobile from '../Assets/Logos/GDSC Logo Mobile.png'
+import { trainAnimation, reset } from '../Utils/Animations'
+import { moveIntoView } from '../Utils/Scroll'
+import '../Styles/Navbar.css'
+import Discord from '../Assets/Discord'
 
 const Navbar = ({
   darkTheme,
@@ -19,9 +19,7 @@ const Navbar = ({
   const location = useLocation()
   const history = useHistory()
 
-  const pathname = location.pathname;
-
-  const [startAnimation, setStartAnimation] = useState(false);
+  const pathname = location.pathname
   const [navbarBg, setNavbarBg] = useState(false)
   const [discoom, setDiscoom] = useState(true)
 
@@ -30,14 +28,14 @@ const Navbar = ({
   const windowWidthRef = useRef(window.innerWidth)
 
   // route we should go to
-  const [destination, setDestination] = useState(pathname);
+  const [destination, setDestination] = useState(pathname)
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDiscoom(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, [discoom]);
+      setDiscoom(false)
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [discoom])
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -45,36 +43,36 @@ const Navbar = ({
         navbarMobileRef.current &&
         !navbarMobileRef.current.contains(event.target)
       ) {
-        setNavlinksOpen(false);
+        setNavlinksOpen(false)
       }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
+    }
+    document.addEventListener('mousedown', handleClickOutside)
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [navbarMobileRef, setNavlinksOpen]);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [navbarMobileRef, setNavlinksOpen])
 
   const handleClick = (route) => {
     if (!startAnimation) {
-      const dest = route;
-      const currentStation = pathname;
-      setNavlinksOpen(false);
+      const dest = route
+      const currentStation = pathname
+      setNavlinksOpen(false)
 
       if (dest && currentStation !== dest) {
-        setStartAnimation(true);
-        setDestination(dest);
+        setStartAnimation(true)
+        setDestination(dest)
       }
     }
-  };
+  }
 
-  window.addEventListener("scroll", () => {
+  window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
-      setNavbarBg(true);
+      setNavbarBg(true)
     } else {
-      setNavbarBg(false);
+      setNavbarBg(false)
     }
-  });
+  })
 
   useEffect(() => {
     const recalc = () => {
@@ -102,11 +100,11 @@ const Navbar = ({
       const destinationStation = destination
 
       trainAnimation(currentStation, destinationStation).then(() => {
-        setStartAnimation(false);
-        history.push(destination);
-        setBodyRender(true);
-        setDiscoom(true);
-      });
+        setStartAnimation(false)
+        history.push(destination)
+        setBodyRender(true)
+        setDiscoom(true)
+      })
     }
   }, [
     startAnimation,
@@ -119,8 +117,8 @@ const Navbar = ({
   ])
 
   const handleNavbarOpen = () => {
-    setNavlinksOpen(!navlinksOpen);
-  };
+    setNavlinksOpen(!navlinksOpen)
+  }
 
   return (
     <>
@@ -128,46 +126,46 @@ const Navbar = ({
       <div
         className={`fixed z-40 h-16 lg:h-20 w-full ${
           navbarBg
-            ? `${darkTheme ? "bg-indigo-900" : "bg-white"} bottom-shadow`
-            : ""
+            ? `${darkTheme ? 'bg-indigo-900' : 'bg-white'} bottom-shadow`
+            : ''
         } transition-all duration-300 ease-in-out`}
       >
         {/* GDSC Logo */}
         <a
-          href="https://dscvit.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden lg:block"
+          href='https://dscvit.com/'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='hidden lg:block'
         >
           {darkTheme && (
-            <GDSCLogoNight className="w-72 invisible lg:visible lg:absolute z-50 left-6 transition-all ease-in-out duration-300 top-5" />
+            <GDSCLogoNight className='w-72 invisible lg:visible lg:absolute z-50 left-6 transition-all ease-in-out duration-300 top-5' />
           )}
           {!darkTheme && (
-            <GDSCLogoDay className="w-72 invisible lg:visible lg:absolute z-50 left-6 transition-all ease-in-out duration-300 top-5" />
+            <GDSCLogoDay className='w-72 invisible lg:visible lg:absolute z-50 left-6 transition-all ease-in-out duration-300 top-5' />
           )}
         </a>
 
         {/* Navbar Mobile */}
         <div>
-          <div className="z-40 w-36 h-full lg:hidden">
+          <div className='z-40 w-36 h-full lg:hidden'>
             {/* Hamburger */}
             <div
               onClick={handleNavbarOpen}
-              className="z-40 flex flex-col mt-5 ml-5 justify-between w-8 h-5 transition-all ease-in-out duration-300 cursor-pointer lg:invisible"
+              className='z-40 flex flex-col mt-5 ml-5 justify-between w-8 h-5 transition-all ease-in-out duration-300 cursor-pointer lg:invisible'
             >
               <span
                 className={`h-1 w-full  rounded-lg ${
-                  darkTheme ? "bg-white" : "bg-black"
+                  darkTheme ? 'bg-white' : 'bg-black'
                 }`}
               />
               <span
                 className={`h-1 w-full  rounded-lg ${
-                  darkTheme ? "bg-white" : "bg-black"
+                  darkTheme ? 'bg-white' : 'bg-black'
                 }`}
               />
               <span
                 className={`h-1 w-full  rounded-lg ${
-                  darkTheme ? "bg-white" : "bg-black"
+                  darkTheme ? 'bg-white' : 'bg-black'
                 }`}
               />
             </div>
@@ -175,59 +173,59 @@ const Navbar = ({
             <div
               ref={navbarMobileRef}
               className={`${
-                darkTheme ? "bg-indigo-900 text-white" : "bg-white text-black"
+                darkTheme ? 'bg-indigo-900 text-white' : 'bg-white text-black'
               } w-60 h-full flex flex-col font-sora items-center text-left top-0 z-60 transition-all ease-in-out duration-300 ${
-                navlinksOpen ? "left-0 fixed" : "-left-96 absolute"
+                navlinksOpen ? 'left-0 fixed' : '-left-96 absolute'
               }`}
             >
-              <div className="close" onClick={handleNavbarOpen} />
+              <div className='close' onClick={handleNavbarOpen} />
               <h4
                 className={`nav-link ${
-                  pathname === "/" && "nav-link-active"
+                  pathname === '/' && 'nav-link-active'
                 } mt-32 mb-10 ${
-                  !startAnimation ? "cursor-pointer hover:opacity-100" : ""
+                  !startAnimation ? 'cursor-pointer hover:opacity-100' : ''
                 }`}
-                onClick={() => handleClick("/")}
+                onClick={() => handleClick('/')}
               >
                 Home
               </h4>
               <h4
                 className={`nav-link ${
-                  pathname === "/about" && "nav-link-active"
+                  pathname === '/about' && 'nav-link-active'
                 } mb-10 ${
-                  !startAnimation ? "cursor-pointer hover:opacity-100" : ""
+                  !startAnimation ? 'cursor-pointer hover:opacity-100' : ''
                 }`}
-                onClick={() => handleClick("/about")}
+                onClick={() => handleClick('/about')}
               >
                 About Us
               </h4>
               <h4
                 className={`nav-link ${
-                  pathname === "/timeline" && "nav-link-active"
+                  pathname === '/timeline' && 'nav-link-active'
                 } mb-10 ${
-                  !startAnimation ? "cursor-pointer hover:opacity-100" : ""
+                  !startAnimation ? 'cursor-pointer hover:opacity-100' : ''
                 }`}
-                onClick={() => handleClick("/timeline")}
+                onClick={() => handleClick('/timeline')}
               >
                 Timeline
               </h4>
               <h4
                 className={`nav-link ${
-                  pathname === "/faq" && "nav-link-active"
+                  pathname === '/faq' && 'nav-link-active'
                 } mb-10 ${
-                  !startAnimation ? "cursor-pointer hover:opacity-100" : ""
+                  !startAnimation ? 'cursor-pointer hover:opacity-100' : ''
                 }`}
-                onClick={() => handleClick("/faq")}
+                onClick={() => handleClick('/faq')}
               >
                 FAQ
               </h4>
               <h4
                 className={`nav-link ${
-                  pathname === "/sponsors" && "nav-link-active"
+                  pathname === '/sponsors' && 'nav-link-active'
                 } mb-10 ${
-                  !startAnimation ? "cursor-pointer hover:opacity-100" : ""
+                  !startAnimation ? 'cursor-pointer hover:opacity-100' : ''
                 }`}
-                onClick={() => handleClick("/sponsors")}
+                onClick={() => handleClick('/sponsors')}
               >
                 Sponsors
               </h4>
@@ -235,49 +233,49 @@ const Navbar = ({
           </div>
 
           {/* Navbar desktop */}
-          <div className="flex fixed items-center right-44 font-sora z-50 transition-all ease-in-out duration-300 top-6">
+          <div className='flex fixed items-center right-44 font-sora z-50 transition-all ease-in-out duration-300 top-6'>
             <div
               className={`hidden lg:flex ${
-                darkTheme ? "text-white" : "text-black"
+                darkTheme ? 'text-white' : 'text-black'
               }`}
             >
               <h4
                 className={`nav-link mr-8 ${
-                  pathname === "/" && "nav-link-active"
-                } ${!startAnimation ? "cursor-pointer hover:opacity-100" : ""}`}
-                onClick={() => handleClick("/")}
+                  pathname === '/' && 'nav-link-active'
+                } ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                onClick={() => handleClick('/')}
               >
                 Home
               </h4>
               <h4
                 className={`nav-link mr-8 ${
-                  pathname === "/about" && "nav-link-active"
-                } ${!startAnimation ? "cursor-pointer hover:opacity-100" : ""}`}
-                onClick={() => handleClick("/about")}
+                  pathname === '/about' && 'nav-link-active'
+                } ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                onClick={() => handleClick('/about')}
               >
                 About Us
               </h4>
               <h4
                 className={`nav-link mr-8 ${
-                  pathname === "/timeline" && "nav-link-active"
-                } ${!startAnimation ? "cursor-pointer hover:opacity-100" : ""}`}
-                onClick={() => handleClick("/timeline")}
+                  pathname === '/timeline' && 'nav-link-active'
+                } ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                onClick={() => handleClick('/timeline')}
               >
                 Timeline
               </h4>
               <h4
                 className={`nav-link mr-8 ${
-                  pathname === "/faq" && "nav-link-active"
-                } ${!startAnimation ? "cursor-pointer hover:opacity-100" : ""}`}
-                onClick={() => handleClick("/faq")}
+                  pathname === '/faq' && 'nav-link-active'
+                } ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                onClick={() => handleClick('/faq')}
               >
                 FAQ
               </h4>
               <h4
                 className={`nav-link ${
-                  pathname === "/sponsors" && "nav-link-active"
-                } ${!startAnimation ? "cursor-pointer hover:opacity-100" : ""}`}
-                onClick={() => handleClick("/sponsors")}
+                  pathname === '/sponsors' && 'nav-link-active'
+                } ${!startAnimation ? 'cursor-pointer hover:opacity-100' : ''}`}
+                onClick={() => handleClick('/sponsors')}
               >
                 Sponsors
               </h4>
@@ -310,8 +308,8 @@ const Navbar = ({
             <h1
               className={`discord-bg--${
                 darkTheme
-                  ? "dark text-discord_violet"
-                  : "light text-discord_white"
+                  ? 'dark text-discord_violet'
+                  : 'light text-discord_white'
               } font-sora whitespace-nowrap font-semibold ml-3 w-52 h-full`}
             >
               Join our Discord
@@ -332,7 +330,7 @@ const Navbar = ({
         <img src={GDSCLogoMobile} alt='Logo mobile' className='w-full' />
       </a>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

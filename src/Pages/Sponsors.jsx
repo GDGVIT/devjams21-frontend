@@ -16,7 +16,7 @@ import Contact from '../Components/Contact'
 
 const SponsorCard = (props) => {
   return (
-    <div className='flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 lg:w-56 lg:h-56 bg-white shadow-lg rounded-2xl'>
+    <div className='flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 lg:w-56 lg:h-56 bg-gray-200 shadow-lg rounded-xl'>
       <img
         src={props.image}
         className='w-24 sm:w-32 lg:w-48 h-auto'
@@ -39,7 +39,7 @@ export default function Sponsors (props) {
       <Baner color='#3B7DED' title='Sponsors' handleScroll={handleScroll} />
       <div className='flex w-screen' ref={contentRef}>
         <div className='m-auto z-20'>
-          <div className='grid gap-8 sm:gap-12 lg:gap-16 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 sm:pb-16 md:pb-10 pt-24 md:pt-28'>
+          <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 sm:pb-16 md:pb-10 pt-24 md:pt-28'>
             <SponsorCard image={DigitalOcean} name='Digital Ocean' />
             <SponsorCard image={HashiCorp} name='HashiCorp' />
             <SponsorCard image={Deepnote} name='Deepnote' />
@@ -57,7 +57,7 @@ export default function Sponsors (props) {
             href='https://form.jotform.com/212415124747047'
             target='_blank'
             rel='noopener noreferrer'
-            className={`mx-auto block text-center ${props.darkTheme ? 'bg-white text-blue-600 hover:bg-gray-200' : 'bg-blue-600 text-white hover:bg-blue-800'} w-full lg:w-2/3 xl:w-1/2 py-4 rounded-md text-lg md:text-2xl font-semibold font-sora mt-8 md:mt-0 md:mb-4`}
+            className='mx-auto block text-center bg-blue-600 text-white hover:bg-blue-800 w-full lg:w-2/3 xl:w-1/2 py-4 rounded-md text-lg md:text-2xl font-semibold font-sora mt-8 md:mt-0 md:mb-4'
           >
             Sponsor Us
           </a>
