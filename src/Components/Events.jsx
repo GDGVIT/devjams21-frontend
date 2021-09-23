@@ -21,12 +21,20 @@ export default function Events (props) {
     <div ref={homeContainerRef} className='overflow-x-hidden'>
       <div className='cards w-screen overflow-x-auto overflow-y-hidden'>
         <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12 2xl:flex 2xl:justify-around'>
-          <CurrentEventGrid event={events.ctf} theme={theme}>
+          <CurrentEventGrid
+            event={events.ctf}
+            theme={theme}
+            buttonLabel='Register'
+          >
             <CTFLogo className='w-52' />
           </CurrentEventGrid>
-          <ComingSoonGrid event={events.knockathon} theme={theme}>
+          <CurrentEventGrid
+            event={events.knockathon}
+            theme={theme}
+            buttonLabel='RSVP'
+          >
             <KnockathonsLogo className='w-52' />
-          </ComingSoonGrid>
+          </CurrentEventGrid>
           <ComingSoonGrid event={events.hexathon} theme={theme}>
             <HexathonLogo className='w-36 my-3' />
           </ComingSoonGrid>
@@ -87,7 +95,7 @@ const DevJamsGrid = (props) => {
 }
 
 const CurrentEventGrid = (props) => {
-  const { event, theme } = props
+  const { event, theme, buttonLabel } = props
   const { date, content, link } = event
 
   return (
@@ -104,8 +112,10 @@ const CurrentEventGrid = (props) => {
         </div>
         <div className='text-center'>
           <a href={link || '#'} rel='noreferrer' target='_blank'>
-            <button className={`btn__register--${theme} grid-btn`}>
-              Register
+            <button
+              className={`btn__register--${theme} grid-btn hover:bg-jams_red`}
+            >
+              {buttonLabel}
             </button>
           </a>
         </div>
@@ -124,7 +134,7 @@ const ComingSoonGrid = (props) => {
 
   return (
     <div
-      className={`relative grid--${theme} coming-soon-grid--${theme} w-80 pt-6 2xl:pt-3 relative shadow-md rounded-3xl overflow-hidden`}
+      className={`relative grid--${theme} coming-soon-grid--${theme} w-80 pt-6 relative shadow-md rounded-3xl overflow-hidden`}
     >
       <div className='content-container'>
         <div className='h-56 grid gap-y-4'>

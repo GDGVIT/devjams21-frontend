@@ -16,7 +16,7 @@ import Contact from '../Components/Contact'
 
 const SponsorCard = (props) => {
   return (
-    <div className='flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 lg:w-56 lg:h-56 bg-gray-200 shadow-lg rounded-xl'>
+    <div className='flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 lg:w-56 lg:h-56 bg-gray-100 shadow-lg rounded-xl'>
       <img
         src={props.image}
         className='w-24 sm:w-32 lg:w-48 h-auto'
