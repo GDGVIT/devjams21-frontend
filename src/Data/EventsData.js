@@ -23,7 +23,8 @@ const events = {
     content:
       'Have what it takes to be a winner? Team up with your friends to solve an innovative problem and pitch your ideas while competing against other teams to come out on top!',
     classname: 'knockathon-grid',
-    coords: { circle1: '-top-32 -right-20', circle2: '-bottom-20 -left-20' }
+    coords: { circle1: '-top-32 -right-20', circle2: '-bottom-20 -left-20' },
+    link: 'https://gdsc.community.dev/e/mpr29r/'
   },
   ctf: {
     name: 'DeconstruCTF',
