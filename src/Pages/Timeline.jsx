@@ -1,6 +1,8 @@
 import React, { useRef } from 'react'
 import Baner from '../Components/Baner'
 import Contact from '../Components/Contact'
+import TimelineDark from '../Assets/Timeline/Timeline Dark.svg'
+import TimelineLight from '../Assets/Timeline/Timeline Light.svg'
 
 export default function Timeline (props) {
   const contentRef = useRef(null)
@@ -14,13 +16,13 @@ export default function Timeline (props) {
     <div className='z-20 absolute'>
       <Baner color='#F9C531' title='Timeline' handleScroll={handleScroll} />
       <div
-        className='w-screen h-screen p-6 grid place-items-center'
+        className='w-screen flex justify-center items-center lg:w-5/6 mx-auto px-6 pt-28 pb-6'
         ref={contentRef}
       >
-        <div>
-          <div className='sm:text-xl font-bold w-40 h-40 font-sora bg-jams_blue text-white sm:py-8 rounded-full grid place-items-center'>
-            Coming Soon
-          </div>
+        <div className='w-full'>
+          {props.darkTheme
+            ? <img src={TimelineDark} alt='timeline dark' className='w-full h-full' />
+            : <img src={TimelineLight} alt='timeline light' className='w-full h-full' />}
         </div>
       </div>
       <Contact darkTheme={props.darkTheme} />

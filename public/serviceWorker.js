@@ -59,7 +59,10 @@ const filesToCache = [
   // About
   '/src/Assets/About/devjams.svg',
   '/src/Assets/About/gdsc.svg',
-  '/src/Assets/About/vit.svg'
+  '/src/Assets/About/vit.svg',
+  // Timeline
+  '/src/Assets/About/Timeline Dark.svg',
+  '/src/Assets/About/Timeline Light.svg'
 ]
 
 self.addEventListener('install', function (e) {
