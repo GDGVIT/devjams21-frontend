@@ -12,6 +12,11 @@ import Taskade from '../Assets/Logos/Sponsors/Taskade.png'
 import Deepnote from '../Assets/Logos/Sponsors/Deepnote.png'
 import Ren from '../Assets/Logos/Sponsors/Ren.png'
 import Genxyz from '../Assets/Logos/Sponsors/genxyz.png'
+import Agora from '../Assets/Logos/Sponsors/agoraLogo.svg'
+import Alchemy from '../Assets/Logos/Sponsors/Alchemy.svg'
+import Sketch from '../Assets/Logos/Sponsors/Sketch.svg'
+import TheDappList from '../Assets/Logos/Sponsors/TheDappList.svg'
+import CrowdStrike from '../Assets/Logos/Sponsors/CrowdStrike.svg'
 import Contact from '../Components/Contact'
 
 const SponsorCard = (props) => {
@@ -40,6 +45,10 @@ export default function Sponsors (props) {
       <div className='flex w-screen' ref={contentRef}>
         <div className='m-auto z-20'>
           <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 sm:pb-16 md:pb-10 pt-24 md:pt-28'>
+            <SponsorCard image={CrowdStrike} name='CrowdStrike' />
+            <SponsorCard image={Alchemy} name='Alchemy' />
+            <SponsorCard image={Agora} name='Agora' />
+            <SponsorCard image={TheDappList} name='The Dapp List' />
             <SponsorCard image={DigitalOcean} name='Digital Ocean' />
             <SponsorCard image={HashiCorp} name='HashiCorp' />
             <SponsorCard image={Deepnote} name='Deepnote' />
@@ -51,6 +60,7 @@ export default function Sponsors (props) {
             <SponsorCard image={Replit} name='Replit' />
             <SponsorCard image={Framer} name='Framer' />
             <SponsorCard image={Ren} name='Ren' />
+            <SponsorCard image={Sketch} name='Sketch' />
             <SponsorCard image={Genxyz} name='Genxyz' />
           </div>
           <a
