@@ -12,6 +12,7 @@ import Taskade from '../Assets/Logos/Sponsors/Taskade.png'
 import Deepnote from '../Assets/Logos/Sponsors/Deepnote.png'
 import Ren from '../Assets/Logos/Sponsors/Ren.png'
 import Genxyz from '../Assets/Logos/Sponsors/genxyz.png'
+import GFG from '../Assets/Logos/Sponsors/GFGlogo.png'
 import Agora from '../Assets/Logos/Sponsors/agoraLogo.svg'
 import Alchemy from '../Assets/Logos/Sponsors/Alchemy.svg'
 import Sketch from '../Assets/Logos/Sponsors/Sketch.svg'
@@ -21,7 +22,7 @@ import Contact from '../Components/Contact'
 
 const SponsorCard = (props) => {
   return (
-    <div className='flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 lg:w-56 lg:h-56 bg-gray-100 shadow-lg rounded-xl'>
+    <div className='flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 lg:w-56 lg:h-56 bg-gray-50 shadow-lg rounded-xl'>
       <img
         src={props.image}
         className='w-24 sm:w-32 lg:w-48 h-auto'
@@ -45,21 +46,27 @@ export default function Sponsors (props) {
       <div className='flex w-screen' ref={contentRef}>
         <div className='m-auto z-20'>
           <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 sm:pb-16 md:pb-10 pt-24 md:pt-28'>
+            {/* Diamond Sponsors */}
             <SponsorCard image={CrowdStrike} name='CrowdStrike' />
             <SponsorCard image={Alchemy} name='Alchemy' />
+            <SponsorCard image={Ren} name='Ren' />
+            {/* Platinum */}
             <SponsorCard image={Agora} name='Agora' />
+            {/* Bronze Sponsors */}
             <SponsorCard image={TheDappList} name='The Dapp List' />
+            {/* Monetory Sponsorts */}
             <SponsorCard image={DigitalOcean} name='Digital Ocean' />
             <SponsorCard image={HashiCorp} name='HashiCorp' />
+            <SponsorCard image={Framer} name='Framer' />
             <SponsorCard image={Deepnote} name='Deepnote' />
+            {/* In kind Sponsors */}
             <SponsorCard image={EchoAR} name='EchoAR' />
             <SponsorCard image={Voiceflow} name='Voiceflow' />
             <SponsorCard image={Taskade} name='Taskade' />
             <SponsorCard image={Egghead} name='Egghead' />
             <SponsorCard image={_1Password} name='1Password' />
             <SponsorCard image={Replit} name='Replit' />
-            <SponsorCard image={Framer} name='Framer' />
-            <SponsorCard image={Ren} name='Ren' />
+            <SponsorCard image={GFG} name='GFG' />
             <SponsorCard image={Sketch} name='Sketch' />
             <SponsorCard image={Genxyz} name='Genxyz' />
           </div>
