@@ -22,13 +22,15 @@ import Contact from '../Components/Contact'
 
 const SponsorCard = (props) => {
   return (
-    <div className='flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 lg:w-56 lg:h-56 bg-gray-50 shadow-lg rounded-xl'>
-      <img
-        src={props.image}
-        className='w-24 sm:w-32 lg:w-48 h-auto'
-        alt={props.name}
-      />
-    </div>
+    <a href={props.website} target='_blank' rel='noopener noreferrer'>
+      <div className='flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 lg:w-56 lg:h-56 bg-gray-50 shadow-lg rounded-xl'>
+        <img
+          src={props.image}
+          className='w-24 sm:w-32 lg:w-48 h-auto'
+          alt={props.name}
+        />
+      </div>
+    </a>
   )
 }
 
@@ -47,28 +49,28 @@ export default function Sponsors (props) {
         <div className='m-auto z-20'>
           <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 sm:pb-16 md:pb-10 pt-24 md:pt-28'>
             {/* Diamond Sponsors */}
-            <SponsorCard image={CrowdStrike} name='CrowdStrike' />
-            <SponsorCard image={Alchemy} name='Alchemy' />
-            <SponsorCard image={Ren} name='Ren' />
+            <SponsorCard image={CrowdStrike} name='CrowdStrike' website='https://www.crowdstrike.com/' />
+            <SponsorCard image={Alchemy} name='Alchemy' website='https://www.alchemy.com/' />
+            <SponsorCard image={Ren} name='Ren' website='https://renproject.io/' />
             {/* Platinum */}
-            <SponsorCard image={Agora} name='Agora' />
+            <SponsorCard image={Agora} name='Agora' website='https://www.agora.io/en/' />
             {/* Bronze Sponsors */}
-            <SponsorCard image={TheDappList} name='The Dapp List' />
+            <SponsorCard image={TheDappList} name='The Dapp List' website='https://thedapplist.com/' />
             {/* Monetory Sponsorts */}
-            <SponsorCard image={DigitalOcean} name='Digital Ocean' />
-            <SponsorCard image={HashiCorp} name='HashiCorp' />
-            <SponsorCard image={Framer} name='Framer' />
-            <SponsorCard image={Deepnote} name='Deepnote' />
+            <SponsorCard image={DigitalOcean} name='Digital Ocean' website='https://www.digitalocean.com/' />
+            <SponsorCard image={HashiCorp} name='HashiCorp' website='https://www.hashicorp.com/' />
+            <SponsorCard image={Framer} name='Framer' website='https://www.framer.com/' />
+            <SponsorCard image={Deepnote} name='Deepnote' website='https://deepnote.com/' />
             {/* In kind Sponsors */}
-            <SponsorCard image={EchoAR} name='EchoAR' />
-            <SponsorCard image={Voiceflow} name='Voiceflow' />
-            <SponsorCard image={Taskade} name='Taskade' />
-            <SponsorCard image={Egghead} name='Egghead' />
-            <SponsorCard image={_1Password} name='1Password' />
-            <SponsorCard image={Replit} name='Replit' />
-            <SponsorCard image={GFG} name='GFG' />
-            <SponsorCard image={Sketch} name='Sketch' />
-            <SponsorCard image={Genxyz} name='Genxyz' />
+            <SponsorCard image={EchoAR} name='EchoAR' website='https://www.echoar.xyz/' />
+            <SponsorCard image={Voiceflow} name='Voiceflow' website='https://www.voiceflow.com/' />
+            <SponsorCard image={Taskade} name='Taskade' website='https://www.taskade.com/' />
+            <SponsorCard image={Egghead} name='Egghead' website='https://egghead.io/' />
+            <SponsorCard image={_1Password} name='1Password' website='https://1password.com/' />
+            <SponsorCard image={Replit} name='Replit' website='https://replit.com/' />
+            <SponsorCard image={GFG} name='GFG' website='https://www.geeksforgeeks.org/' />
+            <SponsorCard image={Sketch} name='Sketch' website='https://www.sketch.com/' />
+            <SponsorCard image={Genxyz} name='Genxyz' website='https://gen.xyz/' />
           </div>
           <a
             href='https://form.jotform.com/212415124747047'
