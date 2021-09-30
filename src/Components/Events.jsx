@@ -31,7 +31,7 @@ export default function Events (props) {
           <CurrentEventGrid
             event={events.knockathon}
             theme={theme}
-            buttonLabel='RSVP'
+            buttonLabel='Register'
           >
             <KnockathonsLogo className='w-52' />
           </CurrentEventGrid>
