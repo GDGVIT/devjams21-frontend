@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import events from '../Data/EventsData'
 import '../Styles/Components/Events.css'
 
@@ -13,34 +13,67 @@ import { ReactComponent as CTFLogo } from '../Assets/Logos/CTF Logo.svg'
 import DevJamsGridGround from '../Assets/Home/DevJamsGridGround'
 
 export default function Events (props) {
+  const knockathonRef = useRef(null)
+  const hexathonRef = useRef(null)
+  const devtalksRef = useRef(null)
   const homeContainerRef = useRef(null)
   const theme = props.darkTheme ? 'dark' : 'light'
+
+  useEffect(() => {
+    const scrollToComponent = () => {
+      if (homeContainerRef && homeContainerRef.current.getBoundingClientRect().top <= 104 && homeContainerRef.current.getBoundingClientRect().top >= 0) {
+        if (knockathonRef) {
+          knockathonRef.current.scrollIntoView({ behavior: 'smooth', block:'nearest', inline: 'center' })
+        }
+      }
+    }
+    window.addEventListener('scroll', scrollToComponent)
+    return () => {
+      window.removeEventListener('scroll', scrollToComponent)
+    }
+  }, [])
 
   // Add auto-rows-10 if you want grid masonry layout
   return (
     <div ref={homeContainerRef} className='overflow-x-hidden'>
       <div className='cards w-screen overflow-x-auto overflow-y-hidden'>
         <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12 2xl:flex 2xl:justify-around'>
-          <CurrentEventGrid
-            event={events.ctf}
-            theme={theme}
-            buttonLabel='Register'
-          >
-            <CTFLogo className='w-52' />
-          </CurrentEventGrid>
-          <CurrentEventGrid
-            event={events.knockathon}
-            theme={theme}
-            buttonLabel='Register'
-          >
-            <KnockathonsLogo className='w-52' />
-          </CurrentEventGrid>
-          <ComingSoonGrid event={events.hexathon} theme={theme}>
-            <HexathonLogo className='w-36 my-3' />
-          </ComingSoonGrid>
-          <ComingSoonGrid event={events.devtalks} theme={theme}>
-            <DevTalksLogo className='w-40' />
-          </ComingSoonGrid>
+          <div>
+            <ComingSoonGrid
+              event={events.ctf}
+              theme={theme}
+              buttonLabel='Registrations Closed'
+            >
+              <CTFLogo className='w-52' />
+            </ComingSoonGrid>
+          </div>
+          <div ref={knockathonRef}>
+            <CurrentEventGrid
+              event={events.knockathon}
+              theme={theme}
+              buttonLabel='Register'
+            >
+              <KnockathonsLogo className='w-52' />
+            </CurrentEventGrid>
+          </div>
+          <div ref={hexathonRef}>
+            <ComingSoonGrid
+              event={events.hexathon}
+              theme={theme}
+              buttonLabel='Coming Soon'
+            >
+              <HexathonLogo className='w-36 my-3' />
+            </ComingSoonGrid>
+          </div>
+          <div ref={devtalksRef}>  
+            <ComingSoonGrid
+              event={events.devtalks}
+              theme={theme}
+              buttonLabel='Coming Soon'
+            >
+              <DevTalksLogo className='w-40' />
+            </ComingSoonGrid>
+          </div>
         </div>
       </div>
       <DevJamsGrid
@@ -129,7 +162,7 @@ const CurrentEventGrid = (props) => {
 }
 
 const ComingSoonGrid = (props) => {
-  const { theme, event } = props
+  const { theme, event, buttonLabel } = props
   const { date, content } = event
 
   return (
@@ -148,7 +181,7 @@ const ComingSoonGrid = (props) => {
           <div
             className={`btn__coming-soon--${theme} absolte bottom-4 grid-btn`}
           >
-            Coming Soon
+            {buttonLabel}
           </div>
         </div>
       </div>
