@@ -19,7 +19,7 @@ import Agora from '../Assets/Logos/Sponsors/agoraLogo.svg'
 import Alchemy from '../Assets/Logos/Sponsors/Alchemy.svg'
 import Sketch from '../Assets/Logos/Sponsors/Sketch.svg'
 import TheDappList from '../Assets/Logos/Sponsors/TheDappList.jpg'
-import CrowdStrike from '../Assets/Logos/Sponsors/CrowdStrike.svg'
+import CrowdStrike from '../Assets/Logos/Sponsors/CrowdStrike.jpeg'
 import Contact from '../Components/Contact'
 
 const SponsorCard = (props) => {
@@ -85,24 +85,25 @@ export default function Sponsors (props) {
               <h1 className={`font-bold mb-7 text-2xl md:text-3xl xl:text-4xl ${props.darkTheme ? 'text-white' : ''}`}>Other Sponsors</h1>
               <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mb-10'>
                 <SponsorCard image={DigitalOcean} name='Digital Ocean' website='https://www.digitalocean.com/' />
-                <SponsorCard image={HashiCorp} name='HashiCorp' website='https://www.hashicorp.com/' />
-                <SponsorCard image={Framer} name='Framer' website='https://www.framer.com/' />
+                <SponsorCard image={Kaspersky} name='Kaspersky' website='https://www.kaspersky.co.in/' />
+                <SponsorCard image={Replit} name='Replit' website='https://replit.com/' />
+                <SponsorCard image={GFG} name='GFG' website='https://www.geeksforgeeks.org/' />
                 <SponsorCard image={EchoAR} name='EchoAR' website='https://www.echoar.xyz/' />
                 <SponsorCard image={Voiceflow} name='Voiceflow' website='https://www.voiceflow.com/' />
+                <SponsorCard image={HashiCorp} name='HashiCorp' website='https://www.hashicorp.com/' />
                 <SponsorCard image={HackTheBox} name='HackTheBox' website='https://www.hackthebox.eu/' />
                 <SponsorCard image={Taskade} name='Taskade' website='https://www.taskade.com/' />
                 <SponsorCard image={_1Password} name='1Password' website='https://1password.com/' />
-                <SponsorCard image={Kaspersky} name='Kaspersky' website='https://www.kaspersky.co.in/' />
-                <SponsorCard image={Replit} name='Replit' website='https://replit.com/' />
-                <SponsorCard image={Genxyz} name='Genxyz' website='https://gen.xyz/' />
+                <SponsorCard image={Framer} name='Framer' website='https://www.framer.com/' />
                 <SponsorCard image={Egghead} name='Egghead' website='https://egghead.io/' />
               </div>
             </div>
-            <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-3 mb-10'>
-              <SponsorCard image={Replit} name='Replit' website='https://replit.com/' />
-              <SponsorCard image={Sketch} name='Sketch' website='https://www.sketch.com/' />
-              <div className='col-span-2 md:col-span-1'>
-                <SponsorCard image={GFG} name='GFG' website='https://www.geeksforgeeks.org/' />
+            <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-6 mb-10'>
+              <div className='md:col-start-2 md:col-span-2'>
+                <SponsorCard image={Sketch} name='Sketch' website='https://www.sketch.com/' />
+              </div>
+              <div className='md:col-span-2'>
+                <SponsorCard image={Genxyz} name='Genxyz' website='https://gen.xyz/' />
               </div>
             </div>
           </div>
