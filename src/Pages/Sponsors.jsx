@@ -65,7 +65,7 @@ const InfoModal = ({ theme, infoModalRef }) => {
         <div className='flex flex-col md:flex-row justify-evenly'>
           <a
             target='_blank' rel='noopener noreferrer'
-            href='https://www.crowdstrike.com/careers/'
+            href='https://www.crowdstrike.com/'
             className='bg-jams_blue rounded-md text-sm px-6 mb-3 md:mb-0 text-center lg:px-12 py-3 font-semibold text-white'
           >
             Read More
