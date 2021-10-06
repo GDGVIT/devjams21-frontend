@@ -23,7 +23,7 @@ export default function Events (props) {
     const scrollToComponent = () => {
       if (homeContainerRef && homeContainerRef.current.getBoundingClientRect().top <= 104 && homeContainerRef.current.getBoundingClientRect().top >= 0) {
         if (knockathonRef) {
-          knockathonRef.current.scrollIntoView({ behavior: 'smooth', block:'nearest', inline: 'center' })
+          knockathonRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
         }
       }
     }
@@ -65,7 +65,7 @@ export default function Events (props) {
               <HexathonLogo className='w-36 my-3' />
             </ComingSoonGrid>
           </div>
-          <div ref={devtalksRef}>  
+          <div ref={devtalksRef}>
             <ComingSoonGrid
               event={events.devtalks}
               theme={theme}
