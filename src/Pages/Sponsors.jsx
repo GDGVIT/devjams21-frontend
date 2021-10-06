@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import Baner from '../Components/Baner'
 import DigitalOcean from '../Assets/Logos/Sponsors/DigitalOcean.svg'
 import HashiCorp from '../Assets/Logos/Sponsors/HashiCorp.svg'
@@ -19,7 +19,7 @@ import Agora from '../Assets/Logos/Sponsors/agoraLogo.svg'
 import Alchemy from '../Assets/Logos/Sponsors/Alchemy.svg'
 import Sketch from '../Assets/Logos/Sponsors/Sketch.svg'
 import TheDappList from '../Assets/Logos/Sponsors/TheDappList.jpg'
-import CrowdStrike from '../Assets/Logos/Sponsors/CrowdStrike.svg'
+import CrowdStrike from '../Assets/Logos/Sponsors/CrowdStrike.jpeg'
 import Contact from '../Components/Contact'
 
 const SponsorCard = (props) => {
@@ -36,7 +36,74 @@ const SponsorCard = (props) => {
   )
 }
 
+const InfoModal = ({ theme, infoModalRef }) => {
+  return (
+    <div className='z-60 flex md:h-full'>
+      <div
+        ref={infoModalRef}
+        className={`my-5 mx-5 h-full md:h-auto md:mx-auto md:my-auto rounded-2xl shadow-lg pt-10 md:pt-14 px-8 md:px-14 pb-10 lg:pb-14 font-sora md:w-5/6 lg:w-2/3 ${
+          theme ? 'bg-jams_dark_blue text-white' : 'bg-white'
+        }`}
+      >
+        <h2 className='text-2xl sm:text-3xl font-semibold mb-5 md:mb-8'>
+          <span className='border-b-4 border-jams_blue'>CrowdStrike</span>
+        </h2>
+        <p className='text-sm leading-relaxed text-justify mb-3 xl:text-lg'>
+          CrowdStrike is a leading cybersecurity company protecting customers from all cyber threats by leveraging its Security Cloud to stop breaches.
+          From its inception in 2011, CrowdStrike was created as a different kind of cybersecurity company.
+          Cloud-native, CrowdStrike immediately brought a threat perspective, effectiveness, scalability, and flexibility never seen before in the industry – seamlessly aligning People, Technology, and Processes.
+          And it doesn’t stop there.
+        </p>
+        <p className='text-sm leading-relaxed text-justify mb-3 xl:text-lg'>
+          At CrowdStrike we’re on a mission - to stop breaches. Our ground breaking technology, services delivery, and intelligence gathering together with our innovations in machine learning and behavioural-based detection, allow our customers to not only defend themselves, but do so in a future-proof manner.
+          Because of that we’ve earned numerous honours and top rankings for our technology, organization and talent.
+          Our culture was purpose-built to be remote first, and we offer flexible work arrangements to help our people manage their personal and professional lives in a way that works for them.
+        </p>
+        <p className='text-sm leading-relaxed text-justify mb-6 xl:text-lg'>
+          If you’re ready to work on unrivalled technology with a team that makes a difference every day, let’s talk!
+        </p>
+        <div className='flex flex-col md:flex-row justify-evenly'>
+          <a
+            target='_blank' rel='noopener noreferrer'
+            href='https://www.crowdstrike.com/'
+            className='bg-jams_blue rounded-md text-sm px-6 mb-3 md:mb-0 text-center lg:px-12 py-3 font-semibold text-white'
+          >
+            Read More
+          </a>
+          <a
+            target='_blank' rel='noopener noreferrer'
+            href='https://www.crowdstrike.com/careers/'
+            className='bg-jams_blue rounded-md text-sm px-6 text-center lg:px-12 py-3 font-semibold text-white'
+          >
+            Careers
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Sponsors (props) {
+  const [infoModalOpen, setInfoModalOpen] = useState(false)
+  const infoModalRef = useRef(null)
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      console.log(event.target)
+      if (
+        infoModalRef.current &&
+        !infoModalRef.current.contains(event.target)
+      ) {
+        setInfoModalOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [infoModalRef, setInfoModalOpen])
+
   const contentRef = useRef(null)
   const handleScroll = () => {
     if (contentRef) {
@@ -48,13 +115,30 @@ export default function Sponsors (props) {
     <div className='absolute'>
       <Baner color='#3B7DED' title='Sponsors' handleScroll={handleScroll} />
       <div className='flex w-screen' ref={contentRef}>
+        {
+          infoModalOpen && (
+            <div className='fixed top-0 left-0 z-50 flex h-full w-screen overflow-y-auto  transition-all ease-in-out duration-500'>
+              <div className={`absolute opacity-70 z-50 ${props.darkTheme ? 'bg-gray-400' : 'bg-black'} h-screen w-full`} />
+              <div className='z-50 h-screen overflow-y-auto m-auto'>
+                <InfoModal theme={props.darkTheme} infoModalRef={infoModalRef} />
+              </div>
+            </div>
+          )
+        }
+
         <div className='m-auto z-20 font-sora w-5/6 xl:w-4/6'>
           <div className='sm:pb-16 md:pb-10 pt-24 md:pt-28'>
             {/* Diamond Sponsors */}
             <div className='text-center'>
               <h1 className={`font-bold mb-7 text-2xl md:text-3xl xl:text-4xl ${props.darkTheme ? 'text-white' : ''}`}>Diamond Sponsors</h1>
               <div className='grid gap-8 sm:gap-12 grid-cols-1 md:grid-cols-3 mb-14 md:mb-20'>
-                <SponsorCard image={CrowdStrike} name='CrowdStrike' website='https://www.crowdstrike.com/' />
+                <div onClick={() => setInfoModalOpen(true)} className='flex items-center justify-center w-full h-28 sm:h-36 lg:h-56 bg-gray-100 shadow-lg rounded-xl cursor-pointer'>
+                  <img
+                    src={CrowdStrike}
+                    className='w-32 sm:w-36 lg:w-56 h-auto mx-3'
+                    alt='CrowdStrike'
+                  />
+                </div>
                 <SponsorCard image={Alchemy} name='Alchemy' website='https://www.alchemy.com/' />
                 <SponsorCard image={Ren} name='Ren' website='https://renproject.io/' />
               </div>
@@ -85,24 +169,25 @@ export default function Sponsors (props) {
               <h1 className={`font-bold mb-7 text-2xl md:text-3xl xl:text-4xl ${props.darkTheme ? 'text-white' : ''}`}>Other Sponsors</h1>
               <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mb-10'>
                 <SponsorCard image={DigitalOcean} name='Digital Ocean' website='https://www.digitalocean.com/' />
-                <SponsorCard image={HashiCorp} name='HashiCorp' website='https://www.hashicorp.com/' />
-                <SponsorCard image={Framer} name='Framer' website='https://www.framer.com/' />
+                <SponsorCard image={Kaspersky} name='Kaspersky' website='https://www.kaspersky.co.in/' />
+                <SponsorCard image={Replit} name='Replit' website='https://replit.com/' />
+                <SponsorCard image={GFG} name='GFG' website='https://www.geeksforgeeks.org/' />
                 <SponsorCard image={EchoAR} name='EchoAR' website='https://www.echoar.xyz/' />
                 <SponsorCard image={Voiceflow} name='Voiceflow' website='https://www.voiceflow.com/' />
+                <SponsorCard image={HashiCorp} name='HashiCorp' website='https://www.hashicorp.com/' />
                 <SponsorCard image={HackTheBox} name='HackTheBox' website='https://www.hackthebox.eu/' />
                 <SponsorCard image={Taskade} name='Taskade' website='https://www.taskade.com/' />
                 <SponsorCard image={_1Password} name='1Password' website='https://1password.com/' />
-                <SponsorCard image={Kaspersky} name='Kaspersky' website='https://www.kaspersky.co.in/' />
-                <SponsorCard image={Replit} name='Replit' website='https://replit.com/' />
-                <SponsorCard image={Genxyz} name='Genxyz' website='https://gen.xyz/' />
+                <SponsorCard image={Framer} name='Framer' website='https://www.framer.com/' />
                 <SponsorCard image={Egghead} name='Egghead' website='https://egghead.io/' />
               </div>
             </div>
-            <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-3 mb-10'>
-              <SponsorCard image={Replit} name='Replit' website='https://replit.com/' />
-              <SponsorCard image={Sketch} name='Sketch' website='https://www.sketch.com/' />
-              <div className='col-span-2 md:col-span-1'>
-                <SponsorCard image={GFG} name='GFG' website='https://www.geeksforgeeks.org/' />
+            <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-6 mb-10'>
+              <div className='md:col-start-2 md:col-span-2'>
+                <SponsorCard image={Sketch} name='Sketch' website='https://www.sketch.com/' />
+              </div>
+              <div className='md:col-span-2'>
+                <SponsorCard image={Genxyz} name='Genxyz' website='https://gen.xyz/' />
               </div>
             </div>
           </div>

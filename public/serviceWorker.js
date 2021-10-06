@@ -44,7 +44,7 @@ const filesToCache = [
   '/src/Assets/Logos/Sponsors/Voiceflow.png',
   '/src/Assets/Logos/Sponsors/agoraLogo.svg',
   '/src/Assets/Logos/Sponsors/Alchemy.svg',
-  '/src/Assets/Logos/Sponsors/CrowdStrike.svg',
+  '/src/Assets/Logos/Sponsors/CrowdStrike.jpeg',
   '/src/Assets/Logos/Sponsors/GFGlogo.png',
   '/src/Assets/Logos/Sponsors/Kaspersky.png',
   '/src/Assets/Logos/Sponsors/HackTheBox.png',
