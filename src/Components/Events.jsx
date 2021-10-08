@@ -22,8 +22,8 @@ export default function Events (props) {
   useEffect(() => {
     const scrollToComponent = () => {
       if (homeContainerRef && homeContainerRef.current.getBoundingClientRect().top <= 104 && homeContainerRef.current.getBoundingClientRect().top >= 0) {
-        if (knockathonRef) {
-          knockathonRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+        if (hexathonRef) {
+          hexathonRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
         }
       }
     }
@@ -48,26 +48,26 @@ export default function Events (props) {
             </ComingSoonGrid>
           </div>
           <div ref={knockathonRef}>
-            <CurrentEventGrid
+            <ComingSoonGrid
               event={events.knockathon}
               theme={theme}
-              buttonLabel='Register'
+              buttonLabel='Registrations Closed'
             >
               <KnockathonsLogo className='w-52' />
-            </CurrentEventGrid>
+            </ComingSoonGrid>
           </div>
           <div ref={hexathonRef}>
-            <ComingSoonGrid
+            <CurrentEventGrid
               event={events.hexathon}
               theme={theme}
-              buttonLabel='Coming Soon'
+              buttonLabel='RSVP'
             >
               <HexathonLogo className='w-36 my-3' />
-            </ComingSoonGrid>
+            </CurrentEventGrid>
           </div>
           <div ref={devtalksRef}>
             <ComingSoonGrid
-              event={events.devtalks}
+              event={events.ctf}
               theme={theme}
               buttonLabel='Coming Soon'
             >
@@ -116,9 +116,13 @@ const DevJamsGrid = (props) => {
             {month}
           </div>
           <div className='grid justify-items-end'>
-            <button className='bg-red-100 border-2 cursor-default border-jams_red cur px-10 py-2 font-bold grid-btn'>
-              Coming Soon
-            </button>
+            <a
+              href='https://gdsc.community.dev/events/details/developer-student-clubs-vellore-institute-of-technology-vit-vellore-presents-devjams21/'
+              className='bg-jams_red hover:bg-red-500 border-2 text-white border-jams_red hover:border-red-500 px-16 py-2 font-bold grid-btn'
+              rel='noreferrer noopener' target='_blank'
+            >
+             RSVP 
+            </a>
           </div>
         </div>
       </div>
