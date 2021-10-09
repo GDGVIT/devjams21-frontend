@@ -12,15 +12,16 @@ const events = {
   },
   devtalks: {
     name: 'DevTalks 21',
-    date: 'Along with DevJams',
+    date: '13th Nov',
     content:
       'Interact and meet with a few of the most prestigious and renowned figures in the ever-changing tech industry!',
     classname: 'devtalks-grid',
-    coords: { circle1: '-top-32 -right-0', circle2: '-bottom-20 left-0' }
+    coords: { circle1: '-top-32 -right-0', circle2: '-bottom-20 left-0' },
+    link: 'https://gdsc.community.dev/events/details/developer-student-clubs-vellore-institute-of-technology-vit-vellore-presents-devtalks21/'
   },
   knockathon: {
     name: 'Knockathons 21',
-    date: '9th - 10th October',
+    date: '9th - 10th Oct',
     content:
       'Have what it takes to be a winner? Team up with your friends to solve an innovative problem and pitch your ideas while competing against other teams to come out on top!',
     classname: 'knockathon-grid',
@@ -29,7 +30,7 @@ const events = {
   },
   ctf: {
     name: 'DeconstruCTF',
-    date: '1st - 2nd October',
+    date: '1st - 2nd Oct',
     content:
       'A 24 hour jeopardy style CTF, ranging to five different domains, namely, web, forensics, cryptography, OSINT and miscellaneous!',
     classname: 'ctf-grid',
@@ -38,7 +39,7 @@ const events = {
   },
   hexathon: {
     name: 'Hexathon',
-    date: '31st October',
+    date: '31st Oct - 1st Nov',
     content:
       'Channel your inner passion and creativity to create innovative and ingenious design solutions to current problems and win exciting prizes!',
     classname: 'hexathon-grid',
