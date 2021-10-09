@@ -16,7 +16,8 @@ const events = {
     content:
       'Interact and meet with a few of the most prestigious and renowned figures in the ever-changing tech industry!',
     classname: 'devtalks-grid',
-    coords: { circle1: '-top-32 -right-0', circle2: '-bottom-20 left-0' }
+    coords: { circle1: '-top-32 -right-0', circle2: '-bottom-20 left-0' },
+    link: 'https://gdsc.community.dev/events/details/developer-student-clubs-vellore-institute-of-technology-vit-vellore-presents-devtalks21/'
   },
   knockathon: {
     name: 'Knockathons 21',

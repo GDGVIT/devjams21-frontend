@@ -66,13 +66,13 @@ export default function Events (props) {
             </CurrentEventGrid>
           </div>
           <div ref={devtalksRef}>
-            <ComingSoonGrid
-              event={events.ctf}
+          <CurrentEventGrid
+              event={events.devtalks}
               theme={theme}
-              buttonLabel='Coming Soon'
+              buttonLabel='RSVP'
             >
-              <DevTalksLogo className='w-40' />
-            </ComingSoonGrid>
+              <DevTalksLogo className='w-36' />
+            </CurrentEventGrid>
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@ const DevJamsGrid = (props) => {
     <div
       className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} mx-5 rounded-3xl relative shadow-md sm:rounded-3xl overflow-hidden xl:mx-12`}
     >
-      <div className='grid md:grid-cols-2 place-items-center pt-5 sm:py-5 px-10 relative z-10'>
+      <div className='grid md:grid-cols-2 place-items-center py-5 px-10 relative z-10'>
         <div className='flex flex-col items-center md:items-start'>
           <DevJamsLogo className='w-40 sm:w-72 h-auto py-5' />
           <div
@@ -102,7 +102,7 @@ const DevJamsGrid = (props) => {
               props.darkTheme
                 ? 'text-gray-100 hover:text-white'
                 : 'text-jams_blue hover:text-blue-600'
-            } md:text-xl lg:text-2xl font-semibold items-center md:px-0 py-2 md:pb-4 md:pt-0`}
+            } md:text-xl font-semibold items-center md:px-0 py-2 md:pb-4 md:pt-0`}
           >
             <span>Download Brochure</span>
             <ChervonRight />
