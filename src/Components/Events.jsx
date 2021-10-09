@@ -143,7 +143,7 @@ const CurrentEventGrid = (props) => {
         <div className='h-56 grid gap-y-4'>
           <div className='grid place-items-center gap-y-4'>
             {props.children}
-            <div className='text-jams_red font-bold'>{date}</div>
+            <div className='text-jams_red text-base font-bold'>{date}</div>
           </div>
           <div className={`content--${theme}`}>{content}</div>
         </div>
@@ -177,7 +177,7 @@ const ComingSoonGrid = (props) => {
         <div className='h-56 grid gap-y-4'>
           <div className='grid place-items-center gap-y-4'>
             {props.children}
-            <div className='text-jams_red font-bold'>{date}</div>
+            <div className='text-jams_red text-base font-bold'>{date}</div>
           </div>
           <div className={`content--${theme}`}>{content}</div>
         </div>
