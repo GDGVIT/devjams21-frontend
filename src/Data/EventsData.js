@@ -8,7 +8,6 @@ const events = {
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero odit praesentium facilis non placeat nisi inventore sapiente nulla alias dolores',
     classname: 'devjams-grid',
-    link: 'https://gdsc.community.dev/events/details/developer-student-clubs-vellore-institute-of-technology-vit-vellore-presents-devjams21/'
   },
   devtalks: {
     name: 'DevTalks 21',
@@ -44,7 +43,7 @@ const events = {
       'Channel your inner passion and creativity to create innovative and ingenious design solutions to current problems and win exciting prizes!',
     classname: 'hexathon-grid',
     coords: { circle1: '-top-32 -right-32', circle2: 'bottom-10 -left-20' },
-    link: 'https://gdsc.community.dev/events/details/developer-student-clubs-vellore-institute-of-technology-vit-vellore-presents-hexathon/'
+    link: 'https://portal.devjams.dscvit.com/'
   }
 }
 
