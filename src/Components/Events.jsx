@@ -36,7 +36,12 @@ export default function Events (props) {
   // Add auto-rows-10 if you want grid masonry layout
   return (
     <div ref={homeContainerRef} className='overflow-x-hidden'>
-      <div className='cards w-screen overflow-x-auto overflow-y-hidden'>
+      <DevJamsGrid
+        event={events.devjams}
+        theme={theme}
+        darkTheme={props.darkTheme}
+      />
+      <div className='cards w-screen overflow-x-auto mt-8 overflow-y-hidden'>
         <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12 2xl:flex 2xl:justify-around'>
           <div>
             <ComingSoonGrid
@@ -60,7 +65,7 @@ export default function Events (props) {
             <CurrentEventGrid
               event={events.hexathon}
               theme={theme}
-              buttonLabel='RSVP'
+              buttonLabel='Register'
             >
               <HexathonLogo className='w-36 my-3' />
             </CurrentEventGrid>
@@ -76,11 +81,6 @@ export default function Events (props) {
           </div>
         </div>
       </div>
-      <DevJamsGrid
-        event={events.devjams}
-        theme={theme}
-        darkTheme={props.darkTheme}
-      />
     </div>
   )
 }
@@ -91,22 +91,20 @@ const DevJamsGrid = (props) => {
 
   return (
     <div
-      className={`grid--${theme} coming-soon-grid--${theme} ${events.devjams.class}--${theme} mx-5 rounded-3xl relative shadow-md sm:rounded-3xl overflow-hidden xl:mx-12`}
+      className={`grid--dark coming-soon-grid--${theme} ${events.devjams.class}--dark mx-5 rounded-3xl relative sm:rounded-3xl overflow-hidden xl:mx-12 mb-6 lg:mb-0 border-4 border-jams_blue`}
     >
-      <div className='grid md:grid-cols-2 place-items-center py-5 px-10 relative z-10'>
+      <div className='grid md:grid-cols-2 place-items-center px-10 relative mb-2 z-10'>
         <div className='flex flex-col items-center md:items-start'>
-          <DevJamsLogo className='w-40 sm:w-72 h-auto py-5' />
-          <div
-            onClick={() => window.open('./Brochure.pdf')}
-            className={`cursor-pointer flex justify-center md:justify-start gap-x-2 ${
-              props.darkTheme
-                ? 'text-gray-100 hover:text-white'
-                : 'text-jams_blue hover:text-blue-600'
-            } md:text-xl font-semibold items-center md:px-0 py-2 md:pb-4 md:pt-0`}
+          <DevJamsLogo className='w-40 sm:w-72 h-auto py-6' />
+          <a
+            href='https://devjams.dscvit.com/Brochure.pdf'
+            target='_blank'
+            rel='noreferrer'
+            className='cursor-pointer flex justify-center md:justify-start gap-x-2 text-gray-100 hover:text-white md:text-lg font-semibold items-center md:px-0 py-2 md:pb-4 md:pt-0'
           >
             <span>Download Brochure</span>
             <ChervonRight />
-          </div>
+          </a>
         </div>
         <div className='text-jams_red grid font-bold gap-y-1 place-items-center pt-5'>
           <div className='text-base sm:text-lg lg:text-xl xl:text-2xl'>
@@ -117,11 +115,11 @@ const DevJamsGrid = (props) => {
           </div>
           <div className='grid justify-items-end'>
             <a
-              href='https://gdsc.community.dev/events/details/developer-student-clubs-vellore-institute-of-technology-vit-vellore-presents-devjams21/'
+              href='https://portal.devjams.dscvit.com/'
               className='bg-jams_red hover:bg-red-500 border-2 text-white border-jams_red hover:border-red-500 px-16 py-2 font-bold grid-btn'
               rel='noreferrer noopener' target='_blank'
             >
-             RSVP 
+              Register 
             </a>
           </div>
         </div>

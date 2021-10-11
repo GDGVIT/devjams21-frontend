@@ -130,7 +130,9 @@ export default function Sponsors (props) {
           <div className='sm:pb-16 md:pb-10 pt-24 md:pt-28'>
             {/* Diamond Sponsors */}
             <div className='text-center'>
-              <h1 className={`font-bold mb-7 text-2xl md:text-3xl xl:text-4xl ${props.darkTheme ? 'text-white' : ''}`}>Diamond Sponsors</h1>
+              <div className={`${props.darkTheme ? 'bg-indigo-400' : 'bg-blue-700'} text-white md:w-2/3 lg:w-1/2 mx-auto px-5 py-3 rounded-md mb-7`}>
+                <h1 className='font-bold text-2xl md:text-3xl xl:text-4xl'>Diamond Sponsors</h1>
+              </div>
               <div className='grid gap-8 sm:gap-12 grid-cols-1 md:grid-cols-3 mb-14 md:mb-20'>
                 <div onClick={() => setInfoModalOpen(true)} className='flex items-center justify-center w-full h-28 sm:h-36 lg:h-56 bg-gray-100 shadow-lg rounded-xl cursor-pointer'>
                   <img
@@ -145,7 +147,9 @@ export default function Sponsors (props) {
             </div>
             {/* Platinum */}
             <div className='text-center'>
-              <h1 className={`font-bold mb-7 text-2xl md:text-3xl xl:text-4xl ${props.darkTheme ? 'text-white' : ''}`}>Platinum Sponsors</h1>
+              <div className={`${props.darkTheme ? 'bg-indigo-400' : 'bg-blue-700'} text-white md:w-2/3 lg:w-1/2 mx-auto px-5 py-3 rounded-md mb-7 w-auto`}>
+                <h1 className='font-bold text-2xl md:text-3xl xl:text-4xl'>Platinum Sponsors</h1>
+              </div>
               <div className='grid gap-8 sm:gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-6 mb-14 md:mb-20'>
                 <div className='xl:col-start-2 xl:col-span-2'>
                   <SponsorCard image={Agora} name='Agora' website='https://www.agora.io/en/' />
@@ -157,7 +161,9 @@ export default function Sponsors (props) {
             </div>
             {/* Bronze Sponsors */}
             <div className='text-center'>
-              <h1 className={`font-bold mb-7 text-2xl md:text-3xl xl:text-4xl ${props.darkTheme ? 'text-white' : ''}`}>Bronze Sponsors</h1>
+              <div className={`${props.darkTheme ? 'bg-indigo-400' : 'bg-blue-700'} text-white md:w-2/3 lg:w-1/2 mx-auto px-5 py-3 rounded-md mb-7 w-auto`}>
+                <h1 className='font-bold text-2xl md:text-3xl xl:text-4xl'>Bronze Sponsors</h1>
+              </div>
               <div className='grid gap-8 sm:gap-12 grid-cols-1 md:grid-cols-5 xl:grid-cols-3 mb-14 md:mb-20'>
                 <div className='md:col-start-2 md:col-span-3 xl:col-span-1 xl:col-start-2 '>
                   <SponsorCard image={TheDappList} name='The Dapp List' website='https://thedapplist.com/' />
@@ -166,7 +172,9 @@ export default function Sponsors (props) {
             </div>
             {/* Other Sponsors */}
             <div className='text-center'>
-              <h1 className={`font-bold mb-7 text-2xl md:text-3xl xl:text-4xl ${props.darkTheme ? 'text-white' : ''}`}>Other Sponsors</h1>
+              <div className={`${props.darkTheme ? 'bg-indigo-400' : 'bg-blue-700'} text-white md:w-2/3 lg:w-1/2 mx-auto px-5 py-3 rounded-md mb-7 w-auto`}>
+                <h1 className='font-bold text-2xl md:text-3xl xl:text-4xl'>Other Sponsors</h1>
+              </div>
               <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mb-10'>
                 <SponsorCard image={DigitalOcean} name='Digital Ocean' website='https://www.digitalocean.com/' />
                 <SponsorCard image={Kaspersky} name='Kaspersky' website='https://www.kaspersky.co.in/' />
