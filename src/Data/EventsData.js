@@ -7,7 +7,7 @@ const events = {
     month: '',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero odit praesentium facilis non placeat nisi inventore sapiente nulla alias dolores',
-    classname: 'devjams-grid',
+    classname: 'devjams-grid'
   },
   devtalks: {
     name: 'DevTalks 21',
