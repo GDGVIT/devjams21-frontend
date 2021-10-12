@@ -89,7 +89,6 @@ export default function Sponsors (props) {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      console.log(event.target)
       if (
         infoModalRef.current &&
         !infoModalRef.current.contains(event.target)
