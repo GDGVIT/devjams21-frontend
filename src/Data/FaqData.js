@@ -16,122 +16,140 @@ const faq = [
   {
     key: 3,
     question:
-      'Do I need to pay anything to register for Knockathons, DevJams or any other DSC event?',
+      'Do I need to pay for any GDSC events, be it Hexathon, Devjams, or any other event that you host?',
     answer:
-      'Like all our other events, DevTalks and DevJams, both are free-of-cost and you don’t need to pay anything to register for it. We plan to keep all of our future events free too.',
+      'Like all our other events, Hexathon and DevJams, both are free-of-cost and you don’t need to pay anything to register for it. We plan to keep all of our future events free too.',
     color: 'red'
   },
   {
     key: 4,
-    question:
-      'Who will own the IP (Intellectual Property) Rights to the product that I have built?',
-    answer:
-      'The developer/developers of the web/mobile application will have all rights and own the IP of the product. However, all the code needs to be in the public domain (open source) so that it can be evaluated by the judges.',
-    color: 'green'
-  },
-  {
-    key: 5,
-    question: 'What is Knockathon?',
-    answer:
-      'Knockathons is a knockout-styled ideation where teams will participate in various rounds against an opposing participating team to showcase and present their idea to the judges and the audience. Ideas that are more optimal, innovative, and presented better than the other teams will advance to the further rounds until a winner is finally decided on.',
+    question: 'What is Hexathon?',
+    answer: 'Hexathon is an event geared towards anyone with an eye for detail and a passion for design! The event begins with an hour-long introductory workshop on October 31st at 11am IST, followed by a 24-hour long design hackathon from 12pm IST on October 31st to 12pm IST on November 1st.',
     color: 'yellow'
   },
   {
+    key: 5,
+    question: 'Is Hexathon a team event?',
+    answer: 'Yes! Each team can have a max of 2 participants.',
+    color: 'blue'
+  },
+  {
     key: 6,
-    question: 'Where can I register for Knockathons?',
-    answer:
-      'Registrations will be starting soon on the other DevJams Portal Website. Stay tuned!',
+    question: 'Are we required to attend the workshop to participate in the Hexathon?',
+    answer: 'While it isn’t compulsory to attend the workshop, our portal is an integral part of the hackathon and we will be having a live demo of the portal and how to use it during the workshop, so it is highly recommended that you are present for it!',
     color: 'red'
   },
   {
     key: 7,
-    question: 'Is Knockathons a Team event?',
+    question: 'What is Knockathon?',
     answer:
-      'Yes! Each team should have a total of 3 members in order to participate.',
+      'Knockathons is a knockout-styled ideation where teams will participate in various rounds against an opposing participating team to showcase and present their idea to the judges and the audience. Ideas that are more optimal, innovative, and presented better than the other teams will advance to the further rounds until a winner is finally decided on.',
     color: 'green'
   },
   {
     key: 8,
-    question: 'What is CTF?',
+    question: 'Where can I register for Knockathons?',
     answer:
-      'A 24 hour jeopardy style CTF, ranging to five different domains, namely, web, forensics, cryptography, OSINT and miscellaneous!',
+      'Registrations will be starting soon on the other DevJams Portal Website. Stay tuned!',
     color: 'yellow'
   },
   {
     key: 9,
-    question: 'Where can I register for CTF?',
+    question: 'Is Knockathons a Team event?',
     answer:
-      'You can register for CTF by clicking on the register link in the home page or you can also register at ctf.dscvit.com',
+      'Yes! Each team should have a total of 3 members in order to participate.',
     color: 'blue'
   },
   {
     key: 10,
-    question:
-      'Is it necessary for all participants to belong to the same university?',
+    question: 'What is DeconstruCT.F?',
     answer:
-      'No, there are no restrictions regarding universities. Your team can have members from different universities across the globe!',
+      'A 24 hour jeopardy style CTF, ranging to five different domains, namely, web, forensics, cryptography, OSINT and miscellaneous!',
     color: 'red'
   },
   {
     key: 11,
-    question:
-      'I’m interested to participate but I am unable to find a team. What should I do?',
-    answer: 'You can try finding like minded people on our discord server.',
+    question: 'Where can I register for DeconstruCT.F?',
+    answer:
+      'You can register for DeconstruCT.F by clicking on the register link in the home page or you can also register at ctf.dscvit.com',
     color: 'green'
   },
   {
     key: 12,
-    question: 'How do I submit what I have made for the Hackathon?',
+    question:
+      'Is it necessary for all participants to belong to the same university?',
     answer:
-      'You have to develop the application on your local system, add your code to a GitHub repository and submit its link. Also, you have to update the README of your repository with all the details about your application along with the instructions to run.',
+      'No, there are no restrictions regarding universities. Your team can have members from different universities across the globe!',
     color: 'yellow'
   },
   {
     key: 13,
-    question: 'Do we need to have the entire idea fully working?',
-    answer:
-      'The entire idea need not be fully implemented. However, the submission should be functional so that it can be reviewed by the judges.',
+    question:
+      'I’m interested to participate but I am unable to find a team. What should I do?',
+    answer: 'You can try finding like minded people on our discord server.',
     color: 'blue'
   },
   {
     key: 14,
-    question:
-      'How is the environment? Will your environment support any language? Will you provide any IDE and DB for us to work on ideas?',
+    question: 'How do I submit what I have made for the Hackathon?',
     answer:
-      'You have to develop the application on your local system, add your code to a GitHub repository and submit its link. Update the README with all the details about your application and the instructions to run the code.',
+      'You have to develop the application on your local system, add your code to a GitHub repository and submit its link. Also, you have to update the README of your repository with all the details about your application along with the instructions to run.',
     color: 'red'
   },
   {
     key: 15,
-    question:
-      'Does one have to be online and available for the entire duration of the Hackathon?',
+    question: 'Do we need to have the entire idea fully working?',
     answer:
-      'No, one does not need to be online for the entire duration. You can develop the application on your local system based on the given themes and then submit it on the DevJams portal, on the specific challenge page.',
+      'The entire idea need not be fully implemented. However, the submission should be functional so that it can be reviewed by the judges.',
     color: 'green'
   },
   {
     key: 16,
     question:
-      'Do I need to give a demonstration for the product that I have built?',
+      'How is the environment? Will your environment support any language? Will you provide any IDE and DB for us to work on ideas?',
     answer:
-      "If you want, you can submit a small presentation or a video that demonstrates your submission. However, it's not mandatory, and only good to have. In case you are one of the winners, you might be invited to demonstrate your application, details of which will be shared with sufficient advance notice.",
+      'You have to develop the application on your local system, add your code to a GitHub repository and submit its link. Update the README with all the details about your application and the instructions to run the code.',
     color: 'yellow'
   },
   {
     key: 17,
     question:
-      "A fully developed application needs to have a proper database for persistent data storage. Since it's online, is it accepted to show only the prototype of it?",
+      'Does one have to be online and available for the entire duration of the Hackathon?',
     answer:
-      "Yes, it's absolutely fine to submit just the prototype. You can develop the application on your local machine and submit just the source code along with the instructions to run.",
+      'No, one does not need to be online for the entire duration. You can develop the application on your local system based on the given themes and then submit it on the DevJams portal, on the specific challenge page.',
     color: 'blue'
   },
   {
     key: 18,
     question:
+      'Do I need to give a demonstration for the product that I have built?',
+    answer:
+      "If you want, you can submit a small presentation or a video that demonstrates your submission. However, it's not mandatory, and only good to have. In case you are one of the winners, you might be invited to demonstrate your application, details of which will be shared with sufficient advance notice.",
+    color: 'red'
+  },
+  {
+    key: 19,
+    question:
+      "A fully developed application needs to have a proper database for persistent data storage. Since it's online, is it accepted to show only the prototype of it?",
+    answer:
+      "Yes, it's absolutely fine to submit just the prototype. You can develop the application on your local machine and submit just the source code along with the instructions to run.",
+    color: 'green'
+  },
+  {
+    key: 20,
+    question:
       'If it is a team submission, does that mean all team members will have access to work at the same time?',
     answer:
       'Yes, all team members can log in from their account and submit their project on the DevJams portal.',
-    color: 'red'
+    color: 'yellow'
+  },
+  {
+    key: 21,
+    question:
+      'Who will own the IP (Intellectual Property) Rights to the product that I have built?',
+    answer:
+      'The developer/developers of the web/mobile application will have all rights and own the IP of the product. However, all the code needs to be in the public domain (open source) so that it can be evaluated by the judges.',
+    color: 'green'
   }
 ]
 
