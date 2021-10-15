@@ -35,7 +35,7 @@ const faq = [
   },
   {
     key: 6,
-    question: 'Are we required to attend the workshop to participate in the hexathon?',
+    question: 'Are we required to attend the workshop to participate in the Hexathon?',
     answer: 'While it isn’t compulsory to attend the workshop, our portal is an integral part of the hackathon and we will be having a live demo of the portal and how to use it during the workshop, so it is highly recommended that you are present for it!',
     color: 'red'
   },
@@ -62,16 +62,16 @@ const faq = [
   },
   {
     key: 10,
-    question: 'What is CTF?',
+    question: 'What is DeconstruCT.F?',
     answer:
       'A 24 hour jeopardy style CTF, ranging to five different domains, namely, web, forensics, cryptography, OSINT and miscellaneous!',
     color: 'red'
   },
   {
     key: 11,
-    question: 'Where can I register for CTF?',
+    question: 'Where can I register for DeconstruCT.F?',
     answer:
-      'You can register for CTF by clicking on the register link in the home page or you can also register at ctf.dscvit.com',
+      'You can register for DeconstruCT.F by clicking on the register link in the home page or you can also register at ctf.dscvit.com',
     color: 'green'
   },
   {
