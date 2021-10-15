@@ -16,9 +16,9 @@ const faq = [
   {
     key: 3,
     question:
-      'Do I need to pay anything to register for Knockathons, DevJams or any other DSC event?',
+      'Do I need to pay for any GDSC events, be it Hexathon, Devjams, or any other event that you host?',
     answer:
-      'Like all our other events, DevTalks and DevJams, both are free-of-cost and you don’t need to pay anything to register for it. We plan to keep all of our future events free too.',
+      'Like all our other events, Hexathon and DevJams, both are free-of-cost and you don’t need to pay anything to register for it. We plan to keep all of our future events free too.',
     color: 'red'
   },
   {
