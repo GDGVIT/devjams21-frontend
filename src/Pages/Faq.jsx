@@ -54,7 +54,7 @@ export default function Faq (props) {
             />
           )
         })}
-        <div className='ac green'>
+        <div className='ac blue'>
           <h2 className={`ac-header ${props.darkTheme ? 'bg-jams_dark_blue' : ''}`}>
             <button className='ac-trigger font-sora md:text-lg'>
               I still have some doubts regarding the event. How can I resolve them?
