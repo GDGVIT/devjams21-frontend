@@ -1,50 +1,50 @@
 const faq = [
   {
     key: 1,
+    question: 'What is DevJams?',
+    answer:
+      'DevJams is an annual 36-hour long hackathon, that aims to bring together great developers and designers under one roof and pitting them against each other in a healthy competition. Under focused mentorship from a dedicated and experienced technical team, and an equally challenging and innovative panel of themes, participants can test their skills and use them to build projects to solve real-world problems.',
+    color: 'yellow'
+  },
+  {
+    key: 2,
+    question: 'Where can I register for DevJams?',
+    answer:
+      'The details for registering for DevJams will be released soon. Stay Tuned!',
+    color: 'blue'
+  },
+  {
+    key: 3,
+    question:
+      'Do I need to pay anything to register for Knockathons, DevJams or any other DSC event?',
+    answer:
+      'Like all our other events, DevTalks and DevJams, both are free-of-cost and you don’t need to pay anything to register for it. We plan to keep all of our future events free too.',
+    color: 'red'
+  },
+  {
+    key: 4,
+    question:
+      'Who will own the IP (Intellectual Property) Rights to the product that I have built?',
+    answer:
+      'The developer/developers of the web/mobile application will have all rights and own the IP of the product. However, all the code needs to be in the public domain (open source) so that it can be evaluated by the judges.',
+    color: 'green'
+  },
+  {
+    key: 5,
     question: 'What is Hexathon?',
     answer: 'Hexathon is an event geared towards anyone with an eye for detail and a passion for design! The event begins with an hour-long introductory workshop on October 31st at 11am IST, followed by a 24-hour long design hackathon from 12pm IST on October 31st to 12pm IST on November 1st.',
     color: 'yellow'
   },
   {
-    key: 2,
+    key: 6,
     question: 'Is Hexathon a team event?',
     answer: 'Yes! Each team can have a max of 2 participants.',
     color: 'blue'
   },
   {
-    key: 3,
-    question: 'Are we required to attend the workshop to participate in the hackathon?',
-    answer: 'While it isn’t compulsory to attend the workshop, our portal is an integral part of the hackathon and we will be having a live demo of the portal and how to use it during the workshop, so it is highly recommended that you are present for it!',
-    color: 'red'
-  },
-  {
-    key: 4,
-    question: 'What is DevJams?',
-    answer:
-      'DevJams is an annual 36-hour long hackathon, that aims to bring together great developers and designers under one roof and pitting them against each other in a healthy competition. Under focused mentorship from a dedicated and experienced technical team, and an equally challenging and innovative panel of themes, participants can test their skills and use them to build projects to solve real-world problems.',
-    color: 'green'
-  },
-  {
-    key: 5,
-    question: 'Where can I register for DevJams?',
-    answer:
-      'The details for registering for DevJams will be released soon. Stay Tuned!',
-    color: 'yellow'
-  },
-  {
-    key: 6,
-    question:
-      'Do I need to pay anything to register for Knockathons, DevJams or any other DSC event?',
-    answer:
-      'Like all our other events, DevTalks and DevJams, both are free-of-cost and you don’t need to pay anything to register for it. We plan to keep all of our future events free too.',
-    color: 'blue'
-  },
-  {
     key: 7,
-    question:
-      'Who will own the IP (Intellectual Property) Rights to the product that I have built?',
-    answer:
-      'The developer/developers of the web/mobile application will have all rights and own the IP of the product. However, all the code needs to be in the public domain (open source) so that it can be evaluated by the judges.',
+    question: 'Are we required to attend the workshop to participate in the hexathon?',
+    answer: 'While it isn’t compulsory to attend the workshop, our portal is an integral part of the hackathon and we will be having a live demo of the portal and how to use it during the workshop, so it is highly recommended that you are present for it!',
     color: 'red'
   },
   {
