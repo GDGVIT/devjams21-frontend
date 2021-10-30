@@ -38,7 +38,7 @@ const events = {
   },
   hexathon: {
     name: 'Hexathon',
-    date: '31st Oct - 1st Nov',
+    date: '27th - 28th Nov',
     content:
       'Channel your inner passion and creativity to create innovative and ingenious design solutions to current problems and win exciting prizes!',
     classname: 'hexathon-grid',
