@@ -260,7 +260,7 @@ export default function Sponsors (props) {
                 <h1 className='font-bold text-2xl md:text-3xl xl:text-4xl'>Other Sponsors</h1>
               </div>
               <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mb-10'>
-              <SponsorCard image={KumoSpace} name='KumoSpace' website='https://www.kumospace.com/' />
+                <SponsorCard image={KumoSpace} name='KumoSpace' website='https://www.kumospace.com/' />
                 <SponsorCard image={DigitalOcean} name='Digital Ocean' website='https://www.digitalocean.com/' />
                 <SponsorCard image={Kaspersky} name='Kaspersky' website='https://www.kaspersky.co.in/' />
                 <SponsorCard image={Replit} name='Replit' website='https://replit.com/' />
