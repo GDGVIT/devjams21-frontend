@@ -95,7 +95,7 @@ const GrowwInfoModal = ({ theme, growwInfoModalRef }) => {
         }`}
       >
         <h2 className='text-2xl sm:text-3xl font-semibold mb-5 md:mb-8'>
-          <span className='border-b-4 border-jams_blue'>CrowdStrike</span>
+          <span className='border-b-4 border-jams_blue'>Groww</span>
         </h2>
         <p className='text-sm leading-relaxed text-justify mb-3 xl:text-lg'>
           We are making finance simple. For millions in India.
@@ -260,6 +260,7 @@ export default function Sponsors (props) {
                 <h1 className='font-bold text-2xl md:text-3xl xl:text-4xl'>Other Sponsors</h1>
               </div>
               <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mb-10'>
+              <SponsorCard image={KumoSpace} name='KumoSpace' website='https://www.kumospace.com/' />
                 <SponsorCard image={DigitalOcean} name='Digital Ocean' website='https://www.digitalocean.com/' />
                 <SponsorCard image={Kaspersky} name='Kaspersky' website='https://www.kaspersky.co.in/' />
                 <SponsorCard image={Replit} name='Replit' website='https://replit.com/' />
@@ -267,7 +268,6 @@ export default function Sponsors (props) {
                 <SponsorCard image={EchoAR} name='EchoAR' website='https://www.echoar.xyz/' />
                 <SponsorCard image={Voiceflow} name='Voiceflow' website='https://www.voiceflow.com/' />
                 <SponsorCard image={HashiCorp} name='HashiCorp' website='https://www.hashicorp.com/' />
-                <SponsorCard image={HackTheBox} name='HackTheBox' website='https://www.hackthebox.eu/' />
                 <SponsorCard image={Taskade} name='Taskade' website='https://www.taskade.com/' />
                 <SponsorCard image={_1Password} name='1Password' website='https://1password.com/' />
                 <SponsorCard image={Framer} name='Framer' website='https://www.framer.com/' />
@@ -279,7 +279,7 @@ export default function Sponsors (props) {
                 <SponsorCard image={Egghead} name='Egghead' website='https://egghead.io/' />
               </div>
               <div className='md:col-span-2'>
-                <SponsorCard image={KumoSpace} name='KumoSpace' website='https://www.kumospace.com/' />
+                <SponsorCard image={HackTheBox} name='HackTheBox' website='https://www.hackthebox.eu/' />
               </div>
               <div className='col-span-2'>
                 <SponsorCard image={Sketch} name='Sketch' website='https://www.sketch.com/' />
