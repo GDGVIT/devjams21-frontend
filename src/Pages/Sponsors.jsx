@@ -9,7 +9,9 @@ import Replit from '../Assets/Logos/Sponsors/replit.png'
 import EchoAR from '../Assets/Logos/Sponsors/EchoAR.png'
 import Voiceflow from '../Assets/Logos/Sponsors/Voiceflow.png'
 import Taskade from '../Assets/Logos/Sponsors/Taskade.png'
+import Groww from '../Assets/Logos/Sponsors/Groww.png'
 import Deepnote from '../Assets/Logos/Sponsors/Deepnote.png'
+import KumoSpace from '../Assets/Logos/Sponsors/KumoSpace.png'
 import HackTheBox from '../Assets/Logos/Sponsors/HackTheBox.png'
 import Ren from '../Assets/Logos/Sponsors/Ren.png'
 import Genxyz from '../Assets/Logos/Sponsors/genxyz.png'
@@ -36,11 +38,11 @@ const SponsorCard = (props) => {
   )
 }
 
-const InfoModal = ({ theme, infoModalRef }) => {
+const CrowdstrikeInfoModal = ({ theme, crowdstrikeInfoModalRef }) => {
   return (
     <div className='z-60 flex md:h-full'>
       <div
-        ref={infoModalRef}
+        ref={crowdstrikeInfoModalRef}
         className={`my-5 mx-5 h-full md:h-auto md:mx-auto md:my-auto rounded-2xl shadow-lg pt-10 md:pt-14 px-8 md:px-14 pb-10 lg:pb-14 font-sora md:w-5/6 lg:w-2/3 ${
           theme ? 'bg-jams_dark_blue text-white' : 'bg-white'
         }`}
@@ -83,17 +85,55 @@ const InfoModal = ({ theme, infoModalRef }) => {
   )
 }
 
+const GrowwInfoModal = ({ theme, growwInfoModalRef }) => {
+  return (
+    <div className='z-60 flex md:h-full'>
+      <div
+        ref={growwInfoModalRef}
+        className={`my-5 mx-5 h-full md:h-auto md:mx-auto md:my-auto rounded-2xl shadow-lg pt-10 md:pt-14 px-8 md:px-14 pb-10 lg:pb-14 font-sora md:w-5/6 lg:w-2/3 ${
+          theme ? 'bg-jams_dark_blue text-white' : 'bg-white'
+        }`}
+      >
+        <h2 className='text-2xl sm:text-3xl font-semibold mb-5 md:mb-8'>
+          <span className='border-b-4 border-jams_blue'>CrowdStrike</span>
+        </h2>
+        <p className='text-sm leading-relaxed text-justify mb-3 xl:text-lg'>
+          We are making finance simple. For millions in India.
+        </p>
+        <p className='text-sm leading-relaxed text-justify mb-3 xl:text-lg'>
+          Groww is on a mission to democratize access to financial services for millions of Indians responsibly. We are a customer-first company.
+        </p>
+        <p className='text-sm leading-relaxed text-justify mb-6 xl:text-lg'>
+          We believe in crafting the best and most delightful user experience for our customers. And we leverage first principle thinking and technology to solve problems at scale. If this excites you, join us.
+        </p>
+        <div className='flex flex-col md:flex-row justify-center'>
+          <a
+            target='_blank' rel='noopener noreferrer'
+            href='https://groww.in/'
+            className='bg-jams_blue rounded-md text-sm px-6 mb-3 md:mb-0 text-center lg:px-12 py-3 font-semibold text-white'
+          >
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Sponsors (props) {
-  const [infoModalOpen, setInfoModalOpen] = useState(false)
-  const infoModalRef = useRef(null)
+  const [crowdstrikeInfoModalOpen, setCrowdstrikeInfoModalOpen] = useState(false)
+  const [growwInfoModalOpen, setGrowwInfoModalOpen] = useState(false)
+  const crowdstrikeInfoModalRef = useRef(null)
+  const growwInfoModalRef = useRef(null)
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
-        infoModalRef.current &&
-        !infoModalRef.current.contains(event.target)
+        crowdstrikeInfoModalRef &&
+        crowdstrikeInfoModalRef.current &&
+        !crowdstrikeInfoModalRef.current.contains(event.target)
       ) {
-        setInfoModalOpen(false)
+        setCrowdstrikeInfoModalOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -101,7 +141,24 @@ export default function Sponsors (props) {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [infoModalRef, setInfoModalOpen])
+  }, [crowdstrikeInfoModalRef, setCrowdstrikeInfoModalOpen])
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        growwInfoModalRef &&
+        growwInfoModalRef.current &&
+        !growwInfoModalRef.current.contains(event.target)
+      ) {
+        setGrowwInfoModalOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [growwInfoModalRef, setGrowwInfoModalOpen])
 
   const contentRef = useRef(null)
   const handleScroll = () => {
@@ -115,11 +172,21 @@ export default function Sponsors (props) {
       <Baner color='#3B7DED' title='Sponsors' handleScroll={handleScroll} />
       <div className='flex w-screen' ref={contentRef}>
         {
-          infoModalOpen && (
+          crowdstrikeInfoModalOpen && (
             <div className='fixed top-0 left-0 z-50 flex h-full w-screen overflow-y-auto  transition-all ease-in-out duration-500'>
               <div className={`absolute opacity-70 z-50 ${props.darkTheme ? 'bg-gray-400' : 'bg-black'} h-screen w-full`} />
               <div className='z-50 h-screen overflow-y-auto m-auto'>
-                <InfoModal theme={props.darkTheme} infoModalRef={infoModalRef} />
+                <CrowdstrikeInfoModal theme={props.darkTheme} crowdstrikeInfoModalRef={crowdstrikeInfoModalRef} />
+              </div>
+            </div>
+          )
+        }
+        {
+          growwInfoModalOpen && (
+            <div className='fixed top-0 left-0 z-50 flex h-full w-screen overflow-y-auto  transition-all ease-in-out duration-500'>
+              <div className={`absolute opacity-70 z-50 ${props.darkTheme ? 'bg-gray-400' : 'bg-black'} h-screen w-full`} />
+              <div className='z-50 h-screen overflow-y-auto m-auto'>
+                <GrowwInfoModal theme={props.darkTheme} growwInfoModalRef={growwInfoModalRef} />
               </div>
             </div>
           )
@@ -132,18 +199,36 @@ export default function Sponsors (props) {
               <div className={`${props.darkTheme ? 'bg-indigo-400' : 'bg-blue-700'} text-white md:w-2/3 lg:w-1/2 mx-auto px-5 py-3 rounded-md mb-7`}>
                 <h1 className='font-bold text-2xl md:text-3xl xl:text-4xl'>Diamond Sponsors</h1>
               </div>
-              <div className='grid gap-8 sm:gap-12 grid-cols-1 md:grid-cols-3 mb-14 md:mb-20'>
-                <div onClick={() => setInfoModalOpen(true)} className='flex items-center justify-center w-full h-28 sm:h-36 lg:h-56 bg-gray-100 shadow-lg rounded-xl cursor-pointer'>
+              <div className='grid gap-8 sm:gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-6 mb-14 md:mb-20'>
+                <div
+                  onClick={() => setCrowdstrikeInfoModalOpen(true)}
+                  className='flex items-center justify-center w-full h-28 sm:h-36 lg:h-56 bg-gray-100 shadow-lg rounded-xl cursor-pointer xl:col-start-2 xl:col-span-2'
+                >
                   <img
                     src={CrowdStrike}
                     className='w-32 sm:w-36 lg:w-56 h-auto mx-3'
                     alt='CrowdStrike'
                   />
                 </div>
-                <SponsorCard image={Alchemy} name='Alchemy' website='https://www.alchemy.com/' />
-                <SponsorCard image={Ren} name='Ren' website='https://renproject.io/' />
+                <div
+                  onClick={() => setGrowwInfoModalOpen(true)}
+                  className='flex items-center justify-center w-full h-28 sm:h-36 lg:h-56 bg-gray-100 shadow-lg rounded-xl cursor-pointer xl:col-span-2'
+                >
+                  <img
+                    src={Groww}
+                    className='w-32 sm:w-36 lg:w-56 h-auto mx-3'
+                    alt='CrowdStrike'
+                  />
+                </div>
+                <div className='xl:col-start-2 xl:col-span-2'>
+                  <SponsorCard image={Alchemy} name='Alchemy' website='https://www.alchemy.com/' />
+                </div>
+                <div className='xl:col-span-2'>
+                  <SponsorCard image={Ren} name='Ren' website='https://renproject.io/' />
+                </div>
               </div>
             </div>
+
             {/* Platinum */}
             <div className='text-center'>
               <div className={`${props.darkTheme ? 'bg-indigo-400' : 'bg-blue-700'} text-white md:w-2/3 lg:w-1/2 mx-auto px-5 py-3 rounded-md mb-7 w-auto`}>
@@ -186,15 +271,18 @@ export default function Sponsors (props) {
                 <SponsorCard image={Taskade} name='Taskade' website='https://www.taskade.com/' />
                 <SponsorCard image={_1Password} name='1Password' website='https://1password.com/' />
                 <SponsorCard image={Framer} name='Framer' website='https://www.framer.com/' />
-                <SponsorCard image={Egghead} name='Egghead' website='https://egghead.io/' />
+                <SponsorCard image={Genxyz} name='Genxyz' website='https://gen.xyz/' />
               </div>
             </div>
             <div className='grid gap-8 sm:gap-12 grid-cols-2 md:grid-cols-6 mb-10'>
-              <div className='md:col-start-2 md:col-span-2'>
-                <SponsorCard image={Sketch} name='Sketch' website='https://www.sketch.com/' />
+              <div className='md:col-span-2'>
+                <SponsorCard image={Egghead} name='Egghead' website='https://egghead.io/' />
               </div>
               <div className='md:col-span-2'>
-                <SponsorCard image={Genxyz} name='Genxyz' website='https://gen.xyz/' />
+                <SponsorCard image={KumoSpace} name='KumoSpace' website='https://www.kumospace.com/' />
+              </div>
+              <div className='col-span-2'>
+                <SponsorCard image={Sketch} name='Sketch' website='https://www.sketch.com/' />
               </div>
             </div>
           </div>
