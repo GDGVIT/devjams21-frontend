@@ -8,6 +8,7 @@ import { ReactComponent as KnockathonsLogo } from '../Assets/Logos/Knockathons L
 import { ReactComponent as DevTalksLogo } from '../Assets/Logos/DevTalks Logo.svg'
 import { ReactComponent as HexathonLogo } from '../Assets/Logos/Hexathon Logo.svg'
 import { ReactComponent as CTFLogo } from '../Assets/Logos/CTF Logo.svg'
+import Speakers from '../Components/Speakers'
 
 // Devjams Grid SVGs
 import DevJamsGridGround from '../Assets/Home/DevJamsGridGround'
@@ -43,6 +44,7 @@ export default function Events (props) {
         theme={theme}
         darkTheme={props.darkTheme}
       />
+      <Speakers />
       <div ref={cardsRef} className='cards w-screen overflow-x-auto mt-8 overflow-y-hidden'>
         <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12 2xl:flex 2xl:justify-around'>
           <div>
