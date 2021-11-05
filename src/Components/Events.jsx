@@ -44,7 +44,7 @@ export default function Events (props) {
         theme={theme}
         darkTheme={props.darkTheme}
       />
-      <Speakers />
+      <Speakers theme={theme} />
       <div ref={cardsRef} className='cards w-screen overflow-x-auto mt-8 overflow-y-hidden'>
         <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12 2xl:flex 2xl:justify-around'>
           <div>

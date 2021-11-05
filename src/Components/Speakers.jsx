@@ -7,7 +7,7 @@ import Sudhakar from '../Assets/Speakers/Sudhakar.jpeg'
 import PrateekNarang from '../Assets/Speakers/PrateekNarang.jpg'
 import AanshulSadaria from '../Assets/Speakers/AanshulSadaria.jpg'
 
-const Speakers = () => {
+const Speakers = ({ theme }) => {
   const prateekNarangRef = useRef(null)
   const aanshulSadaria = useRef(null)
   const riddhiDuttaRef = useRef(null)
@@ -29,28 +29,28 @@ const Speakers = () => {
       <div ref={cardsRef} className='cards pl-12 w-screen overflow-x-auto overflow-y-hidden pt-6'>
         <div className='inline-flex gap-x-10 pl-10 md:pl-0 pr-10'>
           <div ref={dineshPunniRef}>
-            <SpeakerCard speaker={speakers.DineshPunni}>
-              <img src={DineshPunni} alt='speaker' className='w-36 mt-3 rounded-full' />
+            <SpeakerCard speaker={speakers.DineshPunni} theme={theme}>
+              <img src={DineshPunni} alt='speaker' className='w-36 mt-1 rounded-full' />
             </SpeakerCard>
           </div>
           <div ref={aanshulSadaria}>
-            <SpeakerCard speaker={speakers.AanshulSadaria}>
-              <img src={AanshulSadaria} alt='speaker' className='w-36 mt-3 rounded-full' />
+            <SpeakerCard speaker={speakers.AanshulSadaria} theme={theme}>
+              <img src={AanshulSadaria} alt='speaker' className='w-36 mt-1 rounded-full' />
             </SpeakerCard>
           </div>
           <div ref={prateekNarangRef}>
-            <SpeakerCard speaker={speakers.PrateekNarang}>
-              <img src={PrateekNarang} alt='speaker' className='w-36 mt-3 rounded-full' />
+            <SpeakerCard speaker={speakers.PrateekNarang} theme={theme}>
+              <img src={PrateekNarang} alt='speaker' className='w-36 mt-1 rounded-full' />
             </SpeakerCard>
           </div>
           <div ref={riddhiDuttaRef}>
-            <SpeakerCard speaker={speakers.RiddhiDutta}>
-              <img src={RiddhiDutta} alt='speaker' className='w-36 mt-3 rounded-full' />
+            <SpeakerCard speaker={speakers.RiddhiDutta} theme={theme}>
+              <img src={RiddhiDutta} alt='speaker' className='w-36 mt-1 rounded-full' />
             </SpeakerCard>
           </div>
           <div ref={sudhakarRef}>
-            <SpeakerCard speaker={speakers.Sudhakar}>
-              <img src={Sudhakar} alt='speaker' className='w-36 mt-3 rounded-full' />
+            <SpeakerCard speaker={speakers.Sudhakar} theme={theme}>
+              <img src={Sudhakar} alt='speaker' className='w-36 mt-1 rounded-full' />
             </SpeakerCard>
           </div>
         </div>

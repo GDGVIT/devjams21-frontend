@@ -4,7 +4,7 @@ const speakers = {
   DineshPunni: {
     name: 'Dinesh Punni',
     date: '12th Nov',
-    content: 'Founder and CEO, Immersive insiders',
+    content: 'Founder, Immersive insiders',
     route: 'https://www.linkedin.com/in/dineshpunni/'
   },
   AanshulSadaria: {
@@ -22,8 +22,7 @@ const speakers = {
   RiddhiDutta: {
     name: 'Riddhi Dutta',
     date: '13th Nov',
-    content:
-      'SDE, Amazon',
+    content: 'SDE, Amazon',
     route: 'https://www.linkedin.com/in/riddhi-dutta/'
   },
   Sudhakar: {
