@@ -3,32 +3,33 @@
 const speakers = {
   DineshPunni: {
     name: 'Dinesh Punni',
-    content:
-      'Software Development Engineer at Amazon. Loves Problem Solving and to unravel the mysteries behind the magic of computer programs.',
+    date: '12th Nov',
+    content: 'Founder and CEO, Immersive insiders',
     route: 'https://www.linkedin.com/in/dineshpunni/'
   },
   AanshulSadaria: {
     name: 'Aanshul Sadaria',
-    content:
-      'Interact and meet with a few of the most prestigious and renowned figures in the ever-changing tech industry!',
+    date: '13th Nov',
+    content: 'SWE, Google',
     route: ' https://www.linkedin.com/in/aanshul-sadaria-31069494'
   },
   PrateekNarang: {
     name: 'Prateek Narang',
-    content:
-      'Have what it takes to be a winner? Team up with your friends to solve an innovative problem and pitch your ideas while competing against other teams to come out on top!',
+    date: '13th Nov',
+    content: 'Founder, Coding Minutes',
     route: 'https://www.linkedin.com/in/prateeknarang27/'
   },
   RiddhiDutta: {
     name: 'Riddhi Dutta',
+    date: '13th Nov',
     content:
-      'Software Development Engineer at Amazon. Loves Problem Solving and to unravel the mysteries behind the magic of computer programs.',
+      'SDE, Amazon',
     route: 'https://www.linkedin.com/in/riddhi-dutta/'
   },
   Sudhakar: {
     name: 'Sudhakar',
-    content:
-      'Software Development Engineer at Amazon. Loves Problem Solving and to unravel the mysteries behind the magic of computer programs.',
+    date: '13th Nov',
+    content: 'Software Engineer, Crowdstrike',
     route: 'https://www.linkedin.com/in/riddhi-dutta/'
   }
 }
