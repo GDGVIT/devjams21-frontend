@@ -26,31 +26,54 @@ const Speakers = ({ theme }) => {
 
   return (
     <div className='overflow-hidden'>
-      <div ref={cardsRef} className='cards pl-12 w-screen overflow-x-auto overflow-y-hidden pt-6'>
-        <div className='inline-flex gap-x-10 pl-10 md:pl-0 pr-10'>
+      <div
+        ref={cardsRef}
+        className='cards w-screen overflow-x-auto overflow-y-hidden'
+      >
+        <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12'>
           <div ref={dineshPunniRef}>
             <SpeakerCard speaker={speakers.DineshPunni} theme={theme}>
-              <img src={DineshPunni} alt='speaker' className='w-36 mt-1 rounded-full' />
+              <img
+                src={DineshPunni}
+                alt='speaker'
+                className='w-36 mt-1 rounded-full'
+              />
             </SpeakerCard>
           </div>
           <div ref={aanshulSadaria}>
             <SpeakerCard speaker={speakers.AanshulSadaria} theme={theme}>
-              <img src={AanshulSadaria} alt='speaker' className='w-36 mt-1 rounded-full' />
+              <img
+                src={AanshulSadaria}
+                alt='speaker'
+                className='w-36 mt-1 rounded-full'
+              />
             </SpeakerCard>
           </div>
           <div ref={prateekNarangRef}>
             <SpeakerCard speaker={speakers.PrateekNarang} theme={theme}>
-              <img src={PrateekNarang} alt='speaker' className='w-36 mt-1 rounded-full' />
+              <img
+                src={PrateekNarang}
+                alt='speaker'
+                className='w-36 mt-1 rounded-full'
+              />
             </SpeakerCard>
           </div>
           <div ref={riddhiDuttaRef}>
             <SpeakerCard speaker={speakers.RiddhiDutta} theme={theme}>
-              <img src={RiddhiDutta} alt='speaker' className='w-36 mt-1 rounded-full' />
+              <img
+                src={RiddhiDutta}
+                alt='speaker'
+                className='w-36 mt-1 rounded-full'
+              />
             </SpeakerCard>
           </div>
           <div ref={sudhakarRef}>
             <SpeakerCard speaker={speakers.Sudhakar} theme={theme}>
-              <img src={Sudhakar} alt='speaker' className='w-36 mt-1 rounded-full' />
+              <img
+                src={Sudhakar}
+                alt='speaker'
+                className='w-36 mt-1 rounded-full'
+              />
             </SpeakerCard>
           </div>
         </div>

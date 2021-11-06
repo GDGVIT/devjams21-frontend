@@ -10,7 +10,7 @@ const speakers = {
   AanshulSadaria: {
     name: 'Aanshul Sadaria',
     date: '13th Nov',
-    content: 'SWE, Google',
+    content: 'Software Engineer, Google',
     route: ' https://www.linkedin.com/in/aanshul-sadaria-31069494'
   },
   PrateekNarang: {
@@ -22,7 +22,7 @@ const speakers = {
   RiddhiDutta: {
     name: 'Riddhi Dutta',
     date: '13th Nov',
-    content: 'SDE, Amazon',
+    content: 'Software Engineer, Amazon',
     route: 'https://www.linkedin.com/in/riddhi-dutta/'
   },
   Sudhakar: {

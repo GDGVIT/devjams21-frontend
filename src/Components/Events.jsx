@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import events from '../Data/EventsData'
 import '../Styles/Components/Events.css'
+import Header from './Header'
 
 // Logos
 import { ReactComponent as DevJamsLogo } from '../Assets/Logos/DevJams Logo.svg'
@@ -13,7 +14,7 @@ import Speakers from '../Components/Speakers'
 // Devjams Grid SVGs
 import DevJamsGridGround from '../Assets/Home/DevJamsGridGround'
 
-export default function Events (props) {
+const Events = (props) => {
   const knockathonRef = useRef(null)
   const hexathonRef = useRef(null)
   const devtalksRef = useRef(null)
@@ -24,7 +25,11 @@ export default function Events (props) {
   useEffect(() => {
     const cardLeft = hexathonRef.current.getBoundingClientRect().left
     const scrollToComponent = () => {
-      if (homeContainerRef && homeContainerRef.current.getBoundingClientRect().top <= 104 && homeContainerRef.current.getBoundingClientRect().top >= 0) {
+      if (
+        homeContainerRef &&
+        homeContainerRef.current.getBoundingClientRect().top <= 104 &&
+        homeContainerRef.current.getBoundingClientRect().top >= 0
+      ) {
         if (cardsRef) {
           cardsRef.current.scrollLeft = cardLeft - 20
         }
@@ -44,8 +49,17 @@ export default function Events (props) {
         theme={theme}
         darkTheme={props.darkTheme}
       />
+      <div className='mt-8'>
+        <Header darkTheme={theme} text='Speakers' />
+      </div>
       <Speakers theme={theme} />
-      <div ref={cardsRef} className='cards w-screen overflow-x-auto mt-8 overflow-y-hidden'>
+      <div className='mt-8'>
+        <Header darkTheme={theme} text='Events' />
+      </div>
+      <div
+        ref={cardsRef}
+        className='cards w-screen overflow-x-auto mt-8 overflow-y-hidden'
+      >
         <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12 2xl:flex 2xl:justify-around'>
           <div>
             <ComingSoonGrid
@@ -125,7 +139,8 @@ const DevJamsGrid = (props) => {
             <a
               href='https://portal.devjams.dscvit.com/'
               className='bg-jams_red hover:bg-red-500 border-2 text-white border-jams_red hover:border-red-500 px-16 py-2 font-bold grid-btn'
-              rel='noreferrer noopener' target='_blank'
+              rel='noreferrer noopener'
+              target='_blank'
             >
               Register
             </a>
@@ -238,3 +253,5 @@ const ChervonRight = () => {
     </svg>
   )
 }
+
+export default Events
