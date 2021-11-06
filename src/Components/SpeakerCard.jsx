@@ -16,7 +16,7 @@ const SpeakerCard = ({ speaker, theme, ...props }) => {
               {props.children}
               <div className={`content--${theme} font-bold`}>{name}</div>
             </div>
-            <div className={`content--${theme} text-center`}>{content}</div>
+            <div className={`content--${theme} italic text-center`}>{content}</div>
             <div className='text-jams_red text-center'>{date}</div>
           </div>
           <div
