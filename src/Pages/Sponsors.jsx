@@ -23,6 +23,7 @@ import Sketch from '../Assets/Logos/Sponsors/Sketch.svg'
 import TheDappList from '../Assets/Logos/Sponsors/TheDappList.svg'
 import CrowdStrike from '../Assets/Logos/Sponsors/CrowdStrike.png'
 import Contact from '../Components/Contact'
+import SponsorHeader from '../Components/Header'
 
 const SponsorCard = (props) => {
   return (
@@ -35,18 +36,6 @@ const SponsorCard = (props) => {
         />
       </div>
     </a>
-  )
-}
-
-const SponsorHeader = ({ darkTheme, text }) => {
-  return (
-    <div
-      className={`${
-        darkTheme ? 'bg-indigo-400' : 'bg-jams_blue'
-      } text-white w-80 sm:w-96 mx-auto py-2 rounded-full mb-7`}
-    >
-      <h1 className='font-bold text-2xl'>{text}</h1>
-    </div>
   )
 }
 

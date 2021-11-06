@@ -3,7 +3,7 @@
 const events = {
   devjams: {
     name: "DevJams'21",
-    dateRange: '12th - 14th November',
+    dateRange: '20th - 22nd November',
     month: '',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero odit praesentium facilis non placeat nisi inventore sapiente nulla alias dolores',

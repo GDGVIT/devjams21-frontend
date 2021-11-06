@@ -70,7 +70,13 @@ const filesToCache = [
   '/src/Assets/About/vit.svg',
   // Timeline
   '/src/Assets/About/Timeline Dark.svg',
-  '/src/Assets/About/Timeline Light.svg'
+  '/src/Assets/About/Timeline Light.svg',
+  // Speakers
+  '/src/Assets/Speakers/AanshulSadaria.jpg',
+  '/src/Assets/Speakers/PrateekNarang.jpg',
+  '/src/Assets/Speakers/DineshPunni.jpg',
+  '/src/Assets/Speakers/RiddhiDutta.jpeg',
+  '/src/Assets/Speakers/Sudhakar.jpeg'
 ]
 
 self.addEventListener('install', function (e) {
