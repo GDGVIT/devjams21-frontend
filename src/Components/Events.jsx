@@ -54,7 +54,7 @@ const Events = (props) => {
       </div>
       <Speakers theme={theme} />
       <div className='mt-8'>
-        <Header darkTheme={theme} text='Events' />
+        <Header darkTheme={theme} text='Precursor Events' />
       </div>
       <div
         ref={cardsRef}
