@@ -29,7 +29,7 @@ const speakers = {
     name: 'Sudhakar',
     date: '13th Nov',
     content: 'Software Engineer, Crowdstrike',
-    route: 'https://www.linkedin.com/in/riddhi-dutta/'
+    route: 'https://sudhackar.github.io/'
   }
 }
 
