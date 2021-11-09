@@ -1,8 +1,9 @@
 import '../Styles/Components/Events.css'
 import { ReactComponent as Linkedin } from '../Assets/SocialMedia/Linkedin.svg'
+import { ReactComponent as Github } from '../Assets/SocialMedia/Github.svg'
 
 const SpeakerCard = ({ speaker, theme, ...props }) => {
-  const { name, date, content, route } = speaker
+  const { name, content, route } = speaker
 
   const handleRouting = () => {
     window.open(route, '_blank')
@@ -22,15 +23,17 @@ const SpeakerCard = ({ speaker, theme, ...props }) => {
             <div className={`content--${theme} italic text-center text-sm`}>
               {content}
             </div>
-            <div className='text-jams_red text-sm text-center font-bold'>
+            {/* <div className='text-jams_red text-sm text-center font-bold'>
               {date}
-            </div>
+            </div> */}
           </div>
           <div
             onClick={handleRouting}
             className='cursor-pointer grid place-items-center'
           >
-            <Linkedin className='w-9 h-9 rounded-none fill-current text-jams_blue' />
+            {name === 'Sudhakar'
+            ? <Github className={`w-9 h-9 rounded-none fill-current ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
+            : <Linkedin className='w-9 h-9 rounded-none fill-current text-jams_blue' />}
           </div>
         </div>
       </div>
