@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import Baner from '../Components/Baner'
 import Contact from '../Components/Contact'
 import TimelineDark from '../Assets/Timeline/Timeline Dark.svg'
-import TimelineLight from '../Assets/Timeline/Timeline Light.svg'
+// import TimelineLight from '../Assets/Timeline/Timeline Light.svg'
 
 export default function Timeline (props) {
   const contentRef = useRef(null)
@@ -22,7 +22,7 @@ export default function Timeline (props) {
         <div className='w-full'>
           {props.darkTheme
             ? <img src={TimelineDark} alt='timeline dark' className='w-full h-full' />
-            : <img src={TimelineLight} alt='timeline light' className='w-full h-full' />}
+            : <img src={TimelineDark} alt='timeline light' className='w-full h-full' />}
         </div>
       </div>
       <Contact darkTheme={props.darkTheme} />
