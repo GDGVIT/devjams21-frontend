@@ -32,8 +32,8 @@ const SpeakerCard = ({ speaker, theme, ...props }) => {
             className='cursor-pointer grid place-items-center'
           >
             {name === 'Sudhakar'
-            ? <Github className={`w-9 h-9 rounded-none fill-current ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
-            : <Linkedin className='w-9 h-9 rounded-none fill-current text-jams_blue' />}
+              ? <Github className={`w-9 h-9 rounded-none fill-current ${theme === 'dark' ? 'text-white' : 'text-black'}`} />
+              : <Linkedin className='w-9 h-9 rounded-none fill-current text-jams_blue' />}
           </div>
         </div>
       </div>

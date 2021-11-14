@@ -9,6 +9,7 @@ import Faq from './Pages/Faq'
 import Home from './Pages/Home'
 import Animation from './Components/Animation'
 import DJprizes from './Assets/DJprizes.png'
+import anime from 'animejs/lib/anime.es'
 
 function App () {
   const [bodyRender, setBodyRender] = useState(false)
@@ -38,31 +39,38 @@ function App () {
     }
   }, [prizesRef, setPrizeModalOpen])
 
+  useEffect(() => {
+    anime({
+      targets: '#prizeModal',
+      scale: ['0', '1'],
+      duration: 300,
+      easing: 'easeOutCubic'
+    })
+  }, [])
+
   return (
     <div className='App'>
-      {
-        prizeModalOpen && (
-          <div className='fixed top-0 left-0 z-50 flex h-full w-screen overflow-y-auto'>
-            <div
-              className={`absolute opacity-70 z-50 ${
-                darkTheme ? 'bg-gray-400' : 'bg-black'
-              } h-screen w-full transition-all ease-in-out duration-500 delay-1000`}
-            />
-              <div className='z-50 h-screen overflow-y-auto m-auto transition-all ease-in-out duration-500 delay-1000'>
-                <div className='z-60 flex md:h-full'>
-                  <div
-                    ref={prizesRef}
-                    className={`my-5 mx-5 h-full md:h-auto md:mx-auto md:my-auto rounded-xl shadow-lg p-5 font-sora w-1/2 ${
-                      darkTheme ? 'bg-jams_dark_blue text-white' : 'bg-white'
-                    }  border-4 border-jams_blue transition-all ease-in-out duration-500 delay-1000`}
-                  >
-                    <img src={DJprizes} alt='Prizes' />
-                  </div>
-                </div>
+      {prizeModalOpen && (
+        <div className='fixed top-0 left-0 z-50 flex h-full w-screen overflow-y-auto'>
+          <div
+            className={`absolute opacity-70 z-50 ${
+              darkTheme ? 'bg-gray-400' : 'bg-black'
+            } h-screen w-full`}
+          />
+          <div id='prizeModal' className='z-50 h-screen overflow-y-auto m-auto'>
+            <div className='z-60 flex h-full'>
+              <div
+                ref={prizesRef}
+                className={`h-auto mx-auto my-auto rounded-xl shadow-lg p-5 font-sora w-5/6 md:w-3/4 xl:w-1/2 ${
+                    darkTheme ? 'bg-jams_dark_blue text-white' : 'bg-white'
+                  }  border-4 border-jams_blue`}
+              >
+                <img src={DJprizes} alt='Prizes' />
               </div>
             </div>
-        )
-      }
+          </div>
+        </div>
+      )}
       <BrowserRouter>
         <Navbar
           setBodyRender={setBodyRender}
