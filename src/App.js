@@ -46,15 +46,15 @@ function App () {
             <div
               className={`absolute opacity-70 z-50 ${
                 darkTheme ? 'bg-gray-400' : 'bg-black'
-              } h-screen w-full transition-all ease-in-out duration-1000`}
+              } h-screen w-full transition-all ease-in-out duration-500 delay-1000`}
             />
-              <div className='z-50 h-screen overflow-y-auto m-auto transition-all ease-in-out duration-1000'>
+              <div className='z-50 h-screen overflow-y-auto m-auto transition-all ease-in-out duration-500 delay-1000'>
                 <div className='z-60 flex md:h-full'>
                   <div
                     ref={prizesRef}
-                    className={`my-5 mx-5 h-full md:h-auto md:mx-auto md:my-auto rounded-xl shadow-lg pt-10 md:pt-14 px-8 md:px-14 pb-10 lg:pb-14 font-sora w-1/2 ${
+                    className={`my-5 mx-5 h-full md:h-auto md:mx-auto md:my-auto rounded-xl shadow-lg p-5 font-sora w-1/2 ${
                       darkTheme ? 'bg-jams_dark_blue text-white' : 'bg-white'
-                    }  border-4 border-jams_blue transition-all ease-in-out duration-1000`}
+                    }  border-4 border-jams_blue transition-all ease-in-out duration-500 delay-1000`}
                   >
                     <img src={DJprizes} alt='Prizes' />
                   </div>
