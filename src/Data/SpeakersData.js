@@ -7,6 +7,12 @@ const speakers = {
     content: 'Founder, Immersive insiders',
     route: 'https://www.linkedin.com/in/dineshpunni/'
   },
+  AllanCampopiano: {
+    name: 'Allan Campopiano',
+    date: '12th Nov',
+    content: 'Data Scientist, Deepnote',
+    route: 'https://www.linkedin.com/in/allan-campopiano-703394120/'
+  },
   AanshulSadaria: {
     name: 'Aanshul Sadaria',
     date: '13th Nov',
