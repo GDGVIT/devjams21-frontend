@@ -16,6 +16,7 @@ import HackTheBox from '../Assets/Logos/Sponsors/HackTheBox.png'
 import Ren from '../Assets/Logos/Sponsors/Ren.png'
 import Genxyz from '../Assets/Logos/Sponsors/genxyz.png'
 import Kaspersky from '../Assets/Logos/Sponsors/Kaspersky.png'
+import Vicara from '../Assets/Logos/Sponsors/Vicara.png'
 import GFG from '../Assets/Logos/Sponsors/GFGlogo.png'
 import Agora from '../Assets/Logos/Sponsors/agoraLogo.svg'
 import Alchemy from '../Assets/Logos/Sponsors/Alchemy.svg'
@@ -269,6 +270,13 @@ export default function Sponsors (props) {
                     image={Ren}
                     name='Ren'
                     website='https://renproject.io/'
+                  />
+                </div>
+                <div className='xl:col-span-2'>
+                  <SponsorCard
+                    image={Vicara}
+                    name='Vicara'
+                    website='https://vicara.co/'
                   />
                 </div>
               </div>
