@@ -49,6 +49,7 @@ const filesToCache = [
   '/src/Assets/Logos/Sponsors/KumoSpace.png',
   '/src/Assets/Logos/Sponsors/GFGlogo.png',
   '/src/Assets/Logos/Sponsors/Groww.png',
+  '/src/Assets/Logos/Sponsors/Vicara.png',
   '/src/Assets/Logos/Sponsors/Kaspersky.png',
   '/src/Assets/Logos/Sponsors/HackTheBox.png',
   '/src/Assets/Logos/Sponsors/Sketch.svg',
