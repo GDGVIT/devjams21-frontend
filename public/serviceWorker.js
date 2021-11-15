@@ -75,6 +75,7 @@ const filesToCache = [
   '/src/Assets/About/Timeline Light.svg',
   // Speakers
   '/src/Assets/Speakers/AanshulSadaria.jpg',
+  '/src/Assets/Speakers/AllanCampopiano.jpg',
   '/src/Assets/Speakers/PrateekNarang.jpg',
   '/src/Assets/Speakers/DineshPunni.jpg',
   '/src/Assets/Speakers/RiddhiDutta.jpeg',
