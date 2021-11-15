@@ -240,11 +240,11 @@ export default function Sponsors (props) {
               <div className='grid gap-8 sm:gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-6 mb-14 md:mb-20'>
                 <div
                   onClick={() => setCrowdstrikeInfoModalOpen(true)}
-                  className='flex border-2 border-gray-300 items-center justify-center w-full h-28 sm:h-36 lg:h-56 bg-white shadow-lg rounded-xl cursor-pointer xl:col-start-2 xl:col-span-2'
+                  className='flex border-2 border-gray-300 items-center justify-center w-full h-28 sm:h-36 lg:h-56 bg-white shadow-lg rounded-xl cursor-pointer xl:col-span-2'
                 >
                   <img
                     src={CrowdStrike}
-                    className='w-32 sm:w-36 lg:w-56  h-auto mx-3'
+                    className='w-32 sm:w-36 lg:w-56 h-auto mx-3'
                     alt='CrowdStrike'
                   />
                 </div>
@@ -258,21 +258,21 @@ export default function Sponsors (props) {
                     alt='CrowdStrike'
                   />
                 </div>
-                <div className='xl:col-start-2 xl:col-span-2'>
+                <div className='xl:col-span-2'>
                   <SponsorCard
                     image={Alchemy}
                     name='Alchemy'
                     website='https://www.alchemy.com/'
                   />
                 </div>
-                <div className='xl:col-span-2'>
+                <div className='xl:col-start-2 xl:col-span-2'>
                   <SponsorCard
                     image={Ren}
                     name='Ren'
                     website='https://renproject.io/'
                   />
                 </div>
-                <div className='xl:col-span-2'>
+                <div className='md:col-span-2 xl:col-span-2'>
                   <SponsorCard
                     image={Vicara}
                     name='Vicara'
