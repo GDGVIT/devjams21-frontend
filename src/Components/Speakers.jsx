@@ -36,6 +36,15 @@ const Speakers = ({ theme }) => {
             </SpeakerCard>
           </div>
           <div>
+            <SpeakerCard speaker={speakers.Sudhakar} theme={theme}>
+              <img
+                src={Sudhakar}
+                alt='speaker'
+                className='w-36 mt-1 rounded-full'
+              />
+            </SpeakerCard>
+          </div>
+          <div>
             <SpeakerCard speaker={speakers.AllanCampopiano} theme={theme}>
               <img
                 src={AllanCampopiano}
@@ -57,15 +66,6 @@ const Speakers = ({ theme }) => {
             <SpeakerCard speaker={speakers.Saket} theme={theme}>
               <img
                 src={Saket}
-                alt='speaker'
-                className='w-36 mt-1 rounded-full'
-              />
-            </SpeakerCard>
-          </div>
-          <div>
-            <SpeakerCard speaker={speakers.Sudhakar} theme={theme}>
-              <img
-                src={Sudhakar}
                 alt='speaker'
                 className='w-36 mt-1 rounded-full'
               />
