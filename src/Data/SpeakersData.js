@@ -34,7 +34,7 @@ const speakers = {
   JohnFrancis: {
     name: 'John Francis',
     date: '12th Nov',
-    content: 'Full Stack Developer, Groww',
+    content: 'Software Engineer, Groww',
     route: 'https://www.linkedin.com/in/john1jan/'
   },
   AanshulSadaria: {
