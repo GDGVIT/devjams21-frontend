@@ -78,6 +78,7 @@ const filesToCache = [
   '/src/Assets/Speakers/AllanCampopiano.jpeg',
   '/src/Assets/Speakers/JasonShah.jpg',
   '/src/Assets/Speakers/NeerajSingh.jpg',
+  '/src/Assets/Speakers/JohnFrancis.jpg',
   '/src/Assets/Speakers/Saket.jpg',
   '/src/Assets/Speakers/PrateekNarang.jpg',
   '/src/Assets/Speakers/DineshPunni.jpg',
