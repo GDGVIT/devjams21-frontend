@@ -79,6 +79,15 @@ const Events = (props) => {
               <KnockathonsLogo className='w-52' />
             </ComingSoonGrid>
           </div>
+          <div ref={devtalksRef}>
+            <ComingSoonGrid
+              event={events.devtalks}
+              theme={theme}
+              buttonLabel='Registrations Closed'
+            >
+              <DevTalksLogo className='w-36' />
+            </ComingSoonGrid>
+          </div>
           <div ref={hexathonRef}>
             <CurrentEventGrid
               event={events.hexathon}
@@ -86,15 +95,6 @@ const Events = (props) => {
               buttonLabel='Register'
             >
               <HexathonLogo className='w-36 my-3' />
-            </CurrentEventGrid>
-          </div>
-          <div ref={devtalksRef}>
-            <CurrentEventGrid
-              event={events.devtalks}
-              theme={theme}
-              buttonLabel='RSVP'
-            >
-              <DevTalksLogo className='w-36' />
             </CurrentEventGrid>
           </div>
         </div>
