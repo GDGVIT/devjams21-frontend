@@ -7,11 +7,29 @@ const speakers = {
     content: 'Founder, Immersive insiders',
     route: 'https://www.linkedin.com/in/dineshpunni/'
   },
+  NeerajSingh: {
+    name: 'Neeraj Singh',
+    date: '12th Nov',
+    content: 'Co-founder and CTO, Groww',
+    route: 'https://www.linkedin.com/in/neeraj-singh-groww/'
+  },
   AllanCampopiano: {
     name: 'Allan Campopiano',
     date: '12th Nov',
     content: 'Data Scientist, Deepnote',
     route: 'https://www.linkedin.com/in/allan-campopiano-703394120/'
+  },
+  JasonShah: {
+    name: 'Jason Shah',
+    date: '12th Nov',
+    content: 'Product Management, Alchemy',
+    route: 'https://www.linkedin.com/in/jasonyogeshshah'
+  },
+  Saket: {
+    name: 'Saket',
+    date: '12th Nov',
+    content: 'Software Engineer, Groww',
+    route: 'https://www.linkedin.com/in/saket-65261b8a/'
   },
   AanshulSadaria: {
     name: 'Aanshul Sadaria',

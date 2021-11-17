@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import SpeakerCard from './SpeakerCard'
 import speakers from '../Data/SpeakersData'
 import DineshPunni from '../Assets/Speakers/DineshPunni.jpeg'
@@ -7,32 +6,18 @@ import Sudhakar from '../Assets/Speakers/Sudhakar.jpeg'
 import PrateekNarang from '../Assets/Speakers/PrateekNarang.jpg'
 import AanshulSadaria from '../Assets/Speakers/AanshulSadaria.jpg'
 import AllanCampopiano from '../Assets/Speakers/AllanCampopiano.jpeg'
+import JasonShah from '../Assets/Speakers/JasonShah.jpeg'
+import NeerajSingh from '../Assets/Speakers/NeerajSingh.jpg'
+import Saket from '../Assets/Speakers/Saket.jpg'
 
 const Speakers = ({ theme }) => {
-  const prateekNarangRef = useRef(null)
-  const aanshulSadaria = useRef(null)
-  const riddhiDuttaRef = useRef(null)
-  const dineshPunniRef = useRef(null)
-  const sudhakarRef = useRef(null)
-  const cardsRef = useRef(null)
-
-  // useEffect(() => {
-  //   if (dineshPunniRef) {
-  //     const cardLeft = dineshPunniRef.current.getBoundingClientRect().left
-  //     if (cardsRef) {
-  //       cardsRef.current.scrollLeft = cardLeft - 20
-  //     }
-  //   }
-  // }, [])
-
   return (
     <div className='overflow-hidden'>
       <div
-        ref={cardsRef}
         className='cards w-screen overflow-x-auto overflow-y-hidden'
       >
         <div className='inline-flex gap-x-10 pb-10 px-5 lg:px-12'>
-          <div ref={dineshPunniRef}>
+          <div>
             <SpeakerCard speaker={speakers.DineshPunni} theme={theme}>
               <img
                 src={DineshPunni}
@@ -41,7 +26,16 @@ const Speakers = ({ theme }) => {
               />
             </SpeakerCard>
           </div>
-          <div ref={dineshPunniRef}>
+          <div>
+            <SpeakerCard speaker={speakers.NeerajSingh} theme={theme}>
+              <img
+                src={NeerajSingh}
+                alt='speaker'
+                className='w-36 mt-1 rounded-full'
+              />
+            </SpeakerCard>
+          </div>
+          <div>
             <SpeakerCard speaker={speakers.AllanCampopiano} theme={theme}>
               <img
                 src={AllanCampopiano}
@@ -50,7 +44,25 @@ const Speakers = ({ theme }) => {
               />
             </SpeakerCard>
           </div>
-          <div ref={sudhakarRef}>
+          <div>
+            <SpeakerCard speaker={speakers.JasonShah} theme={theme}>
+              <img
+                src={JasonShah}
+                alt='speaker'
+                className='w-36 mt-1 rounded-full'
+              />
+            </SpeakerCard>
+          </div>
+          <div>
+            <SpeakerCard speaker={speakers.Saket} theme={theme}>
+              <img
+                src={Saket}
+                alt='speaker'
+                className='w-36 mt-1 rounded-full'
+              />
+            </SpeakerCard>
+          </div>
+          <div>
             <SpeakerCard speaker={speakers.Sudhakar} theme={theme}>
               <img
                 src={Sudhakar}
@@ -59,7 +71,7 @@ const Speakers = ({ theme }) => {
               />
             </SpeakerCard>
           </div>
-          <div ref={aanshulSadaria}>
+          <div>
             <SpeakerCard speaker={speakers.AanshulSadaria} theme={theme}>
               <img
                 src={AanshulSadaria}
@@ -68,7 +80,7 @@ const Speakers = ({ theme }) => {
               />
             </SpeakerCard>
           </div>
-          <div ref={prateekNarangRef}>
+          <div>
             <SpeakerCard speaker={speakers.PrateekNarang} theme={theme}>
               <img
                 src={PrateekNarang}
@@ -77,7 +89,7 @@ const Speakers = ({ theme }) => {
               />
             </SpeakerCard>
           </div>
-          <div ref={riddhiDuttaRef}>
+          <div>
             <SpeakerCard speaker={speakers.RiddhiDutta} theme={theme}>
               <img
                 src={RiddhiDutta}
