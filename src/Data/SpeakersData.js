@@ -31,6 +31,12 @@ const speakers = {
     content: 'Software Engineer, Groww',
     route: 'https://www.linkedin.com/in/saket-65261b8a/'
   },
+  JohnFrancis: {
+    name: 'John Francis',
+    date: '12th Nov',
+    content: 'Software Engineer, Groww',
+    route: 'https://www.linkedin.com/in/john1jan/'
+  },
   AanshulSadaria: {
     name: 'Aanshul Sadaria',
     date: '13th Nov',

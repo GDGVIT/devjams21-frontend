@@ -8,6 +8,7 @@ import AanshulSadaria from '../Assets/Speakers/AanshulSadaria.jpg'
 import AllanCampopiano from '../Assets/Speakers/AllanCampopiano.jpeg'
 import JasonShah from '../Assets/Speakers/JasonShah.jpeg'
 import NeerajSingh from '../Assets/Speakers/NeerajSingh.jpg'
+import JohnFrancis from '../Assets/Speakers/JohnFrancis.jpg'
 import Saket from '../Assets/Speakers/Saket.jpg'
 
 const Speakers = ({ theme }) => {
@@ -30,6 +31,15 @@ const Speakers = ({ theme }) => {
             <SpeakerCard speaker={speakers.NeerajSingh} theme={theme}>
               <img
                 src={NeerajSingh}
+                alt='speaker'
+                className='w-36 mt-1 rounded-full'
+              />
+            </SpeakerCard>
+          </div>
+          <div>
+            <SpeakerCard speaker={speakers.Sudhakar} theme={theme}>
+              <img
+                src={Sudhakar}
                 alt='speaker'
                 className='w-36 mt-1 rounded-full'
               />
@@ -63,9 +73,9 @@ const Speakers = ({ theme }) => {
             </SpeakerCard>
           </div>
           <div>
-            <SpeakerCard speaker={speakers.Sudhakar} theme={theme}>
+            <SpeakerCard speaker={speakers.JohnFrancis} theme={theme}>
               <img
-                src={Sudhakar}
+                src={JohnFrancis}
                 alt='speaker'
                 className='w-36 mt-1 rounded-full'
               />
