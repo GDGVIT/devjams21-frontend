@@ -10,7 +10,6 @@ workbox.routing.registerRoute(
 )
 
 const filesToCache = [
-  '/src/Assets/DJprizes.png',
   // Train Animations
   '/src/Assets/TrainAnimations/Day/CityLightHouse.svg',
   '/src/Assets/TrainAnimations/Day/DayBg.svg',

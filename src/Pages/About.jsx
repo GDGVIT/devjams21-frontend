@@ -5,8 +5,6 @@ import { ReactComponent as Gdsc } from '../Assets/About/gdsc.svg'
 import { ReactComponent as Devjams } from '../Assets/About/devjams.svg'
 import '../Styles/About.css'
 import Contact from '../Components/Contact'
-import DJprizes from '../Assets/DJprizes.png'
-import Header from '../Components/Header'
 
 export default function About (props) {
   const contentRef = useRef(null)
@@ -42,14 +40,6 @@ export default function About (props) {
             </p>
           </div>
           <Devjams className='h-56 md:h-auto md:col-span-6 mt-10 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9 px-4' />
-        </div>
-        <div className='lg:mx-8 z-30 shadow-lg grid place-items-center'>
-          <Header text='Prizes' />
-          <img
-            src={DJprizes}
-            alt='Prizes'
-            className='rounded-2xl border-4 border-jams_blue'
-          />
         </div>
         <div
           className={`my-36 lg:mx-8 rounded-2xl shadow-lg pt-10 md:pt-14 px-8 md:px-14 pb-10 lg:pb-14 md:grid md:grid-cols-6 ${
