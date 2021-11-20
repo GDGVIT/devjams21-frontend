@@ -41,7 +41,6 @@ export default function About (props) {
           </div>
           <Devjams className='h-56 md:h-auto md:col-span-6 mt-10 w-full mx-auto lg:col-span-3 lg:my-auto lg:w-11/12 lg:ml-9 px-4' />
         </div>
-
         <div
           className={`my-36 lg:mx-8 rounded-2xl shadow-lg pt-10 md:pt-14 px-8 md:px-14 pb-10 lg:pb-14 md:grid md:grid-cols-6 ${
             props.darkTheme ? 'bg-jams_dark_blue text-white' : 'bg-white'

@@ -10,7 +10,6 @@ workbox.routing.registerRoute(
 )
 
 const filesToCache = [
-  '/src/Assets/DJprizes.png',
   // Train Animations
   '/src/Assets/TrainAnimations/Day/CityLightHouse.svg',
   '/src/Assets/TrainAnimations/Day/DayBg.svg',
@@ -43,7 +42,6 @@ const filesToCache = [
   '/src/Assets/Logos/Sponsors/replit.png',
   '/src/Assets/Logos/Sponsors/Taskade.png',
   '/src/Assets/Logos/Sponsors/Voiceflow.png',
-  '/src/Assets/Logos/Sponsors/agoraLogo.svg',
   '/src/Assets/Logos/Sponsors/Alchemy.svg',
   '/src/Assets/Logos/Sponsors/CrowdStrike.png',
   '/src/Assets/Logos/Sponsors/KumoSpace.png',

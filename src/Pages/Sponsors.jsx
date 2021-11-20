@@ -18,7 +18,6 @@ import Genxyz from '../Assets/Logos/Sponsors/genxyz.png'
 import Kaspersky from '../Assets/Logos/Sponsors/Kaspersky.png'
 import Vicara from '../Assets/Logos/Sponsors/Vicara.png'
 import GFG from '../Assets/Logos/Sponsors/GFGlogo.png'
-import Agora from '../Assets/Logos/Sponsors/agoraLogo.svg'
 import Alchemy from '../Assets/Logos/Sponsors/Alchemy.svg'
 import Sketch from '../Assets/Logos/Sponsors/Sketch.svg'
 import TheDappList from '../Assets/Logos/Sponsors/TheDappList.svg'
@@ -288,15 +287,8 @@ export default function Sponsors (props) {
                 darkTheme={props.darkTheme}
                 text='Platinum Sponsors'
               />
-              <div className='grid gap-8 sm:gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-6 mb-14 md:mb-20'>
-                <div className='xl:col-start-2 xl:col-span-2'>
-                  <SponsorCard
-                    image={Agora}
-                    name='Agora'
-                    website='https://www.agora.io/en/'
-                  />
-                </div>
-                <div className='xl:col-span-2'>
+              <div className='grid gap-8 sm:gap-12 grid-cols-1 md:grid-cols-5 xl:grid-cols-3 mb-14 md:mb-20'>
+                <div className='md:col-start-2 md:col-span-3 xl:col-span-1 xl:col-start-2 '>
                   <SponsorCard
                     image={Deepnote}
                     name='Deepnote'
@@ -312,7 +304,7 @@ export default function Sponsors (props) {
                 text='Bronze Sponsors'
               />
               <div className='grid gap-8 sm:gap-12 grid-cols-1 md:grid-cols-5 xl:grid-cols-3 mb-14 md:mb-20'>
-                <div className='md:col-start-2 md:col-span-3 xl:col-span-1 xl:col-start-2 '>
+                <div className='md:col-start-2 md:col-span-3 xl:col-span-1 xl:col-start-2'>
                   <SponsorCard
                     image={TheDappList}
                     name='The Dapp List'
